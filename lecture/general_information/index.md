@@ -23,6 +23,12 @@ Please visit these pages again in the next few weeks for further information.
 
 Hello everyone and welcome to the course page for X
 
+
+
+![diler logo](https://github.com/M-earnest/data_managment_os_days_marburg_2024/blob/main/lecture/static/logo.png)
+
+
+
 ## Course name
 
 Within this course we will explore X
