@@ -7,7 +7,7 @@ titlesonly: true
 ---
 ```
 
-<img src="https://github.com/M-earnest/data_managment_os_days_marburg_2024/blob/main/lecture/static/logo.png" alt="Lgo" title="Logo" width="150" height="100" /> 
+<img src="https://github.com/M-earnest/data_managment_os_days_marburg_2024/blob/main/lecture/static/logo.png" alt="Lgo" title="Logo" width="200" height="50" /> 
 
 # Welcome!
 
@@ -18,12 +18,6 @@ Please visit these pages again in the next few weeks for further information.
 ````
 
 Hello everyone and welcome to the course page for X
-
-
-
-
-![diler logo](https://github.com/M-earnest/data_managment_os_days_marburg_2024/blob/main/lecture/static/logo.png)
-
 
 
 
