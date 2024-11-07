@@ -11,7 +11,7 @@ titlesonly: true
 
 
 ![diler logo](https://github.com/M-earnest/data_managment_os_days_marburg_2024/blob/main/lecture/static/logo.png)
-
+<img src="https://github.com/M-earnest/data_managment_os_days_marburg_2024/blob/main/lecture/static/logo.png" alt="Description of the image">
 
 # Welcome!
 
