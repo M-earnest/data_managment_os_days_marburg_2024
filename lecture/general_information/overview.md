@@ -1,5 +1,10 @@
 # Course overview & procedure
 
+
+<img src="https://github.com/M-earnest/data_managment_os_days_marburg_2024/blob/main/lecture/static/logo.png" alt="Logo" title="Logo" width="200" height="50" />
+
+<iframe src="https://github.com/M-earnest/data_managment_os_days_marburg_2024/blob/main/lecture/static/logo.png" width="280" height="280" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://github.com/M-earnest/data_managment_os_days_marburg_2024/blob/main/lecture/static/logo.png">via GIPHY</a></p>
+
 Detailed explanation of what the course is about,
 
 list of content chapter
