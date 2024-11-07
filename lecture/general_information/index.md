@@ -7,7 +7,7 @@ titlesonly: true
 ---
 ```
 
-![diler logo](/data_managment_os_days_marburg_2024/lecture/static/logo.png)
+![diler logo](https://github.com/M-earnest/data_managment_os_days_marburg_2024/blob/main/lecture/static/logo.png)
 
 
 # Welcome!
