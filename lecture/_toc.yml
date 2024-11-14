@@ -5,9 +5,6 @@ chapters:
 - file: general_information/outline
 - file: general_information/setup
 - file: introduction/intro
-  sections:
-  - file: introduction/static_content
-  - file: introduction/interactive_notebook
 - file: content/intro_content
   sections:
   - file: content/gin.md
