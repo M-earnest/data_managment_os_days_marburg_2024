@@ -42,23 +42,6 @@ While we do not assume participants know the cultural practices of every ethnic 
 ## **Enforcement**
 Participants asked to stop any harassing behavior are expected to comply immediately. Organizers and presenters are also subject to the anti-harassment policy. In particular, they should not use sexualized images, activities, or other material. Event organisers may take action to redress anything designed to, or with the clear impact of, disrupting the event or making the environment hostile for any participants.
 
-## **Reporting**
-If someone makes you or anyone else feel unsafe or unwelcome, please report it as soon as possible to the organizers either in person or by email.
-
-Further the Goethe-University offers a number of ressources: 
-
-[sexual harrasment/violence](https://www.goethe-university-frankfurt.de/113533163/Sexualised_Discrimination?locale=ent)
-
-[anti-discrimination office](https://www.goethe-university-frankfurt.de/113532682/Services_and_Self_conception?locale=en)
-
-[equal opportunities (german)](https://www.uni-frankfurt.de/70268108/Beratungsstelle_Chancengleichheit)
-
-[Guide-book: Studium Inklusiv: Mit gesundheitlicher Beeinträchtigung oder Behinderung
-gut durchs Studium](https://www.uni-frankfurt.de/98672010/leitfaden_gu_inklusion_stud.pdf)
-
-[Ombudsperson (german)](https://www.uni-frankfurt.de/97234850/Ombudspersonen_f%C3%BCr_Studierende_und_wissenschaftliche_Mitarbeiter_innen_sowie_f%C3%BCr_studentische_und_wissenschaftliche_Hilfskr%C3%A4fte)
-
-
 
 ## *Reporting Issues*
 
