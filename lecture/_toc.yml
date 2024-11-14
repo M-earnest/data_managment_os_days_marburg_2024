@@ -5,7 +5,7 @@ chapters:
 - file: general_information/outline
 - file: general_information/setup
 - file: introduction/intro
-- file: content/intro_content
+- file: content/intro
   sections:
   - file: content/gin.md
   - file: content/bids_specs.md
