@@ -1,4 +1,5 @@
-# Introduction to content X
+# Data Managment
+
 
 Within the first session we'll spend a fair amount of time on X
 
