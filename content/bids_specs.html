@@ -416,15 +416,31 @@
 <ul class="simple">
 <li><p>Lack of consensus (or a standard) leads to misunderstandings and time wasted on rearranging data or rewriting scripts expecting certain structure</p></li>
 <li><p>scientific projects especially in the neuroscience are necessarily complex, being organized and providing proper documentation and meta information is a key factor</p></li>
-<li><p>Early stage resaearchers have</p></li>
+<li></li>
+<li><p>Early stage resaearchers have a distinct adavantage of not being bogged down by their already exiting backlogs</p></li>
 </ul>
 <p>FAIR</p>
+<ul class="simple">
+<li><p>integrate: - <a class="reference external" href="https://bids-specification.readthedocs.io/en/stable/introduction.html">https://bids-specification.readthedocs.io/en/stable/introduction.html</a></p></li>
+</ul>
 <p>F - findable:</p>
 <p>I - interoperable:</p>
 <p>R - reusable:</p>
 </section>
 <section id="the-core-specification">
 <h3>The core specification<a class="headerlink" href="#the-core-specification" title="Link to this heading">#</a></h3>
+<p>Requirement levels:</p>
+<p>EQUIRED: Data cannot be be interpreted without this information (or the ambiguity is unacceptably high)
+RECOMMENDED: Interpretation/utility would be dramatically improved with this information
+OPTIONAL: Users and/or tools might find it useful to have this information</p>
+<p>Modalities:</p>
+<ul class="simple">
+<li><p>passive neuroimaging techniques are organized by their own labels: eg, meg and ieeg</p></li>
+<li><p>active neuroimaging techniques are organized by the respective category of brain data recorded, e.g for MRI: T1w, bold or dwi etc.</p></li>
+</ul>
+<p>…</p>
+<p>How best to break down the basic list here?</p>
+<p><a class="reference external" href="https://bids-specification.readthedocs.io/en/stable/common-principles.html">https://bids-specification.readthedocs.io/en/stable/common-principles.html</a></p>
 </section>
 <section id="folder-structure">
 <h3>Folder structure<a class="headerlink" href="#folder-structure" title="Link to this heading">#</a></h3>
@@ -437,6 +453,15 @@
 </section>
 <section id="practical-example-bids-extensions">
 <h3>practical example: BIDS extensions<a class="headerlink" href="#practical-example-bids-extensions" title="Link to this heading">#</a></h3>
+<p>As you’ve seen BIDS is split into modality agnostic files, i.e.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>dataset_description.json
+README[.md|.rst|.txt]
+CITATION.cff
+CHANGES
+LICENSE
+</pre></div>
+</div>
+<p>and modality specific files, which are dependent on the specifics of the hard- and software necessary. This necessarily influences how and which metadata is required or expected to be shared. In the following we will explore to modality specific examples.</p>
 <section id="mne-bids">
 <h4>MNE BIDS<a class="headerlink" href="#mne-bids" title="Link to this heading">#</a></h4>
 <ul class="simple">
