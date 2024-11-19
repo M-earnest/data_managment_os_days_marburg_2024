@@ -20,6 +20,8 @@ I - interoperable:
 
 R - reusable:
 
+### The core specification
+
 ### Folder structure
 
 ### raw
@@ -27,7 +29,7 @@ R - reusable:
 ### derivatives
 
 
-### practical example 
+### practical example: BIDS extensions
 
 #### MNE BIDS
 - https://mne.tools/mne-bids/stable/auto_examples/convert_mne_sample.html#sphx-glr-auto-examples-convert-mne-sample-py
