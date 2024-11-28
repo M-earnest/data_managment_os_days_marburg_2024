@@ -112,6 +112,19 @@ There are two important file types to store metadata:
 - organized as tables
 - columns: fields
 - rows: data points
+##### descriptions.tsv
+- it is optional but recommended
+- documents processing steps in derivative dataset
+
+**columns**
+- `desc_id`
+      - unique labels that are used within the dataset
+      - sub-001_task-listening_desc-preproc_eeg.edf: here `desc-preproc` would be a desc_id, but within the column you would just write: `preproc`
+- `description`
+      - free-form text
+      - describes desc_id labels
+      - has to appear second
+    
 ##### Programming
 **Python**
 - you will need the **Pandas** library (`pd`).
