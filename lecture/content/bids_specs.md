@@ -51,15 +51,15 @@ https://bids-specification.readthedocs.io/en/stable/common-principles.html
 
 ### Folder structure
 Within BIDS folders have to be structured and named in a specific way. The hierarchy is as follows:
-**project**
-- code
-- derivatives
-- phenotype
-- sourcedata
-- stimuli
-- subject
-    - session
-        - datatype
+- **project**
+    - code
+    - derivatives
+    - phenotype
+    - sourcedata
+    - stimuli
+    - subject
+        - session
+            - datatype
 
 The **project** folder has not to be named in a specific manner, but it should be descriptive.
 #### code
@@ -88,11 +88,30 @@ Derivatives are
 - preprocessed data:
       - fundamentally similar to source data (e.g removing of artifacts etc.)
 There are several ways to organize them within your folder structure. For more information have a look [here](https://bids-website.readthedocs.io/en/latest/getting_started/folders_and_files/derivatives.html)
-## metadata
-
-
-
-
+### metadata
+There are two important file types to store metadata:
+#### JSON files
+- **J**ava**S**cript **O**bject **N**otation
+- they are text-based and consist of key-value pairs with the option for nesting and arrays
+##### Editing
+- *Visual Studio Code* (VS Code) is best for editing json files locally
+##### Programming
+**Python**
+- there is a built-in library to read (`json.load()`) and write (`json.dump`) JSON files
+**R**
+- You can use the **jsonlite** package and read (`fromJSON()`) and write (`writeLines`) JSON files
+#### TSV files
+- **t**ab-**s**eparated **v**alues
+- organized as tables
+- columns: fields
+- rows: data points
+##### Programming
+**Python**
+- you will need the **Pandas** library (`pd`).
+- you can read (`pd.read_csv(your_tsv, delimiter = '\t)`) and write (`your_dataframe.to_csv(name, sep = 't')`) tsv files
+**R**
+- you can easily use `read.table()` und `write.table()`
+For more information have a look [here](https://bids-website.readthedocs.io/en/latest/getting_started/folders_and_files/metadata.html)
 
 ### practical example: BIDS extensions
 
