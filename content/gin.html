@@ -891,27 +891,24 @@ A clean dataset status is good practice.</p></li>
 <p>To aquire a dataset from the internet we have multiple options, e.g. via the <a class="reference external" href="http://docs.datalad.org/en/stable/generated/man/datalad-clone.html">datalad clone</a> command.</p>
 <p>This not only allows for faster downloads, but additionally creates necessary metadata. We’re avoiding, e.g. <em>“I don’t really remember where I got the data from; Yeah, whatever version should be fine. Oh they updated the dataset since 2008?”</em> etc.:</p>
 <br>
-```
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ datalad clone --dataset https://github.com/psychoinformatics-de/studyforrest-data-phase2.git
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    $ datalad clone --dataset https://github.com/psychoinformatics-de/studyforrest-data-phase2.git
 
-    install(ok): example-dicom-functional (dataset)                                                                                                                                                                       
-    add(ok): example-dicom-functional (dataset)                                                                                                                                                                           
-    add(ok): .gitmodules (file)                                                                                                                                                                                           
-    save(ok): . (dataset)                                                                                                                                                                                                 
-    add(ok): .gitmodules (file)                                                                                                                                                                                           
-    save(ok): . (dataset)                                                                                                                                                                                                 
-    action summary:                                                                                                                                                                                                       
-    add (ok: 3)
-    install (ok: 1)
-    save (ok: 2)
+        install(ok): example-dicom-functional (dataset)                                                                                                                                                                       
+        add(ok): example-dicom-functional (dataset)                                                                                                                                                                           
+        add(ok): .gitmodules (file)                                                                                                                                                                                           
+        save(ok): . (dataset)                                                                                                                                                                                                 
+        add(ok): .gitmodules (file)                                                                                                                                                                                           
+        save(ok): . (dataset)                                                                                                                                                                                                 
+        action summary:                                                                                                                                                                                                       
+        add (ok: 3)
+        install (ok: 1)
+        save (ok: 2)
+
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-```{admonition} Dataset Nesting - the  --dataset flag
-:class: dropdown
-The `--dataset` flag indicated that we want to creat a nested dataset into our already existing Dataset. This `Superdataset`, contains the information that a subdataset exists though – the subdataset is registered in the superdataset. Why do you think this could be useful? More info on nesting in the [Datalad Handbook](https://handbook.datalad.org/en/latest/basics/101-106-nesting.html)
-
-</pre></div>
+<div class="dropdown admonition">
+<p class="admonition-title">Dataset Nesting - the  –dataset flag</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">--dataset</span></code> flag indicated that we want to creat a nested dataset into our already existing Dataset. This <code class="docutils literal notranslate"><span class="pre">Superdataset</span></code>, contains the information that a subdataset exists though – the subdataset is registered in the superdataset. Why do you think this could be useful? More info on nesting in the <a class="reference external" href="https://handbook.datalad.org/en/latest/basics/101-106-nesting.html">Datalad Handbook</a></p>
 </div>
 <br>
 <p>Let’s take a look at our newly aquired dataset. The directory structure seems familiar, check with <code class="docutils literal notranslate"><span class="pre">tree</span></code></p>

@@ -432,8 +432,8 @@ To aquire a dataset from the internet we have multiple options, e.g. via the [da
 This not only allows for faster downloads, but additionally creates necessary metadata. We're avoiding, e.g. *"I don't really remember where I got the data from; Yeah, whatever version should be fine. Oh they updated the dataset since 2008?"* etc.:
 
 <br>
-```
 
+```
     $ datalad clone --dataset https://github.com/psychoinformatics-de/studyforrest-data-phase2.git
 
         install(ok): example-dicom-functional (dataset)                                                                                                                                                                       
@@ -618,7 +618,7 @@ Let's first set up a new dataset directory.
 ```
     cd ../
     datalad create -c yoda myanalysis
-````
+```
 
 A new configuration procedure appears. Yoda?
 
