@@ -73,7 +73,7 @@ Simply:
     - Maximum file size: 10 GB
     - Maximum files per upload: 100 files
 
-### 3. Create a repository
+### 3. Make it public/Share
 - Share the files or use the Repository as private data storage
 
 

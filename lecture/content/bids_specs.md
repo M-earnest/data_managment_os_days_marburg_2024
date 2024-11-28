@@ -26,7 +26,7 @@ Neuroimaging experiments produce complex datasets that are often organized incon
 <br>
 
 ### 3. Validation Tools:
-- ools like the BIDS Validator check dataset integrity and help identify missing or incorrect data entries.
+- tools like the BIDS Validator check dataset integrity and help identify missing or incorrect data entries.
 
 <br>
 
@@ -51,7 +51,9 @@ The Brain Imaging Data Structure (BIDS) specification categorizes its files into
 *Requirement levels:*
 
 REQUIRED: Data cannot be be interpreted without this information (or the ambiguity is unacceptably high)
+
 RECOMMENDED: Interpretation/utility would be dramatically improved with this information
+
 OPTIONAL: Users and/or tools might find it useful to have this information
 
 
@@ -82,19 +84,19 @@ The **project** folder has not to be named in a specific manner, but it should b
 
 Here you can store any code
 
-*phenotype*
+**phenotype**
 
 Here you can store spearated into individual files any participant level measurements (e.g. responses from questionnaires)
 
-*sourcedata*
+**sourcedata**
 
 Here you can store data before harmonization, reconstruction and/or file format conversion
 
-*stimuli*
+**stimuli**
 
 Self-explanatory, but here you can store your stimuli
 
-*subject-folder structure*
+**subject-folder structure**
 
 ```
 subject/:
@@ -155,9 +157,9 @@ ds001
 ## Derivatives
 Derivatives are the following, they are supposed to be clearly labeled as such and be kept separate from your `raw/source` files. 
 
-- processed data:
+- **processed data**:
       - fundamentally different to the source data and therefore is likely to differ in datatypes from the original (e.g. masks and segmentations).
-- preprocessed data:
+- **preprocessed data**:
       - fundamentally similar to source data (e.g removing of artifacts etc.)
 
 
@@ -169,18 +171,18 @@ There are several ways to organize them within your folder structure. For more i
 
 These files are essential for understanding and interpreting the dataset. Without them, the dataset would be incomplete or ambiguous.
 
-1. Dataset-Level Files: Provide high-level context and participant demographics.
+1. **Dataset-Level Files**: Provide high-level context and participant demographics.
 `dataset_description.json`: Describes the dataset, including its name, version, and authors. Essential for dataset identification and interpretation.
 `participants.tsv`: Contains demographic or other participant-level information (e.g., age, sex, group).
 `sub-<label> directories`: Each participant's data must be organized under a directory named with their unique identifier.
 
-2. Modality-Specific Data Files: Include raw imaging data and acquisition metadata.
+2. **Modality-Specific Data Files**: Include raw imaging data and acquisition metadata.
 `Imaging data files (e.g., sub-<label>/anat/sub-<label>_T1w.nii.gz)`: The actual neuroimaging data (e.g., T1-weighted anatomical images, functional MRI, etc.).
 `Sidecar JSON files (e.g., sub-<label>/anat/sub-<label>_T1w.json)`: Provide metadata for the associated imaging files, such as acquisition parameters and scanner details.
 
-3. Task-Specific Files (if functional data is included): Essential for linking brain activity to tasks in functional datasets.
+3. **Task-Specific Files**: (if functional data is included): Essential for linking brain activity to tasks in functional datasets.
 `task-<label>_bold.nii.gz`: The BOLD fMRI time series.
-`- `task-<label>_events.tsv`: The timing and nature of stimuli presented during the task.
+`-task-<label>_events.tsv`: The timing and nature of stimuli presented during the task.
 
 
 ## RECOMMENDED Files
@@ -189,21 +191,26 @@ But really, please provide them!
 
 These files significantly enhance the interpretability and utility of the dataset but are not strictly necessary, they are mostly for human readers and help others understand what they see.
 
-1. Additional Dataset-Level Metadata:
+1. **Additional Dataset-Level Metadata**:
+
         README: General information about the dataset, such as study purpose or known issues.
+
         CHANGES: Version history of the dataset, useful for tracking updates.
 
-2. Additional Participant Information:
+2. **Additional Participant Information**:
+
         participants.json: Describes the columns in participants.tsv, such as units or definitions for demographic fields.
 
-3. Additional Imaging Metadata:
+3. **Additional Imaging Metadata**:
+
         Field maps (fmap/): Useful for correcting distortions in functional or diffusion MRI data.
+
         Additional anatomical modalities (e.g., T2-weighted images, sub-<label>_T2w.nii.gz).
 
 
 ## Metadata
 
-Metadata is essential in the Brain Imaging Data Structure (BIDS) as it provides the context needed to understand, analyze, and reproduce neuroimaging datasets. Without it, raw imaging data would be ambiguous, hard to interpret, and difficult to reuse, especially for those not involved in the original study.
+Metadata is essential in the Brain Imaging Data Structure (BIDS) as it provides the **context** needed to **understand, analyze, and reproduce neuroimaging datasets**. Without it, raw imaging data would be ambiguous, hard to interpret, and difficult to reuse, especially for those not involved in the original study.
 
 We'll have a look at some real life implementations shortly using the public examples on the [BIDS-Github Demo](https://github.com/bids-standard/bids-examples/tree/master/ds000001-fmriprep)!
 
