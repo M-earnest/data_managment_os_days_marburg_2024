@@ -50,10 +50,37 @@ https://bids-specification.readthedocs.io/en/stable/common-principles.html
 
 
 ### Folder structure
+Within BIDS folders have to be structured and named in a specific way. The hierarchy is as follows:
+project
+- code
+- derivatives
+- phenotype
+- sourcedata
+- stimuli
+- subject
+-     session
+-         datatype
 
-
-
-
+The **project** folder has not to be named in a specific manner, but it should be descriptive.
+#### code
+Here you can store any code
+#### phenotype
+Here you can store spearated into individual files any participant level measurements (e.g. responses from questionnaires)
+#### sourcedata
+Here you can store data before harmonization, reconstruction and/or file format conversion
+#### stimuli
+Self-explanatory, but here you can store your stimuli
+#### subject
+There should be one subject folder for each participant. Naming of subject folders has to be as follows:
+`sub-*particpant label*`
+exchange *participant label* with a label that is unique for each participant in your dataset (can be numbers and/or letters)
+#### session
+You only need this, if there are multiple sessions. A participant does not leave the scanner/headset during a session.
+Sessions are named as follows:
+`ses-*session label*`
+exchange *session label* with a label that is unique (can be numbers and/or letters)
+#### datatype 
+This folder shows the modality of the acquired data, like EEG data (`eeg`), behavioral data (`beh`), fMRI data (`func`) or much more. You can find a list of modalities and their naming conventions [here](https://bids-website.readthedocs.io/en/latest/getting_started/folders_and_files/folders.html)
 ### raw
 
 
