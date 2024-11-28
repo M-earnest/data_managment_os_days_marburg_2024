@@ -1,7 +1,6 @@
 root: general_information/overview
 format: jb-book
 chapters:
-- file: general_information/overview
 - file: general_information/setup
 - file: general_information/prerequisites
 - file: introduction/intro
