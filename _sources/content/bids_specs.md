@@ -51,6 +51,7 @@ https://bids-specification.readthedocs.io/en/stable/common-principles.html
 
 ### Folder structure
 Within BIDS folders have to be structured and named in a specific way. The hierarchy is as follows:
+
 - **project**
     - code
     - derivatives
@@ -72,21 +73,27 @@ Here you can store data before harmonization, reconstruction and/or file format 
 Self-explanatory, but here you can store your stimuli
 #### subject
 There should be one subject folder for each participant. Naming of subject folders has to be as follows:
+
 `sub-*particpant label*`
+
 exchange *participant label* with a label that is unique for each participant in your dataset (can be numbers and/or letters)
 #### session
 You only need this, if there are multiple sessions. A participant does not leave the scanner/headset during a session.
+
 Sessions are named as follows:
 `ses-*session label*`
+
 exchange *session label* with a label that is unique (can be numbers and/or letters)
 #### datatype 
 This folder shows the modality of the acquired data, like EEG data (`eeg`), behavioral data (`beh`), fMRI data (`func`) or much more. You can find a list of modalities and their naming conventions [here](https://bids-website.readthedocs.io/en/latest/getting_started/folders_and_files/folders.html)
 ### derivatives
 Derivatives are 
+
 - processed data:
       - fundamentally different to the source data and therefore is likely to differ in datatypes from the original (e.g. masks and segmentations).
 - preprocessed data:
       - fundamentally similar to source data (e.g removing of artifacts etc.)
+
 There are several ways to organize them within your folder structure. For more information have a look [here](https://bids-website.readthedocs.io/en/latest/getting_started/folders_and_files/derivatives.html)
 ### metadata
 There are two important file types to store metadata:
