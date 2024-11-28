@@ -61,6 +61,8 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"TeX": {"Macros": {"N": "\\mathbb{N}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/gin';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -382,11 +384,46 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intro">Intro</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#usage">Usage</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">Setup</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#alternatives">Alternatives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intro-the-problem-at-hand">Intro: The Problem at Hand</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-g-node-approach">The G-Node Approach</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation">Motivation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spotlight-on-the-gin-platform">Spotlight on the GIN Platform</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#feels-familiar-excursion-github">Feels familiar? Excursion GitHub</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gin-the-manual-way">GIN: The manual way</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#challenges">Challenges</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gin-cli">GIN Cli</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#openneuro">OpenNeuro</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#datalad">DataLad</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">Setup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#usage-how-to-get-started">Usage/How to get started:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#let-s-look-at-how-datalad-does-this">Let’s look at how datalad does this</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#datalad-create">Datalad create</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#datalad-save">Datalad save</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#datlad-status">Datlad status</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-local-version-control">Summary - Local version control</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#datlad-install-datalad-clone">Datlad install/Datalad clone</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#git-annex">Git Annex</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#datalad-get-retrieving-data">Datalad get - Retrieving data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#datlad-drop-removing-data">Datlad drop - Removing data</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#datalad-run-reproducible-execution">Datalad Run: Reproducible execution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-dataset-consumption">Summary - Dataset consumption</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-published-datasets">Using published datasets</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#upload-datasets-connect-gin-and-your-local-system-via-datalad">Upload Datasets: Connect GIN and your local system via DataLad</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#datalad-container">Datalad-container</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#making-the-container-available-to-datalad">Making the Container Available to Datalad</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-example">Practical example:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-using-published-datasets">Summary - Using published datasets</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additinal-information-tutorials">Additinal Information/Tutorials</a></li>
 </ul>
             </nav>
         </div>
@@ -400,31 +437,617 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="g-node-gin">
 <h1>G-Node/GIN<a class="headerlink" href="#g-node-gin" title="Link to this heading">#</a></h1>
-<p>link to git and git annex</p>
-<p><a class="reference external" href="http://datasets.datalad.org/datalad/datalad-course/pics/artwork/src/publishing/publishing_gitvsannex.svg">http://datasets.datalad.org/datalad/datalad-course/pics/artwork/src/publishing/publishing_gitvsannex.svg</a></p>
-<p>link to git &amp; git annex and supported data storage repos</p>
-<p><img alt="alt text" src="https://handbook.datalad.org/en/latest/_images/publishing_network_publishgin.svg" /></p>
-<section id="intro">
-<h2>Intro<a class="headerlink" href="#intro" title="Link to this heading">#</a></h2>
+<p>BIDS gives us a starting point for standardizing neuroscience data, but this alone does not ensure acessability or reproducibility. We need tools that go beyond mere standards.</p>
+<section id="intro-the-problem-at-hand">
+<h2>Intro: The Problem at Hand<a class="headerlink" href="#intro-the-problem-at-hand" title="Link to this heading">#</a></h2>
+<p>Neuroscience is one of the most interdisciplinary fields of research, encompassing various domains—cognitive science, neuroimaging, electrophysiology, computational modeling, and more. Each discipline brings unique methodologies, data modalities, and storage needs. This diversity often leads to siloed practices, making collaboration and data reuse unnecisarrly difficult. Compounding the issue is the variety of standards — when they exist— and the proprietary formats imposed by commercial tools. Let’s be clear we can not simply rely on social contracts, i.e. self inforcement practices.</p>
+<p>Social contracts, like the voluntary adoption of the BIDS standard, help align practices within labs or collaborations but fall short of addressing larger, systemic problems. To bridge gaps between disciplines or even between labs using different conventions, we need robust technical solutions that embed reproducibility, accessibility, and scalability into data management workflows.</p>
+<p>Neuroscience is a diverse field, compromoised of many disciplines each concerned with different aspects of how the human brain operates. This has resulted in a number of different data modalities, storage needs and incorporated standards. To bridge the gaps between disciplines (or even differnt lab standards) we can not simply rely on social contracts (e.g. self inforcement of the BIDS standard). G-Node or the “German German Neuroinformatics Node (G-Node)” provides their own take on this issue:</p>
+</section>
+<section id="the-g-node-approach">
+<h2>The G-Node Approach<a class="headerlink" href="#the-g-node-approach" title="Link to this heading">#</a></h2>
+<p>G-Node, or the German Neuroinformatics Node, addresses the systemic challenges in neuroscience data management by providing an ecosystem where data and tools are open, interoperable, and scalable, rather than proprietary, fragemented and dependence forming standards.</p>
+<p>Their solutions are backed by support from:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>The German Federal Ministry of Education and Research
+Ludwig-Maximilians-Universität München
+The International Neuroinformatics Coordination Facility (INCF)
+</pre></div>
+</div>
+</section>
+<section id="motivation">
+<h2>Motivation<a class="headerlink" href="#motivation" title="Link to this heading">#</a></h2>
+<p>We care, beacuse they provide tools for:</p>
 <ul class="simple">
-<li><p>data laws= and GDN?</p></li>
+<li><p>data access, data storage, and data analysis</p></li>
+</ul>
+<p>We’ll be taking a look at one of their solutions, the G-Node Interface:</p>
+<ul class="simple">
+<li><p>G-Node Interface is a data hosting and sharing plattform, build on git and git-annex infrastructure. Meaning that version control and efficient data management are at the heart of the plattform.</p></li>
 </ul>
 </section>
-<section id="usage">
-<h2>Usage<a class="headerlink" href="#usage" title="Link to this heading">#</a></h2>
+<section id="spotlight-on-the-gin-platform">
+<h2>Spotlight on the GIN Platform<a class="headerlink" href="#spotlight-on-the-gin-platform" title="Link to this heading">#</a></h2>
+<p>One of G-Node’s flagship tools is the GIN (G-Node Infrastructure) platform. GIN is a open-source web-based plattform to host and share data, with server solutions compatible with the GDPR. Unlike traditional cloud storage or proprietary solutions, GIN integrates provenance and transparency directly into its workflows. GIN builds on Git and Git-Annex for these purposes.</p>
+</section>
+<section id="feels-familiar-excursion-github">
+<h2>Feels familiar? Excursion GitHub<a class="headerlink" href="#feels-familiar-excursion-github" title="Link to this heading">#</a></h2>
+<p>While now in the hands of mircrosoft GitHub is and probably will forever be the standard for open and reprodcuible sharing of code and applications.</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Question: GIN is based on the same architecture, but is tailored to a different use-case: What could be the difference?</p>
+<p>Same version control system (Git; version tracking, multiple branch solutions etc.), but tailored towards efficient Management and version control for larger data-heavy projects (Git-Annex). The max. file size for GitHub is 5mb per file via the web-client. and up to 100mb via the command line. Larger projects can make use of Git LFS (Git Large File Storage) using pointer files in your actual repository that point towards the actual files stored in their server system.</p>
+</div>
+</section>
+<section id="gin-the-manual-way">
+<h2>GIN: The manual way<a class="headerlink" href="#gin-the-manual-way" title="Link to this heading">#</a></h2>
+<p>Screenshoot</p>
+<p>Let’s have a quick look at how one can make use of this platform:</p>
+<p>Simply:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Create a Repository: 
+    After creating an account, users can set up a repository to host their data.
+</pre></div>
+</div>
+<p>Screnshot</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Add and Upload Files:
+    Files can be uploaded through the web interface, but with some restrictions:
+        Maximum file size: 10 GB
+        Maximum files per upload: 100 files
+
+Create a repository
+
+Share the files or use the Repository as private data storage
+</pre></div>
+</div>
+</section>
+<section id="challenges">
+<h2>Challenges<a class="headerlink" href="#challenges" title="Link to this heading">#</a></h2>
+<p>While straightforward, this approach has some significant downsides:
+Slow Upload Speeds: For larger datasets, the upload process can be painfully slow.
+Limited Scalability: Working within the file size and number constraints quickly becomes cumbersome.
+Data Provenance?</p>
+</section>
+<section id="gin-cli">
+<h2>GIN Cli<a class="headerlink" href="#gin-cli" title="Link to this heading">#</a></h2>
+<p>The platform also provides tools for more advanced interaction, allowing for faster and automated data-transfer. The Gin Command-Line Interface (GIN CLI):
+The GIN CLI extends the platform’s capabilities beyond the web interface. It allows users to efficiently manage repositories, sync data, and track changes using Git and Git-Annex under the hood. You’ll find a simple tutorial here: <a class="reference external" href="https://gin.g-node.org/G-Node/Info/wiki/GIN+CLI+Usage+Tutorial">https://gin.g-node.org/G-Node/Info/wiki/GIN+CLI+Usage+Tutorial</a></p>
+<p>In essence it’s a very simple approach:</p>
 <ul class="simple">
-<li><p>basic</p></li>
-<li><p>git integration</p></li>
+<li><p>create a GIN repository via the web-client and a local mirror</p></li>
+<li><p>initalize your local repository</p></li>
+<li><p>add data to your local repository</p></li>
+<li><p>upload your data to the associated repository via the CLI using the command:
+<code class="docutils literal notranslate"><span class="pre">gin</span> <span class="pre">upload</span> <span class="pre">--options</span></code></p></li>
 </ul>
 </section>
-<section id="setup">
-<h2>Setup<a class="headerlink" href="#setup" title="Link to this heading">#</a></h2>
-</section>
-<section id="alternatives">
-<h2>Alternatives<a class="headerlink" href="#alternatives" title="Link to this heading">#</a></h2>
+<section id="openneuro">
+<h2>OpenNeuro<a class="headerlink" href="#openneuro" title="Link to this heading">#</a></h2>
+<p><a class="reference external" href="https://handbook.datalad.org/en/latest/_images/openneuro.png">https://handbook.datalad.org/en/latest/_images/openneuro.png</a></p>
+<p>An alternate solution that is very common  of datasets is <a class="reference external" href="https://openneuro.org/">OpenNeuro</a>.</p>
+<p>OpenNeuro is an repository solution to host and share BIDS-compatible datasets, ensuring both accessibility and compliance with community standards. It is designed with the idea of data indexing and searching in mind therefore, but it doesn’t provide the option of non-public datasets.</p>
+<p>It is therfore particularly valuable for researchers looking to share data broadly with the community. It ensures reproducibility by providing an accessible, long-term data repository, implementing automatic BIDS Validation, but lacks the version control system unerlying GIN.</p>
+<p>Find more info in the <a class="reference external" href="https://handbook.datalad.org/en/latest/usecases/openneuro.html">Datalad aHandbook section on OpenNeuro</a></p>
 </section>
 <section id="datalad">
 <h2>DataLad<a class="headerlink" href="#datalad" title="Link to this heading">#</a></h2>
+<p>In life, some things are required by funding agencies, some are nice to have, and then there are those things that, once discovered, make your life (and neuroscience) significantly better. You could say this about data sharing in general, but DataLad exemplifies this perfectly.</p>
+<p>One efficient and reproducible way to work across multiple platforms is through the DataLad library. It focuses on true data provenance by providing an interface to integrate data repositories, local version control, and automatic metadata creation on the fly, e.g.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>- Recording the origin of datasets, including where and when they were created or obtained
+- Tracking transformations, such as scripts applied, parameters used, and the sequence of analysis steps
+- Storing and adding to metadata that identifies contributors and captures the context of data modifications
+</pre></div>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Question: WTF is Data Provenance?</p>
+<p>Data provenance refers to the comprehensive documentation of the origins, transformations, and journey of data throughout its lifecycle. It ensures that every step in data processing is transparently recorded, enabling both researchers and external parties to verify and reproduce results.</p>
+</div>
+<p>Building on this idea, DataLad is best suited for keeping track of data, facilitating sharing, and introducing reproducibility to workflows. For instance, it ensures that associated scripts, data transformations, and workflows are easy to track and re-run—particularly useful for preprocessing tasks (ever tried doing that for someone else’s dataset?).</p>
+<p>The main <code class="docutils literal notranslate"><span class="pre">features</span></code>:
+command-line tool build on Python
+Integrated Git and Git-annex
+Completely domain-agnostic (so not neuroscience specific)
+available for all major operating systems (Linux, macOS/OSX, Windows)</p>
+<p>Allows:
+- version-controlling arbitrarily large content,
+- easily sharing and obtaining data (not data hosting),
+- (computationally) reproducible data analysis,</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Question: <strong>YODA Principles?</strong></p>
+<p>The YODA principles provide a clear framework for organizing datasets to ensure reproducibility, transparency, and modularity in data analysis projects. “YODA” stands for YODAs Organigram on Data Analysis, emphasizing recursive structure and best practices for managing data and analysis. These principles address common issues in data analysis, such as chaotic directory structures, lack of version control, and reproducibility challenges due to environment or tool changes.</p>
+<p>The Three YODA Principles:</p>
+<p>Part 1: One thing, one dataset</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Modular organization: Separate raw data, preprocessed data, analysis code, and results into dedicated directories.
+Nested subdatasets: Use subdatasets for reusable components (e.g., raw datasets, analysis scripts).
+Keep input data untouched during analysis.
+Create separate projects for different analyses to avoid conflation.
+</pre></div>
+</div>
+<p>Part 2: Record where you got it from, and where it is now</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Track the provenance of all data and components, including sources and dependencies.
+    - Use tools like datalad clone and datalad download-url to record sources and link data.
+    - Use relative paths for data references in scripts to ensure portability across systems.
+    - Ensure datasets are clean, modular, and shareable for collaboration or publication.
+</pre></div>
+</div>
+<p>Part 3: Record what you did to it, and with what
+- Capture the provenance of transformations and analyses performed on the data.
+- Use datalad run to track inputs, outputs, commands, authorship, and execution timestamps.
+- For full reproducibility, use datalad containers-run to include the computational environment in the dataset.</p>
+</div>
+</section>
+<section id="setup">
+<h2>Setup<a class="headerlink" href="#setup" title="Link to this heading">#</a></h2>
+<p>Before we get started, we will need a few things to seamlessly manage our data. We need:</p>
+<ul class="simple">
+<li><p>git</p></li>
+<li><p>a GIN account</p></li>
+<li><p>a working terminal</p></li>
+</ul>
+<p>Follow the installation tutorial in the Setup section of this book for your specific system. Be advised that for windows sers to make full use of Datalad’s command line abilities the installation of Windows Subystems for Linux should be installed.</p>
+<p>Next we want to open a terminal and run the following code to install datalad and datalad-container, a handy extension, in a newly created environment called simply “datalad”</p>
+<p>But before we copy and paste the following code block into your terminal, let’s look at what it actually does</p>
+<ol class="arabic">
+<li><p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">venv</span> <span class="pre">--system-site-packages</span> <span class="pre">~/env/datalad</span></code> creates a virtual environment in the directory ~/env/datalad and ensures access to globally installed Python packages</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">~/env/datalad/bin/activate</span></code> activates the virtual environment you just created, isolating your terminal session for your Datalad-related work from your baseline environment</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">datalad</span></code> now installs the datalad package into your isolated virtual environment using the Python package manager, pip.</p></li>
+<li><p>same thing, just for the datalad-container extension, which allows you to manage and run automated pipelines (Docker or singularity container) on your data</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  python -m venv --system-site-packages ~/env/datalad &amp;&amp; source ~/env/datalad/bin/activate;
+  python -m pip install datalad
+  python -m pip install datalad-container
+</pre></div>
+</div>
+</li>
+</ol>
+<p><em>Note:</em>
+From now on, whenever you want to work with Datalad, activate the virtual environment in your terminal with:</p>
+<p><code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">~/env/datalad/bin/activate</span></code></p>
+</section>
+<section id="usage-how-to-get-started">
+<h2>Usage/How to get started:<a class="headerlink" href="#usage-how-to-get-started" title="Link to this heading">#</a></h2>
+<p>Read the <a class="reference external" href="https://handbook.datalad.org/en/latest/">DataLad handbook</a> (like seriously). The Handbook provides a story driven, interactive crash-course concerning every possible aspect that your data management workflow could run into.</p>
+<p>From here on out, most of what we will go through is explained (probably better) and in more detail in the handbook, so please reference the chapters addded at the end of each section if you want to know more:</p>
+<p>We’ll start by jumping into the command line and by showing you the most basic commands that you commonly use to create a local git repository</p>
+<p>You’ll encounter the following bash commands:</p>
+<ul class="simple">
+<li><p>cd <folder> (change directory to another folde)</p></li>
+<li><p>ls -options (list the contents of a directory)</p></li>
+<li><p>mkdir (make/create a directory/folder)</p></li>
+<li><p>cat [OPTIONS] [FILE_NAMES] (create or concatenate a file/files)</p></li>
+<li><p>cp -filename directory/ (copy a file)</p></li>
+<li><p>du -options (summarize disk usage)</p></li>
+</ul>
+<p>We’ll also be using the <code class="docutils literal notranslate"><span class="pre">tree</span></code> libary to visualize the contents of a directory (pip install tree)</p>
+<ul class="simple">
+<li><p>tree -d
+tree
+└── home
+└── me
+└── awesome_datalad_project
+├── aligned
+├── code
+└── sub-01
+└── bold3T
+├── …
+└── sub-xx
+└── bold3T</p></li>
+</ul>
+<p>See aslo the <a class="reference external" href="https://handbook.datalad.org/en/latest/intro/howto.html">handbook section on bash</a></p>
+<p>A normal workflow on the command line therefore may look something like this</p>
+<ol class="arabic simple">
+<li><p>create a directory
+(datalad) (base) Michaels-MacBook-Pro: mkdir os_days_2024_test
+(datalad) (base) Michaels-MacBook-Pro: cd os_days_2024</p></li>
+<li><p>initialize git/make it a git repository
+(datalad) (base) Michaels-MacBook-Pro:os_days_2024_test me$ git init .
+Initialized empty Git repository in /Users/me/phd/projects/git/os_days_2024_test/.git/</p></li>
+<li><p>check for changes</p></li>
+</ol>
+<p>(datalad) (base) Michaels-MacBook-Pro:os_days_2024_test me$ ls -lah
+total 0
+drwxr-xr-x   3 me  staff    96B Nov 27 18:40 .
+drwxr-xr-x  42 me  staff   1.3K Nov 27 18:39 ..
+drwxr-xr-x   9 me  staff   288B Nov 27 18:40 .git</p>
+<ol class="arabic simple" start="4">
+<li><p>Check what git is tracking</p></li>
+</ol>
+<p>(datalad) (base) Michaels-MacBook-Pro:os_days_2024_test me$ git status
+On branch main</p>
+<p>No commits yet</p>
+<ol class="arabic simple" start="5">
+<li><p>create/add a file
+(datalad) (base) Michaels-MacBook-Pro:os_days_2024_test me$ cat &lt;&lt; EOT &gt;&gt; notes.txt</p></li>
+</ol>
+<blockquote>
+<div><p>The command “datalad save [-m] PATH” saves the file (modifications) to
+history.
+Note to self: Always use informative, concise commit messages.</p>
+<p>EOT</p>
+</div></blockquote>
+<ol class="arabic simple" start="6">
+<li><p>track changes
+(datalad) (base) Michaels-MacBook-Pro:os_days_2024_test me<span class="math notranslate nohighlight">\( git add notes.txt 
+(datalad) (base) Michaels-MacBook-Pro:os_days_2024_test me\)</span> git status
+On branch main</p></li>
+</ol>
+<p>No commits yet</p>
+<p>Changes to be committed:
+(use “git rm –cached <file>…” to unstage)
+new file:   notes.txt</p>
+<p>And checking the staus of our git directory again</p>
+<p>(datalad) (base) Michaels-MacBook-Pro:os_days_2024_test me$ git status
+On branch main
+nothing to commit, working tree clean</p>
+<p>Not very informative, huh? But now we commited a file, we can check which logs git keeps</p>
+<ol class="arabic simple" start="9">
+<li><p>check the git log files</p></li>
+</ol>
+<p>(datalad) (base) Michaels-MacBook-Pro:os_days_2024_test me$ git log –oneline
+75a46e4 (HEAD -&gt; main) added notes</p>
+</section>
+<section id="let-s-look-at-how-datalad-does-this">
+<h2>Let’s look at how datalad does this<a class="headerlink" href="#let-s-look-at-how-datalad-does-this" title="Link to this heading">#</a></h2>
+<section id="datalad-create">
+<h3>Datalad create<a class="headerlink" href="#datalad-create" title="Link to this heading">#</a></h3>
+<p>The <a class="reference external" href="http://docs.datalad.org/en/stable/generated/man/datalad-create.html"><code class="docutils literal notranslate"><span class="pre">datalad</span> <span class="pre">create</span></code></a> statement automatically sets up a basic directory structure. The snytax is as following:</p>
+<p><code class="docutils literal notranslate"> <span class="pre">datalad</span> <span class="pre">create</span> <span class="pre">-c</span> <span class="pre">PROC</span> <span class="pre">NAME</span></code></p>
+<p>In the command line this may look something like this:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    (datalad) (base) Michaels-MacBook-Pro:git me$ datalad create -c text2git os_days_demo
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">-c</span></code> flag provides info on the configuration, with which the directory is created. More on that later, here we simpyl chose <code class="docutils literal notranslate"><span class="pre">text2git</span></code>. Any Idea what this might possibly do? Let’s have a look at the directory.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    (datalad) (base) Michaels-MacBook-Pro:git me$ cd os_days_demo
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-la</span></code> command lists all the content in a given directory, e.g.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    (datalad) (base) Michaels-MacBook-Pro:os_days_demo me$ ls -la
+    total 8
+    drwxr-xr-x   5 me  staff   160 Nov 25 19:08 .
+    drwxr-xr-x  32 me  staff  1024 Nov 25 19:08 ..
+    drwxr-xr-x   4 me  staff   128 Nov 25 19:08 .datalad
+    drwxr-xr-x  14 me  staff   448 Nov 25 19:08 .git
+    -rw-r--r--   1 me  staff   115 Nov 25 19:08 .gitattributes
+</pre></div>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Question: What does the dot before the filenames possible mean?</p>
+<p>These are hidden files, running the <em>ls</em> command without the <em>a-flag</em> will reveal that our directory appears still empty.</p>
+</div>
+<p>We see that <code class="docutils literal notranslate"><span class="pre">datalad</span> <span class="pre">create</span></code> has provided us with an empty directory, but gives us a few machine-readable congfiguratio files:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    .datalad: metadata and configuration directory for DataLad-specific settings and state management.
+    .git: Git repository metadata directory for version control. (as we&#39;ve seen with git init)
+    .gitattributes: configuration file specifying rules for tracking files (e.g., text with Git, large files with Git-Annex).
+</pre></div>
+</div>
+<p>We can have a look at these with e.g. the <code class="docutils literal notranslate"><span class="pre">nano</span></code> cli-editor:</p>
+<p><code class="docutils literal notranslate"><span class="pre">nano</span> <span class="pre">.gitattributes:</span></code></p>
+</section>
+</section>
+<section id="datalad-save">
+<h2>Datalad save<a class="headerlink" href="#datalad-save" title="Link to this heading">#</a></h2>
+<p>meaninful changes
+<a class="reference external" href="http://datasets.datalad.org/datalad/datalad-course/pics/local_wf.svg">http://datasets.datalad.org/datalad/datalad-course/pics/local_wf.svg</a>
+check license datalade</p>
+<p>Now we’ve set up the basic directory strtucture and specfiied which files are supposed to be tracked. How do we actually track our changes thoug? Compared to the Git approach above this is simpler, as DataLad does most of the work for us. Let’s create another notes.txt file.</p>
+<p>cat &lt;&lt; EOT &gt;&gt; notes.txt</p>
+<blockquote>
+<div><p>The command “datalad save [-m] PATH” saves the file (modifications) to
+history.
+Note to self: Always use informative, concise commit messages.</p>
+<p>EOT</p>
+</div></blockquote>
+<p>The <code class="docutils literal notranslate"><span class="pre">datalad</span> <span class="pre">save</span></code> command combines a git add and a git commit , and therefore, the commit message is specified with datalad save.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    datalad save -m &quot;added notes.txt&quot;
+</pre></div>
+</div>
+<section id="datlad-status">
+<h3>Datlad status<a class="headerlink" href="#datlad-status" title="Link to this heading">#</a></h3>
+<p>Let’s look at the status of our dataset, i.e. what has changed?</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    (datalad) (base) Michaels-MacBook-Pro:os_days_2024_test me$ datalad status
+    nothing to save, working tree clean
+</pre></div>
+</div>
+<p>Not very formative, but what we would also expect from the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> command. If we want to see the actual changes we can make use of Git, as every datalad dataset is also a git directory:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    (datalad) (base) Michaels-MacBook-Pro:os_days_2024_test me$ git log --oneline
+</pre></div>
+</div>
+</section>
+</section>
+<section id="summary-local-version-control">
+<h2>Summary - Local version control<a class="headerlink" href="#summary-local-version-control" title="Link to this heading">#</a></h2>
+<p>datalad create creates an empty dataset.
+Configurations (-c yoda, -c text2git) are useful.
+A dataset has a history to track files and their modifications.
+Explore it with Git (git log) or external tools (e.g., tig).
+datalad save records the dataset or file state to the history.
+Concise commit messages should summarize the change for future you and others.
+datalad status reports the current state of the dataset.
+A clean dataset status is good practice.</p>
+</section>
+<section id="datlad-install-datalad-clone">
+<h2>Datlad install/Datalad clone<a class="headerlink" href="#datlad-install-datalad-clone" title="Link to this heading">#</a></h2>
+<p>To aquire a dataset from the internet we have multiple options, e.g. via the datalad clone command. This not only allows for faster downloads, but additionally creates necessary metadat. We’re avoiding, e.g. “I don’t really remember where I got the data from; Yeah, whatever version should be fine. Oh they updated the dataset since 2008?” etc.:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>(datalad) (base) Michaels-MacBook-Pro:os_days_demo me$ datalad clone --dataset . https://github.com/datalad/example-dicom-functional.git 
+</pre></div>
+</div>
+<p>Let’s take a look at our newly aquired dataset.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>(datalad) (base) Michaels-MacBook-Pro:bids-data me$ datalad subdatasets
+subdataset(ok): inputs/rawdata (dataset)
+</pre></div>
+</div>
+<p>So datalad subdatasets implies the existenc of a superdataset, contains the information that a subdataset exists though – the subdataset is registered in the superdataset. This is why the subdataset name exists as a directory.</p>
+<p>The directory structure seems familiar</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>tree-d
+</pre></div>
+</div>
+<p>So whats a nii.gz file? How big do you expext those to be?</p>
+<p>Let’s inspect closer. We will print the size of the directory and the contained files in human readable form, using the bash <code class="docutils literal notranslate"><span class="pre">du</span> <span class="pre">(disk</span> <span class="pre">usage)</span></code> command.</p>
+<p><code class="docutils literal notranslate"><span class="pre">du</span> <span class="pre">-sh</span></code></p>
+<p>The file size seems suspicious. Thinking back, why was the download of the dataset this quick?</p>
+<ul class="simple">
+<li><p>tree -d</p>
+<ul>
+<li><p>object tree</p></li>
+</ul>
+</li>
+</ul>
+<section id="git-annex">
+<h3>Git Annex<a class="headerlink" href="#git-annex" title="Link to this heading">#</a></h3>
+<p>Git-Annex and by extension Datalad only indexes large files, but doesn’t actually download themk, so these files are not actually present. The present symbolic links or Simlinks only point to where a file lies. Git-annex allows us to store the relevnat structure of a dataset and only retrieve whatever we need, when we need it. Why could this be of use to neuroscientists?</p>
+<p>git annex lock</p>
+<p>git annex unlock</p>
+</section>
+</section>
+<section id="datalad-get-retrieving-data">
+<h2>Datalad get - Retrieving data<a class="headerlink" href="#datalad-get-retrieving-data" title="Link to this heading">#</a></h2>
+<p>To actually download or retrieve files we will use the <code class="docutils literal notranslate"><span class="pre">datalad</span> <span class="pre">get</span></code> command specifying the excat file we want:</p>
+<p>datalad get sub-01/ses-localizer/func/sub-01_ses-localizer_task-objectcategories_run-*.nii.gz</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Question: How do we check the filesize again?</p>
+<p><code class="docutils literal notranslate"><span class="pre">du</span> <span class="pre">-sh</span></code></p>
+</div>
+<p>To get all files associated with the dataset recursively. We can run <code class="docutils literal notranslate"><span class="pre">datalad</span> <span class="pre">get</span> <span class="pre">-r</span></code>. But think closely before running this, what is the expected behabivor? What happens when we are dealing with massive datasets?</p>
+<section id="datlad-drop-removing-data">
+<h3>Datlad drop - Removing data<a class="headerlink" href="#datlad-drop-removing-data" title="Link to this heading">#</a></h3>
+<p>In the same vein, you might want to remove raw data that has already been processed. This can be done via the <code class="docutils literal notranslate"><span class="pre">datalad</span> <span class="pre">drop</span></code> command.</p>
+<p>datalad drop sub-01/ses-localizer/func/sub-01_ses-localizer_task-objectcategories_run-4_bold.nii.gz</p>
+<p>And checking if everythins is still there?</p>
+<ul class="simple">
+<li><p>tree</p></li>
+</ul>
+<p>what about the size of our directory?</p>
+<p><code class="docutils literal notranslate"><span class="pre">du</span> <span class="pre">-sh</span></code></p>
+</section>
+</section>
+<section id="datalad-run-reproducible-execution">
+<h2>Datalad Run: Reproducible execution<a class="headerlink" href="#datalad-run-reproducible-execution" title="Link to this heading">#</a></h2>
+<p><a class="reference external" href="http://datasets.datalad.org/datalad/datalad-course/pics/run_prov.svg">http://datasets.datalad.org/datalad/datalad-course/pics/run_prov.svg</a></p>
+<p>Now we could start working with this directory. Given that we want datalad to provide us with our metadata on what was done to our data, by whome, given which script etc. we can make use of the <code class="docutils literal notranslate"><span class="pre">datalad</span> <span class="pre">run</span></code> command. This makes use of the native <code class="docutils literal notranslate"><span class="pre">Python</span></code> integration and let´s us run python scripts on our data directories. We will deomstrate this shortly, but let’s get some actual data first.</p>
+</section>
+<section id="summary-dataset-consumption">
+<h2>Summary - Dataset consumption<a class="headerlink" href="#summary-dataset-consumption" title="Link to this heading">#</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>datalad clone installs a dataset.
+    It can be installed “on its own”: Specify the source (url, path, ...) of the dataset, and an optional path for it to be installed to.
+Only small files and metadata about file availability are present locally after an install.
+    To retrieve actual file content of larger files, datalad get downloads large file content on demand.
+Content can be dropped to save disk space with datalad drop.
+    Do this only if content can be easily reobtained.
+Datasets preserve their history.
+    In nested datasets, the superdataset records only the version state of the subdataset. 
+</pre></div>
+</div>
+</section>
+<section id="using-published-datasets">
+<h2>Using published datasets<a class="headerlink" href="#using-published-datasets" title="Link to this heading">#</a></h2>
+<p>Most of the next part is taken from the <a class="reference external" href="https://handbook.datalad.org/en/latest/code_from_chapters/yale.html">Datalad Yale Demo</a>. Head over there to see their more in-depth takes.</p>
+<p>Let’s first set up a new dataset directory.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>cd ../
+datalad create -c yoda myanalysis
+</pre></div>
+</div>
+<p>A new configuration procedure appears. Yoda?</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Question: GIN is based on the same architecture, but is tailored to a different use-case: What could be the difference?</p>
+<p>The YODA Flag in the datalad create Command</p>
+<p>The -c yoda flag in the datalad create command applies YODA-compliant configurations to a newly created dataset. These configurations provide a head start in organizing a dataset according to the YODA principles.
+What the YODA Flag Does:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Directories/files:
+    - modular structure; directories for code and documentation
+    - placeholders; e.g. README.md and CHANGELOG.md (human-readable metadata)
+
+Version Control (.gitattributes)
+    - tracks all code in the code/ directory and all small text files with Git (not Git-Annex)
+    - tracks all other files, i.e. larger data points to be with Git-Annex, not Git
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple">
+<li><p>Pull Data from GIN</p></li>
+</ol>
+<p>We’ll be using the <code class="docutils literal notranslate"><span class="pre">datlad</span> <span class="pre">clone</span></code> command to retrieve a datasat from a public GIN repository.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>cd myanalysis
+datalad clone -d . \
+https://gin.g-node.org/adswa/bids-data \
+input
+</pre></div>
+</div>
+<p>We can further use prexisting scripts, e.g. blatantly steal from the <a class="reference external" href="https://nilearn.github.io/stable/auto_examples/01_plotting/plot_visualization.html#sphx-glr-auto-examples-01-plotting-plot-visualization-py">nilearn tutorial</a>, as they stored theri stuff on Github. We’ll also add a commit message, so that we have some idea on what were doing for our metadata.</p>
+<p>Here we’ll see another of DataLads features. We can simply download web-content via the <code class="docutils literal notranslate"><span class="pre">download-url</span></code> command, and most importantly. This will further create metadata on when, where and who downloaded the data.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>datalad download-url -m &quot;Download code for brain masking from Github&quot; \
+-O code/get_brainmask.py \
+https://raw.githubusercontent.com/datalad-handbook/resources/master/get_brainmask.py
+</pre></div>
+</div>
+<p>We can also verify the File’s Origin, here to confirm the URL is recorded as metadata, ensuring traceability.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>datalad metadata &lt;filename&gt;
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Build the computational environemnt, e.g. get a container</p></li>
+</ol>
+<p>Oh damn, but we don’t have the necessary software installed for this analysis, surely? And what if the script was written for a specific Linux distribution?  That’s were Datalad containers can come in handy. We need a container with a Python 3 environment and the nilearn package already preinstalled installed.</p>
+<p>Importantly, this container does not need to contain the analysis script. It just needs the correct software that the script requires – in this case, a Python 3 environment with nilearn installed.</p>
+<p>Let’s add this container to the dataset using datalad containers-add (manual).</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    datalad containers-add nilearn \
+    --url dhub://djarecka/nilearn:yale
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Run the analysis</p></li>
+</ol>
+<p>inally, call datalad containers-run to execute the script inside of the container. Here’s how this looks like</p>
+<p>datalad containers-run -m “Compute brain mask” <br />
+-n nilearn <br />
+–input input/sub-02/func/sub-02_task-oneback_run-01_bold.nii.gz <br />
+–output figures/ <br />
+–output “sub-02*” <br />
+“python code/get_brainmask.py”</p>
+<ol class="arabic simple" start="4">
+<li><p>Check our metadata</p></li>
+</ol>
+<p>You can query an individual file how it came to be…:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>git log sub-02_brain-mask.nii.gz
+</pre></div>
+</div>
+<p>And the computation can be automatically be repeated in a reproducible manner, based on the recorded provenance using <code class="docutils literal notranslate"><span class="pre">datalad</span> <span class="pre">rerun</span></code>:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>datalad rerun
+</pre></div>
+</div>
+<p>Check the Chapter on <a class="reference external" href="https://handbook.datalad.org/en/latest/basics/101-109-rerun.html">Datalad Rerun</a> in the Handbook for more info.</p>
+</section>
+<section id="upload-datasets-connect-gin-and-your-local-system-via-datalad">
+<h2>Upload Datasets: Connect GIN and your local system via DataLad<a class="headerlink" href="#upload-datasets-connect-gin-and-your-local-system-via-datalad" title="Link to this heading">#</a></h2>
+<p>If we want to upload files from our local system to GIN and make full use of our setup using Datalad and Git to manage our files, we’ll need to connect these services. This can be done by generating and sharing SSH keys between the services. SSH (Secure Shell Protocol) keys are authentication protocols that allow secure login from a local system to remote servers and services. For example, if you’re working on a local server system, you’ve likely already used SSH.</p>
+<p>Admittedly, this is a more complex process that we will not have time to cover in detail during the workshop. However, you can refer to the following resources for guidance on generating an SSH key using the terminal and adding it to your GitHub and GIN repositories:</p>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent">Generate an SSH Key</a></p></li>
+<li><p><a class="reference external" href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent">Adding a SSH Key to your GitHub Account</a></p></li>
+<li><p><a class="reference external" href="https://handbook.datalad.org/en/latest/basics/101-139-gin.html#prerequisites">Adding a SSH Key to your GIN Repository</a></p></li>
+</ol>
+<p>Following this Setup, we can quite easily connect our local and remote repositories, while Datalad keeps track of the metadata for us</p>
+<ol class="arabic simple">
+<li><p>Create an repository on GIN</p></li>
+</ol>
+<p>screenshot</p>
+<ol class="arabic simple" start="2">
+<li><p>Create a local repository using DataLad</p></li>
+</ol>
+<div class="dropdown admonition">
+<p class="admonition-title">Question: Remember how?</p>
+<p>datalad create</p>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Add the remote repository</p></li>
+</ol>
+<p>Now the two systems will necessarily have to know about each other for this to work, right? We’ll let them know that they are related via the <code class="docutils literal notranslate"><span class="pre">datalad</span> <span class="pre">siblings</span> <span class="pre">add</span></code> command. A sibling acts like a remote in Git, allowing you to push or pull data.</p>
+<p>First we need to et the specifici SSH url from our remote repository, e.g. <a class="reference external" href="mailto:git&#37;&#52;&#48;gin&#46;g-node&#46;org">git<span>&#64;</span>gin<span>&#46;</span>g-node<span>&#46;</span>org</a>:/ernstm/datalad_tutorials.git.</p>
+<p>Screenshot</p>
+<p>And running the command:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>(base) Michaels-MacBook-Pro:datalad_os_days_marburg_2024 me$ datalad siblings add -d . \
+    &gt;  --name gin \
+    &gt;  --url git@gin.g-node.org:/ernstm/datalad_tutorials.git
+</pre></div>
+</div>
+<p>Let’s look at the syntac more closely datalad siblings add:</p>
+<p>-d .: Specifies the current dataset as the target.
+–name gin: Assigns the name gin to the remote.
+–url: Provides the SSH URL to the remote repository.</p>
+<p>And we can check wether this worked and what siblings exist for a dataset</p>
+<p><code class="docutils literal notranslate"><span class="pre">datalad</span> <span class="pre">siblings</span></code></p>
+<ol class="arabic simple" start="4">
+<li><p>Push your dataset changes to the remote repository</p></li>
+</ol>
+<p>This command is simply enough, once the two dataset are registered as siblings we simply use <code class="docutils literal notranslate"><span class="pre">datalad</span> <span class="pre">push</span></code> to upload data, using the <code class="docutils literal notranslate"><span class="pre">push</span> <span class="pre">--to.</span></code> flag to tell DataLad our target location, e.g.</p>
+<p>–to gin: specifies the sibling to push to. In this case, it’s the sibling named gin that you configured earlier.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    (base) Michaels-MacBook-Pro:datalad_os_days_marburg_2024 me$ datalad push --to gin
+</pre></div>
+</div>
+</section>
+<section id="datalad-container">
+<h2>Datalad-container<a class="headerlink" href="#datalad-container" title="Link to this heading">#</a></h2>
+<p><img alt="alt text" src="http://datasets.datalad.org/datalad/datalad-course/pics/containers-run.svg" /></p>
+<p>Looking at the official <a class="reference external" href="https://registry.hub.docker.com/r/repronim/containers">Repronim container on DockerHub</a>, tells us most of the info we need to run the container and conveniently also provides a short datalad workflow to demonstrate their implementation e.g.</p>
+<p>As we talked about BIDS, we discussed modality-specific data formats. One such format, originally designed for BIDS, is the raw MRI DICOM format. Usually, we want to transform these into an appropriate format (NIfTI) for further processing. For this, you could use, for example, the ReproIn software container. It is built on HeudiConv, a heuristic conversion tool for DICOM files. Beyond converting DICOMs to NIfTI, it also assists in converting a raw dataset to the BIDS standard and integrates with DataLad to place converted and original data under version control. Additionally, it automatically annotates files with sensitive information (e.g., non-defaced anatomical images, etc.).</p>
+<section id="making-the-container-available-to-datalad">
+<h3>Making the Container Available to Datalad<a class="headerlink" href="#making-the-container-available-to-datalad" title="Link to this heading">#</a></h3>
+<p>This can be done in multiple ways:</p>
+<ol class="arabic simple">
+<li><p>Datalad install for publicly available repositories containing relevant container images.</p></li>
+<li><p>Manually adding the container using datalad containers-add and providing a name and an appropriate link to the container (e.g., from DockerHub).</p></li>
+</ol>
+<p><strong>Tip</strong> Datalad doesn’t automatically handle the container’s functionality. Ensure you’re familiar with the container in question, including its required run commands, input structure, and other specifics.</p>
+<p>For example, to add the HeudiConv container, the command might look something like this:</p>
+<p>datalad containers-add heudiconv –url dhub://nipy/heudiconv:latest</p>
+</section>
+<section id="practical-example">
+<h3>Practical example:<a class="headerlink" href="#practical-example" title="Link to this heading">#</a></h3>
+<p>The official <a class="reference external" href="https://registry.hub.docker.com/r/repronim/containers">Repronim container on DockerHub</a> includes a helpful short DataLad workflow to demonstrate its implementation.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>1. Creating the datalad directory
+(datalad) (base) Michaels-MacBook-Pro:git me$ datalad create -d ds000003-qc -c text2git
+(datalad) (base) Michaels-MacBook-Pro:git me$ cd ds000003-qc
+
+2. using datalad install to pull sourcedate from the internet
+(datalad) (base) Michaels-MacBook-Pro:ds000003-qc me$ datalad install -d . -s https://github.com/ReproNim/ds000003-demo sourcedata
+
+3. using datalad install to download a container image
+(datalad) (base) Michaels-MacBook-Pro:ds000003-qc me$ datalad install -d . ///repronim/containers
+
+4. Verifying our installation
+(datalad) (base) Michaels-MacBook-Pro:ds000003-qc me$ cd containers/
+(datalad) (base) Michaels-MacBook-Pro:containers me$ ls 
+CITATION.cff	LICENSE		README.md	artwork		binds		ci		images		licenses	scripts
+
+5. Verifying our data 
+
+(datalad) (base) Michaels-MacBook-Pro:containers me$ cd ../sourcedata/
+(datalad) (base) Michaels-MacBook-Pro:sourcedata me$ tree
+.
+├── CHANGES
+├── README
+├── dataset_description.json
+├── participants.tsv
+├── sub-02
+│   ├── anat
+│   │   ├── sub-02_T1w.nii.gz -&gt; ../../.git/annex/objects/5g/pJ/MD5E-s5907060--89189d319055e674f76f1524706bac81.nii.gz/MD5E-s5907060--89189d319055e674f76f1524706bac81.nii.gz
+│   │   └── sub-02_inplaneT2.nii.gz -&gt; ../../.git/annex/objects/99/p1/MD5E-s682007--f368aa44caf7bd14238963116d04c70e.nii.gz/MD5E-s682007--f368aa44caf7bd14238963116d04c70e.nii.gz
+│   └── func
+│       ├── sub-02_task-rhymejudgment_bold.nii.gz -&gt; ../../.git/annex/objects/0f/gW/MD5E-s26037942--cb7d19f6eb96bf2b39afdac474a33ed7.nii.gz/MD5E-s26037942--cb7d19f6eb96bf2b39afdac474a33ed7.nii.gz
+│       └── sub-02_task-rhymejudgment_events.tsv
+├── sub-13
+│   ├── anat
+│   │   ├── sub-13_T1w.nii.gz -&gt; ../../.git/annex/objects/5f/66/MD5E-s5401073--70943c0c983c78262efbe9c2cdbf6046.nii.gz/MD5E-s5401073--70943c0c983c78262efbe9c2cdbf6046.nii.gz
+│   │   └── sub-13_inplaneT2.nii.gz -&gt; ../../.git/annex/objects/m3/6P/MD5E-s641672--297b6451565ce496c6a15d55b0f6c857.nii.gz/MD5E-s641672--297b6451565ce496c6a15d55b0f6c857.nii.gz
+│   └── func
+│       ├── sub-13_task-rhymejudgment_bold.nii.gz -&gt; ../../.git/annex/objects/24/Qk/MD5E-s24599758--7d779718aa1faa7ff3bfe8f44e8a51c1.nii.gz/MD5E-s24599758--7d779718aa1faa7ff3bfe8f44e8a51c1.nii.gz
+│       └── sub-13_task-rhymejudgment_events.tsv
+└── task-rhymejudgment_bold.json
+
+7 directories, 13 files
+
+6. And using datalad run to automatically execute the bids-mriqc container (a quality control tool)
+(datalad) (base) Michaels-MacBook-Pro:ds000003-qc me$ datalad containers-run \
+&gt;         -n containers/bids-mriqc \
+&gt;         --input sourcedata \
+&gt;         --output . \
+&gt;         &#39;{inputs}&#39; &#39;{outputs}&#39; participant group -w workdir
+
+</pre></div>
+</div>
+</section>
+</section>
+<section id="summary-using-published-datasets">
+<h2>Summary - Using published datasets<a class="headerlink" href="#summary-using-published-datasets" title="Link to this heading">#</a></h2>
+<p>DataLad provides a robust framework for managing published datasets by enabling workflows that integrate data acquisition, containerized processing, and remote repository synchronization. Key capabilities include:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Dataset Installation: The datalad install and datalad clone commands allow users to acquire datasets while preserving their provenance.
+Sibling Management: Using datalad siblings add, researchers can connect local datasets with remote repositories (e.g., on GIN), enabling seamless synchronization and version control.
+Containerized Processing: The datalad containers-add and datalad containers-run commands facilitate reproducible data processing using preconfigured software environments.
+Data Management: Data can be retrieved selectively using datalad get or removed when no longer needed with datalad drop, ensuring efficient storage use.
+</pre></div>
+</div>
+</section>
+<section id="additinal-information-tutorials">
+<h2>Additinal Information/Tutorials<a class="headerlink" href="#additinal-information-tutorials" title="Link to this heading">#</a></h2>
+<p><a class="reference external" href="https://handbook.datalad.org/en/latest/usecases/openneuro.html">https://handbook.datalad.org/en/latest/usecases/openneuro.html</a></p>
+<p><a class="github reference external" href="https://github.com/G-Node/gin-doi">G-Node/gin-doi</a></p>
+<p>Sources
+<a class="reference external" href="https://handbook.datalad.org/en/latest/code_from_chapters/yale.html">https://handbook.datalad.org/en/latest/code_from_chapters/yale.html</a></p>
 </section>
 </section>
 
@@ -493,11 +1116,46 @@
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intro">Intro</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#usage">Usage</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">Setup</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#alternatives">Alternatives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intro-the-problem-at-hand">Intro: The Problem at Hand</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-g-node-approach">The G-Node Approach</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation">Motivation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spotlight-on-the-gin-platform">Spotlight on the GIN Platform</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#feels-familiar-excursion-github">Feels familiar? Excursion GitHub</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gin-the-manual-way">GIN: The manual way</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#challenges">Challenges</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gin-cli">GIN Cli</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#openneuro">OpenNeuro</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#datalad">DataLad</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">Setup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#usage-how-to-get-started">Usage/How to get started:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#let-s-look-at-how-datalad-does-this">Let’s look at how datalad does this</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#datalad-create">Datalad create</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#datalad-save">Datalad save</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#datlad-status">Datlad status</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-local-version-control">Summary - Local version control</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#datlad-install-datalad-clone">Datlad install/Datalad clone</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#git-annex">Git Annex</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#datalad-get-retrieving-data">Datalad get - Retrieving data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#datlad-drop-removing-data">Datlad drop - Removing data</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#datalad-run-reproducible-execution">Datalad Run: Reproducible execution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-dataset-consumption">Summary - Dataset consumption</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-published-datasets">Using published datasets</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#upload-datasets-connect-gin-and-your-local-system-via-datalad">Upload Datasets: Connect GIN and your local system via DataLad</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#datalad-container">Datalad-container</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#making-the-container-available-to-datalad">Making the Container Available to Datalad</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-example">Practical example:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-using-published-datasets">Summary - Using published datasets</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additinal-information-tutorials">Additinal Information/Tutorials</a></li>
 </ul>
   </nav></div>
 
