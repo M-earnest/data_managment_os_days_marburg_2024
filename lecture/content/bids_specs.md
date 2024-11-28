@@ -50,7 +50,7 @@ https://bids-specification.readthedocs.io/en/stable/common-principles.html
 
 
 ### Folder structure
-Within BIDS folders have to be structured and named in a specific way. The hierarchy is as follows:\\
+Within BIDS folders have to be structured and named in a specific way. The hierarchy is as follows:
 project
 - code
 - derivatives
