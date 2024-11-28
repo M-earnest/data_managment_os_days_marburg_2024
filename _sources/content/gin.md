@@ -73,7 +73,7 @@ Simply:
     - Maximum file size: 10 GB
     - Maximum files per upload: 100 files
 
-### 3. Create a repository
+### 3. Make it public/Share
 - Share the files or use the Repository as private data storage
 
 
@@ -984,3 +984,9 @@ OpenNeuro is an repository solution to host and share BIDS-compatible datasets, 
 It is therfore particularly valuable for researchers looking to share data broadly with the community. It ensures reproducibility by providing an accessible, long-term data repository, implementing automatic BIDS Validation, but lacks the version control system unerlying GIN.
 
 Find more info in the [Datalad aHandbook section on OpenNeuro](https://handbook.datalad.org/en/latest/usecases/openneuro.html)
+
+## Sources
+
+A lot of this info here builds on Datalad tutorials and the DataLad Handbook!
+
+Halchenko et al., (2021). DataLad: distributed system for joint management of code, data, and their relationship. Journal of Open Source Software, 6(63), 3262, https://doi.org/10.21105/joss.03262.

@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>BIDS (Brain Imaging Data Structure) &#8212; Course Template for ressources in higher education</title>
+    <title>BIDS (Brain Imaging Data Structure) &#8212; Data management OS Days 2024 Marburg</title>
   
   
   
@@ -147,8 +147,8 @@
       
     
     
-    <img src="../_static/logo.png" class="logo__image only-light" alt="Course Template for ressources in higher education - Home"/>
-    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt="Course Template for ressources in higher education - Home"/>
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Data management OS Days 2024 Marburg - Home"/>
+    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt="Data management OS Days 2024 Marburg - Home"/>
   
   
 </a></div>
@@ -246,7 +246,7 @@
       
       
       
-      <li><a href="https://github.com/M-earnest/course_template_diler" target="_blank"
+      <li><a href="https://github.com/M-earnest/data_managment_os_days_marburg_2024" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -263,7 +263,7 @@
       
       
       
-      <li><a href="https://github.com/M-earnest/course_template_diler/edit/master/lecture/content/bids_specs.md" target="_blank"
+      <li><a href="https://github.com/M-earnest/data_managment_os_days_marburg_2024/edit/master/lecture/content/bids_specs.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -280,7 +280,7 @@
       
       
       
-      <li><a href="https://github.com/M-earnest/course_template_diler/issues/new?title=Issue%20on%20page%20%2Fcontent/bids_specs.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/M-earnest/data_managment_os_days_marburg_2024/issues/new?title=Issue%20on%20page%20%2Fcontent/bids_specs.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -466,7 +466,7 @@
 <section id="validation-tools">
 <h3>3. Validation Tools:<a class="headerlink" href="#validation-tools" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p>ools like the BIDS Validator check dataset integrity and help identify missing or incorrect data entries.</p></li>
+<li><p>tools like the BIDS Validator check dataset integrity and help identify missing or incorrect data entries.</p></li>
 </ul>
 <br>
 </section>
@@ -489,9 +489,9 @@
 <h3>The core specification<a class="headerlink" href="#the-core-specification" title="Link to this heading">#</a></h3>
 <p>The Brain Imaging Data Structure (BIDS) specification categorizes its files into REQUIRED, RECOMMENDED, and OPTIONAL, depending on their importance for data interpretation and utility. Here’s a breakdown:</p>
 <p><em>Requirement levels:</em></p>
-<p>REQUIRED: Data cannot be be interpreted without this information (or the ambiguity is unacceptably high)
-RECOMMENDED: Interpretation/utility would be dramatically improved with this information
-OPTIONAL: Users and/or tools might find it useful to have this information</p>
+<p>REQUIRED: Data cannot be be interpreted without this information (or the ambiguity is unacceptably high)</p>
+<p>RECOMMENDED: Interpretation/utility would be dramatically improved with this information</p>
+<p>OPTIONAL: Users and/or tools might find it useful to have this information</p>
 <p><em>Modalities:</em></p>
 <ul class="simple">
 <li><p>passive neuroimaging techniques are organized by their own labels: eg, meg and ieeg</p></li>
@@ -515,13 +515,13 @@ OPTIONAL: Users and/or tools might find it useful to have this information</p>
 <p>The <strong>project</strong> folder has not to be named in a specific manner, but it should be descriptive.</p>
 <p><strong>code</strong></p>
 <p>Here you can store any code</p>
-<p><em>phenotype</em></p>
+<p><strong>phenotype</strong></p>
 <p>Here you can store spearated into individual files any participant level measurements (e.g. responses from questionnaires)</p>
-<p><em>sourcedata</em></p>
+<p><strong>sourcedata</strong></p>
 <p>Here you can store data before harmonization, reconstruction and/or file format conversion</p>
-<p><em>stimuli</em></p>
+<p><strong>stimuli</strong></p>
 <p>Self-explanatory, but here you can store your stimuli</p>
-<p><em>subject-folder structure</em></p>
+<p><strong>subject-folder structure</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>subject/:
       - There should be one subject folder for each participant. Naming of subject folders has to be as follows:
             sub-particpant label
@@ -578,9 +578,9 @@ OPTIONAL: Users and/or tools might find it useful to have this information</p>
 <h2>Derivatives<a class="headerlink" href="#derivatives" title="Link to this heading">#</a></h2>
 <p>Derivatives are the following, they are supposed to be clearly labeled as such and be kept separate from your <code class="docutils literal notranslate"><span class="pre">raw/source</span></code> files.</p>
 <ul class="simple">
-<li><p>processed data:
+<li><p><strong>processed data</strong>:
 - fundamentally different to the source data and therefore is likely to differ in datatypes from the original (e.g. masks and segmentations).</p></li>
-<li><p>preprocessed data:
+<li><p><strong>preprocessed data</strong>:
 - fundamentally similar to source data (e.g removing of artifacts etc.)</p></li>
 </ul>
 <p>There are several ways to organize them within your folder structure. For more information have a look <a class="reference external" href="https://bids-website.readthedocs.io/en/latest/getting_started/folders_and_files/derivatives.html">here</a></p>
@@ -589,36 +589,47 @@ OPTIONAL: Users and/or tools might find it useful to have this information</p>
 <h2>Required Files<a class="headerlink" href="#required-files" title="Link to this heading">#</a></h2>
 <p>These files are essential for understanding and interpreting the dataset. Without them, the dataset would be incomplete or ambiguous.</p>
 <ol class="arabic simple">
-<li><p>Dataset-Level Files: Provide high-level context and participant demographics.
+<li><p><strong>Dataset-Level Files</strong>: Provide high-level context and participant demographics.
 <code class="docutils literal notranslate"><span class="pre">dataset_description.json</span></code>: Describes the dataset, including its name, version, and authors. Essential for dataset identification and interpretation.
 <code class="docutils literal notranslate"><span class="pre">participants.tsv</span></code>: Contains demographic or other participant-level information (e.g., age, sex, group).
 <code class="docutils literal notranslate"><span class="pre">sub-&lt;label&gt;</span> <span class="pre">directories</span></code>: Each participant’s data must be organized under a directory named with their unique identifier.</p></li>
-<li><p>Modality-Specific Data Files: Include raw imaging data and acquisition metadata.
+<li><p><strong>Modality-Specific Data Files</strong>: Include raw imaging data and acquisition metadata.
 <code class="docutils literal notranslate"><span class="pre">Imaging</span> <span class="pre">data</span> <span class="pre">files</span> <span class="pre">(e.g.,</span> <span class="pre">sub-&lt;label&gt;/anat/sub-&lt;label&gt;_T1w.nii.gz)</span></code>: The actual neuroimaging data (e.g., T1-weighted anatomical images, functional MRI, etc.).
 <code class="docutils literal notranslate"><span class="pre">Sidecar</span> <span class="pre">JSON</span> <span class="pre">files</span> <span class="pre">(e.g.,</span> <span class="pre">sub-&lt;label&gt;/anat/sub-&lt;label&gt;_T1w.json)</span></code>: Provide metadata for the associated imaging files, such as acquisition parameters and scanner details.</p></li>
-<li><p>Task-Specific Files (if functional data is included): Essential for linking brain activity to tasks in functional datasets.
+<li><p><strong>Task-Specific Files</strong>: (if functional data is included): Essential for linking brain activity to tasks in functional datasets.
 <code class="docutils literal notranslate"><span class="pre">task-&lt;label&gt;_bold.nii.gz</span></code>: The BOLD fMRI time series.
-<code class="docutils literal notranslate"><span class="pre">-</span> </code>task-<label>_events.tsv`: The timing and nature of stimuli presented during the task.</p></li>
+<code class="docutils literal notranslate"><span class="pre">-task-&lt;label&gt;_events.tsv</span></code>: The timing and nature of stimuli presented during the task.</p></li>
 </ol>
 </section>
 <section id="recommended-files">
 <h2>RECOMMENDED Files<a class="headerlink" href="#recommended-files" title="Link to this heading">#</a></h2>
 <p>But really, please provide them!</p>
 <p>These files significantly enhance the interpretability and utility of the dataset but are not strictly necessary, they are mostly for human readers and help others understand what they see.</p>
-<ol class="arabic simple">
-<li><p>Additional Dataset-Level Metadata:
-README: General information about the dataset, such as study purpose or known issues.
-CHANGES: Version history of the dataset, useful for tracking updates.</p></li>
-<li><p>Additional Participant Information:
-participants.json: Describes the columns in participants.tsv, such as units or definitions for demographic fields.</p></li>
-<li><p>Additional Imaging Metadata:
-Field maps (fmap/): Useful for correcting distortions in functional or diffusion MRI data.
-Additional anatomical modalities (e.g., T2-weighted images, sub-<label>_T2w.nii.gz).</p></li>
+<ol class="arabic">
+<li><p><strong>Additional Dataset-Level Metadata</strong>:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span> README: General information about the dataset, such as study purpose or known issues.
+
+ CHANGES: Version history of the dataset, useful for tracking updates.
+</pre></div>
+</div>
+</li>
+<li><p><strong>Additional Participant Information</strong>:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span> participants.json: Describes the columns in participants.tsv, such as units or definitions for demographic fields.
+</pre></div>
+</div>
+</li>
+<li><p><strong>Additional Imaging Metadata</strong>:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span> Field maps (fmap/): Useful for correcting distortions in functional or diffusion MRI data.
+
+ Additional anatomical modalities (e.g., T2-weighted images, sub-&lt;label&gt;_T2w.nii.gz).
+</pre></div>
+</div>
+</li>
 </ol>
 </section>
 <section id="metadata">
 <h2>Metadata<a class="headerlink" href="#metadata" title="Link to this heading">#</a></h2>
-<p>Metadata is essential in the Brain Imaging Data Structure (BIDS) as it provides the context needed to understand, analyze, and reproduce neuroimaging datasets. Without it, raw imaging data would be ambiguous, hard to interpret, and difficult to reuse, especially for those not involved in the original study.</p>
+<p>Metadata is essential in the Brain Imaging Data Structure (BIDS) as it provides the <strong>context</strong> needed to <strong>understand, analyze, and reproduce neuroimaging datasets</strong>. Without it, raw imaging data would be ambiguous, hard to interpret, and difficult to reuse, especially for those not involved in the original study.</p>
 <p>We’ll have a look at some real life implementations shortly using the public examples on the <a class="reference external" href="https://github.com/bids-standard/bids-examples/tree/master/ds000001-fmriprep">BIDS-Github Demo</a>!</p>
 <section id="dataset-description-json">
 <h3>dataset_description.json:<a class="headerlink" href="#dataset-description-json" title="Link to this heading">#</a></h3>
@@ -834,7 +845,7 @@ Additional anatomical modalities (e.g., T2-weighted images, sub-<label>_T2w.nii.
   <div class="footer-item">
     
 <p class="component-author">
-By Michael Ernst, Felix Körber based on the Gorella template by Peer Herholz, José C. García Alanis, Christoph Vogelbacher
+By Michael Ernst, Jannika Hollmann, Felix Körber based on the Gorella template by Peer Herholz, José C. García Alanis, Christoph Vogelbacher
 </p>
 
   </div>
