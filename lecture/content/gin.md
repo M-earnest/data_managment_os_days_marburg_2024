@@ -347,21 +347,23 @@ We can have a look at these with e.g. the `nano` cli-editor:
 
 ## Datalad save
 
-meaninful changes
-http://datasets.datalad.org/datalad/datalad-course/pics/local_wf.svg
+:::{figure-md} markdown-fig
+<img src="http://datasets.datalad.org/datalad/datalad-course/pics/local_wf.svg" alt="fishy" class="bg-primary mb-1" width="300px">
+
+Save meaninful changes `via datalad save`
+:::
+
+
 check license datalade
 
 Now we've set up the basic directory strtucture and specfiied which files are supposed to be tracked. How do we actually track our changes thoug? Compared to the Git approach above this is simpler, as DataLad does most of the work for us. Let's create another notes.txt file.
 
-
-
-
-cat << EOT >> notes.txt
-> The command "datalad save [-m] PATH" saves the file (modifications) to
-> history.
-> Note to self: Always use informative, concise commit messages.
-> 
-> EOT
+        cat << EOT >> notes.txt
+        > The command "datalad save [-m] PATH" saves the file (modifications) to
+        > history.
+        > Note to self: Always use informative, concise commit messages.
+        > 
+        > EOT
 
 The `datalad save` command combines a git add and a git commit , and therefore, the commit message is specified with datalad save.
 
@@ -382,14 +384,14 @@ Not very formative, but what we would also expect from the `git status` command.
 
 ## Summary - Local version control
 
-datalad create creates an empty dataset.
+- `datalad create`: creates an empty dataset.
     Configurations (-c yoda, -c text2git) are useful.
-A dataset has a history to track files and their modifications.
+- A dataset has a history to track files and their modifications.
     Explore it with Git (git log) or external tools (e.g., tig).
-datalad save records the dataset or file state to the history.
+- `datalad save` records the dataset or file state to the history.
     Concise commit messages should summarize the change for future you and others.
-datalad status reports the current state of the dataset.
-A clean dataset status is good practice. 
+- `datalad status` reports the current state of the dataset.
+    A clean dataset status is good practice. 
 
 
 ## Datlad install/Datalad clone
@@ -426,11 +428,20 @@ The file size seems suspicious. Thinking back, why was the download of the datas
 
 ### Git Annex
 
-Git-Annex and by extension Datalad only indexes large files, but doesn't actually download themk, so these files are not actually present. The present symbolic links or Simlinks only point to where a file lies. Git-annex allows us to store the relevnat structure of a dataset and only retrieve whatever we need, when we need it. Why could this be of use to neuroscientists?
+:::{figure-md} markdown-fig
+<img src="https://git-annex.branchable.com/logo_small.png" alt="fishy" class="bg-primary mb-1" width="300px">
 
-git annex lock
+Git-Annex
+:::
 
-git annex unlock
+[Git-Annex](https://git-annex.branchable.com/) and by extension Datalad only indexes large files, but doesn't actually download themk, so these files are not actually present. The present symbolic links or Simlinks only point to where a file lies. Git-annex allows us to store the relevnat structure of a dataset and only retrieve whatever we need, when we need it. Why could this be of use to neuroscientists?
+
+```{admonition} Git-Annex - Definition
+:class: dropdown
+git-annex allows managing large files with git, without storing the file contents in git. It can sync, backup, and archive your data, offline and online. Checksums and encryption keep your data safe and secure. Bring the power and distributed nature of git to bear on your large files with git-annex.
+
+```
+
 
 
 ## Datalad get - Retrieving data
@@ -735,11 +746,8 @@ DataLad provides a robust framework for managing published datasets by enabling 
 
 ## Additinal Information/Tutorials
 
-https://handbook.datalad.org/en/latest/usecases/openneuro.html
+[Full Course on Research Data Management using Datalad](https://handbook.datalad.org/en/latest/usecases/openneuro.html)
 
-
-https://github.com/G-Node/gin-doi
-
+[Quick course; Running and publishing Data using Datalad](https://handbook.datalad.org/en/latest/code_from_chapters/yale.html)
 
 Sources
-https://handbook.datalad.org/en/latest/code_from_chapters/yale.html
