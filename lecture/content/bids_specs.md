@@ -9,18 +9,26 @@ Neuroimaging experiments produce complex datasets that are often organized incon
 - scientific projects especially in the neuroscience are necessarily complex, being organized and providing proper documentation and meta information is a key factor
 - Early stage resaearchers have a distinct adavantage of not being bogged down by their already exiting backlogs
 
+<br>
+
 ### BIDS adavantages:
 
 ### 1. Interoperability with Software:
 - a growing number of data analysis tools and apps support BIDS-formatted datasets
 - adopting BIDS enhances compatibility and facilitates analysis workflows
 
+<br>
+
 ### 2. Facilitates Public Data Sharing:
 - public databases such as OpenNeuro.org require BIDS-compliant datasets.
 - journals increasingly require public sharing of datasets; using BIDS minimizes the effort and time required for curation and publication.
 
+<br>
+
 ### 3. Validation Tools:
 - ools like the BIDS Validator check dataset integrity and help identify missing or incorrect data entries.
+
+<br>
 
 ### 4. Alignment with FAIR Principles
 The adoption of BIDS aligns with the FAIR principles, enhancing the scientific impact of neuroimaging datasets:
@@ -34,19 +42,20 @@ The adoption of BIDS aligns with the FAIR principles, enhancing the scientific i
     R - Reusable:
         Detailed metadata and standardization ensure datasets can be reused effectively, whether for replication, secondary analysis, or integration into meta-analyses.
 ```
-
+<br>
 
 ### The core specification
 
+The Brain Imaging Data Structure (BIDS) specification categorizes its files into REQUIRED, RECOMMENDED, and OPTIONAL, depending on their importance for data interpretation and utility. Here's a breakdown:
 
-Requirement levels:
+*Requirement levels:*
 
 REQUIRED: Data cannot be be interpreted without this information (or the ambiguity is unacceptably high)
 RECOMMENDED: Interpretation/utility would be dramatically improved with this information
 OPTIONAL: Users and/or tools might find it useful to have this information
 
 
-Modalities:
+*Modalities:*
 - passive neuroimaging techniques are organized by their own labels: eg, meg and ieeg
 - active neuroimaging techniques are organized by the respective category of brain data recorded, e.g for MRI: T1w, bold or dwi etc.
 
@@ -67,19 +76,21 @@ Within BIDS folders have to be structured and named in a specific way. The hiera
 ```
 
 
-
 The **project** folder has not to be named in a specific manner, but it should be descriptive.
 
 **code**
 Here you can store any code
+
 *phenotype*
 Here you can store spearated into individual files any participant level measurements (e.g. responses from questionnaires)
 
 *sourcedata*
 Here you can store data before harmonization, reconstruction and/or file format conversion
+
 *stimuli*
 Self-explanatory, but here you can store your stimuli
 
+*subject-folder structure*
 ```
 subject/:
       - There should be one subject folder for each participant. Naming of subject folders has to be as follows:
@@ -97,13 +108,47 @@ subject/:
 
 ```
 
+<br>
+
 
 An example from the BIDS Specification would look something like this
 
+```
+ds001
+├── dataset_description.json
+├── participants.tsv
+├── sub-01
+│   ├── anat
+│   │   ├── sub-01_inplaneT2.nii.gz
+│   │   └── sub-01_T1w.nii.gz
+│   └── func
+│       ├── sub-01_task-balloonanalogrisktask_run-01_bold.nii.gz
+│       ├── sub-01_task-balloonanalogrisktask_run-01_events.tsv
+│       ├── sub-01_task-balloonanalogrisktask_run-02_bold.nii.gz
+│       ├── sub-01_task-balloonanalogrisktask_run-02_events.tsv
+│       ├── sub-01_task-balloonanalogrisktask_run-03_bold.nii.gz
+│       └── sub-01_task-balloonanalogrisktask_run-03_events.tsv
+├── sub-02
+│   ├── anat
+│   │   ├── sub-02_inplaneT2.nii.gz
+│   │   └── sub-02_T1w.nii.gz
+│   └── func
+│       ├── sub-02_task-balloonanalogrisktask_run-01_bold.nii.gz
+│       ├── sub-02_task-balloonanalogrisktask_run-01_events.tsv
+│       ├── sub-02_task-balloonanalogrisktask_run-02_bold.nii.gz
+│       ├── sub-02_task-balloonanalogrisktask_run-02_events.tsv
+│       ├── sub-02_task-balloonanalogrisktask_run-03_bold.nii.gz
+│       └── sub-02_task-balloonanalogrisktask_run-03_events.tsv
+...
+...
+└── task-balloonanalogrisktask_bold.json
 
 
-## derivatives
-Derivatives are 
+```
+
+
+## Derivatives
+Derivatives are the following, they are supposed to be clearly labeled as such and be kept separate from your `raw/source` files. 
 
 - processed data:
       - fundamentally different to the source data and therefore is likely to differ in datatypes from the original (e.g. masks and segmentations).
@@ -119,23 +164,18 @@ There are several ways to organize them within your folder structure. For more i
 
 These files are essential for understanding and interpreting the dataset. Without them, the dataset would be incomplete or ambiguous.
 
-1. Dataset-Level Files:
-- dataset_description.json: Describes the dataset, including its name, version, and authors. Essential for dataset identification and interpretation.
-- participants.tsv: Contains demographic or other participant-level information (e.g., age, sex, group).
-- sub-<label> directories: Each participant's data must be organized under a directory named with their unique identifier.
+1. Dataset-Level Files: Provide high-level context and participant demographics.
+`dataset_description.json`: Describes the dataset, including its name, version, and authors. Essential for dataset identification and interpretation.
+`participants.tsv`: Contains demographic or other participant-level information (e.g., age, sex, group).
+`sub-<label> directories`: Each participant's data must be organized under a directory named with their unique identifier.
 
-2. Modality-Specific Data Files:
-- Imaging data files (e.g., sub-<label>/anat/sub-<label>_T1w.nii.gz): The actual neuroimaging data (e.g., T1-weighted anatomical images, functional MRI, etc.).
-- Sidecar JSON files (e.g., sub-<label>/anat/sub-<label>_T1w.json): Provide metadata for the associated imaging files, such as acquisition parameters and scanner details.
+2. Modality-Specific Data Files: Include raw imaging data and acquisition metadata.
+`Imaging data files (e.g., sub-<label>/anat/sub-<label>_T1w.nii.gz)`: The actual neuroimaging data (e.g., T1-weighted anatomical images, functional MRI, etc.).
+`Sidecar JSON files (e.g., sub-<label>/anat/sub-<label>_T1w.json)`: Provide metadata for the associated imaging files, such as acquisition parameters and scanner details.
 
-3. Task-Specific Files (if functional data is included):
-- task-<label>_bold.nii.gz: The BOLD fMRI time series.
-- task-<label>_events.tsv: The timing and nature of stimuli presented during the task.
-
-
-Files Required in BIDS and Their Requirement Levels
-
-The Brain Imaging Data Structure (BIDS) specification categorizes its files into REQUIRED, RECOMMENDED, and OPTIONAL, depending on their importance for data interpretation and utility. Here's a breakdown:
+3. Task-Specific Files (if functional data is included): Essential for linking brain activity to tasks in functional datasets.
+`task-<label>_bold.nii.gz`: The BOLD fMRI time series.
+`- `task-<label>_events.tsv`: The timing and nature of stimuli presented during the task.
 
 
 ## RECOMMENDED Files
@@ -157,6 +197,10 @@ These files significantly enhance the interpretability and utility of the datase
 
 
 ## Metadata
+
+Metadata is essential in the Brain Imaging Data Structure (BIDS) as it provides the context needed to understand, analyze, and reproduce neuroimaging datasets. Without it, raw imaging data would be ambiguous, hard to interpret, and difficult to reuse, especially for those not involved in the original study.
+
+We'll have a look at some real life implementations shortly using the public examples on the [BIDS-Github Demo](https://github.com/bids-standard/bids-examples/tree/master/ds000001-fmriprep)!
 
 
 ### dataset_description.json:
@@ -193,29 +237,38 @@ These files significantly enhance the interpretability and utility of the datase
             Ensures clarity and avoids ambiguity in data association.
 ```
 
-## BIDS extensions
+## Machine vs Human readable files
 
-As you've seen BIDS is split into modality agnostic files, i.e.
+Some of the info in a BIDS dataset is for your eyes, some is not!
 
-
-    dataset_description.json
-    README[.md|.rst|.txt]
-    CITATION.cff
-    CHANGES
-    LICENSE
-
-and modality specific files, which are dependent on the specifics of the hard- and software necessary. This necessarily influences how and which metadata is required or expected to be shared. In the following we will explore to modality specific examples.
-
-### BIDS Conversion tools 
-
+| File                     | Human Readable   | Machine Readable   | Purpose                                                   |
+|:-------------------------|:-----------------|:-------------------|:----------------------------------------------------------|
+| dataset_description.json | Limited          | Yes                | Dataset-level metadata for identification and validation. |
+| README                   | Yes              | No                 | Provides a human-readable overview of the dataset.        |
+| CHANGES                  | Yes              | No                 | Tracks version history of the dataset.                    |
+| participants.tsv         | Yes              | Yes                | Contains participant-level data in a tabular format.      |
+| participants.json        | No               | Yes                | Describes the columns in participants.tsv.                |
+| sub-<label>_T1w.json     | Yes (if needed)  | Yes                | Provides acquisition details for imaging data.            |
+| task-<label>_events.tsv  | Yes              | Yes                | Time-stamped task information for functional imaging.     |
 
 
-#### MNE BIDS
+## BIDS Conversion tools 
 
-- https://mne.tools/mne-bids/stable/auto_examples/convert_mne_sample.html#sphx-glr-auto-examples-convert-mne-sample-py
+Don't do this stuff by hand please. We have the technology!
+
+Converting neuroimaging data to the Brain Imaging Data Structure (BIDS) format is essential for standardization and interoperability. Several tools facilitate this conversion. You can habe a look at the [List of BIDS converters](https://bids.neuroimaging.io/benefits.html#converters) and find smething that works for you.
+
+The most important tools will be:
+
+### MNE-BIDS: EEG
+
+[MNE-BIDS](https://mne.tools/mne-bids/stable/auto_examples/convert_mne_sample.html#sphx-glr-auto-examples-convert-mne-sample-py) is a Python library that simplifies the conversion of electrophysiological data (e.g., MEG, EEG) into BIDS format. It integrates with MNE-Python, allowing users to read, write, and manipulate BIDS-compatible datasets. For a practical example of converting data using MNE-BIDS, refer to the MNE sample conversion tutorial.
+
+### HeudiConv: MRI
+
+[HeuDiConv](https://heudiconv.readthedocs.io/en/latest/quickstart.html#prepare-dataset) is a flexible DICOM converter designed to organize brain imaging data into structured directory layouts, including BIDS. It uses heuristic scripts to determine the naming and organization of output files, making it adaptable to various study protocols. A detailed walkthrough of HeuDiConv's usage is available in the BIDS Tutorial Series.
+
+To facilitate the use of HeuDiConv without local installation, a Docker container is available: [HeuDiConv Docker Container](https://heudiconv.readthedocs.io/en/latest/container.html)
 
 
-
-#### MRI?
-
-- https://reproducibility.stanford.edu/bids-tutorial-series-part-2a/
+## Summary
