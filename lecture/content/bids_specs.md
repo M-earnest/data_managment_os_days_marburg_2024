@@ -58,8 +58,8 @@ project
 - sourcedata
 - stimuli
 - subject
--     session
--         datatype
+    - session
+        - datatype
 
 The **project** folder has not to be named in a specific manner, but it should be descriptive.
 #### code
