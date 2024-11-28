@@ -1,0 +1,1020 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Introduction to Version Control using Git &#8212; Course Template for ressources in higher education</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'general_information/prerequisites/excercise_intro_git';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Online version control: GitHub" href="github.html" />
+    <link rel="prev" title="Prerequisite - the (unix) command line: bash" href="intro_to_shell.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../overview.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Course Template for ressources in higher education - Home"/>
+    <img src="../../_static/logo.png" class="logo__image only-dark pst-js-only" alt="Course Template for ressources in higher education - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../overview.html">
+                    Course overview & procedure
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../setup.html">Setup for the workshop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../prerequisites.html">Course prerequisites</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../introduction/intro.html">Data Management</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="intro_to_shell.html">Prerequisite - the (unix) command line: bash</a></li>
+
+
+
+
+
+
+
+
+
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Introduction to Version Control using Git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="github.html">Online version control: GitHub</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../content/bids_specs.html">BIDS (Brain Imaging Data Structure)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../content/gin.html">G-Node/GIN</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../CoC.html">Code of Conduct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dei.html">Diversity, Equity and Inclusion</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/M-earnest/course_template_diler/master?urlpath=tree/lecture/general_information/prerequisites/excercise_intro_git.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/M-earnest/course_template_diler/blob/master/lecture/general_information/prerequisites/excercise_intro_git.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/M-earnest/course_template_diler" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/M-earnest/course_template_diler/edit/master/lecture/general_information/prerequisites/excercise_intro_git.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/M-earnest/course_template_diler/issues/new?title=Issue%20on%20page%20%2Fgeneral_information/prerequisites/excercise_intro_git.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/general_information/prerequisites/excercise_intro_git.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Introduction to Version Control using Git</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation">Motivation:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#before-we-get-started-setup">Before we get started: Setup</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#configure-git-if-you-haven-t-already">Configure git (if you haven’t already)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#macos-linux">macOS / Linux</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#windows">Windows</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#goals">Goals</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-side-note">Import side note:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-git-work">How does Git work?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#record-versions-by-tracking-changes">Record versions by tracking <em>changes</em></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#make-independent-changes">Make independent changes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#and-incorporate-the-changes">And incorporate the changes</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#where-does-git-store-information">Where does git store information?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#roadmap">Roadmap</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#git-add-and-git-commit"><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code> and <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-your-understanding">Check your understanding</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-remote-repo">Create a remote repo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#link-it-to-your-local-repo">Link it to your local repo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#did-we-meet-our-goals">Did we meet our goals?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#explain-why-git-github-are-useful">1. Explain why Git &amp; GitHub are useful</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#track-and-share-your-work-using-git-github-git-level-1-commit-push">2. Track and share your work using git/GitHub (git level 1: commit push)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#general-tips">General tips:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quick-feedback">Quick feedback</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-much-of-this-tutorial-could-you-follow">How much of this tutorial could you follow?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#where-there-any-major-hurdles">Where there any major hurdles?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acknowledgements">Acknowledgements</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-version-control-using-git">
+<h1>Introduction to Version Control using Git<a class="headerlink" href="#introduction-to-version-control-using-git" title="Link to this heading">#</a></h1>
+<hr class="docutils" />
+</br>
+<p>This chapter is a <code class="docutils literal notranslate"><span class="pre">practical</span> <span class="pre">exercise,</span></code> where we’ll be learning about how to work with the <code class="docutils literal notranslate"><span class="pre">version</span> <span class="pre">control</span> <span class="pre">system</span> <span class="pre">&quot;Git&quot;.</span></code> A valuable skill for anyone interested in scientific research, software development, or online project collaboration.</p>
+<p>We’ll be mostly learning and practicing the basics of Git: creating a repository, making changes, staging changes, and creating commits. If these names are confusing, don’t worry; we’ll explain them in the following sections.</p>
+<p>To find out more about the accompanying online service for Git - <code class="docutils literal notranslate"><span class="pre">Github</span></code> check out the next lesson: <a class="reference external" href="https://diler-digitell.github.io/dm_workshop_setup/prerequisites/github.html">Intro to GitHub</a></p>
+<hr class="docutils" />
+<section id="motivation">
+<h2>Motivation:<a class="headerlink" href="#motivation" title="Link to this heading">#</a></h2>
+<p>Fairly simple: Version control is invaluable; being able to track and restore lost content or restoring earlier versions of files that contain, e.g., mistakes or bugs, is like having a “save button” in a video game, providing a point from which you can instantly restart your work.</p>
+<p>Git further is the industry standard for every programmer or scientist working with software for, e.g., statistical analyses. It makes your life easier and elevates your chances of actually finding employment in, e.g., academia.</p>
+</section>
+<hr class="docutils" />
+<section id="before-we-get-started-setup">
+<h2>Before we get started: Setup<a class="headerlink" href="#before-we-get-started-setup" title="Link to this heading">#</a></h2>
+<p>For this part of the lecture, you will have to follow along on your own machine.</p>
+<p>Windows users will have to download the <code class="docutils literal notranslate"><span class="pre">Windows-subystems-for-linux</span> <span class="pre">(wsl)</span></code> application; this will install a Unix subsystem, which will allow you to work with the bash shell. Simply follow, e.g., the <a class="reference external" href="https://itsfoss.com/install-bash-on-windows/">Foss Guide: Install bash on windows</a>. Bash already comes preinstalled on Unix systems such as Linux and Mac.</p>
+<p>To use Git on your local machine to log any changes you make to your project and submit your changes to the internet, you’ll need the following:</p>
+<ul class="simple">
+<li><p>a GitHub account</p></li>
+<li><p><a class="reference external" href="https://git-scm.com/downloads">Git</a></p></li>
+<li><p>Bash</p></li>
+</ul>
+<p>We’ve already discussed how to set up a GitHub account and create an online repo. How to get the rest of the listed software is explained in detail in our complete <a class="reference external" href="https://diler-digitell.github.io/Jupyter-Book/setup.html">Setup section</a>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Bash</span></code> is used in <a class="reference external" href="https://www.techtarget.com/searchwindowsserver/definition/command-line-interface-CLI">command-line interfaces</a> for interacting with the operating system. In essence, <code class="docutils literal notranslate"><span class="pre">Bash</span></code> can be seen as a programming language with the main purpose of navigating the file system, manipulating files and directories, running programs, and automating tasks using scripts and workflows.</p>
+<p>It is mainly used in scientific computing and data analysis for its ability to automate complex workflows and control flows of large datasets, but it’s further essential to use the version control system <code class="docutils literal notranslate"><span class="pre">Git</span></code> from the command line. Find out more about it in our chapter <a class="reference external" href="https://diler-digitell.github.io/DiLER_digital_literacy_course/content/intro_to_shell.html">Unix Shell and Bash</a></p>
+<p><strong>Check if you’re ready</strong></p>
+<ul class="simple">
+<li><p>Can you open a text editor? (e.g., Linux: gedit, nano. macOS: textedit. Windows: notepad)</p></li>
+<li><p>Can you go to your GitHub account?</p></li>
+<li><p>When you open a terminal on your system and type <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">--version</span></code>, does it output the version number? (macOS / Linux: you might need to run this: <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">-c</span> <span class="pre">anaconda</span> <span class="pre">git</span></code>)</p></li>
+</ul>
+<hr class="docutils" />
+<p>You may <strong>not need Bash and instead opt to install the <a class="reference external" href="https://www.gitkraken.com/">Gitkraken client</a></strong>, a software package including a Graphical-user-interface to manage all your git/Github projects. If you’re not too familiar with coding or simply prefer to have a visual overview of the exact changes you’ve made, your version history, etc., this might just be the better choice for you.</p>
+<p>Simply download and install the <a class="reference external" href="https://help.gitkraken.com/gitkraken-client/how-to-install/">Gitkraken client</a> and <a class="reference external" href="https://www.youtube.com/watch?v=5nhNfMcczlQ">connect it to your online Github profile</a>.</p>
+</br>
+</br>
+<section id="configure-git-if-you-haven-t-already">
+<h3>Configure git (if you haven’t already)<a class="headerlink" href="#configure-git-if-you-haven-t-already" title="Link to this heading">#</a></h3>
+<p>As git doesn’t work straight out of the box, we’ll have to first provide our credentials. Just copy paste the following lines into a bash shell (remember how to open those?).</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">config</span> <span class="o">--</span><span class="k">global</span> <span class="n">user</span><span class="o">.</span><span class="n">name</span> <span class="s2">&quot;&lt;Vlad Dracula&gt;&quot;</span>
+<span class="n">git</span> <span class="n">config</span> <span class="o">--</span><span class="k">global</span> <span class="n">user</span><span class="o">.</span><span class="n">email</span> <span class="s2">&quot;&lt;vlad@tran.sylvan.ia&gt;&quot;</span>
+</pre></div>
+</div>
+<p><em>use the email you used for your GitHub account</em>  👆</p>
+<section id="macos-linux">
+<h4>macOS / Linux<a class="headerlink" href="#macos-linux" title="Link to this heading">#</a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">config</span> <span class="o">--</span><span class="k">global</span> <span class="n">core</span><span class="o">.</span><span class="n">autocrlf</span> <span class="nb">input</span>
+</pre></div>
+</div>
+</section>
+<section id="windows">
+<h4>Windows<a class="headerlink" href="#windows" title="Link to this heading">#</a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">config</span> <span class="o">--</span><span class="k">global</span> <span class="n">core</span><span class="o">.</span><span class="n">autocrlf</span> <span class="n">true</span>
+
+</pre></div>
+</div>
+<p>If you’re confused about the language used or want to understand things in greater detail, there are great resources out there for you to explore:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.gitkraken.com/learn/git/definitions">Git definitions</a></p></li>
+<li><p><a class="reference external" href="https://www.gitkraken.com/learn/git/tutorials">Git tutorials</a></p></li>
+<li><p><a class="reference external" href="https://help.gitkraken.com/gitkraken-client/gitkraken-client-home/">Learning Git with Gitkraken</a></p></li>
+</ul>
+<p>For more information on how to make Git work for you: <a class="reference external" href="https://swcarpentry.github.io/git-novice/">Software Carpentry’s tutorial</a></p>
+</section>
+</section>
+</section>
+<section id="goals">
+<h2>Goals<a class="headerlink" href="#goals" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Explain why git/GitHub is useful</p></li>
+<li><p>Track and share your work using git/GitHub (git level 1: commit push)</p></li>
+<li><p>Contribute to a project using git/GitHub (git level 2: branches PRs)</p></li>
+</ol>
+</section>
+<section id="import-side-note">
+<h2>Import side note:<a class="headerlink" href="#import-side-note" title="Link to this heading">#</a></h2>
+<p><strong>throughout this lecture/practice you will see a lot of things in &lt;&gt;, within each instance please replace &lt;&gt; with your own info</strong></p>
+<p>e.g.,</p>
+<p><code class="docutils literal notranslate"><span class="pre">github.com/&lt;your_username&gt;</span></code></p>
+<p>becomes</p>
+<p><code class="docutils literal notranslate"><span class="pre">github.com/peerherholz</span></code></p>
+<img align="top" src="https://uidaholib.github.io/get-git/images/phd101212s.gif" alt="git-phd" title="git-phd" width="550" height="500" />
+<p>“Piled Higher and Deeper” by Jorge Cham, <a class="reference external" href="http://www.phdcomics.com">http://www.phdcomics.com</a></p>
+</section>
+<section id="how-does-git-work">
+<h2>How does Git work?<a class="headerlink" href="#how-does-git-work" title="Link to this heading">#</a></h2>
+<p>The basic idea is to:</p>
+<section id="record-versions-by-tracking-changes">
+<h3>Record versions by tracking <em>changes</em><a class="headerlink" href="#record-versions-by-tracking-changes" title="Link to this heading">#</a></h3>
+<p><em>(It’s like having an unlimited “undo” button)</em></p>
+<a class="reference internal image-reference" href="https://swcarpentry.github.io/git-novice/fig/play-changes.svg"><img alt="versions" src="https://swcarpentry.github.io/git-novice/fig/play-changes.svg" style="width: 400px;" /></a>
+</section>
+<section id="make-independent-changes">
+<h3>Make independent changes<a class="headerlink" href="#make-independent-changes" title="Link to this heading">#</a></h3>
+<a class="reference internal image-reference" href="https://swcarpentry.github.io/git-novice/fig/versions.svg"><img alt="versions" src="https://swcarpentry.github.io/git-novice/fig/versions.svg" style="width: 400px;" /></a>
+</section>
+<section id="and-incorporate-the-changes">
+<h3>And incorporate the changes<a class="headerlink" href="#and-incorporate-the-changes" title="Link to this heading">#</a></h3>
+<a class="reference internal image-reference" href="https://swcarpentry.github.io/git-novice/fig/merge.svg"><img alt="versions" src="https://swcarpentry.github.io/git-novice/fig/merge.svg" style="width: 400px;" /></a>
+</section>
+</section>
+<section id="where-does-git-store-information">
+<h2>Where does git store information?<a class="headerlink" href="#where-does-git-store-information" title="Link to this heading">#</a></h2>
+<p>Open your Bash shell (where you typed <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">--version</span></code> at the beginning)</p>
+<p>Create a directory (remember Windows’ slashes are the other way) bing the following lines of bash code into your shell.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">~/</span><span class="n">Desktop</span>
+<span class="n">mkdir</span> <span class="n">desserts</span>
+<span class="n">cd</span> <span class="n">desserts</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>To check what’s in our directory, we can use the bash command <code class="docutils literal notranslate"><span class="pre">ls</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span> <span class="o">-</span><span class="n">a</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>To create create a git repository, we can simply run the following command in our shell</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">init</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>What’s in our directory now?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span> <span class="o">-</span><span class="n">a</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>The <code class="docutils literal notranslate"><span class="pre">.git</span></code> subdirectory is where git stores all the info it needs to do version control</strong></p>
+</section>
+<section id="roadmap">
+<h2>Roadmap<a class="headerlink" href="#roadmap" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Goals</p></li>
+<li><p>Setup</p></li>
+<li><p>Why use git &amp; GitHub?</p></li>
+<li><p>Where does git store information?</p></li>
+<li><p><strong>How do I record changes in git?</strong></p></li>
+<li><p>How do I share my changes on the web?</p></li>
+<li><p>How do I contribute to an existing project?</p></li>
+<li><p>Goals</p></li>
+</ul>
+<p><img alt="" src="general_information/prerequisites/static/workflow/w0_init.png" /></p>
+<p><img alt="" src="general_information/prerequisites/static/workflow/w1_local.png" /></p>
+<section id="git-add-and-git-commit">
+<h3><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code> and <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code><a class="headerlink" href="#git-add-and-git-commit" title="Link to this heading">#</a></h3>
+<p>Let’s create something to track and see how we can use Git to understand the changes happening to our files.
+First, open a new file in your text editor</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">text</span> <span class="n">editor</span><span class="o">&gt;</span> <span class="n">desserts</span><span class="o">.</span><span class="n">md</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p>Or in your terminal create a file using the touch command;</p>
+<p><code class="docutils literal notranslate"><span class="pre">touch</span> <span class="pre">desserts.md</span></code></p>
+<p>and open the file using the `nano``</p>
+<p><code class="docutils literal notranslate"><span class="pre">nano</span> <span class="pre">desserts.md</span></code></p>
+<p>Write this in the file:</p>
+<blockquote>
+<div><p>pie<br />
+ice cream<br />
+cookies</p>
+</div></blockquote>
+<p>Save and exit (Ctrl + X in Nano)</p>
+<p>Let’s check the status of our repo</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Is this file being tracked by git?
+<img alt="" src="general_information/prerequisites/figures/zoom_icons/poll.png" /></p>
+<p><font color='grey'>(hint: look at what your terminal says)</font></p>
+<p>How can we include this file in what will be committed?
+<img alt="" src="general_information/prerequisites/figures/zoom_icons/chat_mic.png" /></p>
+<p>Let’s stage the change</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">add</span> <span class="n">desserts</span><span class="o">.</span><span class="n">md</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s check the status of our <code class="docutils literal notranslate"><span class="pre">repo</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s commit the change</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s2">&quot;list my favorite desserts&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s check the status of our <code class="docutils literal notranslate"><span class="pre">repo</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>I changed my mind…</strong></p>
+<p>Cookies are better than ice cream, so let’s correct our desserts file.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ &lt;text editor&gt; desserts.md
+</pre></div>
+</div>
+<blockquote>
+<div><p>pie<br />
+cookies<br />
+ice cream</p>
+</div></blockquote>
+<p>Save and exit</p>
+<p>Let’s see what actually changed, input;</p>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span></code></p>
+<p>Try it for yourself! Let’s stage and commit the change:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">____</span> <span class="n">desserts</span><span class="o">.</span><span class="n">md</span>
+<span class="n">git</span> <span class="n">____</span> <span class="o">-</span><span class="n">m</span> <span class="s2">&quot;switch cookies and ice cream&quot;</span>
+</pre></div>
+</div>
+<p><img alt="" src="general_information/prerequisites/figures/zoom_icons/chat_mic.png" /></p>
+</section>
+</section>
+<section id="check-your-understanding">
+<h2>Check your understanding<a class="headerlink" href="#check-your-understanding" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>What does git track?
+A. Every Letter we changed
+B. Every relevant change
+C. Every change to a file that is actively being tracked</p></li>
+<li><p>How do I get Git to track a change?
+git ___</p></li>
+</ol>
+<p>Put these in order:</p>
+<p>a) <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">&quot;&lt;this</span> <span class="pre">is</span> <span class="pre">what</span> <span class="pre">I</span> <span class="pre">did&gt;&quot;</span></code><br />
+b) make the change<br />
+c) <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">&lt;file&gt;</span></code></p>
+<p><img alt="" src="general_information/prerequisites/figures/zoom_icons/poll.png" /></p>
+</section>
+<section id="create-a-remote-repo">
+<h2>Create a remote repo<a class="headerlink" href="#create-a-remote-repo" title="Link to this heading">#</a></h2>
+<p>Let’s share our important work with world:
+<em>Note: For a more in-depth explanation on how to do this check the <a class="reference external" href="https://diler-digitell.github.io/DiLER_digital_literacy_course/content/github.html">Intro to GitHub</a></em></p>
+<ul class="simple">
+<li><p>Go to <a class="reference external" href="https://github.com/">github.com</a></p></li>
+<li><p>In the top right corner click the <code class="docutils literal notranslate"><span class="pre">+</span></code> symbol and select  <strong>New Repository</strong></p></li>
+<li><p>Enter the repo name desserts</p></li>
+<li><p>Choose to make your repo Public or Private</p></li>
+<li><p>Don’t check any boxes</p></li>
+<li><p>Click <strong>Create repository</strong></p></li>
+</ul>
+</section>
+<section id="link-it-to-your-local-repo">
+<h2>Link it to your local repo<a class="headerlink" href="#link-it-to-your-local-repo" title="Link to this heading">#</a></h2>
+<p>Tell git the URL of your <code class="docutils literal notranslate"><span class="pre">remote</span> <span class="pre">repo</span></code> and name it ‘origin’</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">remote</span> <span class="n">add</span> <span class="n">origin</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/&lt;</span><span class="n">yourusername</span><span class="o">&gt;/</span><span class="n">desserts</span><span class="o">.</span><span class="n">git</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Set the name of your principle branch to main (if it’s not already)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">branch</span> <span class="o">-</span><span class="n">M</span> <span class="n">main</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Push your changes to <code class="docutils literal notranslate"><span class="pre">GitHub</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">push</span> <span class="o">-</span><span class="n">u</span> <span class="n">origin</span> <span class="n">main</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Refresh your GitHub repo and check the directory</p>
+</section>
+<section id="did-we-meet-our-goals">
+<h2>Did we meet our goals?<a class="headerlink" href="#did-we-meet-our-goals" title="Link to this heading">#</a></h2>
+<section id="explain-why-git-github-are-useful">
+<h3>1. Explain why Git &amp; GitHub are useful<a class="headerlink" href="#explain-why-git-github-are-useful" title="Link to this heading">#</a></h3>
+<p>… to a new grad student
+<img alt="" src="general_information/prerequisites/figures/zoom_icons/chat_mic.png" /></p>
+</section>
+<section id="track-and-share-your-work-using-git-github-git-level-1-commit-push">
+<h3>2. Track and share your work using git/GitHub (git level 1: commit push)<a class="headerlink" href="#track-and-share-your-work-using-git-github-git-level-1-commit-push" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">status</span></code>    
+<code class="docutils literal notranslate"><span class="pre">add</span></code>    
+<code class="docutils literal notranslate"><span class="pre">init</span></code>    
+<code class="docutils literal notranslate"><span class="pre">commit</span></code>    
+<code class="docutils literal notranslate"><span class="pre">diff</span></code>    
+<code class="docutils literal notranslate"><span class="pre">push</span></code>    </p>
+<p><strong>Basic workflow for tracking a change and putting it on GitHub</strong></p>
+<ul class="simple">
+<li><p>make a change</p></li>
+<li><p>stage the change: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">____</span> <span class="pre">&lt;filename&gt;</span></code></p></li>
+<li><p>commit the change: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">____</span> <span class="pre">-m</span> <span class="pre">&quot;&lt;commit</span> <span class="pre">message&gt;&quot;</span></code></p></li>
+<li><p>put the change on GitHub: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">____</span> <span class="pre">origin</span> <span class="pre">main</span></code></p></li>
+</ul>
+<p><strong>See what’s happening with git</strong></p>
+<ul class="simple">
+<li><p>show the working tree status: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">____</span></code></p></li>
+<li><p>show how the file changed: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">____</span></code></p></li>
+</ul>
+</section>
+<section id="general-tips">
+<h3>General tips:<a class="headerlink" href="#general-tips" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Git is hard</p></li>
+<li><p>Don’t expect to remember everything</p></li>
+<li><p>Keep common commands on a sticky note</p></li>
+<li><p>To learn it, you need to <em>commit</em> to doing it</p></li>
+</ul>
+</section>
+</section>
+<section id="quick-feedback">
+<h2>Quick feedback<a class="headerlink" href="#quick-feedback" title="Link to this heading">#</a></h2>
+<section id="how-much-of-this-tutorial-could-you-follow">
+<h3>How much of this tutorial could you follow?<a class="headerlink" href="#how-much-of-this-tutorial-could-you-follow" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>100 %</p></li>
+<li><p>75 %</p></li>
+<li><p>50 %</p></li>
+<li><p>25 %</p></li>
+<li><p>0 %</p></li>
+</ul>
+</section>
+<section id="where-there-any-major-hurdles">
+<h3>Where there any major hurdles?<a class="headerlink" href="#where-there-any-major-hurdles" title="Link to this heading">#</a></h3>
+</section>
+</section>
+<section id="acknowledgements">
+<h2>Acknowledgements<a class="headerlink" href="#acknowledgements" title="Link to this heading">#</a></h2>
+<br>
+<ul class="simple">
+<li><p>most of what you’ll see within this lecture was prepared by Kendra Oudyk and further adapted by Peer Herholz, Michael Ernst &amp; Felix Körber</p></li>
+<li><p>based on the Software Carpentries “<a class="reference external" href="https://swcarpentry.github.io/git-novice/">Version control with Git</a>” under CC-BY 4.0</p></li>
+</ul>
+<p><a class="reference external" href="https://github.com/M-earnest">Michael Ernst</a><br />
+Phd student - <a class="reference external" href="http://www.fiebachlab.org/">Fiebach Lab</a>, <a class="reference external" href="https://www.psychologie.uni-frankfurt.de/49868684/Abteilungen">Neurocognitive Psychology</a> at <a class="reference external" href="https://www.goethe-university-frankfurt.de/en?locale=en">Goethe-University Frankfurt</a></p>
+<p><a class="reference external" href="https://peerherholz.github.io/">Peer Herholz (he/him)</a><br />
+Research affiliate - <a class="reference external" href="https://neurodatascience.github.io/">NeuroDataScience lab</a> at <a class="reference external" href="https://www.mcgill.ca/neuro/">MNI</a>/<a class="reference external" href="https://www.mit.edu/">MIT</a><br />
+Member - <a class="reference external" href="https://bids-specification.readthedocs.io/en/stable/">BIDS</a>, <a class="reference external" href="https://www.repronim.org/">ReproNim</a>, <a class="reference external" href="https://brainhack.org/">Brainhack</a>, <a class="reference external" href="https://www.cneuromod.ca/">Neuromod</a>, <a class="reference external" href="https://ohbm-environment.org/">OHBM SEA-SIG</a>, <a class="reference external" href="https://sites.google.com/view/unique-neuro-ai">UNIQUE</a></p>
+<p><img align="left" src="https://raw.githubusercontent.com/G0RELLA/gorella_mwn/master/lecture/static/Twitter%20social%20icons%20-%20circle%20-%20blue.png" alt="logo" title="Twitter" width="32" height="20" /> <img align="left" src="https://raw.githubusercontent.com/G0RELLA/gorella_mwn/master/lecture/static/GitHub-Mark-120px-plus.png" alt="logo" title="Github" width="30" height="20" />     &#64;peerherholz</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./general_information/prerequisites"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="intro_to_shell.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Prerequisite - the (unix) command line: bash</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="github.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Online version control: GitHub</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation">Motivation:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#before-we-get-started-setup">Before we get started: Setup</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#configure-git-if-you-haven-t-already">Configure git (if you haven’t already)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#macos-linux">macOS / Linux</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#windows">Windows</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#goals">Goals</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-side-note">Import side note:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-git-work">How does Git work?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#record-versions-by-tracking-changes">Record versions by tracking <em>changes</em></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#make-independent-changes">Make independent changes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#and-incorporate-the-changes">And incorporate the changes</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#where-does-git-store-information">Where does git store information?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#roadmap">Roadmap</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#git-add-and-git-commit"><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code> and <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-your-understanding">Check your understanding</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-remote-repo">Create a remote repo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#link-it-to-your-local-repo">Link it to your local repo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#did-we-meet-our-goals">Did we meet our goals?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#explain-why-git-github-are-useful">1. Explain why Git &amp; GitHub are useful</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#track-and-share-your-work-using-git-github-git-level-1-commit-push">2. Track and share your work using git/GitHub (git level 1: commit push)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#general-tips">General tips:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quick-feedback">Quick feedback</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-much-of-this-tutorial-could-you-follow">How much of this tutorial could you follow?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#where-there-any-major-hurdles">Where there any major hurdles?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acknowledgements">Acknowledgements</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Michael Ernst, Felix Körber based on the Gorella template by Peer Herholz, José C. García Alanis, Christoph Vogelbacher
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

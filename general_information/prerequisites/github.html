@@ -1,0 +1,756 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Online version control: GitHub &#8212; Course Template for ressources in higher education</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'general_information/prerequisites/github';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="BIDS (Brain Imaging Data Structure)" href="../../content/bids_specs.html" />
+    <link rel="prev" title="Introduction to Version Control using Git" href="excercise_intro_git.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../overview.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Course Template for ressources in higher education - Home"/>
+    <img src="../../_static/logo.png" class="logo__image only-dark pst-js-only" alt="Course Template for ressources in higher education - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../overview.html">
+                    Course overview & procedure
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../setup.html">Setup for the workshop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../prerequisites.html">Course prerequisites</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../introduction/intro.html">Data Management</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="intro_to_shell.html">Prerequisite - the (unix) command line: bash</a></li>
+
+
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="excercise_intro_git.html">Introduction to Version Control using Git</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Online version control: GitHub</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../content/bids_specs.html">BIDS (Brain Imaging Data Structure)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../content/gin.html">G-Node/GIN</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../CoC.html">Code of Conduct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dei.html">Diversity, Equity and Inclusion</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/M-earnest/course_template_diler/master?urlpath=tree/lecture/general_information/prerequisites/github.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/M-earnest/course_template_diler/blob/master/lecture/general_information/prerequisites/github.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/M-earnest/course_template_diler" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/M-earnest/course_template_diler/edit/master/lecture/general_information/prerequisites/github.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/M-earnest/course_template_diler/issues/new?title=Issue%20on%20page%20%2Fgeneral_information/prerequisites/github.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/general_information/prerequisites/github.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Online version control: GitHub</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#goals">Goals</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-s-a-github-and-why-should-we-use-it">What’s a “GitHub,” and why should we use it?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#version-control-and-collaborative-work">Version control and collaborative work</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-a-github-account">Setting up a GitHub account</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#start-a-project-set-up-a-public-repository">Start a project/set up a public repository</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-git">Setting up Git</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started">Getting started</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#git-operations">Git operations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#git-workflow">Git Workflow</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="online-version-control-github">
+<h1>Online version control: GitHub<a class="headerlink" href="#online-version-control-github" title="Link to this heading">#</a></h1>
+<p><strong>The following lesson will contain information on</strong></p>
+<ul class="simple">
+<li><p>how to set up your public Github account,</p></li>
+<li><p>how to set up a project (your course in this case) on GitHub contained in the GitHub “repository”,</p></li>
+<li><p>how to use the version control software “Git” to manage your projects and how to “push” your local materials to an online repository.</p></li>
+</ul>
+<p>To learn more about the accompanying <code class="docutils literal notranslate"><span class="pre">version</span> <span class="pre">control</span> <span class="pre">system</span> <span class="pre">for</span> <span class="pre">Git</span></code> check out the previous Lesson: <a class="reference external" href="https://diler-digitell.github.io/dm_workshop_setup/prerequisites/excercise_intro_git.html">Intro to Git</a></p>
+<hr class="docutils" />
+<section id="goals">
+<h2>Goals<a class="headerlink" href="#goals" title="Link to this heading">#</a></h2>
+<p>This chapter aims to include the following goals. Do check back here later, and you feel like the lesson addressed the stated goals appropriately!</p>
+<ol class="arabic simple">
+<li><p>Understand the benefits of using GitHub</p></li>
+<li><p>Learn how to setup your GitHub account</p></li>
+<li><p>Learn how to record changes via git</p></li>
+<li><p>Learn how to set up and connect local and online (remote) repository</p></li>
+<li><p>learn how to submit my changes to an online repository</p></li>
+</ol>
+<hr class="docutils" />
+<p><strong><em>Roadmap</em></strong></p>
+<ul class="simple">
+<li><p>What is GitHub, and why should you use it? (skip this if you are already familiar with the concept</p></li>
+<li><p>Setting up a GitHub account</p></li>
+<li><p>Start a project/set up a public repository</p></li>
+<li><p>Setup your local machine for working with Git/Github</p></li>
+<li><p>Git Operations</p></li>
+<li><p>Git Workflows</p></li>
+</ul>
+<section id="what-s-a-github-and-why-should-we-use-it">
+<h3>What’s a “GitHub,” and why should we use it?<a class="headerlink" href="#what-s-a-github-and-why-should-we-use-it" title="Link to this heading">#</a></h3>
+<p>As already mentioned, GitHub is a web-based platform for storing, organizing, and managing projects.</p>
+<p>Content is mainly organized in repositories (or “repos” for short); these reports can be viewed as being equivalent to a normal directory that you have on your local machine, for, e.g., storing data and pictures.
+They may contain a variety of file types and nested directories and will be used as a place to store and organize your project files, including code, assets, and documentation</p>
+<p>Here, you see the repository for the course template that you’ll be working with. Don’t worry if that’s still confusing to you; learning how to work with Github is best done using a “learning-by doing” approach.</p>
+<img src="https://github.com/felixkoerber/jb/blob/main/static/template.png?raw=true" alt=" png depicting the file structure of the course template repository" class="bg-primary" width="500px">
+</section>
+<hr class="docutils" />
+<section id="version-control-and-collaborative-work">
+<h3>Version control and collaborative work<a class="headerlink" href="#version-control-and-collaborative-work" title="Link to this heading">#</a></h3>
+<p>I’m sure we’ve all lost important documents, codes, or progress while working in academia. If you’ve been doing programming work, you might also have encountered that fixing a bug may lead to other substantial bugs down the line.
+People generally tend to come up with their own solution for “project management,” like maintaining multiple files with different suffixes added, e.g., project_working_copy_1.txt, project_notes.txt,  project_final_draft_3. Another approach involves making a mess out of documents by storing cut or to-be-implemented content in its own sub-section at the end of, e.g., project_draft_4.txt.</p>
+<p>Github alleviates that problem by making use of “Git,” a distributed version control system, which logs each time a change is made to a file. Via the commit system, we can not only maintain different versions of the same file on, e.g., your local system and the connected public repository, but also revert changes that had negative consequences or recover information lost on your system.</p>
+<p>Git further makes it easy to work with multiple users on the same project, as each user can maintain their local versions and submit their changes to the public directory, which can then be reviewed by the team on quality and compatibility and subsequently be incorporated into the online project.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="setting-up-a-github-account">
+<h2>Setting up a GitHub account<a class="headerlink" href="#setting-up-a-github-account" title="Link to this heading">#</a></h2>
+<p>First things first, let us set up a GitHub Account.</p>
+<p><strong>1. Go to the GitHub website</strong>: Open a web browser and navigate to the <a class="reference external" href="https://github.com/">github.com</a>.</p>
+<p>**2. Click on the “Sign up” button located in the upper-right corner.</p>
+<p><strong>3. Fill out the registration form</strong>: Fill out the required information and choose a username. Choose your username carefully, as your username will be included in the link to the website we are going to build and will be publicly displayed!</p>
+<p><strong>4. Verify your email address</strong>: Check your email inbox and click on the verification link sent by GitHub.</p>
+<p><strong>5. Customize your profile</strong>: Fill out your profile information. This will help others to find and connect with you on GitHub.</p>
+</br>
+<p><strong>And that is it!</strong>
+You can now use your new GitHub account to store your code online or collaborate and share your projects with the world!</p>
+</section>
+<hr class="docutils" />
+<section id="start-a-project-set-up-a-public-repository">
+<h2>Start a project/set up a public repository<a class="headerlink" href="#start-a-project-set-up-a-public-repository" title="Link to this heading">#</a></h2>
+<p>Let’s put that new account to use, by creating a new online repository, often referred to as a “remote repo”!</p>
+<ol class="arabic simple">
+<li><p>Open Github in your browser</p></li>
+<li><p>Click on the <code class="docutils literal notranslate"><span class="pre">+</span></code> sign in the top right corner and click “New repository”</p></li>
+<li><p>Fill out the repository details: Give your repository a name and description and check the box next to “public” to make sure others can find your directory.</p></li>
+</ol>
+<p>This could look something like this:</p>
+<img src="https://github.com/felixkoerber/jb/blob/main/static/new_repo_example.png?raw=true" alt="depicting an example of a new repository" class="bg-primary" width="500px">
+</br>
+<ol class="arabic simple" start="4">
+<li><p>Check the box “Add a README file”, this will initiate your repository with a file that can later be used to display basic information to others viewing your repo.</p></li>
+<li><p>Choose a license! You can start out with “None” as this repo is just for testing, but if you plan to use Github for your projects it’s imperative to include one to prevent misuse.</p></li>
+<li><p>Click on the “Create repository” button to create your new repository.</p></li>
+<li><p>Now you can add files to your repository by clicking the “Add file” button by either uploading them or creating a new file.</p></li>
+</ol>
+<hr class="docutils" />
+<p>Congratulations! You are now the proud owner of a Github repository. In the following parts we’ll be diving a bit deeper into the specifics of how a standard Github-Workflow might look like, how to connect your local system to your online repos (“cloning”).</p>
+</section>
+<hr class="docutils" />
+<section id="setting-up-git">
+<h2>Setting up Git<a class="headerlink" href="#setting-up-git" title="Link to this heading">#</a></h2>
+<p>Now, you can simply upload files to your GitHub repository, but usually, a GitHub is connected to a local repository on your machine. <code class="docutils literal notranslate"><span class="pre">So</span> <span class="pre">let's</span> <span class="pre">review</span> <span class="pre">how</span> <span class="pre">to</span> <span class="pre">Setup</span> <span class="pre">Git</span> <span class="pre">to</span> <span class="pre">make</span> <span class="pre">use</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">full</span> <span class="pre">capabilities</span> <span class="pre">of</span> <span class="pre">GitHub.</span></code></p>
+<hr class="docutils" />
+<p><strong>If you’ve already done the previous lesson - <a class="reference external" href="https://m-earnest.github.io/diler_dgitial_literacy_course/content/excercise_intro_git.html">Intro to Git</a> - you may skip this section.</strong></p>
+<p>To use Git on your local machine to log any changes you make to your project and submit your changes to the internet, you’ll need the following:</p>
+<ul class="simple">
+<li><p>a GitHub account</p></li>
+<li><p><a class="reference external" href="https://git-scm.com/downloads">Git</a></p></li>
+<li><p>Bash</p></li>
+</ul>
+<p>We’ve already discussed how to set up a Github account and create an online repo. How to get the rest of the listed software is explained in detail in our complete <a class="reference external" href="https://diler-digitell.github.io/Jupyter-Book/setup.html">Setup section</a>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Bash</span></code> is used in <a class="reference external" href="https://www.techtarget.com/searchwindowsserver/definition/command-line-interface-CLI">command-line interfaces</a> for interacting with the operating system. In essence, <code class="docutils literal notranslate"><span class="pre">Bash</span></code> can be seen as a programming language with the main purpose of navigating the file system, manipulating files and directories, running programs, and automating tasks using scripts and workflows.</p>
+<p>It is mainly used in scientific computing and data analysis for its ability to automate complex workflows and control flows of large datasets, but it’s further essential to use the version control system <code class="docutils literal notranslate"><span class="pre">Git</span></code> from the command line. Find out more about it in our chapter <a class="reference external" href="https://diler-digitell.github.io/DiLER_digital_literacy_course/content/excercise_intro_git.html">Unix Shell and Bash</a></p>
+<p>You may <strong>not need Bash and instead opt to install the <a class="reference external" href="https://www.gitkraken.com/">Gitkraken client</a></strong>, a software package including a Graphical-user-interface to manage all your git/Github projects. If you’re not too familiar with coding or simply prefer to have a visual overview of the exact changes you’ve made, your version history, etc., this might just be the better choice for you.</p>
+<p>Simply download and install the <a class="reference external" href="https://help.gitkraken.com/gitkraken-client/how-to-install/">Gitkraken client</a> and <a class="reference external" href="https://www.youtube.com/watch?v=5nhNfMcczlQ">connect it to your online Github profile</a>.</p>
+<p><strong>Check if you’re ready</strong></p>
+<ul class="simple">
+<li><p>Can you open a text editor? (e.g., Linux: gedit, nano. macOS: textedit. Windows: notepad)</p></li>
+<li><p>Can you go to your GitHub account?</p></li>
+</ul>
+</br>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">A.)</span></code> When you open a terminal on your system and type <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">--version,</span></code> does it output the version number? (macOS / Linux: you might need to run this: <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">-c</span> <span class="pre">anaconda</span> <span class="pre">git</span></code>)</p>
+<p>or</p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">B.)</span></code> Open Gitkraken and create a new repository (called initiating a new repository, under “Start a local project”)</p></li>
+</ul>
+</section>
+<section id="getting-started">
+<h2>Getting started<a class="headerlink" href="#getting-started" title="Link to this heading">#</a></h2>
+<p>Now, getting started with GitHub may feel overwhelming, but for this course, we’ll be learning just the bare minimum.</p>
+<p>If you’re confused about the language used or want to understand things in greater detail, there are great resources out there for you to explore:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.gitkraken.com/learn/git/definitions">Git definitions</a></p></li>
+<li><p><a class="reference external" href="https://www.gitkraken.com/learn/git/tutorials">Git tutorials</a></p></li>
+<li><p><a class="reference external" href="https://help.gitkraken.com/gitkraken-client/gitkraken-client-home/">Learning Git with Gitkraken</a></p></li>
+</ul>
+</br>
+</br>
+</section>
+<section id="git-operations">
+<h2>Git operations<a class="headerlink" href="#git-operations" title="Link to this heading">#</a></h2>
+<p>Git can be quite complex, but <strong>we’ll only be using the following operations</strong>; for in-depth explanations in video form, click the contained links:</p>
+<p><a class="reference external" href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/about-forks"><strong>Forking</strong></a>: Creating a copy of someones repository, that you want to work with. Forks let you make changes to a project without affecting the original repository. For example, you’ll create an online copy of another repository under your GitHub account.</p>
+<p><a class="reference external" href="https://www.gitkraken.com/learn/git/tutorials/what-is-git-remote"><strong>Cloning</strong></a>: Meaning to create a local copy of an online repository (called “remote”s on your system.</p>
+<p><a class="reference external" href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-branches"><strong>Branching</strong></a>: Meaning to create a copy of a project either online or locally, so that you have an isolated copy where you can work without affecting other branches in a repository. Each repository has one default branch, usually called the “main” branch, and can have multiple other branches.</p>
+<p><a class="reference external" href="https://www.gitkraken.com/learn/git/tutorials/what-is-git-commit"><strong>Committing</strong></a>: A commit is a “snapshot” of your repository at one specific point in time. If you make changes to a repository, you’ll have to follow up with “committing” the changes to save file changes to your Git repository. This does not mean that your changes will be lost if you, e.g., shut down your system; it just means that the version between a file on your system and the logged version in the GitHub repository does not match.</p>
+<p><a class="reference external" href="https://www.gitkraken.com/learn/git/tutorials/what-is-git-pull"><strong>Pulling</strong></a>: Means simply to update you local repository with the corresponidng online (remote) repository. For, if you or someone else made changes to the online version of a repository, you pull or “download” these changes to your local files this way.</p>
+<p><a class="reference external" href="https://www.gitkraken.com/learn/git/problems/git-push-to-remote-branch"><strong>Pushing</strong></a>: Git push is used to upload a local repository’s content to a remote repository. Meaning that you send your locally committed changes to your online repository.</p>
+</br>
+</br>
+</section>
+<section id="git-workflow">
+<h2>Git Workflow<a class="headerlink" href="#git-workflow" title="Link to this heading">#</a></h2>
+<p><strong>A standard Git workflow may be looking something like this:</strong></p>
+<p><strong>1. Create a repository</strong>: Create an online repository by clicking on the “New repository” button on the GitHub website. Give your repository a name and a description, and select the “public” option.</p>
+<p><strong>2. Clone the repository</strong>: To start working with your repository, you’ll need to “clone” it to your local computer. This will create a copy of the repository on your computer that you can work with. To clone a repository, click on the “Clone or download” button and copy the URL.</p>
+<p><code class="docutils literal notranslate"><span class="pre">BASH</span></code>: Open a terminal or command prompt and input the following command: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://github.com/username/repositoryname.</span></code>Where username is your user name and repository name is the name of your repository.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Gitkraken</span></code>: Click on <code class="docutils literal notranslate"><span class="pre">file,</span></code> <code class="docutils literal notranslate"><span class="pre">clone</span> <span class="pre">repo</span></code> and input where the repo should be stored on your system as well as the URL to the repo, i.e., <code class="docutils literal notranslate"><span class="pre">https://github.com/username/repositoryname.</span></code></p>
+<p><strong>3. Make changes</strong>: Now that you have a local copy of the repository, you can make changes to the code. Simply open the files in your editor and make the changes you want, or create new files and folders.</p>
+<p><strong>4. Commit changes</strong>: When you’re done making changes, you’ll need to “commit” them to the repository. Committing a change records it in the repository’s history and makes it part of the codebase.</p>
+<p><code class="docutils literal notranslate"><span class="pre">BASH</span></code>:To commit a change, run the following commands one after the other in the terminal (replace “Your commit message” with a brief description of the changes you made)l:</p>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">.</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">&quot;Your</span> <span class="pre">commit</span> <span class="pre">message&quot;</span></code></p>
+</br>
+<p><code class="docutils literal notranslate"><span class="pre">Gitkraken</span></code>:  Click on <code class="docutils literal notranslate"><span class="pre">File,</span></code> <code class="docutils literal notranslate"><span class="pre">open</span> <span class="pre">repo,</span></code> and select the repo containing your changes. On the left-hand side, you’ll see the “file” overview. Under unstaged files, you can review your changes. Click the green “stage all changes” button or right-click on individual files/folders and select “stage.” The files will be added to the “staged” files windows. Following, provide a name for your changes (commit) in the summary field below and add a short but meaningful description of your changes. Lastly, hit the green “Stage changes/changes to commit” button.</p>
+<img src="https://github.com/felixkoerber/jb/blob/main/static/stage_menu.png?raw=true" alt="depicting an example of a new repository" class="bg-primary" width="350px">
+<p><strong>5. Push changes</strong>: Finally, you’ll need to “push” your changes to the remote repository on GitHub. This will upload your changes to the website so that others can see them.</p>
+<p><code class="docutils literal notranslate"><span class="pre">BASH</span></code>: To push your changes, run the following command: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">origin</span> <span class="pre">master.</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">Gitkraken</span></code>: Hit the “Push” button on the upper center of the window.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./general_information/prerequisites"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="excercise_intro_git.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Introduction to Version Control using Git</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../../content/bids_specs.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">BIDS (Brain Imaging Data Structure)</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#goals">Goals</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-s-a-github-and-why-should-we-use-it">What’s a “GitHub,” and why should we use it?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#version-control-and-collaborative-work">Version control and collaborative work</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-a-github-account">Setting up a GitHub account</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#start-a-project-set-up-a-public-repository">Start a project/set up a public repository</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-git">Setting up Git</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started">Getting started</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#git-operations">Git operations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#git-workflow">Git Workflow</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Michael Ernst, Felix Körber based on the Gorella template by Peer Herholz, José C. García Alanis, Christoph Vogelbacher
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -61,11 +61,12 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"TeX": {"Macros": {"N": "\\mathbb{N}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'general_information/overview';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="General outline" href="outline.html" />
-    <link rel="prev" title="Welcome!" href="index.html" />
+    <link rel="next" title="Setup for the workshop" href="setup.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -117,6 +118,8 @@
       
       
       
+        
+      
       <dialog id="pst-primary-sidebar-modal"></dialog>
       <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
@@ -136,7 +139,7 @@
     
   
 
-<a class="navbar-brand logo" href="index.html">
+<a class="navbar-brand logo" href="#">
   
   
   
@@ -163,17 +166,30 @@
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1">
-                <a class="reference internal" href="index.html">
-                    Welcome!
+            <li class="toctree-l1 current active">
+                <a class="reference internal" href="#">
+                    Course overview & procedure
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Course overview &amp; procedure</a></li>
-<li class="toctree-l1"><a class="reference internal" href="outline.html">General outline</a></li>
-<li class="toctree-l1"><a class="reference internal" href="setup.html">Setup for the course</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../introduction/intro.html">Data Management</a></li>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="setup.html">Setup for the workshop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="prerequisites.html">Course prerequisites</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../introduction/intro.html">Data Management</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="prerequisites/intro_to_shell.html">Prerequisite - the (unix) command line: bash</a></li>
+
+
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="prerequisites/excercise_intro_git.html">Introduction to Version Control using Git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="prerequisites/github.html">Online version control: GitHub</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="../content/bids_specs.html">BIDS (Brain Imaging Data Structure)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../content/gin.html">G-Node/GIN</a></li>
 
@@ -383,31 +399,15 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#list-of-content-chapter">list of content chapter</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tl-dr">TL;DR</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-reach-the-folks-in-the-front">How to reach the folks in the front</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gimme-the-details">Gimme the details</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#when-and-where">When and where</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#what-about-the-pandemic">What about the pandemic?</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-i-get-all-the-software-and-do-i-have-to-apply-for-a-loan-to-get-it">How do I get all the software and do I have to apply for a loan to get it?</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#where-is-everything">Where is everything?</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#syllabus-and-text">Syllabus and Text</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-get-those-credits">How to get those credits?</a><ul class="nav section-nav flex-column">
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#exams-and-assignments">Exams and Assignments</a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#grading">Grading</a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#late-homework-extension-policy">Late Homework &amp; Extension Policy</a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#academic-honor-code">Academic Honor Code</a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#notice-about-missed-work-due-to-religious-holy-days">Notice about missed work due to religious holy days</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-reach-the-folks-in-the-front">How to reach the folks in the front</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gimme-the-details">Gimme the details</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-i-get-all-the-software-and-do-i-have-to-apply-for-a-loan-to-get-it">How do I get all the software and do I have to apply for a loan to get it?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#where-is-everything">Where is everything?</a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#student-accommodations">Student Accommodations</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#code-of-conduct">Code of conduct</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-get-your-question-s-answered-and-or-provide-feedback">How to Get Your Question(s) Answered and/or Provide Feedback</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#acknowledgements">Acknowledgements</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-of-conduct">Code of conduct</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-get-your-question-s-answered-and-or-provide-feedback">How to Get Your Question(s) Answered and/or Provide Feedback</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acknowledgements">Acknowledgements</a></li>
 </ul>
             </nav>
         </div>
@@ -421,21 +421,12 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="course-overview-procedure">
 <h1>Course overview &amp; procedure<a class="headerlink" href="#course-overview-procedure" title="Link to this heading">#</a></h1>
-<img src="https://github.com/M-earnest/data_managment_os_days_marburg_2024/blob/main/lecture/static/logo.png" alt="Logo" title="Logo" width="200" height="50" />
-<iframe src="https://github.com/M-earnest/data_managment_os_days_marburg_2024/blob/main/lecture/static/logo.png" width="280" height="280" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://github.com/M-earnest/data_managment_os_days_marburg_2024/blob/main/lecture/static/logo.png">via GIPHY</a></p>
-<p>Detailed explanation of what the course is about,</p>
-<section id="list-of-content-chapter">
-<h2>list of content chapter<a class="headerlink" href="#list-of-content-chapter" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li></li>
-</ul>
-<p>How you want to go about teaching.</p>
-<section id="tl-dr">
-<h3>TL;DR<a class="headerlink" href="#tl-dr" title="Link to this heading">#</a></h3>
-<p>Within this course we will explore X, specifically how it can and why it should be utilized within X. To do so, we will follow a “learning by doing” approach X. The steps will be the following: X, X, X. For a rather precise outline of the course, please consult the <a class="reference internal" href="#"><span class="xref myst">respective section</span></a>.</p>
-</section>
+<p>Welcome!</p>
+<p>In this workshop, we’re going to explore some super helpful tools and ideas to make managing your research data easier. We’ll be looking at GIN G-node, BIDS, and Datalad—don’t worry if these are new to you, this session is perfect for beginner</p>
+<p>This workshop content is compiled into a Jupyter Book that you can easily access. Download the book using the button at the top of this page or visit the associated <a class="reference external" href="https://github.com/M-earnest/data_managment_os_days_marburg_2024">GitHub repository</a> to explore and download the materials.</p>
+<p>For more on our broader initiatives in digital literacy, including additional resources and examples, visit our Website: <a class="reference external" href="https://diler-digitell.github.io/examples.html">https://diler-digitell.github.io/examples.html</a></p>
 <section id="how-to-reach-the-folks-in-the-front">
-<h3>How to reach the folks in the front<a class="headerlink" href="#how-to-reach-the-folks-in-the-front" title="Link to this heading">#</a></h3>
+<h2>How to reach the folks in the front<a class="headerlink" href="#how-to-reach-the-folks-in-the-front" title="Link to this heading">#</a></h2>
 <p align="center"><iframe src="https://giphy.com/embed/U6GunJi6B1o7ecMfKc" width="240" height="240" frameBorder="0" vspace="0" class="giphy-embed" allowFullScreen style="overflow-y: hidden;"></iframe></p><p align="center"><a href="https://giphy.com/gifs/justviralnet-funny-mistake-spelling-U6GunJi6B1o7ecMfKc"><small>via GIPHY</small></a></p></p>
 <p>The contact information of the instructors are as follows:</p>
 <p><a class="reference internal" href="#Webseite"><span class="xref myst">Name</span></a></p>
@@ -451,70 +442,25 @@ However, please let me know if you have a preferred way of interacting with othe
 </div>
 </section>
 <section id="gimme-the-details">
-<h3>Gimme the details<a class="headerlink" href="#gimme-the-details" title="Link to this heading">#</a></h3>
+<h2>Gimme the details<a class="headerlink" href="#gimme-the-details" title="Link to this heading">#</a></h2>
 <p>Below you will find important details regarding the course summarized in a compact form. Please consult and familiarize yourself with the information presented there prior to and/or within the first few days of the course.</p>
-<section id="when-and-where">
-<h4>When and where<a class="headerlink" href="#when-and-where" title="Link to this heading">#</a></h4>
-</section>
-<section id="what-about-the-pandemic">
-<h4>What about the pandemic?<a class="headerlink" href="#what-about-the-pandemic" title="Link to this heading">#</a></h4>
-<p>Until further notice, it is assumed that the course will take place in person. This may be subject to change given everything we experienced and learned in the last years. Therefore the course is setup in a way that would allow both in person and virtual meetings. Should changes to the course format be mandated, you’ll be notified ASAP.
-If you feel uncomfortable doing a busy commute to sit in a room with several other people, please let me know and I’ll give my best to come up with a hybrid format. However, based on current regulations there won’t be any recordings. Just in case: yes, everyone should wear a mask at all times (although this is not to be understood as an official regulation, as is not permitted by the university)!</p>
-<iframe src="https://giphy.com/embed/opPuISKbzCXAFHhZFJ" width="280" height="280" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/opPuISKbzCXAFHhZFJ">via GIPHY</a></p>
-</section>
 <section id="how-do-i-get-all-the-software-and-do-i-have-to-apply-for-a-loan-to-get-it">
-<h4>How do I get all the software and do I have to apply for a loan to get it?<a class="headerlink" href="#how-do-i-get-all-the-software-and-do-i-have-to-apply-for-a-loan-to-get-it" title="Link to this heading">#</a></h4>
+<h3>How do I get all the software and do I have to apply for a loan to get it?<a class="headerlink" href="#how-do-i-get-all-the-software-and-do-i-have-to-apply-for-a-loan-to-get-it" title="Link to this heading">#</a></h3>
 <p>Nah, everything we’ll use is <a class="reference external" href="https://en.wikipedia.org/wiki/Open-source_software">open-source software</a> or at minimum free of charge and publicly available.
 Why? Because teaching students via <a class="reference external" href="https://en.wikipedia.org/wiki/Proprietary_software">proprietary software</a> is just not fair and won’t help anyone: students have to obtain licenses or use those from the university (which usually doesn’t have enough for everyone), leading to tremendous problems regarding inequity now and in the future. Additionally, <a class="reference external" href="https://en.wikipedia.org/wiki/Open-source_software">opens-source software</a> can do everything, if not more than <a class="reference external" href="https://en.wikipedia.org/wiki/Proprietary_software">proprietary software</a> and is furthermore usually better supported, tested and documented, creating a fantastic sense of community.</p>
 <p>In order to help you get all the software required for the course, a <a class="reference internal" href="#link-to-setup.html"><span class="xref myst">comprehensive installation instruction</span></a> was compiled.</p>
 </section>
 <section id="where-is-everything">
-<h4>Where is everything?<a class="headerlink" href="#where-is-everything" title="Link to this heading">#</a></h4>
+<h3>Where is everything?<a class="headerlink" href="#where-is-everything" title="Link to this heading">#</a></h3>
 <p>All course materials (lecture slides, lecture demo notebooks, lab notebooks, homework assignments, etc.) will be available on the <a class="reference internal" href="#link-to-index.html"><span class="xref myst">course website</span></a>, i.e. the one you’re looking at right now. Everything will be completely open and free to use, thus constituting an <a class="reference external" href="https://en.wikipedia.org/wiki/Open_educational_resources">open educational resource</a> you are <strong>free to explore, enhance and share</strong>. Thus, this website and all materials will also remain up for the entire duration of the course and beyond, ideally to end of the internet. The usage of this resource and the materials therein will be explained at the beginning and throughout the course.</p>
 </section>
-<section id="syllabus-and-text">
-<h4>Syllabus and Text<a class="headerlink" href="#syllabus-and-text" title="Link to this heading">#</a></h4>
-<p>As noted above, this page serves as the syllabus for this course, with the precise outline indicated in the <a class="reference internal" href="#link-to-outline.html"><span class="xref myst">respective section</span></a>. This syllabus is subject to change; students who miss class are responsible for learning about any changes to the syllabus.</p>
-<p>Additional reading material might be added but will always be open &amp; free with students being informed about any addition.</p>
-</section>
-<section id="how-to-get-those-credits">
-<h4>How to get those credits?<a class="headerlink" href="#how-to-get-those-credits" title="Link to this heading">#</a></h4>
-<section id="exams-and-assignments">
-<h5>Exams and Assignments<a class="headerlink" href="#exams-and-assignments" title="Link to this heading">#</a></h5>
-</section>
-<section id="grading">
-<h5>Grading<a class="headerlink" href="#grading" title="Link to this heading">#</a></h5>
-</section>
-<section id="late-homework-extension-policy">
-<h5>Late Homework &amp; Extension Policy<a class="headerlink" href="#late-homework-extension-policy" title="Link to this heading">#</a></h5>
-<p><code class="docutils literal notranslate"><span class="pre">Homework</span> <span class="pre">assignments</span></code> will in general have a clearly stated due date, so as to manage course load clearly. Exceptions will be communicated. Please check the respective sections of this course and don’t hesitate to ask questions if things are unclear. Generally <code class="docutils literal notranslate"><span class="pre">Homework</span> <span class="pre">assignments</span></code> must be turned in on the due date in order to to earn participation credits for the course and receive full scores.  Homework assignments must be turned in on the due date in order to receive full credit. Homework assignment turned in less than 1 week late will be accepted but the score will be penalized by 10%. Homework has to be handed in via e-mail to the <a class="reference internal" href="#e-mail&#64;psych.uni-frankfurt.de"><span class="xref myst">instructor</span></a>.</p>
-<p>Late <code class="docutils literal notranslate"><span class="pre">homework</span> <span class="pre">assignments</span></code> will also be accepted under <em>exceptional circumstances</em> (e.g., medical or family emergency etc.) and at the discretion of the instructor (e.g. exceptional “gedenotes a rare event) with no penalty. This policy allowing for exceptional circumstances is definitely a right, but courtesy to be used when needed and not abused. Should you encounter such circumstances, simply email the assignment to instructor and note “late submission due to exceptional circumstances”. <strong>You do not need to provide any further justification or personally revealing information regarding the details.</strong></p>
-</section>
-<section id="academic-honor-code">
-<h5>Academic Honor Code<a class="headerlink" href="#academic-honor-code" title="Link to this heading">#</a></h5>
-<p>You are encouraged to discuss problem sets with classmates and work on them together, but certain written submissions must reflect your own, original work. If you worked with other students on a problem set, no worries, please include their names in a statement like “I worked on this homework with XX and YY” on the assignment. If in doubt, ask the instructor.
-<strong>Using online-ressources to help you programm is endorsed and advised, but please note that if code is copied from the internet without alterations and not clearly marked as such, this will be understood as an attempt at deception and treated as such.</strong> The same goes for any kind of reproduction of any other published work, as per usual.</p>
-</section>
-<section id="notice-about-missed-work-due-to-religious-holy-days">
-<h5>Notice about missed work due to religious holy days<a class="headerlink" href="#notice-about-missed-work-due-to-religious-holy-days" title="Link to this heading">#</a></h5>
-<p>We might miss some things, so please notify the instructors of your pending absence at least 7 days prior to the date of observance of a religious holy day. If you must miss a class, an examination, a work assignment, or a project in order to observe a religious holy day, I will give you an opportunity to complete the missed work within a reasonable time after the absence.</p>
-</section>
-</section>
-</section>
-<section id="student-accommodations">
-<h3>Student Accommodations<a class="headerlink" href="#student-accommodations" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Please request a meeting as soon as possible to discuss any accommodations.</p></li>
-<li><p>Please notify me as soon as possible if the material being presented in class is not accessible.</p></li>
-<li><p>Please notify me if any of the physical accomodations are difficult to use or access for you.</p></li>
-</ul>
 </section>
 <section id="code-of-conduct">
-<h3>Code of conduct<a class="headerlink" href="#code-of-conduct" title="Link to this heading">#</a></h3>
+<h2>Code of conduct<a class="headerlink" href="#code-of-conduct" title="Link to this heading">#</a></h2>
 <p>This course has a <code class="docutils literal notranslate"><span class="pre">Code</span> <span class="pre">of</span> <span class="pre">conduct</span></code>. Please inform yourself about the specifics by carefully reading through the <a class="reference internal" href="#link-to-CoC.html"><span class="xref myst">respective section</span></a>.</p>
 </section>
 <section id="how-to-get-your-question-s-answered-and-or-provide-feedback">
-<h3>How to Get Your Question(s) Answered and/or Provide Feedback<a class="headerlink" href="#how-to-get-your-question-s-answered-and-or-provide-feedback" title="Link to this heading">#</a></h3>
+<h2>How to Get Your Question(s) Answered and/or Provide Feedback<a class="headerlink" href="#how-to-get-your-question-s-answered-and-or-provide-feedback" title="Link to this heading">#</a></h2>
 <p>It’s great that we have so many ways to communicate, but it can get tricky to figure out who to contact or where your question belongs or when to expect a response. These guidelines are to help you get your question answered as quickly as possible and to ensure that we’re able to get to everyone’s questions.</p>
 <p>If you have:</p>
 <p><strong>- questions about course content</strong> - these are awesome! We want everyone to see them and have their questions answered too, so either use the <a class="reference external" href="https://web.hypothes.is/">hypothes.is</a> plugin, the <code class="docutils literal notranslate"><span class="pre">discord</span></code> channel, <code class="docutils literal notranslate"><span class="pre">e-mail</span></code> or the <a class="reference external" href="https://github.com/name_of_repo/issues">GitHub repository</a>.</p>
@@ -526,10 +472,11 @@ Why? Because teaching students via <a class="reference external" href="https://e
 <p>*This form can be taken down at any time if it’s not being used for its intended purpose; however, you all will be notified should that happen.</p>
 </section>
 <section id="acknowledgements">
-<h3>Acknowledgements<a class="headerlink" href="#acknowledgements" title="Link to this heading">#</a></h3>
+<h2>Acknowledgements<a class="headerlink" href="#acknowledgements" title="Link to this heading">#</a></h2>
 <p>Several parts of this section are directly taken or adapted from <a class="reference external" href="https://github.com/alexhuth/ndap-fa2020">Alexander Huth’s Neuro Data Analysis in Python syllabus</a> licensed under a <a class="reference external" href="https://github.com/alexhuth/ndap-fa2020/blob/master/LICENSE">BSD-3-Clause License</a> and <a class="reference external" href="https://cogs18.github.io/assets/intro/syllabus.html">Shannon Ellis’ COGS 18: Introduction to Python</a>.</p>
 </section>
-</section>
+<div class="toctree-wrapper compound">
+</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -562,21 +509,12 @@ Why? Because teaching students via <a class="reference external" href="https://e
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="index.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Welcome!</p>
-      </div>
-    </a>
     <a class="right-next"
-       href="outline.html"
+       href="setup.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">General outline</p>
+        <p class="prev-next-title">Setup for the workshop</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -597,31 +535,15 @@ Why? Because teaching students via <a class="reference external" href="https://e
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#list-of-content-chapter">list of content chapter</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tl-dr">TL;DR</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-reach-the-folks-in-the-front">How to reach the folks in the front</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gimme-the-details">Gimme the details</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#when-and-where">When and where</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#what-about-the-pandemic">What about the pandemic?</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-i-get-all-the-software-and-do-i-have-to-apply-for-a-loan-to-get-it">How do I get all the software and do I have to apply for a loan to get it?</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#where-is-everything">Where is everything?</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#syllabus-and-text">Syllabus and Text</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-get-those-credits">How to get those credits?</a><ul class="nav section-nav flex-column">
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#exams-and-assignments">Exams and Assignments</a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#grading">Grading</a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#late-homework-extension-policy">Late Homework &amp; Extension Policy</a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#academic-honor-code">Academic Honor Code</a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#notice-about-missed-work-due-to-religious-holy-days">Notice about missed work due to religious holy days</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-reach-the-folks-in-the-front">How to reach the folks in the front</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gimme-the-details">Gimme the details</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-i-get-all-the-software-and-do-i-have-to-apply-for-a-loan-to-get-it">How do I get all the software and do I have to apply for a loan to get it?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#where-is-everything">Where is everything?</a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#student-accommodations">Student Accommodations</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#code-of-conduct">Code of conduct</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-get-your-question-s-answered-and-or-provide-feedback">How to Get Your Question(s) Answered and/or Provide Feedback</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#acknowledgements">Acknowledgements</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-of-conduct">Code of conduct</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-get-your-question-s-answered-and-or-provide-feedback">How to Get Your Question(s) Answered and/or Provide Feedback</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acknowledgements">Acknowledgements</a></li>
 </ul>
   </nav></div>
 

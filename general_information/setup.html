@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Setup for the course &#8212; Course Template for ressources in higher education</title>
+    <title>Setup for the workshop &#8212; Course Template for ressources in higher education</title>
   
   
   
@@ -64,8 +64,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'general_information/setup';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Data Management" href="../introduction/intro.html" />
-    <link rel="prev" title="General outline" href="outline.html" />
+    <link rel="next" title="Course prerequisites" href="prerequisites.html" />
+    <link rel="prev" title="Course overview &amp; procedure" href="overview.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -136,7 +136,7 @@
     
   
 
-<a class="navbar-brand logo" href="index.html">
+<a class="navbar-brand logo" href="overview.html">
   
   
   
@@ -164,16 +164,29 @@
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
-                <a class="reference internal" href="index.html">
-                    Welcome!
+                <a class="reference internal" href="overview.html">
+                    Course overview & procedure
                 </a>
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="overview.html">Course overview &amp; procedure</a></li>
-<li class="toctree-l1"><a class="reference internal" href="outline.html">General outline</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Setup for the course</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../introduction/intro.html">Data Management</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Setup for the workshop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="prerequisites.html">Course prerequisites</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../introduction/intro.html">Data Management</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="prerequisites/intro_to_shell.html">Prerequisite - the (unix) command line: bash</a></li>
+
+
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="prerequisites/excercise_intro_git.html">Introduction to Version Control using Git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="prerequisites/github.html">Online version control: GitHub</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="../content/bids_specs.html">BIDS (Brain Imaging Data Structure)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../content/gin.html">G-Node/GIN</a></li>
 
@@ -373,7 +386,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Setup for the course</h1>
+    <h1>Setup for the workshop</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -383,17 +396,14 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#required-software">Required software</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-things">General things</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#required-software">Required software</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#some-quick-general-notes-on-instructions">Some quick general notes on instructions</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#os-specific-installation-instructions">OS-specific installation instructions</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-stuff">Additional stuff</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discord">Discord</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modern-web-browser">Modern web browser</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-quick-general-notes-on-instructions">Some quick general notes on instructions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#os-specific-installation-instructions">OS-specific installation instructions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-your-install">Checking your install</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enter-the-matrix">Enter the matrix</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-your-install">Checking your install</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-the-course-content">Getting the course content</a></li>
 </ul>
             </nav>
         </div>
@@ -405,56 +415,425 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="setup-for-the-course">
-<h1>Setup for the course<a class="headerlink" href="#setup-for-the-course" title="Link to this heading">#</a></h1>
-<p>There are a few things you need to get working on your machine in order to follow this course. However, don’t worry as it’s all gonna be <a class="reference internal" href="#"><span class="xref myst">open source</span></a>, won’t require a lot of storage and will be explained in detail.</p>
-<section id="general-things">
-<h2>General things<a class="headerlink" href="#general-things" title="Link to this heading">#</a></h2>
-<p>There are a few computing requirements for the course that are absolutely necessary (beyond the few software packages you should install, described below):</p>
-<p>-list</p>
-<p>If you foresee any of these being a problem please reach out to one of the instructors and enquire what steps you can take to ensure your setup is ready for the course.</p>
-</section>
+  <section class="tex2jax_ignore mathjax_ignore" id="setup-for-the-workshop">
+<h1>Setup for the workshop<a class="headerlink" href="#setup-for-the-workshop" title="Link to this heading">#</a></h1>
+<p>Most of the materials for this workshop can be found on this website, if you’d like to give input, leave comments or highlight relevant parts (publicly or privately) we encourage you to make use of the <a class="reference external" href="https://web.hypothes.is/"><code class="docutils literal notranslate"><span class="pre">hypothes.is</span></code></a> plugin via the annotation sidebar on the right side of the page. If you’d rather download these materials, you can do so via the {download} symbol! at the top of the respective page. You can open the respective content (.md files) via an IDE (e.g. VScode, Atom) or via Jupyter Notebooks/Lab.</p>
+<p>We’ll come to actual installation instructions shortly, but there are a few other requirements that will need to be satisfied. Please read the whole document and follow the instructions closely.</p>
 <section id="required-software">
 <h2>Required software<a class="headerlink" href="#required-software" title="Link to this heading">#</a></h2>
-<p>To get the most out of the course, we ask that you arrive with the following software already installed (software/things in () are not entirely necessary but definitely great to have):</p>
 <ul class="simple">
-<li><p>list</p></li>
+<li><p>a command-line shell: Bash</p></li>
+<li><p>Git and Git-Annex</p></li>
+<li><p>a GitHub Account</p></li>
+<li><p>a GIN-Account</p></li>
+<li><p>DataLad</p></li>
 </ul>
+<p>additionally, you’ll generally should have:</p>
+<ul class="simple">
+<li><p>An IDE or text editor: e.g. VSCode (recommended)</p></li>
+<li><p>a modern browser (Install Firefox or Chrome; Safari will also work.)</p></li>
+<li><p>Docker (a containerization software that enables you to run automated workflows; required for one of our demos)
+Mac and Linux distributions automatically provide a command line shell, simply search for <code class="docutils literal notranslate"><span class="pre">terminal</span></code> and you should be good to go. Windows users will have to complete a few additional steps, see the OS-specific installation instructions down below.</p></li>
+</ul>
+</section>
+<section id="general-things">
+<h2>General things<a class="headerlink" href="#general-things" title="Link to this heading">#</a></h2>
+<p>There are a few computing requirements for the course that are necessary:</p>
+<ol class="arabic simple">
+<li><p>You must have administrator access to your computer (i.e., you must be able to install things yourself without requesting IT approval).</p></li>
+<li><p>You should have at least <code class="docutils literal notranslate"><span class="pre">20</span> <span class="pre">GB</span></code> of free disk space on your computer (but we would recommend more, to be safe).</p></li>
+<li><p>If you are using Windows you must be using Windows 10/11; Windows 7 and 8 will not be sufficient for this workshop.</p></li>
+<li><p>Some parts of this workshop will make use of GitHub, so creating a GitHub account is recommended</p></li>
+</ol>
+<p>If you foresee any of these being a problem please reach out to one of the instructors to see what steps you can take to ensure you are ready for the course start.</p>
+</section>
 <section id="some-quick-general-notes-on-instructions">
-<h3>Some quick general notes on instructions<a class="headerlink" href="#some-quick-general-notes-on-instructions" title="Link to this heading">#</a></h3>
+<h2>Some quick general notes on instructions<a class="headerlink" href="#some-quick-general-notes-on-instructions" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>If you already have some of these things installed on your computer that should (theoretically) be okay.
+However, you need to make sure that you can complete the steps described in <code class="docutils literal notranslate"><span class="pre">checking</span> <span class="pre">your</span> <span class="pre">install</span></code> section below without issue.</p></li>
+</ul>
 </section>
 <section id="os-specific-installation-instructions">
-<h3>OS-specific installation instructions<a class="headerlink" href="#os-specific-installation-instructions" title="Link to this heading">#</a></h3>
+<h2>OS-specific installation instructions<a class="headerlink" href="#os-specific-installation-instructions" title="Link to this heading">#</a></h2>
 <p>Select the tab that corresponds to your operating system and follow the instructions therein.</p>
-<p><strong>Note</strong>: If the instructions aren’t working and you have spent more than 15-20 minutes troubleshooting on your own, reach out on the #help-installation channel on the Discord channel with the exact problems you’re having.
-One of the instructors will try and get back to you quickly to help resolve the situation.
-If they’re unable to help via <code class="docutils literal notranslate"><span class="pre">Discord</span></code>, you may be directed to attend one of the installation office hours.</p>
-</section>
-<section id="additional-stuff">
-<h3>Additional stuff<a class="headerlink" href="#additional-stuff" title="Link to this heading">#</a></h3>
-</section>
-<section id="discord">
-<h3>Discord<a class="headerlink" href="#discord" title="Link to this heading">#</a></h3>
-<p>Go to <a class="reference external" href="https://discord.com/">https://discord.com/</a> and download and install Discord. Please note, that you can also use Discord through your browser if you don’t want to download it. This will be the main channel of communication for the course.
-You will be invited to the course channel via e-mail.</p>
-</section>
-<section id="modern-web-browser">
-<h3>Modern web browser<a class="headerlink" href="#modern-web-browser" title="Link to this heading">#</a></h3>
-<p>Install Firefox or Chrome.
-(Safari will also work.)
-Microsoft Edge is not modern, despite what Microsoft might try and otherwise tell you.</p>
-</section>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-0">
+Windows</label><div class="sd-tab-content docutils">
+<p><strong>Bash shell - Windows Subsystem for Linux (WSL)</strong></p>
+<p>Windows doesn’t come with a preinstalled bash shell. To remedy this we will rely on <a class="reference external" href="https://learn.microsoft.com/en-us/windows/wsl/install">WSL (Windows subystems for Linux)</a>, which will provide a Unix command-line based on the latest Ubuntu distribution.</p>
+<ol class="arabic">
+<li><p>Search for <code class="docutils literal notranslate"><span class="pre">Windows</span> <span class="pre">Powershell</span></code> in your applications; right click and select <code class="docutils literal notranslate"><span class="pre">Run</span> <span class="pre">as</span> <span class="pre">administrator</span></code>.
+Select <code class="docutils literal notranslate"><span class="pre">Yes</span></code> on the prompt that appears asking if you want to allow the app to make changes to your device.</p></li>
+<li><p>Type the following into the Powershell and then press <code class="docutils literal notranslate"><span class="pre">Enter</span></code>:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>wsl --install
+</pre></div>
+</div>
+</li>
+<li><p>Press <code class="docutils literal notranslate"><span class="pre">Enter</span></code> again when prompted to reboot your computer.</p></li>
+<li><p>You’ll find a new application named “Ubuntu”, this is your new command line tool. Right-click and run this app as administrator.</p>
+<ul class="simple">
+<li><p>the first launch of the new Linux distribution may take some time as files need to be decompressed and stored</p></li>
+</ul>
+</li>
+<li><p>Upon opening the apllication you will be prompted to set up your Linux username and password</p>
+<ul class="simple">
+<li><p>to make use of the command line you’ll have to bascially create an deafult user account, which gives you the ability to run sudo (Super User Do) administrative commands</p></li>
+<li><p>the account name should be simple and contain no extra characters or spaces, e.g. your initials or first name will usually do</p></li>
+<li><p>`Note: When entering your password nothing will appear on the screen (blind typing), but you’re input will still be registered. Simply type a password and hit enter.</p></li>
+</ul>
+</li>
+<li><p>Make sure that your packages are up-to-date by entering the following and hitting enter: <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">update</span> <span class="pre">&amp;&amp;</span> <span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">upgrade</span></code></p>
+<ul class="simple">
+<li><p>here you’ll be asked for the password you set in the previous step</p></li>
+</ul>
+</li>
+</ol>
+<p><em>From this point on whenever the instructions specify to “open a terminal” please assume you are supposed to open the Ubuntu application.</em></p>
+<p><code class="docutils literal notranslate"><span class="pre">Important!</span></code> This will create a virtual Ubuntu application on your system. The <em>terminal</em> will alwyays start in your Ubuntu home directory, to access your Windows file system you’ll have to use a path that should look something like this <code class="docutils literal notranslate"><span class="pre">/mnt/c/Users/yourusername</span></code>, where yourusername is your windows user name. If you’re unsure how to navigate through your Ubuntu file system via the terminal, check back with our chapter on [prerequisites/bash](link here).</p>
+<br>
+<br>
+<p><strong>VSCode</strong></p>
+<ol class="arabic simple">
+<li><p>Go to <a class="reference external" href="https://code.visualstudio.com/">https://code.visualstudio.com/</a> and click the download button, then run the <code class="docutils literal notranslate"><span class="pre">.exe</span></code> file.</p></li>
+<li><p>Leave all the defaults during the installation with the following exception:</p>
+<ul class="simple">
+<li><p>Please make sure the box labelled “Register Code as an editor for supported file types” is selected</p></li>
+</ul>
+</li>
+<li><p>When working with Linux under Windows using WSL you will have two different filesystems/drives since WSL will create a distinct filestystem for every
+Linux distribution you have installed. VSCode automatically detects WSL distributions and you can connect to them via the remote connection button (Blue button at the bottom left corner of your VSCode window). This is what it should look like:</p></li>
+</ol>
+<p><img alt="remote connection wsl startup screen" src="static/VSCode_startup.png" /></p>
+<br>
+<p><img alt="remote connection wsl taskbar options" src="static/VSCode_WSL.png" /></p>
+<br>
+<br>
+<p><strong>GitHub</strong></p>
+<p>Go to <a class="github reference external" href="https://github.com/join/">join/</a> and follow the on-screen instructions to create an account.
+It is a good idea to associate this with your university e-mail (if you have one) as this will entitle you to sign up for the <a class="reference external" href="https://education.github.com/pack">GitHub Student Developer Pack</a> or <a class="reference external" href="https://education.github.com/teachers">GitHub for teachers</a> which come with some nice free bonuses.</p>
+<br>
+<br>
+<p><strong>Git and Git Annex</strong>
+Unfortunately, Windows does not provide a Git installation out of the box. There are a few ways to set up your Windows system to work with version control systems, but efficiency may suffer when trying to force Git to work with a standard Windows installation.</p>
+<p>Good news, though! WSL provides you with a Unix environment, which most likely already includes an up-to-date Git installation. To verify whether this is true for your system, open the Ubuntu application (your ‘terminal’ or ‘command-line interface’). Type: git –version and press Enter. The output should display a sensible version number, e.g.</p>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">version</span> <span class="pre">2.39.2</span> </code></p>
+<p>Should you see no output, an error message or a version number starting with a <code class="docutils literal notranslate"><span class="pre">1.</span></code>, you will have to install or update you Git installation. We will make use of the linux package manager <a class="reference internal" href="#"><span class="xref myst">apt</span></a> for this, Still in the <code class="docutils literal notranslate"><span class="pre">terminal</span></code> type the following and hit enter,</p>
+<p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">git</span></code></p>
+<p>After the installation process is completed, you will want to connect your local Git version to the online version-control system GitHub, to make use of the full functionalilty of Git. For this, first create an account on <a class="reference internal" href="#"><span class="xref myst">GitHub</span></a> and type the following in your terminal, replacing the highlighted text with the information you provided on GitHub:</p>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">user.name</span> <span class="pre">&lt;Your</span> <span class="pre">Name&gt;</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">user.email</span> <span class="pre">&lt;youremail&#64;domain.com&gt;</span></code></p>
+<p>Verify that your data is correct by running the same command again, but omitting the email-input:</p>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">user.email</span></code></p>
+<p>Which will return the email you have registered.</p>
+<p>Should you want to change or override this information, simply run the above commands again, providing your corrected email.</p>
+<p>Additionally, we will want to make use of Git Annex, a version control and data managment system. Input the following into your terminal:</p>
+<p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">git-annex</span></code></p>
+<p>For more information and troubleshooting, you can check the following ressources:
+<a class="reference external" href="https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-git">Getting started with Git (Microsoft)</a>
+<a class="reference external" href="https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-git">Setting your commit email addres </a></p>
+<br>
+<br>
+<p><strong>DataLad</strong></p>
+<p>Our friendly all-purpose data managemnt software. Learning Datalad will make your life (professional) much easier, so we highly encourage not only following our workshop,but having a look at the masterpiece that is the <a class="reference internal" href="#"><span class="xref myst">Datalad Handbook</span></a>. They also provide a a <a class="reference external" href="https://handbook.datalad.org/en/latest/intro/installation.html#fom-macosx-pip">OS-specific installation guide</a>, but we will be changing this process up a little not only using the python package manager <a class="reference internal" href="#%5Bvenv%5D(https://docs.python.org/3/library/venv.html)"><span class="xref myst">pip</span></a> that all of you already have preinstalled with your OS (your Ubuntu app created with WSL in the case of Windows kids), and the provided <code class="docutils literal notranslate"><span class="pre">enviornment</span> <span class="pre">managemnt</span> <span class="pre">package</span></code> <a class="reference external" href="https://docs.python.org/3/library/venv.html">venv</a>.</p>
+<p>But before we copy and paste the following code block into your terminal, let’s look at what it actually does</p>
+<ol class="arabic">
+<li><p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">venv</span> <span class="pre">--system-site-packages</span> <span class="pre">~/env/datalad</span></code> creates a virtual environment in the directory ~/env/datalad and ensures access to globally installed Python packages</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">~/env/datalad/bin/activate</span></code> activates the virtual environment you just created, isolating your terminal session for your Datalad-related work from your baseline environment</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">datalad</span></code> now installs the datalad package into your isolated virtual environment using the Python package manager, pip.</p></li>
+<li><p>same thing, just for the datalad-container extension, which allows you to manage and run automated pipelines (Docker or singularity container) on your data</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  python -m venv --system-site-packages ~/env/datalad &amp;&amp; source ~/env/datalad/bin/activate;
+  python -m pip install datalad
+  python -m pip install datalad-container
+</pre></div>
+</div>
+</li>
+</ol>
+<p><em>Note:</em>
+From now on, whenever you want to work with Datalad, activate the virtual environment in your terminal with:</p>
+<p><code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">~/env/datalad/bin/activate</span></code></p>
+<br>
+<br>
+<p><strong>GIN.g-node interface</strong></p>
+<p>G-Node, or the “German Neuroinformatics Node” interface, provides a GDPR-compliant service for data storage and sharing. It is built on Git and git-annex, allowing easy integration into version-controlled, automated workflows. To begin, you’ll need to set up an account on the <a class="reference external" href="https://gin.g-node.org/">public GIN website</a>.</p>
+<p>If we want to upload files from our local system to GIN and make full use of our setup using Datalad and Git to manage our files, we’ll need to connect these services. This can be done by generating and sharing SSH keys between the services. SSH (Secure Shell Protocol) keys are authentication protocols that allow secure login from a local system to remote servers and services. For example, if you’re working on a local server system, you’ve likely already used SSH.</p>
+<p>Admittedly, this is a more complex process that we will not have time to cover in detail during the workshop. However, you can refer to the following resources for guidance on generating an SSH key using the terminal and adding it to your GitHub and GIN repositories:</p>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent">Generate an SSH Key</a></p></li>
+<li><p><a class="reference external" href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent">Adding a SSH Key to your GitHub Account</a></p></li>
+<li><p><a class="reference external" href="https://handbook.datalad.org/en/latest/basics/101-139-gin.html#prerequisites">Adding a SSH Key to your GIN Repository</a></p></li>
+</ol>
+<br>
+<br>
+<p><strong>Docker</strong></p>
+<p>Unfortunately, getting Docker to work on Windows is a tad more complicated.</p>
+<ol class="arabic simple">
+<li><p>Download the installer from this <a class="reference external" href="https://www.docker.com/products/docker-desktop/">website</a>.</p></li>
+<li><p>Double-click Docker Desktop Installer.exe to run the installer. By default, Docker Desktop is installed at C:\Program Files\Docker\Docker.</p></li>
+<li><p>When prompted, ensure that “Use WSL 2” instead of Hyper-V option on the Configuration page is selected.</p></li>
+<li><p>If your system only supports one of the two options, you will not be able to select which backend to use.</p></li>
+<li><p>Follow the instructions on the installation wizard to authorize the installer and proceed with the install.</p></li>
+<li><p>When the installation is successful, select Close to complete the installation process.</p></li>
+<li><p>Open Docker Dektop, agree to the the terms of service and login using your Dockerhub user credentials. Now, the Docker engine should start (if starting of the Docker engine takes more than 5 minutes, restart your computer.</p></li>
+</ol>
+<p><code class="docutils literal notranslate"><span class="pre">If</span> <span class="pre">your</span> <span class="pre">admin</span> <span class="pre">account</span> <span class="pre">is</span> <span class="pre">different</span> <span class="pre">to</span> <span class="pre">your</span> <span class="pre">user</span> <span class="pre">account,</span> <span class="pre">you</span> <span class="pre">must</span> <span class="pre">add</span> <span class="pre">the</span> <span class="pre">user</span> <span class="pre">to</span> <span class="pre">the</span> <span class="pre">docker-users</span> <span class="pre">group:</span></code></p>
+<ol class="arabic simple" start="8">
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">Computer</span> <span class="pre">Management</span></code> as <code class="docutils literal notranslate"><span class="pre">administrator</span></code>.</p></li>
+<li><p>Navigate to Local Users and Groups &gt; Groups &gt; docker-users.</p></li>
+<li><p>Right-click to add the user to the group. 4)Sign out and sign back in for the changes to take effect.</p></li>
+</ol>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-1">
+Linux</label><div class="sd-tab-content docutils">
+<p><strong>Bash shell</strong></p>
+<p>You already have it!
+Depending on which version of Linux you’re running you may need to type <code class="docutils literal notranslate"><span class="pre">bash</span></code> inside the terminal to access it (and hit enter).
+To check whether this is necessary, follow these steps:</p>
+<p>Open a terminal and type <code class="docutils literal notranslate"><span class="pre">echo</span> <span class="pre">$SHELL</span></code>.</p>
+<p>If it reads <code class="docutils literal notranslate"><span class="pre">/bin/bash</span></code> then you are all set, this should be the standard.
+If not go through these following steps:</p>
+<ol class="arabic simple">
+<li><p>To check which shell you’re using open a terminal and type <code class="docutils literal notranslate"><span class="pre">echo</span> <span class="pre">$SHELL</span></code>.</p></li>
+</ol>
+<ul class="simple">
+<li><p>If it read `/bin/zsh we will need to make the following adjustments</p></li>
+</ul>
+<ol class="arabic simple" start="2">
+<li><p>Type <code class="docutils literal notranslate"><span class="pre">cat</span> <span class="pre">/etc/shells</span></code> and hit enter</p>
+<ul class="simple">
+<li><p>under the list of accaeptable shells you should find <code class="docutils literal notranslate"><span class="pre">/bin/bash</span></code>, note down this path (in most cases it should just read /bin/bash)</p></li>
+</ul>
+</li>
+<li><p>Type <code class="docutils literal notranslate"><span class="pre">chsh</span> <span class="pre">-s</span> <span class="pre">/bin/bash</span></code> and hit enter (Note. <code class="docutils literal notranslate"><span class="pre">chsh</span></code> stands simply for “change shell”, this process is harmless and reversible, no worries. For more info see the official <a class="reference external" href="https://linux.die.net/man/1/chsh">documentation</a>))</p></li>
+<li><p>Close and reopen your terminal</p></li>
+<li><p>Verify that you’re now using the bash shell via <code class="docutils literal notranslate"><span class="pre">echo</span> <span class="pre">$SHELL</span></code></p></li>
+</ol>
+<br>
+<br>
+<p><strong>VSCode</strong></p>
+<ol class="arabic simple">
+<li><p>Go to <a class="reference external" href="https://code.visualstudio.com/">https://code.visualstudio.com/</a> and click the download button for either the .deb (Ubuntu, Debian) or the .rpm (Fedora, CentOS) file.</p></li>
+<li><p>Double-click the downloaded file to install VSCode.</p></li>
+</ol>
+<br>
+<br>
+<p><strong>GitHub</strong></p>
+<p>Go to <a class="github reference external" href="https://github.com/join/">join/</a> and follow the on-screen instructions to create an account.
+It is a good idea to associate this with your university e-mail (if you have one) as this will entitle you to sign up for the <a class="reference external" href="https://education.github.com/pack">GitHub Student Developer Pack</a> or <a class="reference external" href="https://education.github.com/teachers">GitHub for teachers</a> which come with some nice free bonuses.</p>
+<br>
+<br>
+<p><strong>Git and Git-Annex</strong>
+Should also be pre-installed! To verify run the followin command in your terminal</p>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">--version</span></code></p>
+<p>Should you see no output, an error message or a version number starting with a <code class="docutils literal notranslate"><span class="pre">1.</span></code>, you will have to install or update you Git installation. We will make use of the linux package manager <a class="reference internal" href="#"><span class="xref myst">apt</span></a> for this, Still in the <code class="docutils literal notranslate"><span class="pre">terminal</span></code> type the following and hit enter,</p>
+<p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">git</span></code></p>
+<p>After the installation process is completed, you will want to connect your local Git version to the online version-control system GitHub, to make use of the full functionalilty of Git. For this, first create an account on <a class="reference internal" href="#"><span class="xref myst">GitHub</span></a> and type the following in your terminal, replacing the highlighted text with the information you provided on GitHub:</p>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">user.name</span> <span class="pre">&lt;Your</span> <span class="pre">Name&gt;</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">user.email</span> <span class="pre">&lt;youremail&#64;domain.com&gt;</span></code></p>
+<p>Verify that your data is correct by running the same command again, but omitting the email-input:</p>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">user.email</span></code></p>
+<p>Should you want to change or override this information, simply run the above commands again, providing your corrected email.</p>
+<p>Additionally, we will want to make use of Git Annex, a version control and data managment system. Input the following into your terminal:</p>
+<p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">git-annex</span></code></p>
+<br>
+<br>
+<p><strong>DataLad</strong></p>
+<p>Our friendly all-purpose data managemnt software. Learning Datalad will make your life (professional) much easier, so we highly encourage not only following our workshop,but having a look at the masterpiece that is the <a class="reference internal" href="#"><span class="xref myst">Datalad Handbook</span></a>. They also provide a a <a class="reference external" href="https://handbook.datalad.org/en/latest/intro/installation.html#fom-macosx-pip">OS-specific installation guide</a>, but we will be changing this process up a little not only using the python package manager <a class="reference internal" href="#%5Bvenv%5D(https://docs.python.org/3/library/venv.html)"><span class="xref myst">pip</span></a> that all of you already have preinstalled with your OS (WSL in the case of Windows kids), and the provided <code class="docutils literal notranslate"><span class="pre">enviornment</span> <span class="pre">managemnt</span> <span class="pre">package</span></code> <a class="reference external" href="https://docs.python.org/3/library/venv.html">venv</a>.</p>
+<p>But before we copy and paste the following code block into your terminal, let’s look at what it actually does</p>
+<ol class="arabic">
+<li><p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">venv</span> <span class="pre">--system-site-packages</span> <span class="pre">~/env/datalad</span></code> creates a virtual environment in the directory ~/env/datalad and ensures access to globally installed Python packages</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">~/env/datalad/bin/activate</span></code> activates the virtual environment you just created, isolating your terminal session for your Datalad-related work from your baseline environment</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">datalad</span></code> now installs the datalad package into your isolated virtual environment using the Python package manager, pip.</p></li>
+<li><p>same thing, just for the datalad-container extension, which allows you to manage and run automated pipelines (Docker or singularity container) on your data</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  python -m venv --system-site-packages ~/env/datalad &amp;&amp; source ~/env/datalad/bin/activate;
+  python -m pip install datalad
+  python -m pip install datalad-container
+</pre></div>
+</div>
+</li>
+</ol>
+<p><em>Note:</em>
+From now on, whenever you want to work with Datalad, activate the virtual environment in your terminal with:</p>
+<p><code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">~/env/datalad/bin/activate</span></code></p>
+<br>
+<br>
+<p><strong>GIN.g-node interface</strong></p>
+<p>G-Node, or the “German Neuroinformatics Node” interface, provides a GDPR-compliant service for data storage and sharing. It is built on Git and git-annex, allowing easy integration into version-controlled, automated workflows. To begin, you’ll need to set up an account on the <a class="reference external" href="https://gin.g-node.org/">public GIN website</a>.</p>
+<p>If we want to upload files from our local system to GIN and make full use of our setup using Datalad and Git to manage our files, we’ll need to connect these services. This can be done by generating and sharing SSH keys between the services. SSH (Secure Shell Protocol) keys are authentication protocols that allow secure login from a local system to remote servers and services. For example, if you’re working on a local server system, you’ve likely already used SSH.</p>
+<p>Admittedly, this is a more complex process that we will not have time to cover in detail during the workshop. However, you can refer to the following resources for guidance on generating an SSH key using the terminal and adding it to your GitHub and GIN repositories:</p>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent">Generate an SSH Key</a></p></li>
+<li><p><a class="reference external" href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent">Adding a SSH Key to your GitHub Account</a></p></li>
+<li><p><a class="reference external" href="https://handbook.datalad.org/en/latest/basics/101-139-gin.html#prerequisites">Adding a SSH Key to your GIN Repository</a></p></li>
+</ol>
+<br>
+<br>
+<p><strong>Docker</strong></p>
+<p>Installing Docker Desktop is the recommended approach for all systems. You’ll need administraror (sudo) rights to follow this process.</p>
+<ol class="arabic simple">
+<li><p>Install Docker Desktop by following the official <a class="reference external" href="https://docs.docker.com/desktop/install/linux-install/">installation guide</a> for your specific distro.</p>
+<ol class="arabic simple">
+<li><p>Set up Docker’s package repository. See <code class="docutils literal notranslate"><span class="pre">step</span> <span class="pre">one</span></code> of <a class="reference external" href="https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository">Install using the apt repository</a>.</p></li>
+<li><p>Download latest package</p></li>
+<li><p>Open a terminal and install the package with apt following the instructions on the website</p></li>
+</ol>
+</li>
+<li><p>To Launch Docker Desktop run:
+`systemctl –user start docker-desktop``</p>
+<ul class="simple">
+<li><p>alternatively to enable Docker Desktop to start at sign-in run:
+<code class="docutils literal notranslate"><span class="pre">systemctl</span> <span class="pre">--user</span> <span class="pre">enable</span> <span class="pre">docker-desktop</span></code></p></li>
+</ul>
+</li>
+<li><p>Close and Re-open a new terminal and type
+<code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">run</span> <span class="pre">hello-world</span></code>.
+A brief introductory message should be printed to the screen.</p></li>
+</ol>
+</div>
+<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-2">
+MacOs</label><div class="sd-tab-content docutils">
+<p><strong>Bash shell</strong></p>
+<p>You already have it!
+Newer versions of Mac OS will rely on a differnt standard, i.e. <code class="docutils literal notranslate"><span class="pre">zsh</span></code>, so we might need a few extra steps to setup your system.</p>
+<ol class="arabic simple">
+<li><p>To check which shell you’re using open a terminal and type <code class="docutils literal notranslate"><span class="pre">echo</span> <span class="pre">$SHELL</span></code>.</p>
+<ul class="simple">
+<li><p>If it reads <code class="docutils literal notranslate"><span class="pre">/bin/bash</span></code> then you are all set!</p></li>
+<li><p>If it read `/bin/zsh we will need to make the following adjustments</p></li>
+</ul>
+</li>
+<li><p>Type <code class="docutils literal notranslate"><span class="pre">cat</span> <span class="pre">/etc/shells</span></code> and hit enter</p>
+<ul class="simple">
+<li><p>under the list of accaeptable shells you should find <code class="docutils literal notranslate"><span class="pre">/bin/bash</span></code>, note down this path (in most cases it should just read /bin/bash)</p></li>
+</ul>
+</li>
+<li><p>Type <code class="docutils literal notranslate"><span class="pre">chsh</span> <span class="pre">-s</span> <span class="pre">/bin/bash</span></code> and hit enter (Note. <code class="docutils literal notranslate"><span class="pre">chsh</span></code> stands simply for “change shell”, this process is harmless and reversible, no worries. For more info see the official <a class="reference external" href="https://linux.die.net/man/1/chsh">documentation</a>))</p></li>
+<li><p>Close and reopen your terminal</p></li>
+<li><p>Verify that you’re now using the bash shell via <code class="docutils literal notranslate"><span class="pre">echo</span> <span class="pre">$SHELL</span></code></p></li>
+</ol>
+<br>
+<br>
+<p><strong>VSCode</strong></p>
+<ol class="arabic simple">
+<li><p>Go to <a class="reference external" href="https://code.visualstudio.com/">https://code.visualstudio.com/</a> and click the download button.</p></li>
+<li><p>Unzip the downloaded file (e.g., <code class="docutils literal notranslate"><span class="pre">VSCode-darwin-stable.zip</span></code>) and moving the resulting <code class="docutils literal notranslate"><span class="pre">Visual</span> <span class="pre">Studio</span> <span class="pre">Code</span></code> file to your Applications directory.</p></li>
+</ol>
+<br>
+<br>
+<p><strong>GitHub</strong></p>
+<p>Go to <a class="github reference external" href="https://github.com/join/">join/</a> and follow the on-screen instructions to create an account.
+It is a good idea to associate this with your university e-mail (if you have one) as this will entitle you to sign up for the <a class="reference external" href="https://education.github.com/pack">GitHub Student Developer Pack</a> or <a class="reference external" href="https://education.github.com/teachers">GitHub for teachers</a> which come with some nice free bonuses.</p>
+<br>
+<br>
+<p><strong>Git and Git-Annex</strong>
+Unlike other Unix-systems MacOs sadly doesn’t usually provide a Git installation straight out of the box. So we’ll first have to install a package manager that allows us the installation of programms via the terminal.</p>
+<p>Head to the following site and simply cope-paste the highlighted bash code: <a class="reference external" href="https://brew.sh/">Homebrew</a>
+It should look something like, this:</p>
+<p><code class="docutils literal notranslate"><span class="pre">/bin/bash</span> <span class="pre">-c</span> <span class="pre">&quot;$(curl</span> <span class="pre">-fsSL</span> <span class="pre">https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)</span></code></p>
+<p>The output of the script will explain exactly what it does and ask for your confirmation at every relevant step.</p>
+<p>Once this is done, still in your terminal, input the following command:</p>
+<p><code class="docutils literal notranslate"><span class="pre">brew</span> <span class="pre">install</span> <span class="pre">git</span></code></p>
+<p>Additionally, we will want to make use of Git Annex, a version control and data managment system. Input the following into your terminal:</p>
+<p><code class="docutils literal notranslate"><span class="pre">brew</span> <span class="pre">install</span> <span class="pre">git-annex</span></code></p>
+<p>After the installation process is completed, you will want to connect your local Git version to the online version-control system GitHub, to make use of the full functionalilty of Git. For this, first create an account on <a class="reference internal" href="#"><span class="xref myst">GitHub</span></a> and type the following in your terminal, replacing the highlighted text with the information you provided on GitHub:</p>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">user.name</span> <span class="pre">&lt;Your</span> <span class="pre">Name&gt;</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">user.email</span> <span class="pre">&lt;youremail&#64;domain.com&gt;</span></code></p>
+<p>Verify that your data is correct by running the same command again, but omitting the email-input:</p>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">user.email</span></code></p>
+<p>Should you want to change or override this information, simply run the above commands again, providing your corrected email.</p>
+<br>
+<br>
+<p><strong>DataLad</strong></p>
+<p>Our friendly all-purpose data managemnt software. Learning Datalad will make your life (professional) much easier, so we highly encourage not only following our workshop,but having a look at the masterpiece that is the <a class="reference internal" href="#"><span class="xref myst">Datalad Handbook</span></a>. They also provide a a <a class="reference external" href="https://handbook.datalad.org/en/latest/intro/installation.html#fom-macosx-pip">OS-specific installation guide</a>, but we will be changing this process up a little not only using the python package manager <a class="reference internal" href="#%5Bvenv%5D(https://docs.python.org/3/library/venv.html)"><span class="xref myst">pip</span></a> that all of you already have preinstalled with your OS (WSL in the case of Windows kids), and the provided <code class="docutils literal notranslate"><span class="pre">enviornment</span> <span class="pre">managemnt</span> <span class="pre">package</span></code> <a class="reference external" href="https://docs.python.org/3/library/venv.html">venv</a>.</p>
+<p>But before we copy and paste the following code block into your terminal, let’s look at what it actually does</p>
+<ol class="arabic">
+<li><p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">venv</span> <span class="pre">--system-site-packages</span> <span class="pre">~/env/datalad</span></code> creates a virtual environment in the directory ~/env/datalad and ensures access to globally installed Python packages</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">~/env/datalad/bin/activate</span></code> activates the virtual environment you just created, isolating your terminal session for your Datalad-related work from your baseline environment</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">datalad</span></code> now installs the datalad package into your isolated virtual environment using the Python package manager, pip.</p></li>
+<li><p>same thing, just for the datalad-container extension, which allows you to manage and run automated pipelines (Docker or singularity container) on your data</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  python -m venv --system-site-packages ~/env/datalad &amp;&amp; source ~/env/datalad/bin/activate;
+  python -m pip install datalad
+  python -m pip install datalad-container
+</pre></div>
+</div>
+</li>
+</ol>
+<p><em>Note:</em>
+From now on, whenever you want to work with Datalad, activate the virtual environment in your terminal with:</p>
+<p><code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">~/env/datalad/bin/activate</span></code></p>
+<br>
+<br>
+<p><strong>GIN.g-node interface</strong></p>
+<p>G-Node, or the “German Neuroinformatics Node” interface, provides a GDPR-compliant service for data storage and sharing. It is built on Git and git-annex, allowing easy integration into version-controlled, automated workflows. To begin, you’ll need to set up an account on the <a class="reference external" href="https://gin.g-node.org/">public GIN website</a>.</p>
+<p>If we want to upload files from our local system to GIN and make full use of our setup using Datalad and Git to manage our files, we’ll need to connect these services. This can be done by generating and sharing SSH keys between the services. SSH (Secure Shell Protocol) keys are authentication protocols that allow secure login from a local system to remote servers and services. For example, if you’re working on a local server system, you’ve likely already used SSH.</p>
+<p>Admittedly, this is a more complex process that we will not have time to cover in detail during the workshop. However, you can refer to the following resources for guidance on generating an SSH key using the terminal and adding it to your GitHub and GIN repositories:</p>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent">Generate an SSH Key</a></p></li>
+<li><p><a class="reference external" href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent">Adding a SSH Key to your GitHub Account</a></p></li>
+<li><p><a class="reference external" href="https://handbook.datalad.org/en/latest/basics/101-139-gin.html#prerequisites">Adding a SSH Key to your GIN Repository</a></p></li>
+</ol>
+<br>
+<br>
+<p><strong>Docker</strong></p>
+<ol class="arabic simple">
+<li><p>Go to <a class="reference external" href="https://hub.docker.com/editions/community/docker-ce-desktop-mac/">https://hub.docker.com/editions/community/docker-ce-desktop-mac/</a> and press “Get Docker”.</p></li>
+<li><p>Open the “Docker.dmg” file that is downloaded and drag and drop the icon to the Applications folder</p></li>
+<li><p>Open the Docker application and enter your password.
+An icon will appear in the status bar in the top-left of the screen.
+Wait until it reads “Docker Desktop is now up and running!”</p></li>
+<li><p>Open a new terminal and type <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">run</span> <span class="pre">hello-world</span></code>.
+A brief introductory message should be printed to the screen.</p></li>
+</ol>
+<p>(The above step-by-step Docker instructions are distilled from <a class="reference external" href="https://docs.docker.com/docker-for-mac/install/">here</a>.
+If you have questions during the installation procedure please check that link for potential answers!)</p>
+</div>
+</div>
+<p><strong>Note</strong>: If the instructions aren’t working and you have spent more than 15-20 minutes troubleshooting on your own, reach out to the instructors or create a pull request for the assoicated <a class="reference external" href="https://github.com/DiLER-Digitell/dm_workshop_setup">GitHub Repo</a>.</p>
+<p><a class="reference external" href="https://github.com/M-earnest">Michael Ernst</a></p>
+<ul class="simple">
+<li><p>Office hours: upon request</p></li>
+<li><p>E-mail: <code class="docutils literal notranslate"><span class="pre">ernst&#64;psych.uni-frankfurt.de</span></code></p></li>
+<li><p>preferred mode of contact: via  e-mail</p></li>
+</ul>
+<div class="dropdown admonition">
+<p class="admonition-title">How do we address one another?</p>
+<p>He/Him. When contacting me, please refrain from using honoraries and formal language, “Michael” or “you” is fine as long as the content is respectful, fair, and constructive (I aim for the same when I reply).
+However, please let me know if you have a preferred way of interacting with other folks, including how you would like to be addressed, your pronouns, and the level of formality.</p>
+</div>
 </section>
 <section id="checking-your-install">
 <h2>Checking your install<a class="headerlink" href="#checking-your-install" title="Link to this heading">#</a></h2>
-</section>
-<section id="getting-the-course-content">
-<h2>Getting the course content<a class="headerlink" href="#getting-the-course-content" title="Link to this heading">#</a></h2>
-<p>Now that you have installed the required software (or not) to follow the course, it’s time to gather the respective materials.</p>
-<p>To get things up and running, please follow these steps:</p>
-<ol class="arabic simple">
-<li><p>Download the notebooks in this repository via <a class="reference internal" href="#github-repo/main.zip"><span class="xref myst">this link</span></a> and unzip them to your preferred location, e.g. <code class="docutils literal notranslate"><span class="pre">Desktop/X</span></code>.</p></li>
+<ol class="arabic">
+<li><p>open a new terminal (i.e. start the Ubuntu application if you are on windows)</p></li>
+<li><p>Input <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">--version</span></code></p>
+<ul class="simple">
+<li><p>a git version should be displayed</p></li>
+</ul>
+</li>
+<li><p>Start your Datalad environment by inputting: <code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">~/env/datalad/bin/activate</span></code></p>
+<ul class="simple">
+<li><p>the name of your environemnt should appear before your username in your terminal, e.g.</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>(base) Michaels-MacBook-Pro:dm_workshop_setup me$ source ~/env/datalad/bin/activate
+(datalad) (base) Michaels-MacBook-Pro:dm_workshop_setup me$ 
+</pre></div>
+</div>
+</li>
+<li><p>Input <code class="docutils literal notranslate"><span class="pre">datalad</span> <span class="pre">--version</span></code></p>
+<ul class="simple">
+<li><p>a datalad version should be displayed</p></li>
+</ul>
+</li>
 </ol>
+<section id="enter-the-matrix">
+<h3>Enter the matrix<a class="headerlink" href="#enter-the-matrix" title="Link to this heading">#</a></h3>
+<p>Once you have reached this point, you should be ready the enter the matrix and follow the workshop in your preferred way. Congrats, fantastic work!</p>
+<p><img alt="logo" src="https://media1.tenor.com/images/e5c21d98f56c4af119b4e14b6a9df893/tenor.gif?itemid=4011236" /><br />
+<sub><sup><sub><sup><a class="reference external" href="https://media1.tenor.com/images/e5c21d98f56c4af119b4e14b6a9df893/tenor.gif?itemid=4011236">https://media1.tenor.com/images/e5c21d98f56c4af119b4e14b6a9df893/tenor.gif?itemid=4011236</a></sup></sub></sup></sub></p>
+</section>
 </section>
 </section>
 
@@ -489,20 +868,20 @@ Microsoft Edge is not modern, despite what Microsoft might try and otherwise tel
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="outline.html"
+       href="overview.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">General outline</p>
+        <p class="prev-next-title">Course overview &amp; procedure</p>
       </div>
     </a>
     <a class="right-next"
-       href="../introduction/intro.html"
+       href="prerequisites.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Data Management</p>
+        <p class="prev-next-title">Course prerequisites</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -523,17 +902,14 @@ Microsoft Edge is not modern, despite what Microsoft might try and otherwise tel
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#required-software">Required software</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-things">General things</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#required-software">Required software</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#some-quick-general-notes-on-instructions">Some quick general notes on instructions</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#os-specific-installation-instructions">OS-specific installation instructions</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-stuff">Additional stuff</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discord">Discord</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modern-web-browser">Modern web browser</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-quick-general-notes-on-instructions">Some quick general notes on instructions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#os-specific-installation-instructions">OS-specific installation instructions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-your-install">Checking your install</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enter-the-matrix">Enter the matrix</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-your-install">Checking your install</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-the-course-content">Getting the course content</a></li>
 </ul>
   </nav></div>
 

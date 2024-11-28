@@ -1,21 +1,13 @@
 # Course overview & procedure
 
+Welcome!
 
-<img src="https://github.com/M-earnest/data_managment_os_days_marburg_2024/blob/main/lecture/static/logo.png" alt="Logo" title="Logo" width="200" height="50" />
+In this workshop, we’re going to explore some super helpful tools and ideas to make managing your research data easier. We’ll be looking at GIN G-node, BIDS, and Datalad—don’t worry if these are new to you, this session is perfect for beginner
 
-<iframe src="https://github.com/M-earnest/data_managment_os_days_marburg_2024/blob/main/lecture/static/logo.png" width="280" height="280" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://github.com/M-earnest/data_managment_os_days_marburg_2024/blob/main/lecture/static/logo.png">via GIPHY</a></p>
+This workshop content is compiled into a Jupyter Book that you can easily access. Download the book using the button at the top of this page or visit the associated [GitHub repository](https://github.com/M-earnest/data_managment_os_days_marburg_2024) to explore and download the materials.
 
-Detailed explanation of what the course is about,
+For more on our broader initiatives in digital literacy, including additional resources and examples, visit our Website: https://diler-digitell.github.io/examples.html
 
-list of content chapter
-- 
-- 
-
-How you want to go about teaching.
-
-### TL;DR
-
-Within this course we will explore X, specifically how it can and why it should be utilized within X. To do so, we will follow a "learning by doing" approach X. The steps will be the following: X, X, X. For a rather precise outline of the course, please consult the [respective section]().
 
 ### How to reach the folks in the front
 
@@ -40,17 +32,6 @@ However, please let me know if you have a preferred way of interacting with othe
 
 Below you will find important details regarding the course summarized in a compact form. Please consult and familiarize yourself with the information presented there prior to and/or within the first few days of the course. 
 
-#### When and where
-
-
-#### What about the pandemic? 
-
-Until further notice, it is assumed that the course will take place in person. This may be subject to change given everything we experienced and learned in the last years. Therefore the course is setup in a way that would allow both in person and virtual meetings. Should changes to the course format be mandated, you'll be notified ASAP.
-If you feel uncomfortable doing a busy commute to sit in a room with several other people, please let me know and I'll give my best to come up with a hybrid format. However, based on current regulations there won't be any recordings. Just in case: yes, everyone should wear a mask at all times (although this is not to be understood as an official regulation, as is not permitted by the university)!
-
-<iframe src="https://giphy.com/embed/opPuISKbzCXAFHhZFJ" width="280" height="280" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/opPuISKbzCXAFHhZFJ">via GIPHY</a></p>
-
-
 
 
 #### How do I get all the software and do I have to apply for a loan to get it?
@@ -64,48 +45,6 @@ In order to help you get all the software required for the course, a [comprehens
 
 All course materials (lecture slides, lecture demo notebooks, lab notebooks, homework assignments, etc.) will be available on the [course website](link-to-index.html), i.e. the one you're looking at right now. Everything will be completely open and free to use, thus constituting an [open educational resource](https://en.wikipedia.org/wiki/Open_educational_resources) you are **free to explore, enhance and share**. Thus, this website and all materials will also remain up for the entire duration of the course and beyond, ideally to end of the internet. The usage of this resource and the materials therein will be explained at the beginning and throughout the course.  
 
-
-#### Syllabus and Text
-
-As noted above, this page serves as the syllabus for this course, with the precise outline indicated in the [respective section](link-to-outline.html). This syllabus is subject to change; students who miss class are responsible for learning about any changes to the syllabus.
-
-Additional reading material might be added but will always be open & free with students being informed about any addition.
-
-
-#### How to get those credits?
-
-
-
-##### Exams and Assignments
-
-
-##### Grading
-
-
-
-##### Late Homework & Extension Policy
-
-`Homework assignments` will in general have a clearly stated due date, so as to manage course load clearly. Exceptions will be communicated. Please check the respective sections of this course and don't hesitate to ask questions if things are unclear. Generally `Homework assignments` must be turned in on the due date in order to to earn participation credits for the course and receive full scores.  Homework assignments must be turned in on the due date in order to receive full credit. Homework assignment turned in less than 1 week late will be accepted but the score will be penalized by 10%. Homework has to be handed in via e-mail to the [instructor](e-mail@psych.uni-frankfurt.de).
-
-Late `homework assignments` will also be accepted under _exceptional circumstances_ (e.g., medical or family emergency etc.) and at the discretion of the instructor (e.g. exceptional "gedenotes a rare event) with no penalty. This policy allowing for exceptional circumstances is definitely a right, but courtesy to be used when needed and not abused. Should you encounter such circumstances, simply email the assignment to instructor and note "late submission due to exceptional circumstances". **You do not need to provide any further justification or personally revealing information regarding the details.**
-
-
-##### Academic Honor Code
-
-You are encouraged to discuss problem sets with classmates and work on them together, but certain written submissions must reflect your own, original work. If you worked with other students on a problem set, no worries, please include their names in a statement like "I worked on this homework with XX and YY" on the assignment. If in doubt, ask the instructor.
-**Using online-ressources to help you programm is endorsed and advised, but please note that if code is copied from the internet without alterations and not clearly marked as such, this will be understood as an attempt at deception and treated as such.** The same goes for any kind of reproduction of any other published work, as per usual.
-
-
-##### Notice about missed work due to religious holy days
-
-We might miss some things, so please notify the instructors of your pending absence at least 7 days prior to the date of observance of a religious holy day. If you must miss a class, an examination, a work assignment, or a project in order to observe a religious holy day, I will give you an opportunity to complete the missed work within a reasonable time after the absence.
-
-
-### Student Accommodations
-
-- Please request a meeting as soon as possible to discuss any accommodations.
-- Please notify me as soon as possible if the material being presented in class is not accessible.
-- Please notify me if any of the physical accomodations are difficult to use or access for you.
 
 
 ### Code of conduct
