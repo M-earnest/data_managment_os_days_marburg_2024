@@ -22,9 +22,9 @@ G-Node, or the German Neuroinformatics Node, addresses the systemic challenges i
 
 Their solutions are backed by support from:
 
-    The German Federal Ministry of Education and Research
-    Ludwig-Maximilians-Universität München
-    The International Neuroinformatics Coordination Facility (INCF)
+- The German Federal Ministry of Education and Research
+- Ludwig-Maximilians-Universität München
+- The International Neuroinformatics Coordination Facility (INCF)
 
 
 ## Motivation
@@ -57,19 +57,20 @@ Let's have a quick look at how one can make use of this platform:
 
 Simply:
 
-    Create a Repository: 
-        After creating an account, users can set up a repository to host their data.
+
+
+1. Create a Repository: 
+- After creating an account, users can set up a repository to host their data.
 
 Screnshot
 
-    Add and Upload Files:
-        Files can be uploaded through the web interface, but with some restrictions:
-            Maximum file size: 10 GB
-            Maximum files per upload: 100 files
+2. Add and Upload Files:
+- Files can be uploaded through the web interface, but with some restrictions:
+    - Maximum file size: 10 GB
+    - Maximum files per upload: 100 files
 
-    Create a repository
-
-    Share the files or use the Repository as private data storage
+3. Create a repository
+- Share the files or use the Repository as private data storage
 
 
 
@@ -128,15 +129,15 @@ Data provenance refers to the comprehensive documentation of the origins, transf
 Building on this idea, DataLad is best suited for keeping track of data, facilitating sharing, and introducing reproducibility to workflows. For instance, it ensures that associated scripts, data transformations, and workflows are easy to track and re-run—particularly useful for preprocessing tasks (ever tried doing that for someone else’s dataset?).
 
 The main `features`:
-    command-line tool build on Python
-    Integrated Git and Git-annex
-    Completely domain-agnostic (so not neuroscience specific)
-    available for all major operating systems (Linux, macOS/OSX, Windows)
+- command-line tool build on Python
+- Integrated Git and Git-annex
+- Completely domain-agnostic (so not neuroscience specific)
+- available for all major operating systems (Linux, macOS/OSX, Windows)
 
 Allows:
-    - version-controlling arbitrarily large content,
-    - easily sharing and obtaining data (not data hosting),
-    - (computationally) reproducible data analysis, 
+- version-controlling arbitrarily large content,
+- easily sharing and obtaining data (not data hosting),
+- (computationally) reproducible data analysis, 
 
 ```{admonition} Question: **YODA Principles?**
 :class: dropdown  
@@ -145,21 +146,21 @@ The YODA principles provide a clear framework for organizing datasets to ensure 
 
 The Three YODA Principles:
 
-Part 1: One thing, one dataset
+**Part 1: One thing, one dataset**
 
     Modular organization: Separate raw data, preprocessed data, analysis code, and results into dedicated directories.
     Nested subdatasets: Use subdatasets for reusable components (e.g., raw datasets, analysis scripts).
     Keep input data untouched during analysis.
     Create separate projects for different analyses to avoid conflation.
 
-Part 2: Record where you got it from, and where it is now
+**Part 2: Record where you got it from, and where it is now**
 
     Track the provenance of all data and components, including sources and dependencies.
         - Use tools like datalad clone and datalad download-url to record sources and link data.
         - Use relative paths for data references in scripts to ensure portability across systems.
         - Ensure datasets are clean, modular, and shareable for collaboration or publication.
 
-Part 3: Record what you did to it, and with what
+**Part 3: Record what you did to it, and with what**
     - Capture the provenance of transformations and analyses performed on the data.
         - Use datalad run to track inputs, outputs, commands, authorship, and execution timestamps.
         - For full reproducibility, use datalad containers-run to include the computational environment in the dataset.
@@ -181,10 +182,14 @@ Follow the installation tutorial in the Setup section of this book for your spec
 Next we want to open a terminal and run the following code to install datalad and datalad-container, a handy extension, in a newly created environment called simply "datalad"
 
 But before we copy and paste the following code block into your terminal, let's look at what it actually does
-1. `python -m venv --system-site-packages ~/env/datalad` creates a virtual environment in the directory ~/env/datalad and ensures access to globally installed Python packages
-2. `source ~/env/datalad/bin/activate` activates the virtual environment you just created, isolating your terminal session for your Datalad-related work from your baseline environment
-3. `python -m pip install datalad` now installs the datalad package into your isolated virtual environment using the Python package manager, pip.
-4. same thing, just for the datalad-container extension, which allows you to manage and run automated pipelines (Docker or singularity container) on your data
+1. `python -m venv --system-site-packages ~/env/datalad`
+    - creates a virtual environment in the directory ~/env/datalad and ensures access to globally installed Python packages
+2. `source ~/env/datalad/bin/activate`
+    -  activates the virtual environment you just created, isolating your terminal session for your Datalad-related work from your baseline environment
+3. `python -m pip install datalad`
+    -  now installs the datalad package into your isolated virtual environment using the Python package manager, pip.
+4. `python -m pip install datalad-container`
+    - same thing, just for the datalad-container extension, which allows you to manage and run automated pipelines (Docker or singularity container) on your data
 
          python -m venv --system-site-packages ~/env/datalad && source ~/env/datalad/bin/activate;
          python -m pip install datalad
@@ -205,16 +210,19 @@ From here on out, most of what we will go through is explained (probably better)
 We'll start by jumping into the command line and by showing you the most basic commands that you commonly use to create a local git repository
 
 You'll encounter the following bash commands:
-- cd <folder> (change directory to another folde)
-- ls -options (list the contents of a directory)
-- mkdir (make/create a directory/folder)
-- cat [OPTIONS] [FILE_NAMES] (create or concatenate a file/files)
-- cp -filename directory/ (copy a file)
-- du -options (summarize disk usage)
+
+        cd <folder> (change directory to another folde)
+        ls -options (list the contents of a directory)
+        mkdir (make/create a directory/folder)
+        cat [OPTIONS] [FILE_NAMES] (create or concatenate a file/files)
+        cp -filename directory/ (copy a file)
+        du -options (summarize disk usage)
 
 
 
 We'll also be using the `tree` libary to visualize the contents of a directory (pip install tree) 
+
+```
 - tree -d 
     tree
     └── home
@@ -227,71 +235,68 @@ We'll also be using the `tree` libary to visualize the contents of a directory (
                 ├── ...
                 └── sub-xx
                     └── bold3T
-
+```
 
 
 See aslo the [handbook section on bash](https://handbook.datalad.org/en/latest/intro/howto.html)
 
-
-
 A normal workflow on the command line therefore may look something like this
 
 1. create a directory
-(datalad) (base) Michaels-MacBook-Pro: mkdir os_days_2024_test
-(datalad) (base) Michaels-MacBook-Pro: cd os_days_2024
+        (datalad) (base) Michaels-MacBook-Pro: mkdir os_days_2024_test
+        (datalad) (base) Michaels-MacBook-Pro: cd os_days_2024
 
 2. initialize git/make it a git repository
-(datalad) (base) Michaels-MacBook-Pro:os_days_2024_test me$ git init .
-Initialized empty Git repository in /Users/me/phd/projects/git/os_days_2024_test/.git/
+        (datalad) (base) Michaels-MacBook-Pro:os_days_2024_test me$ git init .
+        Initialized empty Git repository in /Users/me/phd/projects/git/os_days_2024_test/.git/
 
 3. check for changes
 
-(datalad) (base) Michaels-MacBook-Pro:os_days_2024_test me$ ls -lah
-total 0
-drwxr-xr-x   3 me  staff    96B Nov 27 18:40 .
-drwxr-xr-x  42 me  staff   1.3K Nov 27 18:39 ..
-drwxr-xr-x   9 me  staff   288B Nov 27 18:40 .git
+        (datalad) (base) Michaels-MacBook-Pro:os_days_2024_test me$ ls -lah
+        total 0
+        drwxr-xr-x   3 me  staff    96B Nov 27 18:40 .
+        drwxr-xr-x  42 me  staff   1.3K Nov 27 18:39 ..
+        drwxr-xr-x   9 me  staff   288B Nov 27 18:40 .git
 
 4. Check what git is tracking
 
-(datalad) (base) Michaels-MacBook-Pro:os_days_2024_test me$ git status
-On branch main
+        (datalad) (base) Michaels-MacBook-Pro:os_days_2024_test me$ git status
+        On branch main
+        No commits yet
 
-No commits yet
-
-5. create/add a file
-(datalad) (base) Michaels-MacBook-Pro:os_days_2024_test me$ cat << EOT >> notes.txt
-> The command "datalad save [-m] PATH" saves the file (modifications) to
-> history.
-> Note to self: Always use informative, concise commit messages.
-> 
-> EOT
+5. create/add a file (cat << EOT >> notes.txt appends multiple lines of text, specified between EOT delimiters, to the file notes.txt)
+        (datalad) (base) Michaels-MacBook-Pro:os_days_2024_test me$ cat << EOT >> notes.txt
+            The command "datalad save [-m] PATH" saves the file (modifications) to
+            history.
+            Note to self: Always use informative, concise commit messages.
+         
+            EOT
 
 6. track changes
-(datalad) (base) Michaels-MacBook-Pro:os_days_2024_test me$ git add notes.txt 
-(datalad) (base) Michaels-MacBook-Pro:os_days_2024_test me$ git status
-On branch main
+    (datalad) (base) Michaels-MacBook-Pro:os_days_2024_test me$ git add notes.txt 
+    (datalad) (base) Michaels-MacBook-Pro:os_days_2024_test me$ git status
+    On branch main
 
-No commits yet
+    No commits yet
 
-Changes to be committed:
-  (use "git rm --cached <file>..." to unstage)
-	new file:   notes.txt
+    Changes to be committed:
+    (use "git rm --cached <file>..." to unstage)
+        new file:   notes.txt
 
 
-And checking the staus of our git directory again
+7. And checking the staus of our git directory again
 
-(datalad) (base) Michaels-MacBook-Pro:os_days_2024_test me$ git status
-On branch main
-nothing to commit, working tree clean
+    (datalad) (base) Michaels-MacBook-Pro:os_days_2024_test me$ git status
+    On branch main
+    nothing to commit, working tree clean
 
 Not very informative, huh? But now we commited a file, we can check which logs git keeps
 
 
 9. check the git log files
 
-(datalad) (base) Michaels-MacBook-Pro:os_days_2024_test me$ git log --oneline
-75a46e4 (HEAD -> main) added notes
+    (datalad) (base) Michaels-MacBook-Pro:os_days_2024_test me$ git log --oneline
+    75a46e4 (HEAD -> main) added notes
 
 
 ## Let's look at how datalad does this

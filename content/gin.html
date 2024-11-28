@@ -448,11 +448,11 @@
 <h2>The G-Node Approach<a class="headerlink" href="#the-g-node-approach" title="Link to this heading">#</a></h2>
 <p>G-Node, or the German Neuroinformatics Node, addresses the systemic challenges in neuroscience data management by providing an ecosystem where data and tools are open, interoperable, and scalable, rather than proprietary, fragemented and dependence forming standards.</p>
 <p>Their solutions are backed by support from:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>The German Federal Ministry of Education and Research
-Ludwig-Maximilians-Universität München
-The International Neuroinformatics Coordination Facility (INCF)
-</pre></div>
-</div>
+<ul class="simple">
+<li><p>The German Federal Ministry of Education and Research</p></li>
+<li><p>Ludwig-Maximilians-Universität München</p></li>
+<li><p>The International Neuroinformatics Coordination Facility (INCF)</p></li>
+</ul>
 </section>
 <section id="motivation">
 <h2>Motivation<a class="headerlink" href="#motivation" title="Link to this heading">#</a></h2>
@@ -482,21 +482,30 @@ The International Neuroinformatics Coordination Facility (INCF)
 <p>Screenshoot</p>
 <p>Let’s have a quick look at how one can make use of this platform:</p>
 <p>Simply:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Create a Repository: 
-    After creating an account, users can set up a repository to host their data.
-</pre></div>
-</div>
+<ol class="arabic simple">
+<li><p>Create a Repository:</p></li>
+</ol>
+<ul class="simple">
+<li><p>After creating an account, users can set up a repository to host their data.</p></li>
+</ul>
 <p>Screnshot</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Add and Upload Files:
-    Files can be uploaded through the web interface, but with some restrictions:
-        Maximum file size: 10 GB
-        Maximum files per upload: 100 files
-
-Create a repository
-
-Share the files or use the Repository as private data storage
-</pre></div>
-</div>
+<ol class="arabic simple" start="2">
+<li><p>Add and Upload Files:</p></li>
+</ol>
+<ul class="simple">
+<li><p>Files can be uploaded through the web interface, but with some restrictions:</p>
+<ul>
+<li><p>Maximum file size: 10 GB</p></li>
+<li><p>Maximum files per upload: 100 files</p></li>
+</ul>
+</li>
+</ul>
+<ol class="arabic simple" start="3">
+<li><p>Create a repository</p></li>
+</ol>
+<ul class="simple">
+<li><p>Share the files or use the Repository as private data storage</p></li>
+</ul>
 </section>
 <section id="challenges">
 <h2>Challenges<a class="headerlink" href="#challenges" title="Link to this heading">#</a></h2>
@@ -540,34 +549,38 @@ The GIN CLI extends the platform’s capabilities beyond the web interface. It a
 <p>Data provenance refers to the comprehensive documentation of the origins, transformations, and journey of data throughout its lifecycle. It ensures that every step in data processing is transparently recorded, enabling both researchers and external parties to verify and reproduce results.</p>
 </div>
 <p>Building on this idea, DataLad is best suited for keeping track of data, facilitating sharing, and introducing reproducibility to workflows. For instance, it ensures that associated scripts, data transformations, and workflows are easy to track and re-run—particularly useful for preprocessing tasks (ever tried doing that for someone else’s dataset?).</p>
-<p>The main <code class="docutils literal notranslate"><span class="pre">features</span></code>:
-command-line tool build on Python
-Integrated Git and Git-annex
-Completely domain-agnostic (so not neuroscience specific)
-available for all major operating systems (Linux, macOS/OSX, Windows)</p>
-<p>Allows:
-- version-controlling arbitrarily large content,
-- easily sharing and obtaining data (not data hosting),
-- (computationally) reproducible data analysis,</p>
+<p>The main <code class="docutils literal notranslate"><span class="pre">features</span></code>:</p>
+<ul class="simple">
+<li><p>command-line tool build on Python</p></li>
+<li><p>Integrated Git and Git-annex</p></li>
+<li><p>Completely domain-agnostic (so not neuroscience specific)</p></li>
+<li><p>available for all major operating systems (Linux, macOS/OSX, Windows)</p></li>
+</ul>
+<p>Allows:</p>
+<ul class="simple">
+<li><p>version-controlling arbitrarily large content,</p></li>
+<li><p>easily sharing and obtaining data (not data hosting),</p></li>
+<li><p>(computationally) reproducible data analysis,</p></li>
+</ul>
 <div class="dropdown admonition">
 <p class="admonition-title">Question: <strong>YODA Principles?</strong></p>
 <p>The YODA principles provide a clear framework for organizing datasets to ensure reproducibility, transparency, and modularity in data analysis projects. “YODA” stands for YODAs Organigram on Data Analysis, emphasizing recursive structure and best practices for managing data and analysis. These principles address common issues in data analysis, such as chaotic directory structures, lack of version control, and reproducibility challenges due to environment or tool changes.</p>
 <p>The Three YODA Principles:</p>
-<p>Part 1: One thing, one dataset</p>
+<p><strong>Part 1: One thing, one dataset</strong></p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Modular organization: Separate raw data, preprocessed data, analysis code, and results into dedicated directories.
 Nested subdatasets: Use subdatasets for reusable components (e.g., raw datasets, analysis scripts).
 Keep input data untouched during analysis.
 Create separate projects for different analyses to avoid conflation.
 </pre></div>
 </div>
-<p>Part 2: Record where you got it from, and where it is now</p>
+<p><strong>Part 2: Record where you got it from, and where it is now</strong></p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Track the provenance of all data and components, including sources and dependencies.
     - Use tools like datalad clone and datalad download-url to record sources and link data.
     - Use relative paths for data references in scripts to ensure portability across systems.
     - Ensure datasets are clean, modular, and shareable for collaboration or publication.
 </pre></div>
 </div>
-<p>Part 3: Record what you did to it, and with what
+<p><strong>Part 3: Record what you did to it, and with what</strong>
 - Capture the provenance of transformations and analyses performed on the data.
 - Use datalad run to track inputs, outputs, commands, authorship, and execution timestamps.
 - For full reproducibility, use datalad containers-run to include the computational environment in the dataset.</p>
@@ -585,15 +598,29 @@ Create separate projects for different analyses to avoid conflation.
 <p>Next we want to open a terminal and run the following code to install datalad and datalad-container, a handy extension, in a newly created environment called simply “datalad”</p>
 <p>But before we copy and paste the following code block into your terminal, let’s look at what it actually does</p>
 <ol class="arabic">
-<li><p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">venv</span> <span class="pre">--system-site-packages</span> <span class="pre">~/env/datalad</span></code> creates a virtual environment in the directory ~/env/datalad and ensures access to globally installed Python packages</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">~/env/datalad/bin/activate</span></code> activates the virtual environment you just created, isolating your terminal session for your Datalad-related work from your baseline environment</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">datalad</span></code> now installs the datalad package into your isolated virtual environment using the Python package manager, pip.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">venv</span> <span class="pre">--system-site-packages</span> <span class="pre">~/env/datalad</span></code></p>
+<ul class="simple">
+<li><p>creates a virtual environment in the directory ~/env/datalad and ensures access to globally installed Python packages</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">~/env/datalad/bin/activate</span></code></p>
+<ul class="simple">
+<li><p>activates the virtual environment you just created, isolating your terminal session for your Datalad-related work from your baseline environment</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">datalad</span></code></p>
+<ul class="simple">
+<li><p>now installs the datalad package into your isolated virtual environment using the Python package manager, pip.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">datalad-container</span></code></p>
+<ul>
 <li><p>same thing, just for the datalad-container extension, which allows you to manage and run automated pipelines (Docker or singularity container) on your data</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  python -m venv --system-site-packages ~/env/datalad &amp;&amp; source ~/env/datalad/bin/activate;
-  python -m pip install datalad
-  python -m pip install datalad-container
-</pre></div>
-</div>
+<p>python -m venv –system-site-packages ~/env/datalad &amp;&amp; source ~/env/datalad/bin/activate;
+python -m pip install datalad
+python -m pip install datalad-container</p>
+</li>
+</ul>
 </li>
 </ol>
 <p><em>Note:</em>
@@ -606,81 +633,85 @@ From now on, whenever you want to work with Datalad, activate the virtual enviro
 <p>From here on out, most of what we will go through is explained (probably better) and in more detail in the handbook, so please reference the chapters addded at the end of each section if you want to know more:</p>
 <p>We’ll start by jumping into the command line and by showing you the most basic commands that you commonly use to create a local git repository</p>
 <p>You’ll encounter the following bash commands:</p>
-<ul class="simple">
-<li><p>cd <folder> (change directory to another folde)</p></li>
-<li><p>ls -options (list the contents of a directory)</p></li>
-<li><p>mkdir (make/create a directory/folder)</p></li>
-<li><p>cat [OPTIONS] [FILE_NAMES] (create or concatenate a file/files)</p></li>
-<li><p>cp -filename directory/ (copy a file)</p></li>
-<li><p>du -options (summarize disk usage)</p></li>
-</ul>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    cd &lt;folder&gt; (change directory to another folde)
+    ls -options (list the contents of a directory)
+    mkdir (make/create a directory/folder)
+    cat [OPTIONS] [FILE_NAMES] (create or concatenate a file/files)
+    cp -filename directory/ (copy a file)
+    du -options (summarize disk usage)
+</pre></div>
+</div>
 <p>We’ll also be using the <code class="docutils literal notranslate"><span class="pre">tree</span></code> libary to visualize the contents of a directory (pip install tree)</p>
-<ul class="simple">
-<li><p>tree -d
-tree
-└── home
-└── me
-└── awesome_datalad_project
-├── aligned
-├── code
-└── sub-01
-└── bold3T
-├── …
-└── sub-xx
-└── bold3T</p></li>
-</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>- tree -d 
+    tree
+    └── home
+        └── me
+            └── awesome_datalad_project
+                ├── aligned
+                    ├── code
+                └── sub-01
+                    └── bold3T
+                ├── ...
+                └── sub-xx
+                    └── bold3T
+</pre></div>
+</div>
 <p>See aslo the <a class="reference external" href="https://handbook.datalad.org/en/latest/intro/howto.html">handbook section on bash</a></p>
 <p>A normal workflow on the command line therefore may look something like this</p>
-<ol class="arabic simple">
+<ol class="arabic">
 <li><p>create a directory
 (datalad) (base) Michaels-MacBook-Pro: mkdir os_days_2024_test
 (datalad) (base) Michaels-MacBook-Pro: cd os_days_2024</p></li>
 <li><p>initialize git/make it a git repository
 (datalad) (base) Michaels-MacBook-Pro:os_days_2024_test me$ git init .
 Initialized empty Git repository in /Users/me/phd/projects/git/os_days_2024_test/.git/</p></li>
-<li><p>check for changes</p></li>
-</ol>
-<p>(datalad) (base) Michaels-MacBook-Pro:os_days_2024_test me$ ls -lah
-total 0
-drwxr-xr-x   3 me  staff    96B Nov 27 18:40 .
-drwxr-xr-x  42 me  staff   1.3K Nov 27 18:39 ..
-drwxr-xr-x   9 me  staff   288B Nov 27 18:40 .git</p>
-<ol class="arabic simple" start="4">
-<li><p>Check what git is tracking</p></li>
-</ol>
-<p>(datalad) (base) Michaels-MacBook-Pro:os_days_2024_test me$ git status
-On branch main</p>
-<p>No commits yet</p>
-<ol class="arabic simple" start="5">
-<li><p>create/add a file
-(datalad) (base) Michaels-MacBook-Pro:os_days_2024_test me$ cat &lt;&lt; EOT &gt;&gt; notes.txt</p></li>
-</ol>
-<blockquote>
-<div><p>The command “datalad save [-m] PATH” saves the file (modifications) to
+<li><p>check for changes</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span> (datalad) (base) Michaels-MacBook-Pro:os_days_2024_test me$ ls -lah
+ total 0
+ drwxr-xr-x   3 me  staff    96B Nov 27 18:40 .
+ drwxr-xr-x  42 me  staff   1.3K Nov 27 18:39 ..
+ drwxr-xr-x   9 me  staff   288B Nov 27 18:40 .git
+</pre></div>
+</div>
+</li>
+<li><p>Check what git is tracking</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span> (datalad) (base) Michaels-MacBook-Pro:os_days_2024_test me$ git status
+ On branch main
+ No commits yet
+</pre></div>
+</div>
+</li>
+<li><p>create/add a file (cat &lt;&lt; EOT &gt;&gt; notes.txt appends multiple lines of text, specified between EOT delimiters, to the file notes.txt)
+(datalad) (base) Michaels-MacBook-Pro:os_days_2024_test me$ cat &lt;&lt; EOT &gt;&gt; notes.txt
+The command “datalad save [-m] PATH” saves the file (modifications) to
 history.
 Note to self: Always use informative, concise commit messages.</p>
-<p>EOT</p>
-</div></blockquote>
-<ol class="arabic simple" start="6">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>     EOT
+</pre></div>
+</div>
+</li>
 <li><p>track changes
 (datalad) (base) Michaels-MacBook-Pro:os_days_2024_test me<span class="math notranslate nohighlight">\( git add notes.txt 
-(datalad) (base) Michaels-MacBook-Pro:os_days_2024_test me\)</span> git status
-On branch main</p></li>
-</ol>
+ (datalad) (base) Michaels-MacBook-Pro:os_days_2024_test me\)</span> git status
+On branch main</p>
 <p>No commits yet</p>
 <p>Changes to be committed:
 (use “git rm –cached <file>…” to unstage)
 new file:   notes.txt</p>
-<p>And checking the staus of our git directory again</p>
+</li>
+<li><p>And checking the staus of our git directory again</p>
 <p>(datalad) (base) Michaels-MacBook-Pro:os_days_2024_test me$ git status
 On branch main
 nothing to commit, working tree clean</p>
-<p>Not very informative, huh? But now we commited a file, we can check which logs git keeps</p>
-<ol class="arabic simple" start="9">
-<li><p>check the git log files</p></li>
+</li>
 </ol>
+<p>Not very informative, huh? But now we commited a file, we can check which logs git keeps</p>
+<ol class="arabic" start="9">
+<li><p>check the git log files</p>
 <p>(datalad) (base) Michaels-MacBook-Pro:os_days_2024_test me$ git log –oneline
 75a46e4 (HEAD -&gt; main) added notes</p>
+</li>
+</ol>
 </section>
 <section id="let-s-look-at-how-datalad-does-this">
 <h2>Let’s look at how datalad does this<a class="headerlink" href="#let-s-look-at-how-datalad-does-this" title="Link to this heading">#</a></h2>
