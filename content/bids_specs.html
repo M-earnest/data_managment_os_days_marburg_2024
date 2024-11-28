@@ -403,6 +403,7 @@
 </ul>
 </li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tsv-files">TSV files</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#descriptions-tsv">descriptions.tsv</a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Programming</a></li>
 </ul>
 </li>
@@ -564,6 +565,23 @@ OPTIONAL: Users and/or tools might find it useful to have this information</p>
 <li><p>columns: fields</p></li>
 <li><p>rows: data points</p></li>
 </ul>
+<section id="descriptions-tsv">
+<h5>descriptions.tsv<a class="headerlink" href="#descriptions-tsv" title="Link to this heading">#</a></h5>
+<ul class="simple">
+<li><p>it is optional but recommended</p></li>
+<li><p>documents processing steps in derivative dataset</p></li>
+</ul>
+<p><strong>columns</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">desc_id</span></code>
+- unique labels that are used within the dataset
+- sub-001_task-listening_desc-preproc_eeg.edf: here <code class="docutils literal notranslate"><span class="pre">desc-preproc</span></code> would be a desc_id, but within the column you would just write: <code class="docutils literal notranslate"><span class="pre">preproc</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">description</span></code>
+- free-form text
+- describes desc_id labels
+- has to appear second</p></li>
+</ul>
+</section>
 <section id="id1">
 <h5>Programming<a class="headerlink" href="#id1" title="Link to this heading">#</a></h5>
 <p><strong>Python</strong></p>
@@ -690,6 +708,7 @@ LICENSE
 </ul>
 </li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tsv-files">TSV files</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#descriptions-tsv">descriptions.tsv</a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Programming</a></li>
 </ul>
 </li>
