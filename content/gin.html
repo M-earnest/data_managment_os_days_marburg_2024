@@ -391,9 +391,14 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation">Motivation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spotlight-on-the-gin-platform">Spotlight on the GIN Platform</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#feels-familiar-excursion-github">Feels familiar? Excursion GitHub</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gin-the-manual-way">GIN: The manual way</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#challenges">Challenges</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gin-cli">GIN Cli</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gin-the-manual-way">GIN: The manual way</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-repository">1. Create a Repository:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#add-and-upload-files">2. Add and Upload Files:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">3. Create a repository</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#challenges">Challenges</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gin-cli">GIN Cli</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#datalad">DataLad</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">Setup</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#usage-how-to-get-started">Usage/How to get started:</a><ul class="nav section-nav flex-column">
@@ -403,6 +408,8 @@
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#check-what-git-is-tracking">4. Check what git is tracking</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-add-a-file-cat-eot-notes-txt-appends-multiple-lines-of-text-specified-between-eot-delimiters-to-the-file-notes-txt">5. create/add a file (cat &lt;&lt; EOT &gt;&gt; notes.txt appends multiple lines of text, specified between EOT delimiters, to the file notes.txt)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#track-changes">6. track changes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#and-checking-the-staus-of-our-git-directory-again">7. And checking the staus of our git directory again</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#check-the-git-log-files">9. check the git log files</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#let-s-look-at-how-datalad-does-this">Let’s look at how datalad does this</a><ul class="nav section-nav flex-column">
@@ -468,9 +475,13 @@
 <p>BIDS gives us a starting point for standardizing neuroscience data, but this alone does not ensure acessability or reproducibility. We need tools that go beyond mere standards.</p>
 <section id="intro-the-problem-at-hand">
 <h2>Intro: The Problem at Hand<a class="headerlink" href="#intro-the-problem-at-hand" title="Link to this heading">#</a></h2>
-<p>Neuroscience is one of the most interdisciplinary fields of research, encompassing various domains—cognitive science, neuroimaging, electrophysiology, computational modeling, and more. Each discipline brings unique methodologies, data modalities, and storage needs. This diversity often leads to siloed practices, making collaboration and data reuse unnecisarrly difficult. Compounding the issue is the variety of standards — when they exist— and the proprietary formats imposed by commercial tools. Let’s be clear we can not simply rely on social contracts, i.e. self inforcement practices.</p>
-<p>Social contracts, like the voluntary adoption of the BIDS standard, help align practices within labs or collaborations but fall short of addressing larger, systemic problems. To bridge gaps between disciplines or even between labs using different conventions, we need robust technical solutions that embed reproducibility, accessibility, and scalability into data management workflows.</p>
-<p>Neuroscience is a diverse field, compromoised of many disciplines each concerned with different aspects of how the human brain operates. This has resulted in a number of different data modalities, storage needs and incorporated standards. To bridge the gaps between disciplines (or even differnt lab standards) we can not simply rely on social contracts (e.g. self inforcement of the BIDS standard). G-Node or the “German German Neuroinformatics Node (G-Node)” provides their own take on this issue:</p>
+<p>Neuroscience is one of the most interdisciplinary fields of research, encompassing various domains</p>
+<p>— cognitive science, neuroimaging, electrophysiology, computational modeling, and more.</p>
+<p>Each discipline brings unique methodologies, data modalities, and storage needs. This diversity often leads to siloed practices, making collaboration and data reuse unnecisarrly difficult.</p>
+<p>Compounding the issue is the variety of standards — when they exist— and the proprietary formats imposed by commercial tools. Let’s be clear we can not simply rely on social contracts, i.e. self inforcement practices.</p>
+<p>Social contracts, like the voluntary adoption of the BIDS standard, help align practices within labs or collaborations but fall short of addressing larger, systemic problems.</p>
+<p>To bridge gaps between disciplines or even between labs using different conventions, we need robust technical solutions that embed reproducibility, accessibility, and scalability into data management workflows.</p>
+<p>G-Node or the “German German Neuroinformatics Node (G-Node)” provides their own take on this issue:</p>
 </section>
 <section id="the-g-node-approach">
 <h2>The G-Node Approach<a class="headerlink" href="#the-g-node-approach" title="Link to this heading">#</a></h2>
@@ -507,19 +518,17 @@
 </section>
 <section id="gin-the-manual-way">
 <h2>GIN: The manual way<a class="headerlink" href="#gin-the-manual-way" title="Link to this heading">#</a></h2>
-<p>Screenshoot</p>
 <p>Let’s have a quick look at how one can make use of this platform:</p>
 <p>Simply:</p>
-<ol class="arabic simple">
-<li><p>Create a Repository:</p></li>
-</ol>
+<section id="create-a-repository">
+<h3>1. Create a Repository:<a class="headerlink" href="#create-a-repository" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>After creating an account, users can set up a repository to host their data.</p></li>
 </ul>
-<p>Screnshot</p>
-<ol class="arabic simple" start="2">
-<li><p>Add and Upload Files:</p></li>
-</ol>
+<p><img alt="gin repo creation " src="../_images/create_repo_gin.png" /></p>
+</section>
+<section id="add-and-upload-files">
+<h3>2. Add and Upload Files:<a class="headerlink" href="#add-and-upload-files" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Files can be uploaded through the web interface, but with some restrictions:</p>
 <ul>
@@ -528,22 +537,22 @@
 </ul>
 </li>
 </ul>
-<ol class="arabic simple" start="3">
-<li><p>Create a repository</p></li>
-</ol>
+</section>
+<section id="id1">
+<h3>3. Create a repository<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Share the files or use the Repository as private data storage</p></li>
 </ul>
 </section>
 <section id="challenges">
-<h2>Challenges<a class="headerlink" href="#challenges" title="Link to this heading">#</a></h2>
+<h3>Challenges<a class="headerlink" href="#challenges" title="Link to this heading">#</a></h3>
 <p>While straightforward, this approach has some significant downsides:
 Slow Upload Speeds: For larger datasets, the upload process can be painfully slow.
 Limited Scalability: Working within the file size and number constraints quickly becomes cumbersome.
 Data Provenance?</p>
 </section>
 <section id="gin-cli">
-<h2>GIN Cli<a class="headerlink" href="#gin-cli" title="Link to this heading">#</a></h2>
+<h3>GIN Cli<a class="headerlink" href="#gin-cli" title="Link to this heading">#</a></h3>
 <p>The platform also provides tools for more advanced interaction, allowing for faster and automated data-transfer. The Gin Command-Line Interface (GIN CLI):
 The GIN CLI extends the platform’s capabilities beyond the web interface. It allows users to efficiently manage repositories, sync data, and track changes using Git and Git-Annex under the hood. You’ll find a simple tutorial here: <a class="reference external" href="https://gin.g-node.org/G-Node/Info/wiki/GIN+CLI+Usage+Tutorial">https://gin.g-node.org/G-Node/Info/wiki/GIN+CLI+Usage+Tutorial</a></p>
 <p>In essence it’s a very simple approach:</p>
@@ -554,6 +563,7 @@ The GIN CLI extends the platform’s capabilities beyond the web interface. It a
 <li><p>upload your data to the associated repository via the CLI using the command:
 <code class="docutils literal notranslate"><span class="pre">gin</span> <span class="pre">upload</span> <span class="pre">--options</span></code></p></li>
 </ul>
+</section>
 </section>
 <section id="datalad">
 <h2>DataLad<a class="headerlink" href="#datalad" title="Link to this heading">#</a></h2>
@@ -734,20 +744,22 @@ From now on, whenever you want to work with Datalad, activate the virtual enviro
         new file:   notes.txt
 </pre></div>
 </div>
-<ol class="arabic" start="7">
-<li><p>And checking the staus of our git directory again</p>
-<p>$ git status
-On branch main
-nothing to commit, working tree clean</p>
-</li>
-</ol>
+</section>
+<section id="and-checking-the-staus-of-our-git-directory-again">
+<h3>7. And checking the staus of our git directory again<a class="headerlink" href="#and-checking-the-staus-of-our-git-directory-again" title="Link to this heading">#</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    $ git status
+    On branch main
+    nothing to commit, working tree clean
+</pre></div>
+</div>
 <p>Not very informative, huh? But now we commited a file, we can check which logs git keeps</p>
-<ol class="arabic" start="9">
-<li><p>check the git log files</p>
-<p>$ git log –oneline
-75a46e4 (HEAD -&gt; main) added notes</p>
-</li>
-</ol>
+</section>
+<section id="check-the-git-log-files">
+<h3>9. check the git log files<a class="headerlink" href="#check-the-git-log-files" title="Link to this heading">#</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    $ git log --oneline
+    75a46e4 (HEAD -&gt; main) added notes
+</pre></div>
+</div>
 </section>
 </section>
 <section id="let-s-look-at-how-datalad-does-this">
@@ -765,14 +777,16 @@ nothing to commit, working tree clean</p>
 </pre></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-la</span></code> command lists all the content in a given directory, e.g.</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    ls -la
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
 
-    total 8
-    drwxr-xr-x   5 me  staff   160 Nov 25 19:08 .
-    drwxr-xr-x  32 me  staff  1024 Nov 25 19:08 ..
-    drwxr-xr-x   4 me  staff   128 Nov 25 19:08 .datalad
-    drwxr-xr-x  14 me  staff   448 Nov 25 19:08 .git
-    -rw-r--r--   1 me  staff   115 Nov 25 19:08 .gitattributes
+        <span class="n">ls</span> <span class="o">-</span><span class="n">la</span>
+
+        <span class="n">total</span> <span class="mi">8</span>
+        <span class="n">drwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span>   <span class="mi">5</span> <span class="n">me</span>  <span class="n">staff</span>   <span class="mi">160</span> <span class="n">Nov</span> <span class="mi">25</span> <span class="mi">19</span><span class="p">:</span><span class="mi">08</span> <span class="o">.</span>
+        <span class="n">drwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span>  <span class="mi">32</span> <span class="n">me</span>  <span class="n">staff</span>  <span class="mi">1024</span> <span class="n">Nov</span> <span class="mi">25</span> <span class="mi">19</span><span class="p">:</span><span class="mi">08</span> <span class="o">..</span>
+        <span class="n">drwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span>   <span class="mi">4</span> <span class="n">me</span>  <span class="n">staff</span>   <span class="mi">128</span> <span class="n">Nov</span> <span class="mi">25</span> <span class="mi">19</span><span class="p">:</span><span class="mi">08</span> <span class="o">.</span><span class="n">datalad</span>
+        <span class="n">drwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span>  <span class="mi">14</span> <span class="n">me</span>  <span class="n">staff</span>   <span class="mi">448</span> <span class="n">Nov</span> <span class="mi">25</span> <span class="mi">19</span><span class="p">:</span><span class="mi">08</span> <span class="o">.</span><span class="n">git</span>
+        <span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="o">--</span><span class="n">r</span><span class="o">--</span>   <span class="mi">1</span> <span class="n">me</span>  <span class="n">staff</span>   <span class="mi">115</span> <span class="n">Nov</span> <span class="mi">25</span> <span class="mi">19</span><span class="p">:</span><span class="mi">08</span> <span class="o">.</span><span class="n">gitattributes</span>
 </pre></div>
 </div>
 <div class="dropdown admonition">
@@ -785,7 +799,8 @@ nothing to commit, working tree clean</p>
     .gitattributes: configuration file specifying rules for tracking files (e.g., text with Git, large files with Git-Annex).
 </pre></div>
 </div>
-<p>We can have a look at these with e.g. the <code class="docutils literal notranslate"><span class="pre">nano</span></code> cli-editor:</p>
+<br>
+We can have a look at these with e.g. the `nano` cli-editor:
 <p><code class="docutils literal notranslate"><span class="pre">nano</span> <span class="pre">.gitattributes</span></code></p>
 <div class="dropdown admonition">
 <p class="admonition-title">.gitattributes files</p>
@@ -805,16 +820,11 @@ annex.largefiles=((mimeencoding=binary)and(largerthan=0))
 </pre></div>
 </div>
 </div>
+<br>
 </section>
 </section>
 <section id="datalad-save">
 <h2>Datalad save<a class="headerlink" href="#datalad-save" title="Link to this heading">#</a></h2>
-<figure class="align-default" id="markdown-fig">
-<a class="mb-1 reference internal image-reference" href="http://datasets.datalad.org/datalad/datalad-course/pics/local_wf.svg"><img alt="fishy" class="mb-1" src="http://datasets.datalad.org/datalad/datalad-course/pics/local_wf.svg" style="width: 300px;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 1 </span><span class="caption-text">Save meaninful changes <code class="docutils literal notranslate"><span class="pre">via</span> <span class="pre">datalad</span> <span class="pre">save</span></code></span><a class="headerlink" href="#markdown-fig" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
 <p>Now we’ve set up the basic directory strtucture and specfiied which files are supposed to be tracked. How do we actually track our changes thoug? Compared to the Git approach above this is simpler, as DataLad does most of the work for us. Let’s create another notes.txt file.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    cat &lt;&lt; EOT &gt;&gt; notes.txt
     &gt; The command &quot;datalad save [-m] PATH&quot; saves the file (modifications) to
@@ -863,25 +873,30 @@ A clean dataset status is good practice.</p></li>
 </section>
 <section id="datlad-install-datalad-clone">
 <h2>Datlad install/Datalad clone<a class="headerlink" href="#datlad-install-datalad-clone" title="Link to this heading">#</a></h2>
-<p>To aquire a dataset from the internet we have multiple options, e.g. via the <a class="reference external" href="http://docs.datalad.org/en/stable/generated/man/datalad-clone.html">datalad clone</a> command. This not only allows for faster downloads, but additionally creates necessary metadat. We’re avoiding, e.g. “I don’t really remember where I got the data from; Yeah, whatever version should be fine. Oh they updated the dataset since 2008?” etc.:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    $ datalad clone --dataset https://github.com/psychoinformatics-de/studyforrest-data-phase2.git
-
-        install(ok): example-dicom-functional (dataset)                                                                                                                                                                       
-        add(ok): example-dicom-functional (dataset)                                                                                                                                                                           
-        add(ok): .gitmodules (file)                                                                                                                                                                                           
-        save(ok): . (dataset)                                                                                                                                                                                                 
-        add(ok): .gitmodules (file)                                                                                                                                                                                           
-        save(ok): . (dataset)                                                                                                                                                                                                 
-        action summary:                                                                                                                                                                                                       
-        add (ok: 3)
-        install (ok: 1)
-        save (ok: 2)
+<p>To aquire a dataset from the internet we have multiple options, e.g. via the <a class="reference external" href="http://docs.datalad.org/en/stable/generated/man/datalad-clone.html">datalad clone</a> command.</p>
+<p>This not only allows for faster downloads, but additionally creates necessary metadata. We’re avoiding, e.g. <em>“I don’t really remember where I got the data from; Yeah, whatever version should be fine. Oh they updated the dataset since 2008?”</em> etc.:</p>
+<br>
+```
+    $ datalad clone --dataset https://github.com/psychoinformatics-de/studyforrest-data-phase2.git
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    install(ok): example-dicom-functional (dataset)                                                                                                                                                                       
+    add(ok): example-dicom-functional (dataset)                                                                                                                                                                           
+    add(ok): .gitmodules (file)                                                                                                                                                                                           
+    save(ok): . (dataset)                                                                                                                                                                                                 
+    add(ok): .gitmodules (file)                                                                                                                                                                                           
+    save(ok): . (dataset)                                                                                                                                                                                                 
+    action summary:                                                                                                                                                                                                       
+    add (ok: 3)
+    install (ok: 1)
+    save (ok: 2)
 </pre></div>
 </div>
-<div class="dropdown admonition">
-<p class="admonition-title">Dataset Nesting - the  –dataset flag</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">--dataset</span></code> flag indicated that we want to creat a nested dataset into our already existing Dataset. This <code class="docutils literal notranslate"><span class="pre">Superdataset</span></code>, contains the information that a subdataset exists though – the subdataset is registered in the superdataset. Why do you think this could be useful? More info on nesting in the <a class="reference external" href="https://handbook.datalad.org/en/latest/basics/101-106-nesting.html">Datalad Handbook</a></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+```{admonition} Dataset Nesting - the  --dataset flag
+:class: dropdown
+The `--dataset` flag indicated that we want to creat a nested dataset into our already existing Dataset. This `Superdataset`, contains the information that a subdataset exists though – the subdataset is registered in the superdataset. Why do you think this could be useful? More info on nesting in the [Datalad Handbook](https://handbook.datalad.org/en/latest/basics/101-106-nesting.html)
+</pre></div>
 </div>
+<br>
 <p>Let’s take a look at our newly aquired dataset. The directory structure seems familiar, check with <code class="docutils literal notranslate"><span class="pre">tree</span></code></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>- tree -d 
     .
@@ -931,10 +946,10 @@ A clean dataset status is good practice.</p></li>
 <p>The file size seems suspicious. Thinking back, why was the download of the dataset this quick?</p>
 <section id="git-annex">
 <h3>Git Annex<a class="headerlink" href="#git-annex" title="Link to this heading">#</a></h3>
-<figure class="align-default" id="id1">
+<figure class="align-default" id="markdown-fig">
 <a class="mb-1 reference internal image-reference" href="https://git-annex.branchable.com/logo_small.png"><img alt="fishy" class="mb-1" src="https://git-annex.branchable.com/logo_small.png" style="width: 300px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 2 </span><span class="caption-text">Git-Annex</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text">Git-Annex</span><a class="headerlink" href="#markdown-fig" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p><a class="reference external" href="https://git-annex.branchable.com/">Git-Annex</a> and by extension Datalad by deault indexes large files, but doesn’t necessarily download them, so these files are not actually present. The present symbolic links or Simlinks only point to where a file lies. Git-annex allows us to store the relevnat structure of a dataset and only retrieve whatever we need, when we need it. Why could this be of use to neuroscientists?</p>
@@ -983,7 +998,7 @@ A clean dataset status is good practice.</p></li>
 <figure class="align-default" id="id2">
 <a class="mb-1 reference internal image-reference" href="http://datasets.datalad.org/datalad/datalad-course/pics/run_prov.svg"><img alt="fishy" class="mb-1" src="http://datasets.datalad.org/datalad/datalad-course/pics/run_prov.svg" style="width: 300px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 3 </span><span class="caption-text">DataLad Run - reproducbile execution inclduing metafile generation</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text">DataLad Run - reproducbile execution inclduing metafile generation</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Now we could start working with this directory. Given that we want datalad to provide us with our metadata on what was done to our data, by whome, given which script etc. we can make use of the <code class="docutils literal notranslate"><span class="pre">datalad</span> <span class="pre">run</span></code> command. This makes use of the native <code class="docutils literal notranslate"><span class="pre">Python</span></code> integration and let´s us run python scripts on our data directories. We will deomstrate this shortly, but let’s get some actual data first.</p>
@@ -1161,13 +1176,13 @@ https://raw.githubusercontent.com/datalad-handbook/resources/master/get_brainmas
 <figure class="align-default" id="id4">
 <a class="mb-1 reference internal image-reference" href="https://handbook.datalad.org/en/latest/_images/publishing_network_publishgin.svg"><img alt="fishy" class="mb-1" src="https://handbook.datalad.org/en/latest/_images/publishing_network_publishgin.svg" style="width: 300px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 4 </span><span class="caption-text">Datalad connecnts local and remote systems, build on Git and Git-Annex</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 3 </span><span class="caption-text">Datalad connecnts local and remote systems, build on Git and Git-Annex</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <section id="create-an-repository-on-gin">
 <h3>1. Create an repository on GIN<a class="headerlink" href="#create-an-repository-on-gin" title="Link to this heading">#</a></h3>
 <p>Simply click the <code class="docutils literal notranslate"><span class="pre">+</span></code> at the top of GIN webpage and select `new repository``</p>
-<p>create_repo_gin  screenshot</p>
+<p><img alt="alt text" src="../_images/create_repo_gin1.png" /></p>
 </section>
 <section id="create-a-local-repository-using-datalad">
 <h3>2. Create a local repository using DataLad<a class="headerlink" href="#create-a-local-repository-using-datalad" title="Link to this heading">#</a></h3>
@@ -1180,7 +1195,7 @@ https://raw.githubusercontent.com/datalad-handbook/resources/master/get_brainmas
 <h3>3. Add the remote repository<a class="headerlink" href="#add-the-remote-repository" title="Link to this heading">#</a></h3>
 <p>Now the two systems will necessarily have to know about each other for this to work, right? We’ll let them know that they are related via the <code class="docutils literal notranslate"><span class="pre">datalad</span> <span class="pre">siblings</span> <span class="pre">add</span></code> command. A sibling acts like a remote in Git, allowing you to push or pull data.</p>
 <p>First we need to et the specifici SSH url from our remote repository, e.g. <a class="reference external" href="mailto:git&#37;&#52;&#48;gin&#46;g-node&#46;org">git<span>&#64;</span>gin<span>&#46;</span>g-node<span>&#46;</span>org</a>:/ernstm/os_test_days_gin.git</p>
-<p><img alt=" " src="../_images/gin_ssh.png" />Screenshot</p>
+<p><img alt="gin ssh " src="../_images/gin_ssh.png" /></p>
 <p>And running the command:
 <span class="math notranslate nohighlight">\( cd os_test_days_gin
     \)</span> datalad siblings add -d .   –name gin   –url <a class="reference external" href="mailto:git&#37;&#52;&#48;gin&#46;g-node&#46;org">git<span>&#64;</span>gin<span>&#46;</span>g-node<span>&#46;</span>org</a>:/ernstm/os_test_days_gin.git</p>
@@ -1202,15 +1217,15 @@ https://raw.githubusercontent.com/datalad-handbook/resources/master/get_brainmas
 </pre></div>
 </div>
 <p>Checking online our files have indeed been uploaded, but If you inspect the differnt <code class="docutils literal notranslate"><span class="pre">branches</span></code> at the top of your repo, you should see some new entries, e.g. a Git-Annex branch that has been recently updated</p>
-<a class="mb-1 reference internal image-reference" href="../_images/gin_upload.png"><img alt="gin branches" class="mb-1 align-center" src="../_images/gin_upload.png" style="width: 300px;" /></a>
+<a class="mb-1 reference internal image-reference" href="../_images/gin_upload.png"><img alt="gin branches" class="mb-1 align-center" src="../_images/gin_upload.png" style="width: 600px;" /></a>
 </section>
 </section>
 <section id="datalad-container">
 <h2>Datalad-container<a class="headerlink" href="#datalad-container" title="Link to this heading">#</a></h2>
 <figure class="align-default" id="id5">
-<a class="mb-1 reference internal image-reference" href="http://datasets.datalad.org/datalad/datalad-course/pics/containers-run.svg"><img alt="fishy" class="mb-1" src="http://datasets.datalad.org/datalad/datalad-course/pics/containers-run.svg" style="width: 300px;" /></a>
+<a class="mb-1 reference internal image-reference" href="http://datasets.datalad.org/datalad/datalad-course/pics/containers-run.svg"><img alt="fishy" class="mb-1" src="http://datasets.datalad.org/datalad/datalad-course/pics/containers-run.svg" style="width: 800px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 5 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">datalad</span> <span class="pre">containers-run</span></code> allows you to run reproducible workflows with included metadata</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 4 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">datalad</span> <span class="pre">containers-run</span></code> allows you to run reproducible workflows with included metadata</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Looking at the official <a class="reference external" href="https://registry.hub.docker.com/r/repronim/containers">Repronim container on DockerHub</a>, tells us most of the info we need to run the container and conveniently also provides a short datalad workflow to demonstrate their implementation e.g.</p>
@@ -1384,9 +1399,14 @@ ds000003-qc $ datalad containers-run \
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation">Motivation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spotlight-on-the-gin-platform">Spotlight on the GIN Platform</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#feels-familiar-excursion-github">Feels familiar? Excursion GitHub</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gin-the-manual-way">GIN: The manual way</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#challenges">Challenges</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gin-cli">GIN Cli</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gin-the-manual-way">GIN: The manual way</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-repository">1. Create a Repository:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#add-and-upload-files">2. Add and Upload Files:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">3. Create a repository</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#challenges">Challenges</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gin-cli">GIN Cli</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#datalad">DataLad</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">Setup</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#usage-how-to-get-started">Usage/How to get started:</a><ul class="nav section-nav flex-column">
@@ -1396,6 +1416,8 @@ ds000003-qc $ datalad containers-run \
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#check-what-git-is-tracking">4. Check what git is tracking</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-add-a-file-cat-eot-notes-txt-appends-multiple-lines-of-text-specified-between-eot-delimiters-to-the-file-notes-txt">5. create/add a file (cat &lt;&lt; EOT &gt;&gt; notes.txt appends multiple lines of text, specified between EOT delimiters, to the file notes.txt)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#track-changes">6. track changes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#and-checking-the-staus-of-our-git-directory-again">7. And checking the staus of our git directory again</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#check-the-git-log-files">9. check the git log files</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#let-s-look-at-how-datalad-does-this">Let’s look at how datalad does this</a><ul class="nav section-nav flex-column">

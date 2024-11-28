@@ -6,16 +6,22 @@ BIDS gives us a starting point for standardizing neuroscience data, but this alo
 
 ## Intro: The Problem at Hand
 
-Neuroscience is one of the most interdisciplinary fields of research, encompassing various domains—cognitive science, neuroimaging, electrophysiology, computational modeling, and more. Each discipline brings unique methodologies, data modalities, and storage needs. This diversity often leads to siloed practices, making collaboration and data reuse unnecisarrly difficult. Compounding the issue is the variety of standards — when they exist— and the proprietary formats imposed by commercial tools. Let's be clear we can not simply rely on social contracts, i.e. self inforcement practices.
+Neuroscience is one of the most interdisciplinary fields of research, encompassing various domains 
 
-Social contracts, like the voluntary adoption of the BIDS standard, help align practices within labs or collaborations but fall short of addressing larger, systemic problems. To bridge gaps between disciplines or even between labs using different conventions, we need robust technical solutions that embed reproducibility, accessibility, and scalability into data management workflows.
+— cognitive science, neuroimaging, electrophysiology, computational modeling, and more.
 
-Neuroscience is a diverse field, compromoised of many disciplines each concerned with different aspects of how the human brain operates. This has resulted in a number of different data modalities, storage needs and incorporated standards. To bridge the gaps between disciplines (or even differnt lab standards) we can not simply rely on social contracts (e.g. self inforcement of the BIDS standard). G-Node or the "German German Neuroinformatics Node (G-Node)" provides their own take on this issue:
+Each discipline brings unique methodologies, data modalities, and storage needs. This diversity often leads to siloed practices, making collaboration and data reuse unnecisarrly difficult. 
 
+Compounding the issue is the variety of standards — when they exist— and the proprietary formats imposed by commercial tools. Let's be clear we can not simply rely on social contracts, i.e. self inforcement practices.
+
+Social contracts, like the voluntary adoption of the BIDS standard, help align practices within labs or collaborations but fall short of addressing larger, systemic problems. 
+
+To bridge gaps between disciplines or even between labs using different conventions, we need robust technical solutions that embed reproducibility, accessibility, and scalability into data management workflows.
+
+G-Node or the "German German Neuroinformatics Node (G-Node)" provides their own take on this issue:
 
 
 ## The G-Node Approach
-
 
 
 G-Node, or the German Neuroinformatics Node, addresses the systemic challenges in neuroscience data management by providing an ecosystem where data and tools are open, interoperable, and scalable, rather than proprietary, fragemented and dependence forming standards. 
@@ -35,6 +41,7 @@ We care, beacuse they provide tools for:
 We'll be taking a look at one of their solutions, the G-Node Interface:
 - G-Node Interface is a data hosting and sharing plattform, build on git and git-annex infrastructure. Meaning that version control and efficient data management are at the heart of the plattform.
 
+
 ## Spotlight on the GIN Platform
 
 One of G-Node’s flagship tools is the GIN (G-Node Infrastructure) platform. GIN is a open-source web-based plattform to host and share data, with server solutions compatible with the GDPR. Unlike traditional cloud storage or proprietary solutions, GIN integrates provenance and transparency directly into its workflows. GIN builds on Git and Git-Annex for these purposes.
@@ -51,38 +58,35 @@ Same version control system (Git; version tracking, multiple branch solutions et
 
 ## GIN: The manual way
 
-Screenshoot
 
 Let's have a quick look at how one can make use of this platform:
 
 Simply:
 
-
-
-1. Create a Repository: 
+### 1. Create a Repository: 
 - After creating an account, users can set up a repository to host their data.
 
-Screnshot
+![gin repo creation ](../static/create_repo_gin.png)
 
-2. Add and Upload Files:
+### 2. Add and Upload Files:
 - Files can be uploaded through the web interface, but with some restrictions:
     - Maximum file size: 10 GB
     - Maximum files per upload: 100 files
 
-3. Create a repository
+### 3. Create a repository
 - Share the files or use the Repository as private data storage
 
 
 
 
-## Challenges
+### Challenges
 While straightforward, this approach has some significant downsides:
         Slow Upload Speeds: For larger datasets, the upload process can be painfully slow.
         Limited Scalability: Working within the file size and number constraints quickly becomes cumbersome.
         Data Provenance?
 
 
-## GIN Cli
+### GIN Cli
 
 The platform also provides tools for more advanced interaction, allowing for faster and automated data-transfer. The Gin Command-Line Interface (GIN CLI):
     The GIN CLI extends the platform’s capabilities beyond the web interface. It allows users to efficiently manage repositories, sync data, and track changes using Git and Git-Annex under the hood. You'll find a simple tutorial here: https://gin.g-node.org/G-Node/Info/wiki/GIN+CLI+Usage+Tutorial
@@ -272,19 +276,19 @@ A normal workflow on the command line therefore may look something like this
             new file:   notes.txt
 
 
-7. And checking the staus of our git directory again
+### 7. And checking the staus of our git directory again
 
-    $ git status
-    On branch main
-    nothing to commit, working tree clean
+        $ git status
+        On branch main
+        nothing to commit, working tree clean
 
 Not very informative, huh? But now we commited a file, we can check which logs git keeps
 
 
-9. check the git log files
+### 9. check the git log files
 
-    $ git log --oneline
-    75a46e4 (HEAD -> main) added notes
+        $ git log --oneline
+        75a46e4 (HEAD -> main) added notes
 
 
 ## Let's look at how datalad does this
@@ -292,7 +296,9 @@ Not very informative, huh? But now we commited a file, we can check which logs g
 
 ### Datalad create
 
+
 The [`datalad create`](http://docs.datalad.org/en/stable/generated/man/datalad-create.html) statement automatically sets up a basic directory structure. The snytax is as following:
+
 
 ` datalad create -c PROC NAME`
 
@@ -306,6 +312,9 @@ The `-c` flag provides info on the configuration, with which the directory is cr
 
 The `ls -la` command lists all the content in a given directory, e.g.
 
+```
+
+
         ls -la
 
         total 8
@@ -314,6 +323,7 @@ The `ls -la` command lists all the content in a given directory, e.g.
         drwxr-xr-x   4 me  staff   128 Nov 25 19:08 .datalad
         drwxr-xr-x  14 me  staff   448 Nov 25 19:08 .git
         -rw-r--r--   1 me  staff   115 Nov 25 19:08 .gitattributes
+```
 
 ```{admonition} Question: What does the dot before the filenames possible mean?
 :class: dropdown
@@ -327,6 +337,7 @@ We see that `datalad create` has provided us with an empty directory, but gives 
         .git: Git repository metadata directory for version control. (as we've seen with git init)
         .gitattributes: configuration file specifying rules for tracking files (e.g., text with Git, large files with Git-Annex).
 
+<br>
 We can have a look at these with e.g. the `nano` cli-editor:
 
 `nano .gitattributes`
@@ -352,13 +363,14 @@ These are hidden files, specifying what git and  Git-Annex respectively are supp
 
 
 
-
+<br>
 
 ## Datalad save
 
 :::{figure-md} markdown-fig
 <img src="http://datasets.datalad.org/datalad/datalad-course/pics/local_wf.svg" alt="fishy" class="mb-1" width="300px">
 
+<br>
 Save meaninful changes `via datalad save`
 :::
 
@@ -414,8 +426,11 @@ Not very formative, but what we would also expect from the `git status` command.
 
 ## Datlad install/Datalad clone
 
-To aquire a dataset from the internet we have multiple options, e.g. via the [datalad clone](http://docs.datalad.org/en/stable/generated/man/datalad-clone.html) command. This not only allows for faster downloads, but additionally creates necessary metadat. We're avoiding, e.g. "I don't really remember where I got the data from; Yeah, whatever version should be fine. Oh they updated the dataset since 2008?" etc.:
+To aquire a dataset from the internet we have multiple options, e.g. via the [datalad clone](http://docs.datalad.org/en/stable/generated/man/datalad-clone.html) command. 
 
+This not only allows for faster downloads, but additionally creates necessary metadata. We're avoiding, e.g. *"I don't really remember where I got the data from; Yeah, whatever version should be fine. Oh they updated the dataset since 2008?"* etc.:
+
+<br>
 ```
     $ datalad clone --dataset https://github.com/psychoinformatics-de/studyforrest-data-phase2.git
 
@@ -437,6 +452,8 @@ The `--dataset` flag indicated that we want to creat a nested dataset into our a
 ```
 
 
+
+<br>
 
 Let's take a look at our newly aquired dataset. The directory structure seems familiar, check with `tree`
 
@@ -567,7 +584,6 @@ DataLad Run - reproducbile execution inclduing metafile generation
 
 
 Now we could start working with this directory. Given that we want datalad to provide us with our metadata on what was done to our data, by whome, given which script etc. we can make use of the `datalad run` command. This makes use of the native `Python` integration and let´s us run python scripts on our data directories. We will deomstrate this shortly, but let's get some actual data first.
-
 
 
 
@@ -779,7 +795,8 @@ Datalad connecnts local and remote systems, build on Git and Git-Annex
 
 Simply click the `+` at the top of GIN webpage and select `new repository``
 
-create_repo_gin  screenshot
+
+![alt text](create_repo_gin.png)
 
 
 ### 2. Create a local repository using DataLad
@@ -797,7 +814,7 @@ Now the two systems will necessarily have to know about each other for this to w
 
 First we need to et the specifici SSH url from our remote repository, e.g. git@gin.g-node.org:/ernstm/os_test_days_gin.git
 
-![ ](gin_ssh.png)Screenshot
+![gin ssh ](gin_ssh.png)
 
 
 And running the command:
@@ -836,7 +853,7 @@ Checking online our files have indeed been uploaded, but If you inspect the diff
 ```{image} ../static/gin_upload.png
 :alt: gin branches
 :class: mb-1
-:width: 300px
+:width: 600px
 :align: center
 ```
 
@@ -846,7 +863,7 @@ Checking online our files have indeed been uploaded, but If you inspect the diff
 
 
 :::{figure-md} markdown-fig
-<img src="http://datasets.datalad.org/datalad/datalad-course/pics/containers-run.svg" alt="fishy" class="mb-1" width="300px">
+<img src="http://datasets.datalad.org/datalad/datalad-course/pics/containers-run.svg" alt="fishy" class="mb-1" width="800px">
 
 `datalad containers-run` allows you to run reproducible workflows with included metadata
 :::
