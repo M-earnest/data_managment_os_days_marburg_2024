@@ -434,7 +434,7 @@ This not only allows for faster downloads, but additionally creates necessary me
 <br>
 
 ```
-    $ datalad clone --dataset https://github.com/psychoinformatics-de/studyforrest-data-phase2.git
+    datalad clone https://github.com/psychoinformatics-de/studyforrest-data-phase2.git
 
         install(ok): example-dicom-functional (dataset)                                                                                                                                                                       
         add(ok): example-dicom-functional (dataset)                                                                                                                                                                           
@@ -696,6 +696,7 @@ Let’s add this container to our available ennvironments using [datalad contain
 ```
 
 Let's break this command down, we call `datalad containers-run`, defining our nilearn container, specifying `input` and `output`, as well as our executable `python` to run our previously downloaded script.
+
 ```
     -n nilearn:
     Specifies the nilearn container for running the computation, pre-configured for neuroimaging tasks.
@@ -822,8 +823,12 @@ First we need to et the specifici SSH url from our remote repository, e.g. git@g
 
 
 And running the command:
-    $ cd os_test_days_gin
-    $ datalad siblings add -d .   --name gin   --url git@gin.g-node.org:/ernstm/os_test_days_gin.git
+
+```
+    cd os_test_days_gin
+    datalad siblings add -d .   --name gin   --url git@gin.g-node.org:/ernstm/os_test_days_gin.git
+
+````
 
 Let's look at the syntac more closely datalad siblings add:
 
@@ -968,14 +973,13 @@ DataLad provides a robust framework for managing published datasets by enabling 
 
 ## Additinal Information/Tutorials
 
-[Full Course on Research Data Management using Datalad](https://handbook.datalad.org/en/latest/usecases/openneuro.html)
+[Full Course on Research Data Management using Datalad](https://psychoinformatics-de.github.io/rdm-course/)
 
 [Quick course; Running and publishing Data using Datalad](https://handbook.datalad.org/en/latest/code_from_chapters/yale.html)
 
     
 ## OpenNeuro
 
-https://handbook.datalad.org/en/latest/_images/openneuro.png
 
 An alternate solution that is very common  of datasets is [OpenNeuro](https://openneuro.org/). 
 
