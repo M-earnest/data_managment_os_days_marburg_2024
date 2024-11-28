@@ -82,6 +82,7 @@ and modality specific files, which are dependent on the specifics of the hard- a
 
 
 #### MNE BIDS
+
 - https://mne.tools/mne-bids/stable/auto_examples/convert_mne_sample.html#sphx-glr-auto-examples-convert-mne-sample-py
 
 
