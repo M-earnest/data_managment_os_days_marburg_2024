@@ -1,11 +1,16 @@
-root: general_information/index
+root: general_information/overview
 format: jb-book
 chapters:
 - file: general_information/overview
-- file: general_information/outline
 - file: general_information/setup
+- file: general_information/prerequisites
 - file: introduction/intro
+  sections:
+    - file: general_information/prerequisites/intro_to_shell 
+    - file: general_information/prerequisites/excercise_intro_git.ipynb
+    - file: general_information/prerequisites/github.ipynb
 - file: content/bids_specs.md
 - file: content/gin.md
 - file: general_information/CoC
 - file: general_information/dei
+
