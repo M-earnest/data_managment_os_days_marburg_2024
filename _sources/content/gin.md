@@ -153,6 +153,7 @@ The Three YODA Principles:
         - Ensure datasets are clean, modular, and shareable for collaboration or publication.
 
 **Part 3: Record what you did to it, and with what**
+
     - Capture the provenance of transformations and analyses performed on the data.
         - Use datalad run to track inputs, outputs, commands, authorship, and execution timestamps.
         - For full reproducibility, use datalad containers-run to include the computational environment in the dataset.
@@ -432,6 +433,7 @@ This not only allows for faster downloads, but additionally creates necessary me
 
 <br>
 ```
+
     $ datalad clone --dataset https://github.com/psychoinformatics-de/studyforrest-data-phase2.git
 
         install(ok): example-dicom-functional (dataset)                                                                                                                                                                       
@@ -444,11 +446,13 @@ This not only allows for faster downloads, but additionally creates necessary me
         add (ok: 3)
         install (ok: 1)
         save (ok: 2)
+
 ```
 
 ```{admonition} Dataset Nesting - the  --dataset flag
 :class: dropdown
 The `--dataset` flag indicated that we want to creat a nested dataset into our already existing Dataset. This `Superdataset`, contains the information that a subdataset exists though – the subdataset is registered in the superdataset. Why do you think this could be useful? More info on nesting in the [Datalad Handbook](https://handbook.datalad.org/en/latest/basics/101-106-nesting.html)
+
 ```
 
 

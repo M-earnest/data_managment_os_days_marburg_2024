@@ -623,10 +623,12 @@ Create separate projects for different analyses to avoid conflation.
     - Ensure datasets are clean, modular, and shareable for collaboration or publication.
 </pre></div>
 </div>
-<p><strong>Part 3: Record what you did to it, and with what</strong>
-- Capture the provenance of transformations and analyses performed on the data.
-- Use datalad run to track inputs, outputs, commands, authorship, and execution timestamps.
-- For full reproducibility, use datalad containers-run to include the computational environment in the dataset.</p>
+<p><strong>Part 3: Record what you did to it, and with what</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>- Capture the provenance of transformations and analyses performed on the data.
+    - Use datalad run to track inputs, outputs, commands, authorship, and execution timestamps.
+    - For full reproducibility, use datalad containers-run to include the computational environment in the dataset.
+</pre></div>
+</div>
 </div>
 </section>
 <section id="setup">
@@ -890,8 +892,9 @@ A clean dataset status is good practice.</p></li>
 <p>This not only allows for faster downloads, but additionally creates necessary metadata. We’re avoiding, e.g. <em>“I don’t really remember where I got the data from; Yeah, whatever version should be fine. Oh they updated the dataset since 2008?”</em> etc.:</p>
 <br>
 ```
-    $ datalad clone --dataset https://github.com/psychoinformatics-de/studyforrest-data-phase2.git
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    install(ok): example-dicom-functional (dataset)                                                                                                                                                                       
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ datalad clone --dataset https://github.com/psychoinformatics-de/studyforrest-data-phase2.git
+
+    install(ok): example-dicom-functional (dataset)                                                                                                                                                                       
     add(ok): example-dicom-functional (dataset)                                                                                                                                                                           
     add(ok): .gitmodules (file)                                                                                                                                                                                           
     save(ok): . (dataset)                                                                                                                                                                                                 
@@ -907,6 +910,7 @@ A clean dataset status is good practice.</p></li>
 ```{admonition} Dataset Nesting - the  --dataset flag
 :class: dropdown
 The `--dataset` flag indicated that we want to creat a nested dataset into our already existing Dataset. This `Superdataset`, contains the information that a subdataset exists though – the subdataset is registered in the superdataset. Why do you think this could be useful? More info on nesting in the [Datalad Handbook](https://handbook.datalad.org/en/latest/basics/101-106-nesting.html)
+
 </pre></div>
 </div>
 <br>
