@@ -51,7 +51,7 @@ https://bids-specification.readthedocs.io/en/stable/common-principles.html
 
 ### Folder structure
 Within BIDS folders have to be structured and named in a specific way. The hierarchy is as follows:
-project
+**project**
 - code
 - derivatives
 - phenotype
@@ -81,13 +81,13 @@ Sessions are named as follows:
 exchange *session label* with a label that is unique (can be numbers and/or letters)
 #### datatype 
 This folder shows the modality of the acquired data, like EEG data (`eeg`), behavioral data (`beh`), fMRI data (`func`) or much more. You can find a list of modalities and their naming conventions [here](https://bids-website.readthedocs.io/en/latest/getting_started/folders_and_files/folders.html)
-### raw
-
-
-
 ### derivatives
-
-
+Derivatives are 
+- processed data:
+      - fundamentally different to the source data and therefore is likely to differ in datatypes from the original (e.g. masks and segmentations).
+- preprocessed data:
+      - fundamentally similar to source data (e.g removing of artifacts etc.)
+There are several ways to organize them within your folder structure. For more information have a look [here](https://bids-website.readthedocs.io/en/latest/getting_started/folders_and_files/derivatives.html)
 ## metadata
 
 
