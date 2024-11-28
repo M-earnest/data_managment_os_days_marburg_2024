@@ -95,18 +95,6 @@ In essence it's a very simple approach:
     `gin upload --options`
 
 
-    
-## OpenNeuro
-
-https://handbook.datalad.org/en/latest/_images/openneuro.png
-
-An alternate solution that is very common  of datasets is [OpenNeuro](https://openneuro.org/). 
-
-OpenNeuro is an repository solution to host and share BIDS-compatible datasets, ensuring both accessibility and compliance with community standards. It is designed with the idea of data indexing and searching in mind therefore, but it doesn't provide the option of non-public datasets.
-
-It is therfore particularly valuable for researchers looking to share data broadly with the community. It ensures reproducibility by providing an accessible, long-term data repository, implementing automatic BIDS Validation, but lacks the version control system unerlying GIN.
-
-Find more info in the [Datalad aHandbook section on OpenNeuro](https://handbook.datalad.org/en/latest/usecases/openneuro.html)
 
 ## DataLad
 
@@ -242,51 +230,51 @@ See aslo the [handbook section on bash](https://handbook.datalad.org/en/latest/i
 
 A normal workflow on the command line therefore may look something like this
 
-1. create a directory
-        (datalad) (base) Michaels-MacBook-Pro: mkdir os_days_2024_test
-        (datalad) (base) Michaels-MacBook-Pro: cd os_days_2024
+### 1. create a directory
+        $ mkdir os_days_2024_test
+        $ cd os_days_2024
 
-2. initialize git/make it a git repository
-        (datalad) (base) Michaels-MacBook-Pro:os_days_2024_test me$ git init .
+### 2. initialize git/make it a git repository
+         $ git init .
         Initialized empty Git repository in /Users/me/phd/projects/git/os_days_2024_test/.git/
 
-3. check for changes
+### 3. check for changes
 
-        (datalad) (base) Michaels-MacBook-Pro:os_days_2024_test me$ ls -lah
+        $ ls -lah
         total 0
         drwxr-xr-x   3 me  staff    96B Nov 27 18:40 .
         drwxr-xr-x  42 me  staff   1.3K Nov 27 18:39 ..
         drwxr-xr-x   9 me  staff   288B Nov 27 18:40 .git
 
-4. Check what git is tracking
+### 4. Check what git is tracking
 
-        (datalad) (base) Michaels-MacBook-Pro:os_days_2024_test me$ git status
+        $ git status
         On branch main
         No commits yet
 
-5. create/add a file (cat << EOT >> notes.txt appends multiple lines of text, specified between EOT delimiters, to the file notes.txt)
-        (datalad) (base) Michaels-MacBook-Pro:os_days_2024_test me$ cat << EOT >> notes.txt
+### 5. create/add a file (cat << EOT >> notes.txt appends multiple lines of text, specified between EOT delimiters, to the file notes.txt)
+        $ cat << EOT >> notes.txt
             The command "datalad save [-m] PATH" saves the file (modifications) to
             history.
             Note to self: Always use informative, concise commit messages.
          
             EOT
 
-6. track changes
-    (datalad) (base) Michaels-MacBook-Pro:os_days_2024_test me$ git add notes.txt 
-    (datalad) (base) Michaels-MacBook-Pro:os_days_2024_test me$ git status
-    On branch main
+### 6. track changes
+         $ git add notes.txt 
+         $ git status
+        On branch main
 
-    No commits yet
+        No commits yet
 
-    Changes to be committed:
-    (use "git rm --cached <file>..." to unstage)
-        new file:   notes.txt
+        Changes to be committed:
+        (use "git rm --cached <file>..." to unstage)
+            new file:   notes.txt
 
 
 7. And checking the staus of our git directory again
 
-    (datalad) (base) Michaels-MacBook-Pro:os_days_2024_test me$ git status
+    $ git status
     On branch main
     nothing to commit, working tree clean
 
@@ -295,7 +283,7 @@ Not very informative, huh? But now we commited a file, we can check which logs g
 
 9. check the git log files
 
-    (datalad) (base) Michaels-MacBook-Pro:os_days_2024_test me$ git log --oneline
+    $ git log --oneline
     75a46e4 (HEAD -> main) added notes
 
 
@@ -310,15 +298,16 @@ The [`datalad create`](http://docs.datalad.org/en/stable/generated/man/datalad-c
 
 In the command line this may look something like this:
 
-        (datalad) (base) Michaels-MacBook-Pro:git me$ datalad create -c text2git os_days_demo
+        $ datalad create -c text2git os_days_demo
 
 The `-c` flag provides info on the configuration, with which the directory is created. More on that later, here we simpyl chose `text2git`. Any Idea what this might possibly do? Let's have a look at the directory.
 
-        (datalad) (base) Michaels-MacBook-Pro:git me$ cd os_days_demo
+        $ cd os_days_demo
 
 The `ls -la` command lists all the content in a given directory, e.g.
 
-        (datalad) (base) Michaels-MacBook-Pro:os_days_demo me$ ls -la
+        ls -la
+
         total 8
         drwxr-xr-x   5 me  staff   160 Nov 25 19:08 .
         drwxr-xr-x  32 me  staff  1024 Nov 25 19:08 ..
@@ -340,7 +329,27 @@ We see that `datalad create` has provided us with an empty directory, but gives 
 
 We can have a look at these with e.g. the `nano` cli-editor:
 
-`nano .gitattributes:`
+`nano .gitattributes`
+
+
+```{admonition} .gitattributes files
+:class: dropdown
+These are hidden files, specifying what git and  Git-Annex respectively are supposed to track. Here Git-Annex tracks binary files larger than 0 bytes while excluding files in .git directories. In detail:
+
+    annex.backend=MD5E
+        Specifies the hash backend for file storage in Git-Annex.
+        Uses MD5E hash (MD5 with file extension) for identifying files.
+
+    **/.git* annex.largefiles=nothing
+        Excludes .git files from being handled by Git-Annex.
+        Ensures .git files remain under Git's regular version control.
+
+    annex.largefiles=((mimeencoding=binary)and(largerthan=0))
+        Defines criteria for files handled by Git-Annex.
+        Targets files with binary mime encoding.
+        Includes files larger than 0 bytes.
+```
+
 
 
 
@@ -348,13 +357,11 @@ We can have a look at these with e.g. the `nano` cli-editor:
 ## Datalad save
 
 :::{figure-md} markdown-fig
-<img src="http://datasets.datalad.org/datalad/datalad-course/pics/local_wf.svg" alt="fishy" class="bg-primary mb-1" width="300px">
+<img src="http://datasets.datalad.org/datalad/datalad-course/pics/local_wf.svg" alt="fishy" class="mb-1" width="300px">
 
 Save meaninful changes `via datalad save`
 :::
 
-
-check license datalade
 
 Now we've set up the basic directory strtucture and specfiied which files are supposed to be tracked. How do we actually track our changes thoug? Compared to the Git approach above this is simpler, as DataLad does most of the work for us. Let's create another notes.txt file.
 
@@ -365,21 +372,32 @@ Now we've set up the basic directory strtucture and specfiied which files are su
         > 
         > EOT
 
+
+
+#### Datlad status 
+
+Let's look at the status of our dataset, i.e. what has changed?
+
+         $ datalad status
+        untracked: notes.txt (file)
+
+So there seem to be some untrack changes, let's add and commit, just like in git, yes?
+
 The `datalad save` command combines a git add and a git commit , and therefore, the commit message is specified with datalad save.
 
         datalad save -m "added notes.txt"
 
-
-### Datlad status 
-
-Let's look at the status of our dataset, i.e. what has changed?
-
-        (datalad) (base) Michaels-MacBook-Pro:os_days_2024_test me$ datalad status
+And let's look at the staus again
+         $ datalad status
         nothing to save, working tree clean
 
 Not very formative, but what we would also expect from the `git status` command. If we want to see the actual changes we can make use of Git, as every datalad dataset is also a git directory:
 
-        (datalad) (base) Michaels-MacBook-Pro:os_days_2024_test me$ git log --oneline
+         $ git log --oneline
+
+         df63d9c (HEAD -> main) added notes.txt
+         6d7160c [DATALAD] new dataset
+
 
 
 ## Summary - Local version control
@@ -396,45 +414,94 @@ Not very formative, but what we would also expect from the `git status` command.
 
 ## Datlad install/Datalad clone
 
-To aquire a dataset from the internet we have multiple options, e.g. via the datalad clone command. This not only allows for faster downloads, but additionally creates necessary metadat. We're avoiding, e.g. "I don't really remember where I got the data from; Yeah, whatever version should be fine. Oh they updated the dataset since 2008?" etc.:
+To aquire a dataset from the internet we have multiple options, e.g. via the [datalad clone](http://docs.datalad.org/en/stable/generated/man/datalad-clone.html) command. This not only allows for faster downloads, but additionally creates necessary metadat. We're avoiding, e.g. "I don't really remember where I got the data from; Yeah, whatever version should be fine. Oh they updated the dataset since 2008?" etc.:
 
-    (datalad) (base) Michaels-MacBook-Pro:os_days_demo me$ datalad clone --dataset . https://github.com/datalad/example-dicom-functional.git 
+```
+    $ datalad clone --dataset https://github.com/psychoinformatics-de/studyforrest-data-phase2.git
+
+        install(ok): example-dicom-functional (dataset)                                                                                                                                                                       
+        add(ok): example-dicom-functional (dataset)                                                                                                                                                                           
+        add(ok): .gitmodules (file)                                                                                                                                                                                           
+        save(ok): . (dataset)                                                                                                                                                                                                 
+        add(ok): .gitmodules (file)                                                                                                                                                                                           
+        save(ok): . (dataset)                                                                                                                                                                                                 
+        action summary:                                                                                                                                                                                                       
+        add (ok: 3)
+        install (ok: 1)
+        save (ok: 2)
+```
+
+```{admonition} Dataset Nesting - the  --dataset flag
+:class: dropdown
+The `--dataset` flag indicated that we want to creat a nested dataset into our already existing Dataset. This `Superdataset`, contains the information that a subdataset exists though – the subdataset is registered in the superdataset. Why do you think this could be useful? More info on nesting in the [Datalad Handbook](https://handbook.datalad.org/en/latest/basics/101-106-nesting.html)
+```
 
 
-Let's take a look at our newly aquired dataset.
 
-    (datalad) (base) Michaels-MacBook-Pro:bids-data me$ datalad subdatasets
-    subdataset(ok): inputs/rawdata (dataset)
+Let's take a look at our newly aquired dataset. The directory structure seems familiar, check with `tree`
 
-So datalad subdatasets implies the existenc of a superdataset, contains the information that a subdataset exists though – the subdataset is registered in the superdataset. This is why the subdataset name exists as a directory.
+```
+- tree -d 
+    .
+    ├── code
+    │   ├── rawdata_conversion
+    │   └── stimulus
+    │       ├── movie
+    │       ├── movie_localizer
+    │       │   └── videos
+    │       ├── retinotopic_mapping
+    │       │   ├── songs
+    │       │   └── videos
+    │       └── visualarea_localizer
+    │           └── img
+    │               └── lcm
+    ├── src
+    │   └── lab-eyetracking
+    ├── stimuli
+    │   ├── movie_localizer -> ../code/stimulus/movie_localizer/videos/
+    │   ├── retinotopic_mapping -> ../code/stimulus/retinotopic_mapping/videos
+    │   └── visualarea_localizer -> ../code/stimulus/visualarea_localizer/img/
+    ├── sub-01
+    │   ├── ses-localizer
+    │   │   └── func
+    │   └── ses-movie
+    │       └── func
 
-The directory structure seems familiar
+```
 
-    tree-d
+Let's look into this more, we'll use `cd` to look at some of our subject data.
 
+```
+    cd sub-01/ses-localizer/func/
+    ls 
+
+    sub-01_ses-localizer_task-movielocalizer_run-1_bold.json
+    sub-01_ses-localizer_task-movielocalizer_run-1_bold.nii.gz
+    ...
+
+```
 
 So whats a nii.gz file? How big do you expext those to be? 
 
 Let's inspect closer. We will print the size of the directory and the contained files in human readable form, using the bash `du (disk usage)` command.
 
-`du -sh`
+    du -sh
+
+     B	.
 
 The file size seems suspicious. Thinking back, why was the download of the dataset this quick?
 
-
-- tree -d 
-    - object tree
 
 
 ### Git Annex
 
 :::{figure-md} markdown-fig
-<img src="https://git-annex.branchable.com/logo_small.png" alt="fishy" class="bg-primary mb-1" width="300px">
+<img src="https://git-annex.branchable.com/logo_small.png" alt="fishy" class="mb-1" width="300px">
 
 Git-Annex
 :::
 
-[Git-Annex](https://git-annex.branchable.com/) and by extension Datalad only indexes large files, but doesn't actually download themk, so these files are not actually present. The present symbolic links or Simlinks only point to where a file lies. Git-annex allows us to store the relevnat structure of a dataset and only retrieve whatever we need, when we need it. Why could this be of use to neuroscientists?
+[Git-Annex](https://git-annex.branchable.com/) and by extension Datalad by deault indexes large files, but doesn't necessarily download them, so these files are not actually present. The present symbolic links or Simlinks only point to where a file lies. Git-annex allows us to store the relevnat structure of a dataset and only retrieve whatever we need, when we need it. Why could this be of use to neuroscientists?
 
 ```{admonition} Git-Annex - Definition
 :class: dropdown
@@ -443,13 +510,30 @@ git-annex allows managing large files with git, without storing the file content
 ```
 
 
-
 ## Datalad get - Retrieving data
 
 
 To actually download or retrieve files we will use the `datalad get` command specifying the excat file we want:
 
-datalad get sub-01/ses-localizer/func/sub-01_ses-localizer_task-objectcategories_run-*.nii.gz
+```
+    datalad get sub-01/ses-localizer/func/sub-01_ses-localizer_task-objectcategories_run-*.nii.gz
+        get(ok): sub-01/ses-localizer/func/sub-01_ses-localizer_task-objectcategories_run-2_bold.nii.gz (file) [from mddatasrc...]                                                                                            
+        get(ok): sub-01/ses-localizer/func/sub-01_ses-localizer_task-objectcategories_run-4_bold.nii.gz (file) [from mddatasrc...]                                                                                            
+        get(ok): sub-01/ses-localizer/func/sub-01_ses-localizer_task-objectcategories_run-3_bold.nii.gz (file) [from mddatasrc...]
+        get(ok): sub-01/ses-localizer/func/sub-01_ses-localizer_task-objectcategories_run-4_defacemask.nii.gz (file) [from mddatasrc...]
+        get(ok): sub-01/ses-localizer/func/sub-01_ses-localizer_task-objectcategories_run-3_defacemask.nii.gz (file) [from mddatasrc...]
+        get(ok): sub-01/ses-localizer/func/sub-01_ses-localizer_task-objectcategories_run-2_defacemask.nii.gz (file) [from mddatasrc...]
+        get(ok): sub-01/ses-localizer/func/sub-01_ses-localizer_task-objectcategories_run-1_bold.nii.gz (file) [from mddatasrc...]
+        get(ok): sub-01/ses-localizer/func/sub-01_ses-localizer_task-objectcategories_run-1_defacemask.nii.gz (file) [from mddatasrc...]
+        action summary:
+        get (ok: 8)
+
+```
+
+As we can see, Datalad now uses the existing structure to download the data we've queried. But it looks like only the `nifti` (nii.gz)  files were downloaded. What about the `.json` files we saw before?
+
+
+To get all files associated with the dataset recursively. We can run `datalad get -r`. But think closely before running this, what is the expected behabivor? What happens when we are dealing with massive datasets?
 
 ```{admonition} Question: How do we check the filesize again?
 :class: dropdown
@@ -457,28 +541,30 @@ datalad get sub-01/ses-localizer/func/sub-01_ses-localizer_task-objectcategories
 
 ```
 
-To get all files associated with the dataset recursively. We can run `datalad get -r`. But think closely before running this, what is the expected behabivor? What happens when we are dealing with massive datasets?
-
 ### Datlad drop - Removing data
 
 In the same vein, you might want to remove raw data that has already been processed. This can be done via the `datalad drop` command.
 
-datalad drop sub-01/ses-localizer/func/sub-01_ses-localizer_task-objectcategories_run-4_bold.nii.gz
+```
+    datalad drop sub-01/ses-localizer/func/sub-01_ses-localizer_task-objectcategories_run-4_bold.nii.gz
+    drop(ok): sub-01/ses-localizer/func/sub-01_ses-localizer_task-objectcategories_run-4_bold.nii.gz (file)
+```
 
-And checking if everythins is still there?
 
-- tree
-
-what about the size of our directory?
+what about the size of our directory now?
 
 `du -sh`
 
 
 
-
 ## Datalad Run: Reproducible execution
 
-http://datasets.datalad.org/datalad/datalad-course/pics/run_prov.svg
+:::{figure-md} markdown-fig
+<img src="http://datasets.datalad.org/datalad/datalad-course/pics/run_prov.svg" alt="fishy" class="mb-1" width="300px">
+
+DataLad Run - reproducbile execution inclduing metafile generation
+:::
+
 
 Now we could start working with this directory. Given that we want datalad to provide us with our metadata on what was done to our data, by whome, given which script etc. we can make use of the `datalad run` command. This makes use of the native `Python` integration and let´s us run python scripts on our data directories. We will deomstrate this shortly, but let's get some actual data first.
 
@@ -488,31 +574,37 @@ Now we could start working with this directory. Given that we want datalad to pr
 
 ## Summary - Dataset consumption
 
-    datalad clone installs a dataset.
-        It can be installed “on its own”: Specify the source (url, path, ...) of the dataset, and an optional path for it to be installed to.
-    Only small files and metadata about file availability are present locally after an install.
-        To retrieve actual file content of larger files, datalad get downloads large file content on demand.
-    Content can be dropped to save disk space with datalad drop.
-        Do this only if content can be easily reobtained.
-    Datasets preserve their history.
-        In nested datasets, the superdataset records only the version state of the subdataset. 
+- datalad clone installs a dataset.
+    It can be installed “on its own”: Specify the source (url, path, ...) of the dataset, and an optional path for it to be installed to.
+
+- Only small files and metadata about file availability are present locally after an install.
+    To retrieve actual file content of larger files, datalad get downloads large file content on demand.
+
+- Content can be dropped to save disk space with datalad drop.
+    Do this only if content can be easily reobtained.
+
+- Datasets preserve their history.
+    In nested datasets, the superdataset records only the version state of the subdataset. 
 
 
 ## Using published datasets
 
 Most of the next part is taken from the [Datalad Yale Demo](https://handbook.datalad.org/en/latest/code_from_chapters/yale.html). Head over there to see their more in-depth takes.
 
+<br>
 
 Let's first set up a new dataset directory. 
 
+```
     cd ../
     datalad create -c yoda myanalysis
+````
 
 A new configuration procedure appears. Yoda?
 
-```{admonition} Question: GIN is based on the same architecture, but is tailored to a different use-case: What could be the difference?  
+
+```{admonition} Question: What's the YODA Flag in the datalad create Command?
 :class: dropdown  
-The YODA Flag in the datalad create Command
 
 The -c yoda flag in the datalad create command applies YODA-compliant configurations to a newly created dataset. These configurations provide a head start in organizing a dataset according to the YODA principles.
 What the YODA Flag Does:
@@ -527,15 +619,16 @@ What the YODA Flag Does:
 ```
 
 
-1. Pull Data from GIN
+### 1. Pull Data from GIN
 
 We'll be using the `datlad clone` command to retrieve a datasat from a public GIN repository.
 
+```
     cd myanalysis
     datalad clone -d . \
     https://gin.g-node.org/adswa/bids-data \
     input
-
+```
 
 We can further use prexisting scripts, e.g. blatantly steal from the [nilearn tutorial](https://nilearn.github.io/stable/auto_examples/01_plotting/plot_visualization.html#sphx-glr-auto-examples-01-plotting-plot-visualization-py), as they stored theri stuff on Github. We'll also add a commit message, so that we have some idea on what were doing for our metadata.
 
@@ -546,26 +639,33 @@ Here we'll see another of DataLads features. We can simply download web-content 
     https://raw.githubusercontent.com/datalad-handbook/resources/master/get_brainmask.py
 
 
-We can also verify the File's Origin, here to confirm the URL is recorded as metadata, ensuring traceability.
-
-    datalad metadata <filename>
-
-2. Build the computational environemnt, e.g. get a container
+### 2. Build the computational environemnt, e.g. get a container
 
 Oh damn, but we don't have the necessary software installed for this analysis, surely? And what if the script was written for a specific Linux distribution?  That's were Datalad containers can come in handy. We need a container with a Python 3 environment and the nilearn package already preinstalled installed.
 
-Importantly, this container does not need to contain the analysis script. It just needs the correct software that the script requires – in this case, a Python 3 environment with nilearn installed.
+This container does not need to contain the analysis script. It just needs the correct software specifications our downloaded script requires – here a Python 3 environment with nilearn.
 
-Let’s add this container to the dataset using datalad containers-add (manual).
-
+Let’s add this container to our available ennvironments using [datalad containers-add](http://docs.datalad.org/projects/container/en/latest/generated/man/datalad-containers-add.html).
+#
+```
         datalad containers-add nilearn \
         --url dhub://djarecka/nilearn:yale
 
+        yale: Pulling from djarecka/nilearn
+        Digest: sha256:8b7592db7c29f449aae918cc7af2000771071084c861db63013099812e87a5bf
+        Status: Image is up to date for djarecka/nilearn:yale
+        docker.io/djarecka/nilearn:yale
 
-3. Run the analysis
+        What's Next?
+        View a summary of image vulnerabilities and recommendations → docker scout quickview djarecka/nilearn:yale
+```
 
- inally, call datalad containers-run to execute the script inside of the container. Here’s how this looks like
 
+### 3. Run the analysis
+
+ Simply, call `datalad containers-run` to execute the script inside of the container. Here’s how this looks like
+
+```
  datalad containers-run -m "Compute brain mask" \
  -n nilearn \
  --input input/sub-02/func/sub-02_task-oneback_run-01_bold.nii.gz \
@@ -573,17 +673,85 @@ Let’s add this container to the dataset using datalad containers-add (manual).
  --output "sub-02*" \
  "python code/get_brainmask.py"
 
-4. Check our metadata
+```
 
-You can query an individual file how it came to be…:
+Let's break this command down, we call `datalad containers-run`, defining our nilearn container, specifying `input` and `output`, as well as our executable `python` to run our previously downloaded script.
+```
+    -n nilearn:
+    Specifies the nilearn container for running the computation, pre-configured for neuroimaging tasks.
 
-    git log sub-02_brain-mask.nii.gz
+    --input input/sub-02/func/sub-02_task-oneback_run-01_bold.nii.gz:
+    Uses a BOLD fMRI image (NIfTI format) as input, tracked and reproducible by datalad.
 
-And the computation can be automatically be repeated in a reproducible manner, based on the recorded provenance using `datalad rerun`:
+    --output figures/:
+    Outputs results (e.g., visualizations) to the figures/ directory.
 
-    datalad rerun
+    --output "sub-02*":
+    Tracks additional outputs matching the sub-02* pattern.
+
+    "python code/get_brainmask.py":
+    Runs the Python script to compute a brain mask, isolating brain regions from the input image.
+```
+
+Looking into our `figures` output folder, we can see that we apparently did do some neuroscience? Yay!
+```
+    $ ls
+        CHANGELOG.md			README.md			code				figures				input				sub-02_brain-mask.nii.gz
+    $ cd figures/
+    $ ls
+        sub-02_brainmask.png	sub-02_mean-epi.png
+```
+
+### 4. Check our metadata
+
+You can query an individual file and how it came to be using the `git log` command providing it's name, e.g.:
+
+```
+
+    $ git log sub-02_brain-mask.nii.gz
+    commit 3ab58eef122727e392a0ce765bd3c2a19f194a95 (HEAD -> main)
+    Author: Michael Ernst <m.earnest211@gmail.com>
+    Date:   Thu Nov 28 12:47:50 2024 +0100
+
+        [DATALAD RUNCMD] Compute brain mask
+        
+        === Do not change lines below ===
+        {
+        "chain": [],
+        "cmd": "/Users/me/env/datalad/bin/python3.13 -m datalad_container.adapters.docker run .datalad/environments/nilearn/image python code/get_brainmask.py",
+        "dsid": "6d4fed52-fc20-4a0d-9b4c-6bb5d8463192",
+        "exit": 0,
+        "extra_inputs": [
+        ".datalad/environments/nilearn/image"
+        ],
+        "inputs": [
+        "input/sub-02/func/sub-02_task-oneback_run-01_bold.nii.gz"
+        ],
+        "outputs": [
+        "figures/",
+        "sub-02*"
+        ],
+        "pwd": "."
+        }
+        ^^^ Do not change lines above ^^^
+```
+
+Or using datalads own `diff` command, specyfing the most recent change:
+```
+
+- $ datalad diff -f HEAD~1
+    added: figures/sub-02_brainmask.png (symlink)
+    added: figures/sub-02_mean-epi.png (symlink)
+    added: sub-02_brain-mask.nii.gz (symlink)
+```
+
+
+And the computation can be automatically be repeated in a reproducible manner, based on the recorded provenance using `datalad rerun` by using the SHA-1 checksum at the top of the commit message:
+
+    datalad rerun 3ab58eef122727e392a0ce765bd3c2a19f194a95
 
 Check the Chapter on [Datalad Rerun](https://handbook.datalad.org/en/latest/basics/101-109-rerun.html) in the Handbook for more info. 
+
 
 ## Upload Datasets: Connect GIN and your local system via DataLad
 
@@ -595,36 +763,46 @@ Admittedly, this is a more complex process that we will not have time to cover i
 2. [Adding a SSH Key to your GitHub Account](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
 3. [Adding a SSH Key to your GIN Repository](https://handbook.datalad.org/en/latest/basics/101-139-gin.html#prerequisites)
 
-Following this Setup, we can quite easily connect our local and remote repositories, while Datalad keeps track of the metadata for us
-
-1. Create an repository on GIN
-
-screenshot
+Following this Setup, we can quite easily connect our local and remote repositories, while Datalad keeps track of the metadata for us.
 
 
-2. Create a local repository using DataLad
+:::{figure-md} markdown-fig
+<img src="https://handbook.datalad.org/en/latest/_images/publishing_network_publishgin.svg" alt="fishy" class="mb-1" width="300px">
+
+Datalad connecnts local and remote systems, build on Git and Git-Annex
+:::
+
+
+
+
+### 1. Create an repository on GIN
+
+Simply click the `+` at the top of GIN webpage and select `new repository``
+
+create_repo_gin  screenshot
+
+
+### 2. Create a local repository using DataLad
 
 
 ```{admonition} Question: Remember how? 
 :class: dropdown  
-datalad create 
+datalad create -c yoda os_test_days_gin
 
 ```
 
-3. Add the remote repository 
+### 3. Add the remote repository 
 
 Now the two systems will necessarily have to know about each other for this to work, right? We'll let them know that they are related via the `datalad siblings add` command. A sibling acts like a remote in Git, allowing you to push or pull data.
 
-First we need to et the specifici SSH url from our remote repository, e.g. git@gin.g-node.org:/ernstm/datalad_tutorials.git.
+First we need to et the specifici SSH url from our remote repository, e.g. git@gin.g-node.org:/ernstm/os_test_days_gin.git
 
-Screenshot
+![ ](gin_ssh.png)Screenshot
 
 
 And running the command:
-
-    (base) Michaels-MacBook-Pro:datalad_os_days_marburg_2024 me$ datalad siblings add -d . \
-        >  --name gin \
-        >  --url git@gin.g-node.org:/ernstm/datalad_tutorials.git
+    $ cd os_test_days_gin
+    $ datalad siblings add -d .   --name gin   --url git@gin.g-node.org:/ernstm/os_test_days_gin.git
 
 Let's look at the syntac more closely datalad siblings add:
 
@@ -635,28 +813,45 @@ Let's look at the syntac more closely datalad siblings add:
 
 And we can check wether this worked and what siblings exist for a dataset
 
-`datalad siblings`
+```
+    $ datalad siblings
+    .: gin(-) [git@gin.g-node.org:/ernstm/os_test_days_gin.git (git)]
+```
 
-4. Push your dataset changes to the remote repository
+
+### 4. Push your dataset changes to the remote repository
 
 This command is simply enough, once the two dataset are registered as siblings we simply use `datalad push` to upload data, using the `push --to.` flag to tell DataLad our target location, e.g. 
 
 --to gin: specifies the sibling to push to. In this case, it’s the sibling named gin that you configured earlier.
 
 
-        (base) Michaels-MacBook-Pro:datalad_os_days_marburg_2024 me$ datalad push --to gin
+        $ datalad push --to gin
 
 
+
+Checking online our files have indeed been uploaded, but If you inspect the differnt `branches` at the top of your repo, you should see some new entries, e.g. a Git-Annex branch that has been recently updated
+
+
+```{image} ../static/gin_upload.png
+:alt: gin branches
+:class: mb-1
+:width: 300px
+:align: center
+```
 
 
 ## Datalad-container 
 
 
-![alt text](http://datasets.datalad.org/datalad/datalad-course/pics/containers-run.svg)
 
+:::{figure-md} markdown-fig
+<img src="http://datasets.datalad.org/datalad/datalad-course/pics/containers-run.svg" alt="fishy" class="mb-1" width="300px">
+
+`datalad containers-run` allows you to run reproducible workflows with included metadata
+:::
 
 Looking at the official [Repronim container on DockerHub](https://registry.hub.docker.com/r/repronim/containers), tells us most of the info we need to run the container and conveniently also provides a short datalad workflow to demonstrate their implementation e.g. 
-
 
 
 As we talked about BIDS, we discussed modality-specific data formats. One such format, originally designed for BIDS, is the raw MRI DICOM format. Usually, we want to transform these into an appropriate format (NIfTI) for further processing. For this, you could use, for example, the ReproIn software container. It is built on HeudiConv, a heuristic conversion tool for DICOM files. Beyond converting DICOMs to NIfTI, it also assists in converting a raw dataset to the BIDS standard and integrates with DataLad to place converted and original data under version control. Additionally, it automatically annotates files with sensitive information (e.g., non-defaced anatomical images, etc.).
@@ -681,25 +876,30 @@ The official [Repronim container on DockerHub](https://registry.hub.docker.com/r
 
 
 ````
+
 1. Creating the datalad directory
-(datalad) (base) Michaels-MacBook-Pro:git me$ datalad create -d ds000003-qc -c text2git
-(datalad) (base) Michaels-MacBook-Pro:git me$ cd ds000003-qc
+$ datalad create -d ds000003-qc -c text2git
+$ cd ds000003-qc
+
 
 2. using datalad install to pull sourcedate from the internet
-(datalad) (base) Michaels-MacBook-Pro:ds000003-qc me$ datalad install -d . -s https://github.com/ReproNim/ds000003-demo sourcedata
+ds000003-qc $ datalad install -d . -s https://github.com/ReproNim/ds000003-demo sourcedata
+
 
 3. using datalad install to download a container image
-(datalad) (base) Michaels-MacBook-Pro:ds000003-qc me$ datalad install -d . ///repronim/containers
+ds000003-qc $ datalad install -d . ///repronim/containers
+
 
 4. Verifying our installation
-(datalad) (base) Michaels-MacBook-Pro:ds000003-qc me$ cd containers/
-(datalad) (base) Michaels-MacBook-Pro:containers me$ ls 
+ds000003-qc $ cd containers/
+containers $ ls 
 CITATION.cff	LICENSE		README.md	artwork		binds		ci		images		licenses	scripts
+
 
 5. Verifying our data 
 
-(datalad) (base) Michaels-MacBook-Pro:containers me$ cd ../sourcedata/
-(datalad) (base) Michaels-MacBook-Pro:sourcedata me$ tree
+containers $ cd ../sourcedata/
+sourcedata $ tree
 .
 ├── CHANGES
 ├── README
@@ -723,8 +923,9 @@ CITATION.cff	LICENSE		README.md	artwork		binds		ci		images		licenses	scripts
 
 7 directories, 13 files
 
+
 6. And using datalad run to automatically execute the bids-mriqc container (a quality control tool)
-(datalad) (base) Michaels-MacBook-Pro:ds000003-qc me$ datalad containers-run \
+ds000003-qc $ datalad containers-run \
 >         -n containers/bids-mriqc \
 >         --input sourcedata \
 >         --output . \
@@ -738,10 +939,10 @@ CITATION.cff	LICENSE		README.md	artwork		binds		ci		images		licenses	scripts
 
 DataLad provides a robust framework for managing published datasets by enabling workflows that integrate data acquisition, containerized processing, and remote repository synchronization. Key capabilities include:
 
-    Dataset Installation: The datalad install and datalad clone commands allow users to acquire datasets while preserving their provenance.
-    Sibling Management: Using datalad siblings add, researchers can connect local datasets with remote repositories (e.g., on GIN), enabling seamless synchronization and version control.
-    Containerized Processing: The datalad containers-add and datalad containers-run commands facilitate reproducible data processing using preconfigured software environments.
-    Data Management: Data can be retrieved selectively using datalad get or removed when no longer needed with datalad drop, ensuring efficient storage use.
+- `Dataset Installation`: The datalad install and datalad clone commands allow users to acquire datasets while preserving their provenance.
+- `Sibling Management`: Using datalad siblings add, researchers can connect local datasets with remote repositories (e.g., on GIN), enabling seamless synchronization and version control.
+- `Containerized Processing`: The datalad containers-add and datalad containers-run commands facilitate reproducible data processing using preconfigured software environments.
+- `Data Management`: Data can be retrieved selectively using datalad get or removed when no longer needed with datalad drop, ensuring efficient storage use.
 
 
 ## Additinal Information/Tutorials
@@ -750,4 +951,15 @@ DataLad provides a robust framework for managing published datasets by enabling 
 
 [Quick course; Running and publishing Data using Datalad](https://handbook.datalad.org/en/latest/code_from_chapters/yale.html)
 
-Sources
+    
+## OpenNeuro
+
+https://handbook.datalad.org/en/latest/_images/openneuro.png
+
+An alternate solution that is very common  of datasets is [OpenNeuro](https://openneuro.org/). 
+
+OpenNeuro is an repository solution to host and share BIDS-compatible datasets, ensuring both accessibility and compliance with community standards. It is designed with the idea of data indexing and searching in mind therefore, but it doesn't provide the option of non-public datasets.
+
+It is therfore particularly valuable for researchers looking to share data broadly with the community. It ensures reproducibility by providing an accessible, long-term data repository, implementing automatic BIDS Validation, but lacks the version control system unerlying GIN.
+
+Find more info in the [Datalad aHandbook section on OpenNeuro](https://handbook.datalad.org/en/latest/usecases/openneuro.html)
