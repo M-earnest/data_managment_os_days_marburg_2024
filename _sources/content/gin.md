@@ -853,7 +853,7 @@ Checking online our files have indeed been uploaded, but If you inspect the diff
 ```{image} ../static/gin_upload.png
 :alt: gin branches
 :class: mb-1
-:width: 600px
+:width: 900px
 :align: center
 ```
 
@@ -863,7 +863,7 @@ Checking online our files have indeed been uploaded, but If you inspect the diff
 
 
 :::{figure-md} markdown-fig
-<img src="http://datasets.datalad.org/datalad/datalad-course/pics/containers-run.svg" alt="fishy" class="mb-1" width="800px">
+<img src="http://datasets.datalad.org/datalad/datalad-course/pics/containers-run.svg" alt="fishy" class="mb-1" width="600px">
 
 `datalad containers-run` allows you to run reproducible workflows with included metadata
 :::

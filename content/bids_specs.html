@@ -383,34 +383,27 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intro">Intro</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation">Motivation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation">Motivation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bids-adavantages">BIDS adavantages:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interoperability-with-software">1. Interoperability with Software:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#facilitates-public-data-sharing">2. Facilitates Public Data Sharing:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#validation-tools">3. Validation Tools:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#alignment-with-fair-principles">4. Alignment with FAIR Principles</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-core-specification">The core specification</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#folder-structure">Folder structure</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#code">code</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#phenotype">phenotype</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sourcedata">sourcedata</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#stimuli">stimuli</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#subject">subject</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#session">session</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#datatype">datatype</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#folder-structure">Folder structure</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#derivatives">derivatives</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metadata">metadata</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#json-files">JSON files</a><ul class="nav section-nav flex-column">
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#editing">Editing</a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#programming">Programming</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#derivatives">derivatives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#required-files">Required Files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recommended-files">RECOMMENDED Files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metadata">Metadata</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset-description-json">dataset_description.json:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#participants-tsv">participants.tsv:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sub-directories">sub-<label> directories:</label></a></li>
 </ul>
 </li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tsv-files">TSV files</a><ul class="nav section-nav flex-column">
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#descriptions-tsv">descriptions.tsv</a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Programming</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-example-bids-extensions">practical example: BIDS extensions</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bids-extensions">BIDS extensions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bids-conversion-tools">BIDS Conversion tools</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#mne-bids">MNE BIDS</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#mri">MRI?</a></li>
 </ul>
@@ -430,29 +423,55 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="bids-brain-imaging-data-structure">
 <h1>BIDS (Brain Imaging Data Structure)<a class="headerlink" href="#bids-brain-imaging-data-structure" title="Link to this heading">#</a></h1>
-<section id="intro">
-<h2>Intro<a class="headerlink" href="#intro" title="Link to this heading">#</a></h2>
-<p>The Brain Imaging Data Structure (BIDS) is a simple and intuitive way to organize and describe data.</p>
 <section id="motivation">
-<h3>Motivation<a class="headerlink" href="#motivation" title="Link to this heading">#</a></h3>
+<h2>Motivation<a class="headerlink" href="#motivation" title="Link to this heading">#</a></h2>
+<p>The Brain Imaging Data Structure (BIDS) is a simple and intuitive way to organize and describe data.</p>
+<p>Neuroimaging experiments produce complex datasets that are often organized inconsistently, even within the same lab. This lack of standardization can lead to misunderstandings, wasted time, and inefficiencies in data reuse and collaboration. Below, we outline the benefits of adopting a standardized approach, specifically the Brain Imaging Data Structure (BIDS)</p>
 <ul class="simple">
-<li><p>Lack of consensus (or a standard) leads to misunderstandings and time wasted on rearranging data or rewriting scripts expecting certain structure</p></li>
 <li><p>scientific projects especially in the neuroscience are necessarily complex, being organized and providing proper documentation and meta information is a key factor</p></li>
-<li></li>
 <li><p>Early stage resaearchers have a distinct adavantage of not being bogged down by their already exiting backlogs</p></li>
 </ul>
-<p>FAIR</p>
+<section id="bids-adavantages">
+<h3>BIDS adavantages:<a class="headerlink" href="#bids-adavantages" title="Link to this heading">#</a></h3>
+</section>
+<section id="interoperability-with-software">
+<h3>1. Interoperability with Software:<a class="headerlink" href="#interoperability-with-software" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p>integrate: - <a class="reference external" href="https://bids-specification.readthedocs.io/en/stable/introduction.html">https://bids-specification.readthedocs.io/en/stable/introduction.html</a></p></li>
+<li><p>a growing number of data analysis tools and apps support BIDS-formatted datasets</p></li>
+<li><p>adopting BIDS enhances compatibility and facilitates analysis workflows</p></li>
 </ul>
-<p>F - findable:</p>
-<p>I - interoperable:</p>
-<p>R - reusable:</p>
+</section>
+<section id="facilitates-public-data-sharing">
+<h3>2. Facilitates Public Data Sharing:<a class="headerlink" href="#facilitates-public-data-sharing" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>public databases such as <a class="reference external" href="http://OpenNeuro.org">OpenNeuro.org</a> require BIDS-compliant datasets.</p></li>
+<li><p>journals increasingly require public sharing of datasets; using BIDS minimizes the effort and time required for curation and publication.</p></li>
+</ul>
+</section>
+<section id="validation-tools">
+<h3>3. Validation Tools:<a class="headerlink" href="#validation-tools" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>ools like the BIDS Validator check dataset integrity and help identify missing or incorrect data entries.</p></li>
+</ul>
+</section>
+<section id="alignment-with-fair-principles">
+<h3>4. Alignment with FAIR Principles<a class="headerlink" href="#alignment-with-fair-principles" title="Link to this heading">#</a></h3>
+<p>The adoption of BIDS aligns with the FAIR principles, enhancing the scientific impact of neuroimaging datasets:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">F</span> <span class="o">-</span> <span class="n">Findable</span><span class="p">:</span>
+        <span class="n">BIDS</span> <span class="n">encourages</span> <span class="n">consistent</span> <span class="n">naming</span> <span class="n">conventions</span> <span class="ow">and</span> <span class="n">metadata</span> <span class="n">organization</span><span class="p">,</span> <span class="n">making</span> <span class="n">datasets</span> <span class="n">easy</span> <span class="n">to</span> <span class="n">locate</span> <span class="ow">and</span> <span class="n">index</span><span class="p">,</span> <span class="n">whether</span> <span class="n">within</span> <span class="n">a</span> <span class="n">lab</span> <span class="ow">or</span> <span class="n">on</span> <span class="n">public</span> <span class="n">repositories</span><span class="o">.</span>
+    <span class="n">A</span> <span class="o">-</span> <span class="n">Accessible</span><span class="p">:</span>
+        <span class="n">Structured</span> <span class="n">datasets</span><span class="p">,</span> <span class="k">with</span> <span class="n">rich</span> <span class="n">metadata</span><span class="p">,</span> <span class="n">are</span> <span class="n">easily</span> <span class="n">accessible</span> <span class="n">to</span> <span class="n">both</span> <span class="n">humans</span> <span class="ow">and</span> <span class="n">machines</span><span class="p">,</span> <span class="n">increasing</span> <span class="n">usability</span> <span class="n">across</span> <span class="n">tools</span> <span class="ow">and</span> <span class="n">platforms</span><span class="o">.</span>
+    <span class="n">I</span> <span class="o">-</span> <span class="n">Interoperable</span><span class="p">:</span>
+        <span class="n">By</span> <span class="n">adhering</span> <span class="n">to</span> <span class="n">universal</span> <span class="n">standards</span><span class="p">,</span> <span class="n">BIDS</span> <span class="n">ensures</span> <span class="n">compatibility</span> <span class="k">with</span> <span class="n">a</span> <span class="n">wide</span> <span class="nb">range</span> <span class="n">of</span> <span class="n">software</span> <span class="ow">and</span> <span class="n">computational</span> <span class="n">workflows</span><span class="p">,</span> <span class="n">promoting</span> <span class="n">cross</span><span class="o">-</span><span class="n">disciplinary</span> <span class="n">collaboration</span><span class="o">.</span>
+    <span class="n">R</span> <span class="o">-</span> <span class="n">Reusable</span><span class="p">:</span>
+        <span class="n">Detailed</span> <span class="n">metadata</span> <span class="ow">and</span> <span class="n">standardization</span> <span class="n">ensure</span> <span class="n">datasets</span> <span class="n">can</span> <span class="n">be</span> <span class="n">reused</span> <span class="n">effectively</span><span class="p">,</span> <span class="n">whether</span> <span class="k">for</span> <span class="n">replication</span><span class="p">,</span> <span class="n">secondary</span> <span class="n">analysis</span><span class="p">,</span> <span class="ow">or</span> <span class="n">integration</span> <span class="n">into</span> <span class="n">meta</span><span class="o">-</span><span class="n">analyses</span><span class="o">.</span>
+</pre></div>
+</div>
 </section>
 <section id="the-core-specification">
 <h3>The core specification<a class="headerlink" href="#the-core-specification" title="Link to this heading">#</a></h3>
 <p>Requirement levels:</p>
-<p>EQUIRED: Data cannot be be interpreted without this information (or the ambiguity is unacceptably high)
+<p>REQUIRED: Data cannot be be interpreted without this information (or the ambiguity is unacceptably high)
 RECOMMENDED: Interpretation/utility would be dramatically improved with this information
 OPTIONAL: Users and/or tools might find it useful to have this information</p>
 <p>Modalities:</p>
@@ -460,70 +479,51 @@ OPTIONAL: Users and/or tools might find it useful to have this information</p>
 <li><p>passive neuroimaging techniques are organized by their own labels: eg, meg and ieeg</p></li>
 <li><p>active neuroimaging techniques are organized by the respective category of brain data recorded, e.g for MRI: T1w, bold or dwi etc.</p></li>
 </ul>
-<p>…</p>
-<p>How best to break down the basic list here?</p>
-<p><a class="reference external" href="https://bids-specification.readthedocs.io/en/stable/common-principles.html">https://bids-specification.readthedocs.io/en/stable/common-principles.html</a></p>
 </section>
 <section id="folder-structure">
 <h3>Folder structure<a class="headerlink" href="#folder-structure" title="Link to this heading">#</a></h3>
 <p>Within BIDS folders have to be structured and named in a specific way. The hierarchy is as follows:</p>
-<ul class="simple">
-<li><p><strong>project</strong></p>
-<ul>
-<li><p>code</p></li>
-<li><p>derivatives</p></li>
-<li><p>phenotype</p></li>
-<li><p>sourcedata</p></li>
-<li><p>stimuli</p></li>
-<li><p>subject</p>
-<ul>
-<li><p>session</p>
-<ul>
-<li><p>datatype</p></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span> <span class="n">project</span><span class="o">/</span>
+    <span class="o">-</span> <span class="n">code</span><span class="o">/</span>
+    <span class="o">-</span> <span class="n">derivatives</span><span class="o">/</span>
+    <span class="o">-</span> <span class="n">phenotype</span><span class="o">/</span>
+    <span class="o">-</span> <span class="n">sourcedata</span><span class="o">/</span>
+    <span class="o">-</span> <span class="n">stimuli</span><span class="o">/</span>
+    <span class="o">-</span> <span class="n">subject</span><span class="o">/</span>
+        <span class="o">-</span> <span class="n">session</span><span class="o">/</span>
+            <span class="o">-</span> <span class="n">datatype</span><span class="o">/</span>
+</pre></div>
+</div>
 <p>The <strong>project</strong> folder has not to be named in a specific manner, but it should be descriptive.</p>
-<section id="code">
-<h4>code<a class="headerlink" href="#code" title="Link to this heading">#</a></h4>
-<p>Here you can store any code</p>
-</section>
-<section id="phenotype">
-<h4>phenotype<a class="headerlink" href="#phenotype" title="Link to this heading">#</a></h4>
-<p>Here you can store spearated into individual files any participant level measurements (e.g. responses from questionnaires)</p>
-</section>
-<section id="sourcedata">
-<h4>sourcedata<a class="headerlink" href="#sourcedata" title="Link to this heading">#</a></h4>
-<p>Here you can store data before harmonization, reconstruction and/or file format conversion</p>
-</section>
-<section id="stimuli">
-<h4>stimuli<a class="headerlink" href="#stimuli" title="Link to this heading">#</a></h4>
-<p>Self-explanatory, but here you can store your stimuli</p>
-</section>
-<section id="subject">
-<h4>subject<a class="headerlink" href="#subject" title="Link to this heading">#</a></h4>
-<p>There should be one subject folder for each participant. Naming of subject folders has to be as follows:</p>
-<p><code class="docutils literal notranslate"><span class="pre">sub-*particpant</span> <span class="pre">label*</span></code></p>
-<p>exchange <em>participant label</em> with a label that is unique for each participant in your dataset (can be numbers and/or letters)</p>
-</section>
-<section id="session">
-<h4>session<a class="headerlink" href="#session" title="Link to this heading">#</a></h4>
-<p>You only need this, if there are multiple sessions. A participant does not leave the scanner/headset during a session.</p>
-<p>Sessions are named as follows:
-<code class="docutils literal notranslate"><span class="pre">ses-*session</span> <span class="pre">label*</span></code></p>
-<p>exchange <em>session label</em> with a label that is unique (can be numbers and/or letters)</p>
-</section>
-<section id="datatype">
-<h4>datatype<a class="headerlink" href="#datatype" title="Link to this heading">#</a></h4>
-<p>This folder shows the modality of the acquired data, like EEG data (<code class="docutils literal notranslate"><span class="pre">eeg</span></code>), behavioral data (<code class="docutils literal notranslate"><span class="pre">beh</span></code>), fMRI data (<code class="docutils literal notranslate"><span class="pre">func</span></code>) or much more. You can find a list of modalities and their naming conventions <a class="reference external" href="https://bids-website.readthedocs.io/en/latest/getting_started/folders_and_files/folders.html">here</a></p>
+<p><strong>code</strong>
+Here you can store any code
+<em>phenotype</em>
+Here you can store spearated into individual files any participant level measurements (e.g. responses from questionnaires)</p>
+<p><em>sourcedata</em>
+Here you can store data before harmonization, reconstruction and/or file format conversion
+<em>stimuli</em>
+Self-explanatory, but here you can store your stimuli</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>subject/:
+      - There should be one subject folder for each participant. Naming of subject folders has to be as follows:
+            sub-particpant label
+            exchange participant label with a label that is unique for each participant in your dataset (can be numbers and/or letters)
+
+      session/
+            You only need this, if there are multiple sessions. A participant does not leave the scanner/headset during a session.
+            Sessions are named as follows:
+            ses-session label
+            exchange `session label` with a label that is unique (can be numbers and/or letters)
+
+            datatype/
+                  This folder shows the modality of the acquired data, like EEG data (`eeg`), behavioral data (`beh`), fMRI data (`func`) or much more. You can find a list of modalities and their naming conventions [here](https://bids-website.readthedocs.io/en/latest/getting_started/folders_and_files/folders.html)
+
+</pre></div>
+</div>
+<p>An example from the BIDS Specification would look something like this</p>
 </section>
 </section>
 <section id="derivatives">
-<h3>derivatives<a class="headerlink" href="#derivatives" title="Link to this heading">#</a></h3>
+<h2>derivatives<a class="headerlink" href="#derivatives" title="Link to this heading">#</a></h2>
 <p>Derivatives are</p>
 <ul class="simple">
 <li><p>processed data:
@@ -533,71 +533,91 @@ OPTIONAL: Users and/or tools might find it useful to have this information</p>
 </ul>
 <p>There are several ways to organize them within your folder structure. For more information have a look <a class="reference external" href="https://bids-website.readthedocs.io/en/latest/getting_started/folders_and_files/derivatives.html">here</a></p>
 </section>
+<section id="required-files">
+<h2>Required Files<a class="headerlink" href="#required-files" title="Link to this heading">#</a></h2>
+<p>These files are essential for understanding and interpreting the dataset. Without them, the dataset would be incomplete or ambiguous.</p>
+<ol class="arabic simple">
+<li><p>Dataset-Level Files:</p></li>
+</ol>
+<ul class="simple">
+<li><p>dataset_description.json: Describes the dataset, including its name, version, and authors. Essential for dataset identification and interpretation.</p></li>
+<li><p>participants.tsv: Contains demographic or other participant-level information (e.g., age, sex, group).</p></li>
+<li><p>sub-<label> directories: Each participant’s data must be organized under a directory named with their unique identifier.</p></li>
+</ul>
+<ol class="arabic simple" start="2">
+<li><p>Modality-Specific Data Files:</p></li>
+</ol>
+<ul class="simple">
+<li><p>Imaging data files (e.g., sub-<label>/anat/sub-<label>_T1w.nii.gz): The actual neuroimaging data (e.g., T1-weighted anatomical images, functional MRI, etc.).</p></li>
+<li><p>Sidecar JSON files (e.g., sub-<label>/anat/sub-<label>_T1w.json): Provide metadata for the associated imaging files, such as acquisition parameters and scanner details.</p></li>
+</ul>
+<ol class="arabic simple" start="3">
+<li><p>Task-Specific Files (if functional data is included):</p></li>
+</ol>
+<ul class="simple">
+<li><p>task-<label>_bold.nii.gz: The BOLD fMRI time series.</p></li>
+<li><p>task-<label>_events.tsv: The timing and nature of stimuli presented during the task.</p></li>
+</ul>
+<p>Files Required in BIDS and Their Requirement Levels</p>
+<p>The Brain Imaging Data Structure (BIDS) specification categorizes its files into REQUIRED, RECOMMENDED, and OPTIONAL, depending on their importance for data interpretation and utility. Here’s a breakdown:</p>
+</section>
+<section id="recommended-files">
+<h2>RECOMMENDED Files<a class="headerlink" href="#recommended-files" title="Link to this heading">#</a></h2>
+<p>But really, please provide them!</p>
+<p>These files significantly enhance the interpretability and utility of the dataset but are not strictly necessary, they are mostly for human readers and help others understand what they see.</p>
+<ol class="arabic simple">
+<li><p>Additional Dataset-Level Metadata:
+README: General information about the dataset, such as study purpose or known issues.
+CHANGES: Version history of the dataset, useful for tracking updates.</p></li>
+<li><p>Additional Participant Information:
+participants.json: Describes the columns in participants.tsv, such as units or definitions for demographic fields.</p></li>
+<li><p>Additional Imaging Metadata:
+Field maps (fmap/): Useful for correcting distortions in functional or diffusion MRI data.
+Additional anatomical modalities (e.g., T2-weighted images, sub-<label>_T2w.nii.gz).</p></li>
+</ol>
+</section>
 <section id="metadata">
-<h3>metadata<a class="headerlink" href="#metadata" title="Link to this heading">#</a></h3>
-<p>There are two important file types to store metadata:</p>
-<section id="json-files">
-<h4>JSON files<a class="headerlink" href="#json-files" title="Link to this heading">#</a></h4>
-<ul class="simple">
-<li><p><strong>J</strong>ava<strong>S</strong>cript <strong>O</strong>bject <strong>N</strong>otation</p></li>
-<li><p>they are text-based and consist of key-value pairs with the option for nesting and arrays</p></li>
-</ul>
-<section id="editing">
-<h5>Editing<a class="headerlink" href="#editing" title="Link to this heading">#</a></h5>
-<ul class="simple">
-<li><p><em>Visual Studio Code</em> (VS Code) is best for editing json files locally</p></li>
-</ul>
+<h2>Metadata<a class="headerlink" href="#metadata" title="Link to this heading">#</a></h2>
+<section id="dataset-description-json">
+<h3>dataset_description.json:<a class="headerlink" href="#dataset-description-json" title="Link to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>      <span class="n">Purpose</span><span class="p">:</span> <span class="n">A</span> <span class="n">structured</span> <span class="n">JSON</span> <span class="n">file</span> <span class="n">containing</span> <span class="n">essential</span> <span class="n">metadata</span> <span class="n">to</span> <span class="n">identify</span> <span class="ow">and</span> <span class="n">describe</span> <span class="n">the</span> <span class="n">dataset</span><span class="o">.</span>
+      <span class="n">Required</span> <span class="n">Fields</span><span class="p">:</span>
+      <span class="n">Name</span><span class="p">:</span> <span class="n">The</span> <span class="n">title</span> <span class="ow">or</span> <span class="n">name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">dataset</span><span class="o">.</span>
+      <span class="n">BIDSVersion</span><span class="p">:</span> <span class="n">The</span> <span class="n">version</span> <span class="n">of</span> <span class="n">the</span> <span class="n">BIDS</span> <span class="n">specification</span> <span class="n">used</span><span class="o">.</span>
+      <span class="n">Authors</span><span class="p">:</span> <span class="n">A</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">individuals</span> <span class="n">responsible</span> <span class="k">for</span> <span class="n">the</span> <span class="n">dataset</span><span class="o">.</span>
+      <span class="n">Funding</span> <span class="p">(</span><span class="n">optional</span><span class="p">):</span> <span class="n">Information</span> <span class="n">about</span> <span class="n">the</span> <span class="n">funding</span> <span class="n">sources</span> <span class="k">for</span> <span class="n">the</span> <span class="n">study</span><span class="o">.</span>
+      <span class="n">DatasetDOI</span> <span class="p">(</span><span class="n">optional</span><span class="p">):</span> <span class="n">The</span> <span class="n">DOI</span> <span class="ow">or</span> <span class="n">other</span> <span class="n">persistent</span> <span class="n">identifier</span> <span class="k">for</span> <span class="n">the</span> <span class="n">dataset</span> <span class="k">if</span> <span class="n">published</span><span class="o">.</span>
+      <span class="n">Importance</span><span class="p">:</span>
+      <span class="n">Acts</span> <span class="k">as</span> <span class="n">a</span> <span class="n">reference</span> <span class="n">document</span> <span class="k">for</span> <span class="n">dataset</span> <span class="n">context</span><span class="o">.</span>
+      <span class="n">Facilitates</span> <span class="n">proper</span> <span class="n">citation</span> <span class="ow">and</span> <span class="n">acknowledgment</span><span class="o">.</span>
+
+</pre></div>
+</div>
 </section>
-<section id="programming">
-<h5>Programming<a class="headerlink" href="#programming" title="Link to this heading">#</a></h5>
-<p><strong>Python</strong></p>
-<ul class="simple">
-<li><p>there is a built-in library to read (<code class="docutils literal notranslate"><span class="pre">json.load()</span></code>) and write (<code class="docutils literal notranslate"><span class="pre">json.dump</span></code>) JSON files
-<strong>R</strong></p></li>
-<li><p>You can use the <strong>jsonlite</strong> package and read (<code class="docutils literal notranslate"><span class="pre">fromJSON()</span></code>) and write (<code class="docutils literal notranslate"><span class="pre">writeLines</span></code>) JSON files</p></li>
-</ul>
+<section id="participants-tsv">
+<h3>participants.tsv:<a class="headerlink" href="#participants-tsv" title="Link to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>        <span class="n">Purpose</span><span class="p">:</span> <span class="n">A</span> <span class="n">tab</span><span class="o">-</span><span class="n">separated</span> <span class="n">values</span> <span class="p">(</span><span class="n">TSV</span><span class="p">)</span> <span class="n">file</span> <span class="n">containing</span> <span class="n">participant</span><span class="o">-</span><span class="n">level</span> <span class="n">information</span><span class="o">.</span>
+        <span class="n">Required</span> <span class="n">Columns</span><span class="p">:</span>
+            <span class="n">participant_id</span><span class="p">:</span> <span class="n">Unique</span> <span class="n">identifier</span> <span class="k">for</span> <span class="n">each</span> <span class="n">participant</span><span class="o">.</span>
+            <span class="n">Optional</span> <span class="n">but</span> <span class="n">recommended</span> <span class="n">fields</span> <span class="n">include</span> <span class="n">age</span><span class="p">,</span> <span class="n">sex</span><span class="p">,</span> <span class="ow">and</span> <span class="n">group</span> <span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">g</span><span class="o">.</span><span class="p">,</span> <span class="n">control</span> <span class="ow">or</span> <span class="n">experimental</span><span class="p">)</span><span class="o">.</span>
+        <span class="n">Importance</span><span class="p">:</span>
+            <span class="n">Allows</span> <span class="n">researchers</span> <span class="n">to</span> <span class="n">understand</span> <span class="n">the</span> <span class="n">demographic</span> <span class="n">distribution</span> <span class="n">of</span> <span class="n">participants</span><span class="o">.</span>
+            <span class="n">Provides</span> <span class="n">key</span> <span class="n">grouping</span> <span class="n">variables</span> <span class="k">for</span> <span class="n">analysis</span> <span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">g</span><span class="o">.</span><span class="p">,</span> <span class="n">age</span> <span class="n">groups</span> <span class="ow">or</span> <span class="n">experimental</span> <span class="n">conditions</span><span class="p">)</span><span class="o">.</span>
+</pre></div>
+</div>
 </section>
-</section>
-<section id="tsv-files">
-<h4>TSV files<a class="headerlink" href="#tsv-files" title="Link to this heading">#</a></h4>
-<ul class="simple">
-<li><p><strong>t</strong>ab-<strong>s</strong>eparated <strong>v</strong>alues</p></li>
-<li><p>organized as tables</p></li>
-<li><p>columns: fields</p></li>
-<li><p>rows: data points</p></li>
-</ul>
-<section id="descriptions-tsv">
-<h5>descriptions.tsv<a class="headerlink" href="#descriptions-tsv" title="Link to this heading">#</a></h5>
-<ul class="simple">
-<li><p>it is optional but recommended</p></li>
-<li><p>documents processing steps in derivative dataset</p></li>
-</ul>
-<p><strong>columns</strong></p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">desc_id</span></code>
-- unique labels that are used within the dataset
-- sub-001_task-listening_desc-preproc_eeg.edf: here <code class="docutils literal notranslate"><span class="pre">desc-preproc</span></code> would be a desc_id, but within the column you would just write: <code class="docutils literal notranslate"><span class="pre">preproc</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">description</span></code>
-- free-form text
-- describes desc_id labels
-- has to appear second</p></li>
-</ul>
-</section>
-<section id="id1">
-<h5>Programming<a class="headerlink" href="#id1" title="Link to this heading">#</a></h5>
-<p><strong>Python</strong></p>
-<ul class="simple">
-<li><p>you will need the <strong>Pandas</strong> library (<code class="docutils literal notranslate"><span class="pre">pd</span></code>).</p></li>
-<li><p>you can read (<code class="docutils literal notranslate"><span class="pre">pd.read_csv(your_tsv,</span> <span class="pre">delimiter</span> <span class="pre">=</span> <span class="pre">'\t)</span></code>) and write (<code class="docutils literal notranslate"><span class="pre">your_dataframe.to_csv(name,</span> <span class="pre">sep</span> <span class="pre">=</span> <span class="pre">'t')</span></code>) tsv files
-<strong>R</strong></p></li>
-<li><p>you can easily use <code class="docutils literal notranslate"><span class="pre">read.table()</span></code> und <code class="docutils literal notranslate"><span class="pre">write.table()</span></code>
-For more information have a look <a class="reference external" href="https://bids-website.readthedocs.io/en/latest/getting_started/folders_and_files/metadata.html">here</a></p></li>
-</ul>
+<section id="sub-directories">
+<h3>sub-<label> directories:<a class="headerlink" href="#sub-directories" title="Link to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>        Purpose: Each participant’s data is stored in its own directory, named with their unique identifier (e.g., sub-001).
+        Structure:
+            Organized hierarchically to separate anatomical, functional, and other modalities.
+            Ensures clarity and avoids ambiguity in data association.
+</pre></div>
+</div>
 </section>
 </section>
-</section>
-<section id="practical-example-bids-extensions">
-<h3>practical example: BIDS extensions<a class="headerlink" href="#practical-example-bids-extensions" title="Link to this heading">#</a></h3>
+<section id="bids-extensions">
+<h2>BIDS extensions<a class="headerlink" href="#bids-extensions" title="Link to this heading">#</a></h2>
 <p>As you’ve seen BIDS is split into modality agnostic files, i.e.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>dataset_description.json
 README[.md|.rst|.txt]
@@ -607,6 +627,8 @@ LICENSE
 </pre></div>
 </div>
 <p>and modality specific files, which are dependent on the specifics of the hard- and software necessary. This necessarily influences how and which metadata is required or expected to be shared. In the following we will explore to modality specific examples.</p>
+<section id="bids-conversion-tools">
+<h3>BIDS Conversion tools<a class="headerlink" href="#bids-conversion-tools" title="Link to this heading">#</a></h3>
 <section id="mne-bids">
 <h4>MNE BIDS<a class="headerlink" href="#mne-bids" title="Link to this heading">#</a></h4>
 <ul class="simple">
@@ -688,34 +710,27 @@ LICENSE
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intro">Intro</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation">Motivation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation">Motivation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bids-adavantages">BIDS adavantages:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interoperability-with-software">1. Interoperability with Software:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#facilitates-public-data-sharing">2. Facilitates Public Data Sharing:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#validation-tools">3. Validation Tools:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#alignment-with-fair-principles">4. Alignment with FAIR Principles</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-core-specification">The core specification</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#folder-structure">Folder structure</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#code">code</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#phenotype">phenotype</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sourcedata">sourcedata</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#stimuli">stimuli</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#subject">subject</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#session">session</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#datatype">datatype</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#folder-structure">Folder structure</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#derivatives">derivatives</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metadata">metadata</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#json-files">JSON files</a><ul class="nav section-nav flex-column">
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#editing">Editing</a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#programming">Programming</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#derivatives">derivatives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#required-files">Required Files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recommended-files">RECOMMENDED Files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metadata">Metadata</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset-description-json">dataset_description.json:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#participants-tsv">participants.tsv:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sub-directories">sub-<label> directories:</label></a></li>
 </ul>
 </li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tsv-files">TSV files</a><ul class="nav section-nav flex-column">
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#descriptions-tsv">descriptions.tsv</a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Programming</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-example-bids-extensions">practical example: BIDS extensions</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bids-extensions">BIDS extensions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bids-conversion-tools">BIDS Conversion tools</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#mne-bids">MNE BIDS</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#mri">MRI?</a></li>
 </ul>
