@@ -458,20 +458,20 @@ OPTIONAL: Users and/or tools might find it useful to have this information</p>
 <h3>Folder structure<a class="headerlink" href="#folder-structure" title="Link to this heading">#</a></h3>
 <p>Within BIDS folders have to be structured and named in a specific way. The hierarchy is as follows:
 project</p>
-<ul>
+<ul class="simple">
 <li><p>code</p></li>
 <li><p>derivatives</p></li>
 <li><p>phenotype</p></li>
 <li><p>sourcedata</p></li>
 <li><p>stimuli</p></li>
-<li><p>subject</p></li>
-<li><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>session
-</pre></div>
-</div>
+<li><p>subject</p>
+<ul>
+<li><p>session</p>
+<ul>
+<li><p>datatype</p></li>
+</ul>
 </li>
-<li><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    datatype
-</pre></div>
-</div>
+</ul>
 </li>
 </ul>
 <p>The <strong>project</strong> folder has not to be named in a specific manner, but it should be descriptive.</p>
