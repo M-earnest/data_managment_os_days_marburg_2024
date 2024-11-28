@@ -178,6 +178,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../introduction/intro.html">Data Management</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bids_specs.html">BIDS (Brain Imaging Data Structure)</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">G-Node/GIN</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="../general_information/CoC.html">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../general_information/dei.html">Diversity, Equity and Inclusion</a></li>
 </ul>
@@ -384,6 +385,7 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">G-Node/GIN</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intro-the-problem-at-hand">Intro: The Problem at Hand</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-g-node-approach">The G-Node Approach</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation">Motivation</a></li>
@@ -392,10 +394,17 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gin-the-manual-way">GIN: The manual way</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#challenges">Challenges</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gin-cli">GIN Cli</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#openneuro">OpenNeuro</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#datalad">DataLad</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">Setup</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#usage-how-to-get-started">Usage/How to get started:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#usage-how-to-get-started">Usage/How to get started:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-directory">1. create a directory</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#initialize-git-make-it-a-git-repository">2. initialize git/make it a git repository</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#check-for-changes">3. check for changes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#check-what-git-is-tracking">4. Check what git is tracking</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-add-a-file-cat-eot-notes-txt-appends-multiple-lines-of-text-specified-between-eot-delimiters-to-the-file-notes-txt">5. create/add a file (cat &lt;&lt; EOT &gt;&gt; notes.txt appends multiple lines of text, specified between EOT delimiters, to the file notes.txt)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#track-changes">6. track changes</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#let-s-look-at-how-datalad-does-this">Let’s look at how datalad does this</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#datalad-create">Datalad create</a></li>
 </ul>
@@ -415,8 +424,23 @@
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#datalad-run-reproducible-execution">Datalad Run: Reproducible execution</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-dataset-consumption">Summary - Dataset consumption</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-published-datasets">Using published datasets</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#upload-datasets-connect-gin-and-your-local-system-via-datalad">Upload Datasets: Connect GIN and your local system via DataLad</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-published-datasets">Using published datasets</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pull-data-from-gin">1. Pull Data from GIN</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#build-the-computational-environemnt-e-g-get-a-container">2. Build the computational environemnt, e.g. get a container</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id3"></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-the-analysis">3. Run the analysis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-our-metadata">4. Check our metadata</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#upload-datasets-connect-gin-and-your-local-system-via-datalad">Upload Datasets: Connect GIN and your local system via DataLad</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-an-repository-on-gin">1. Create an repository on GIN</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-local-repository-using-datalad">2. Create a local repository using DataLad</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#add-the-remote-repository">3. Add the remote repository</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#push-your-dataset-changes-to-the-remote-repository">4. Push your dataset changes to the remote repository</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#datalad-container">Datalad-container</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#making-the-container-available-to-datalad">Making the Container Available to Datalad</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-example">Practical example:</a></li>
@@ -424,7 +448,11 @@
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-using-published-datasets">Summary - Using published datasets</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additinal-information-tutorials">Additinal Information/Tutorials</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#openneuro">OpenNeuro</a></li>
 </ul>
+</li>
+</ul>
+
             </nav>
         </div>
     </div>
@@ -526,14 +554,6 @@ The GIN CLI extends the platform’s capabilities beyond the web interface. It a
 <li><p>upload your data to the associated repository via the CLI using the command:
 <code class="docutils literal notranslate"><span class="pre">gin</span> <span class="pre">upload</span> <span class="pre">--options</span></code></p></li>
 </ul>
-</section>
-<section id="openneuro">
-<h2>OpenNeuro<a class="headerlink" href="#openneuro" title="Link to this heading">#</a></h2>
-<p><a class="reference external" href="https://handbook.datalad.org/en/latest/_images/openneuro.png">https://handbook.datalad.org/en/latest/_images/openneuro.png</a></p>
-<p>An alternate solution that is very common  of datasets is <a class="reference external" href="https://openneuro.org/">OpenNeuro</a>.</p>
-<p>OpenNeuro is an repository solution to host and share BIDS-compatible datasets, ensuring both accessibility and compliance with community standards. It is designed with the idea of data indexing and searching in mind therefore, but it doesn’t provide the option of non-public datasets.</p>
-<p>It is therfore particularly valuable for researchers looking to share data broadly with the community. It ensures reproducibility by providing an accessible, long-term data repository, implementing automatic BIDS Validation, but lacks the version control system unerlying GIN.</p>
-<p>Find more info in the <a class="reference external" href="https://handbook.datalad.org/en/latest/usecases/openneuro.html">Datalad aHandbook section on OpenNeuro</a></p>
 </section>
 <section id="datalad">
 <h2>DataLad<a class="headerlink" href="#datalad" title="Link to this heading">#</a></h2>
@@ -658,49 +678,65 @@ From now on, whenever you want to work with Datalad, activate the virtual enviro
 </div>
 <p>See aslo the <a class="reference external" href="https://handbook.datalad.org/en/latest/intro/howto.html">handbook section on bash</a></p>
 <p>A normal workflow on the command line therefore may look something like this</p>
-<ol class="arabic">
-<li><p>create a directory
-(datalad) (base) Michaels-MacBook-Pro: mkdir os_days_2024_test
-(datalad) (base) Michaels-MacBook-Pro: cd os_days_2024</p></li>
-<li><p>initialize git/make it a git repository
-(datalad) (base) Michaels-MacBook-Pro:os_days_2024_test me$ git init .
-Initialized empty Git repository in /Users/me/phd/projects/git/os_days_2024_test/.git/</p></li>
-<li><p>check for changes</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span> (datalad) (base) Michaels-MacBook-Pro:os_days_2024_test me$ ls -lah
- total 0
- drwxr-xr-x   3 me  staff    96B Nov 27 18:40 .
- drwxr-xr-x  42 me  staff   1.3K Nov 27 18:39 ..
- drwxr-xr-x   9 me  staff   288B Nov 27 18:40 .git
+<section id="create-a-directory">
+<h3>1. create a directory<a class="headerlink" href="#create-a-directory" title="Link to this heading">#</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    $ mkdir os_days_2024_test
+    $ cd os_days_2024
 </pre></div>
 </div>
-</li>
-<li><p>Check what git is tracking</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span> (datalad) (base) Michaels-MacBook-Pro:os_days_2024_test me$ git status
- On branch main
- No commits yet
+</section>
+<section id="initialize-git-make-it-a-git-repository">
+<h3>2. initialize git/make it a git repository<a class="headerlink" href="#initialize-git-make-it-a-git-repository" title="Link to this heading">#</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>     $ git init .
+    Initialized empty Git repository in /Users/me/phd/projects/git/os_days_2024_test/.git/
 </pre></div>
 </div>
-</li>
-<li><p>create/add a file (cat &lt;&lt; EOT &gt;&gt; notes.txt appends multiple lines of text, specified between EOT delimiters, to the file notes.txt)
-(datalad) (base) Michaels-MacBook-Pro:os_days_2024_test me$ cat &lt;&lt; EOT &gt;&gt; notes.txt
-The command “datalad save [-m] PATH” saves the file (modifications) to
-history.
-Note to self: Always use informative, concise commit messages.</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>     EOT
+</section>
+<section id="check-for-changes">
+<h3>3. check for changes<a class="headerlink" href="#check-for-changes" title="Link to this heading">#</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    $ ls -lah
+    total 0
+    drwxr-xr-x   3 me  staff    96B Nov 27 18:40 .
+    drwxr-xr-x  42 me  staff   1.3K Nov 27 18:39 ..
+    drwxr-xr-x   9 me  staff   288B Nov 27 18:40 .git
 </pre></div>
 </div>
-</li>
-<li><p>track changes
-(datalad) (base) Michaels-MacBook-Pro:os_days_2024_test me<span class="math notranslate nohighlight">\( git add notes.txt 
- (datalad) (base) Michaels-MacBook-Pro:os_days_2024_test me\)</span> git status
-On branch main</p>
-<p>No commits yet</p>
-<p>Changes to be committed:
-(use “git rm –cached <file>…” to unstage)
-new file:   notes.txt</p>
-</li>
+</section>
+<section id="check-what-git-is-tracking">
+<h3>4. Check what git is tracking<a class="headerlink" href="#check-what-git-is-tracking" title="Link to this heading">#</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    $ git status
+    On branch main
+    No commits yet
+</pre></div>
+</div>
+</section>
+<section id="create-add-a-file-cat-eot-notes-txt-appends-multiple-lines-of-text-specified-between-eot-delimiters-to-the-file-notes-txt">
+<h3>5. create/add a file (cat &lt;&lt; EOT &gt;&gt; notes.txt appends multiple lines of text, specified between EOT delimiters, to the file notes.txt)<a class="headerlink" href="#create-add-a-file-cat-eot-notes-txt-appends-multiple-lines-of-text-specified-between-eot-delimiters-to-the-file-notes-txt" title="Link to this heading">#</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    $ cat &lt;&lt; EOT &gt;&gt; notes.txt
+        The command &quot;datalad save [-m] PATH&quot; saves the file (modifications) to
+        history.
+        Note to self: Always use informative, concise commit messages.
+     
+        EOT
+</pre></div>
+</div>
+</section>
+<section id="track-changes">
+<h3>6. track changes<a class="headerlink" href="#track-changes" title="Link to this heading">#</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>     $ git add notes.txt 
+     $ git status
+    On branch main
+
+    No commits yet
+
+    Changes to be committed:
+    (use &quot;git rm --cached &lt;file&gt;...&quot; to unstage)
+        new file:   notes.txt
+</pre></div>
+</div>
+<ol class="arabic" start="7">
 <li><p>And checking the staus of our git directory again</p>
-<p>(datalad) (base) Michaels-MacBook-Pro:os_days_2024_test me$ git status
+<p>$ git status
 On branch main
 nothing to commit, working tree clean</p>
 </li>
@@ -708,10 +744,11 @@ nothing to commit, working tree clean</p>
 <p>Not very informative, huh? But now we commited a file, we can check which logs git keeps</p>
 <ol class="arabic" start="9">
 <li><p>check the git log files</p>
-<p>(datalad) (base) Michaels-MacBook-Pro:os_days_2024_test me$ git log –oneline
+<p>$ git log –oneline
 75a46e4 (HEAD -&gt; main) added notes</p>
 </li>
 </ol>
+</section>
 </section>
 <section id="let-s-look-at-how-datalad-does-this">
 <h2>Let’s look at how datalad does this<a class="headerlink" href="#let-s-look-at-how-datalad-does-this" title="Link to this heading">#</a></h2>
@@ -720,15 +757,16 @@ nothing to commit, working tree clean</p>
 <p>The <a class="reference external" href="http://docs.datalad.org/en/stable/generated/man/datalad-create.html"><code class="docutils literal notranslate"><span class="pre">datalad</span> <span class="pre">create</span></code></a> statement automatically sets up a basic directory structure. The snytax is as following:</p>
 <p><code class="docutils literal notranslate"> <span class="pre">datalad</span> <span class="pre">create</span> <span class="pre">-c</span> <span class="pre">PROC</span> <span class="pre">NAME</span></code></p>
 <p>In the command line this may look something like this:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    (datalad) (base) Michaels-MacBook-Pro:git me$ datalad create -c text2git os_days_demo
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    $ datalad create -c text2git os_days_demo
 </pre></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">-c</span></code> flag provides info on the configuration, with which the directory is created. More on that later, here we simpyl chose <code class="docutils literal notranslate"><span class="pre">text2git</span></code>. Any Idea what this might possibly do? Let’s have a look at the directory.</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    (datalad) (base) Michaels-MacBook-Pro:git me$ cd os_days_demo
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    $ cd os_days_demo
 </pre></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-la</span></code> command lists all the content in a given directory, e.g.</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    (datalad) (base) Michaels-MacBook-Pro:os_days_demo me$ ls -la
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    ls -la
+
     total 8
     drwxr-xr-x   5 me  staff   160 Nov 25 19:08 .
     drwxr-xr-x  32 me  staff  1024 Nov 25 19:08 ..
@@ -748,18 +786,35 @@ nothing to commit, working tree clean</p>
 </pre></div>
 </div>
 <p>We can have a look at these with e.g. the <code class="docutils literal notranslate"><span class="pre">nano</span></code> cli-editor:</p>
-<p><code class="docutils literal notranslate"><span class="pre">nano</span> <span class="pre">.gitattributes:</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">nano</span> <span class="pre">.gitattributes</span></code></p>
+<div class="dropdown admonition">
+<p class="admonition-title">.gitattributes files</p>
+<p>These are hidden files, specifying what git and  Git-Annex respectively are supposed to track. Here Git-Annex tracks binary files larger than 0 bytes while excluding files in .git directories. In detail:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>annex.backend=MD5E
+    Specifies the hash backend for file storage in Git-Annex.
+    Uses MD5E hash (MD5 with file extension) for identifying files.
+
+**/.git* annex.largefiles=nothing
+    Excludes .git files from being handled by Git-Annex.
+    Ensures .git files remain under Git&#39;s regular version control.
+
+annex.largefiles=((mimeencoding=binary)and(largerthan=0))
+    Defines criteria for files handled by Git-Annex.
+    Targets files with binary mime encoding.
+    Includes files larger than 0 bytes.
+</pre></div>
+</div>
+</div>
 </section>
 </section>
 <section id="datalad-save">
 <h2>Datalad save<a class="headerlink" href="#datalad-save" title="Link to this heading">#</a></h2>
 <figure class="align-default" id="markdown-fig">
-<a class="bg-primary mb-1 reference internal image-reference" href="http://datasets.datalad.org/datalad/datalad-course/pics/local_wf.svg"><img alt="fishy" class="bg-primary mb-1" src="http://datasets.datalad.org/datalad/datalad-course/pics/local_wf.svg" style="width: 300px;" /></a>
+<a class="mb-1 reference internal image-reference" href="http://datasets.datalad.org/datalad/datalad-course/pics/local_wf.svg"><img alt="fishy" class="mb-1" src="http://datasets.datalad.org/datalad/datalad-course/pics/local_wf.svg" style="width: 300px;" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 1 </span><span class="caption-text">Save meaninful changes <code class="docutils literal notranslate"><span class="pre">via</span> <span class="pre">datalad</span> <span class="pre">save</span></code></span><a class="headerlink" href="#markdown-fig" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<p>check license datalade</p>
 <p>Now we’ve set up the basic directory strtucture and specfiied which files are supposed to be tracked. How do we actually track our changes thoug? Compared to the Git approach above this is simpler, as DataLad does most of the work for us. Let’s create another notes.txt file.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    cat &lt;&lt; EOT &gt;&gt; notes.txt
     &gt; The command &quot;datalad save [-m] PATH&quot; saves the file (modifications) to
@@ -769,19 +824,26 @@ nothing to commit, working tree clean</p>
     &gt; EOT
 </pre></div>
 </div>
+<section id="datlad-status">
+<h3>Datlad status<a class="headerlink" href="#datlad-status" title="Link to this heading">#</a></h3>
+<p>Let’s look at the status of our dataset, i.e. what has changed?</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>     $ datalad status
+    untracked: notes.txt (file)
+</pre></div>
+</div>
+<p>So there seem to be some untrack changes, let’s add and commit, just like in git, yes?</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">datalad</span> <span class="pre">save</span></code> command combines a git add and a git commit , and therefore, the commit message is specified with datalad save.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    datalad save -m &quot;added notes.txt&quot;
 </pre></div>
 </div>
-<section id="datlad-status">
-<h3>Datlad status<a class="headerlink" href="#datlad-status" title="Link to this heading">#</a></h3>
-<p>Let’s look at the status of our dataset, i.e. what has changed?</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    (datalad) (base) Michaels-MacBook-Pro:os_days_2024_test me$ datalad status
-    nothing to save, working tree clean
-</pre></div>
-</div>
+<p>And let’s look at the staus again
+$ datalad status
+nothing to save, working tree clean</p>
 <p>Not very formative, but what we would also expect from the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> command. If we want to see the actual changes we can make use of Git, as every datalad dataset is also a git directory:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    (datalad) (base) Michaels-MacBook-Pro:os_days_2024_test me$ git log --oneline
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>     $ git log --oneline
+
+     df63d9c (HEAD -&gt; main) added notes.txt
+     6d7160c [DATALAD] new dataset
 </pre></div>
 </div>
 </section>
@@ -801,40 +863,81 @@ A clean dataset status is good practice.</p></li>
 </section>
 <section id="datlad-install-datalad-clone">
 <h2>Datlad install/Datalad clone<a class="headerlink" href="#datlad-install-datalad-clone" title="Link to this heading">#</a></h2>
-<p>To aquire a dataset from the internet we have multiple options, e.g. via the datalad clone command. This not only allows for faster downloads, but additionally creates necessary metadat. We’re avoiding, e.g. “I don’t really remember where I got the data from; Yeah, whatever version should be fine. Oh they updated the dataset since 2008?” etc.:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>(datalad) (base) Michaels-MacBook-Pro:os_days_demo me$ datalad clone --dataset . https://github.com/datalad/example-dicom-functional.git 
+<p>To aquire a dataset from the internet we have multiple options, e.g. via the <a class="reference external" href="http://docs.datalad.org/en/stable/generated/man/datalad-clone.html">datalad clone</a> command. This not only allows for faster downloads, but additionally creates necessary metadat. We’re avoiding, e.g. “I don’t really remember where I got the data from; Yeah, whatever version should be fine. Oh they updated the dataset since 2008?” etc.:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    $ datalad clone --dataset https://github.com/psychoinformatics-de/studyforrest-data-phase2.git
+
+        install(ok): example-dicom-functional (dataset)                                                                                                                                                                       
+        add(ok): example-dicom-functional (dataset)                                                                                                                                                                           
+        add(ok): .gitmodules (file)                                                                                                                                                                                           
+        save(ok): . (dataset)                                                                                                                                                                                                 
+        add(ok): .gitmodules (file)                                                                                                                                                                                           
+        save(ok): . (dataset)                                                                                                                                                                                                 
+        action summary:                                                                                                                                                                                                       
+        add (ok: 3)
+        install (ok: 1)
+        save (ok: 2)
 </pre></div>
 </div>
-<p>Let’s take a look at our newly aquired dataset.</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>(datalad) (base) Michaels-MacBook-Pro:bids-data me$ datalad subdatasets
-subdataset(ok): inputs/rawdata (dataset)
+<div class="dropdown admonition">
+<p class="admonition-title">Dataset Nesting - the  –dataset flag</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">--dataset</span></code> flag indicated that we want to creat a nested dataset into our already existing Dataset. This <code class="docutils literal notranslate"><span class="pre">Superdataset</span></code>, contains the information that a subdataset exists though – the subdataset is registered in the superdataset. Why do you think this could be useful? More info on nesting in the <a class="reference external" href="https://handbook.datalad.org/en/latest/basics/101-106-nesting.html">Datalad Handbook</a></p>
+</div>
+<p>Let’s take a look at our newly aquired dataset. The directory structure seems familiar, check with <code class="docutils literal notranslate"><span class="pre">tree</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>- tree -d 
+    .
+    ├── code
+    │   ├── rawdata_conversion
+    │   └── stimulus
+    │       ├── movie
+    │       ├── movie_localizer
+    │       │   └── videos
+    │       ├── retinotopic_mapping
+    │       │   ├── songs
+    │       │   └── videos
+    │       └── visualarea_localizer
+    │           └── img
+    │               └── lcm
+    ├── src
+    │   └── lab-eyetracking
+    ├── stimuli
+    │   ├── movie_localizer -&gt; ../code/stimulus/movie_localizer/videos/
+    │   ├── retinotopic_mapping -&gt; ../code/stimulus/retinotopic_mapping/videos
+    │   └── visualarea_localizer -&gt; ../code/stimulus/visualarea_localizer/img/
+    ├── sub-01
+    │   ├── ses-localizer
+    │   │   └── func
+    │   └── ses-movie
+    │       └── func
+
 </pre></div>
 </div>
-<p>So datalad subdatasets implies the existenc of a superdataset, contains the information that a subdataset exists though – the subdataset is registered in the superdataset. This is why the subdataset name exists as a directory.</p>
-<p>The directory structure seems familiar</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>tree-d
+<p>Let’s look into this more, we’ll use <code class="docutils literal notranslate"><span class="pre">cd</span></code> to look at some of our subject data.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">cd</span> <span class="n">sub</span><span class="o">-</span><span class="mi">01</span><span class="o">/</span><span class="n">ses</span><span class="o">-</span><span class="n">localizer</span><span class="o">/</span><span class="n">func</span><span class="o">/</span>
+    <span class="n">ls</span> 
+
+    <span class="n">sub</span><span class="o">-</span><span class="mi">01</span><span class="n">_ses</span><span class="o">-</span><span class="n">localizer_task</span><span class="o">-</span><span class="n">movielocalizer_run</span><span class="o">-</span><span class="mi">1</span><span class="n">_bold</span><span class="o">.</span><span class="n">json</span>
+    <span class="n">sub</span><span class="o">-</span><span class="mi">01</span><span class="n">_ses</span><span class="o">-</span><span class="n">localizer_task</span><span class="o">-</span><span class="n">movielocalizer_run</span><span class="o">-</span><span class="mi">1</span><span class="n">_bold</span><span class="o">.</span><span class="n">nii</span><span class="o">.</span><span class="n">gz</span>
+    <span class="o">...</span>
+
 </pre></div>
 </div>
 <p>So whats a nii.gz file? How big do you expext those to be?</p>
 <p>Let’s inspect closer. We will print the size of the directory and the contained files in human readable form, using the bash <code class="docutils literal notranslate"><span class="pre">du</span> <span class="pre">(disk</span> <span class="pre">usage)</span></code> command.</p>
-<p><code class="docutils literal notranslate"><span class="pre">du</span> <span class="pre">-sh</span></code></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>du -sh
+
+ B	.
+</pre></div>
+</div>
 <p>The file size seems suspicious. Thinking back, why was the download of the dataset this quick?</p>
-<ul class="simple">
-<li><p>tree -d</p>
-<ul>
-<li><p>object tree</p></li>
-</ul>
-</li>
-</ul>
 <section id="git-annex">
 <h3>Git Annex<a class="headerlink" href="#git-annex" title="Link to this heading">#</a></h3>
 <figure class="align-default" id="id1">
-<a class="bg-primary mb-1 reference internal image-reference" href="https://git-annex.branchable.com/logo_small.png"><img alt="fishy" class="bg-primary mb-1" src="https://git-annex.branchable.com/logo_small.png" style="width: 300px;" /></a>
+<a class="mb-1 reference internal image-reference" href="https://git-annex.branchable.com/logo_small.png"><img alt="fishy" class="mb-1" src="https://git-annex.branchable.com/logo_small.png" style="width: 300px;" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 2 </span><span class="caption-text">Git-Annex</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<p><a class="reference external" href="https://git-annex.branchable.com/">Git-Annex</a> and by extension Datalad only indexes large files, but doesn’t actually download themk, so these files are not actually present. The present symbolic links or Simlinks only point to where a file lies. Git-annex allows us to store the relevnat structure of a dataset and only retrieve whatever we need, when we need it. Why could this be of use to neuroscientists?</p>
+<p><a class="reference external" href="https://git-annex.branchable.com/">Git-Annex</a> and by extension Datalad by deault indexes large files, but doesn’t necessarily download them, so these files are not actually present. The present symbolic links or Simlinks only point to where a file lies. Git-annex allows us to store the relevnat structure of a dataset and only retrieve whatever we need, when we need it. Why could this be of use to neuroscientists?</p>
 <div class="dropdown admonition">
 <p class="admonition-title">Git-Annex - Definition</p>
 <p>git-annex allows managing large files with git, without storing the file contents in git. It can sync, backup, and archive your data, offline and online. Checksums and encryption keep your data safe and secure. Bring the power and distributed nature of git to bear on your large files with git-annex.</p>
@@ -844,54 +947,72 @@ subdataset(ok): inputs/rawdata (dataset)
 <section id="datalad-get-retrieving-data">
 <h2>Datalad get - Retrieving data<a class="headerlink" href="#datalad-get-retrieving-data" title="Link to this heading">#</a></h2>
 <p>To actually download or retrieve files we will use the <code class="docutils literal notranslate"><span class="pre">datalad</span> <span class="pre">get</span></code> command specifying the excat file we want:</p>
-<p>datalad get sub-01/ses-localizer/func/sub-01_ses-localizer_task-objectcategories_run-*.nii.gz</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">datalad</span> <span class="n">get</span> <span class="n">sub</span><span class="o">-</span><span class="mi">01</span><span class="o">/</span><span class="n">ses</span><span class="o">-</span><span class="n">localizer</span><span class="o">/</span><span class="n">func</span><span class="o">/</span><span class="n">sub</span><span class="o">-</span><span class="mi">01</span><span class="n">_ses</span><span class="o">-</span><span class="n">localizer_task</span><span class="o">-</span><span class="n">objectcategories_run</span><span class="o">-*.</span><span class="n">nii</span><span class="o">.</span><span class="n">gz</span>
+        <span class="n">get</span><span class="p">(</span><span class="n">ok</span><span class="p">):</span> <span class="n">sub</span><span class="o">-</span><span class="mi">01</span><span class="o">/</span><span class="n">ses</span><span class="o">-</span><span class="n">localizer</span><span class="o">/</span><span class="n">func</span><span class="o">/</span><span class="n">sub</span><span class="o">-</span><span class="mi">01</span><span class="n">_ses</span><span class="o">-</span><span class="n">localizer_task</span><span class="o">-</span><span class="n">objectcategories_run</span><span class="o">-</span><span class="mi">2</span><span class="n">_bold</span><span class="o">.</span><span class="n">nii</span><span class="o">.</span><span class="n">gz</span> <span class="p">(</span><span class="n">file</span><span class="p">)</span> <span class="p">[</span><span class="kn">from</span> <span class="nn">mddatasrc...</span><span class="p">]</span>                                                                                            
+        <span class="n">get</span><span class="p">(</span><span class="n">ok</span><span class="p">):</span> <span class="n">sub</span><span class="o">-</span><span class="mi">01</span><span class="o">/</span><span class="n">ses</span><span class="o">-</span><span class="n">localizer</span><span class="o">/</span><span class="n">func</span><span class="o">/</span><span class="n">sub</span><span class="o">-</span><span class="mi">01</span><span class="n">_ses</span><span class="o">-</span><span class="n">localizer_task</span><span class="o">-</span><span class="n">objectcategories_run</span><span class="o">-</span><span class="mi">4</span><span class="n">_bold</span><span class="o">.</span><span class="n">nii</span><span class="o">.</span><span class="n">gz</span> <span class="p">(</span><span class="n">file</span><span class="p">)</span> <span class="p">[</span><span class="kn">from</span> <span class="nn">mddatasrc...</span><span class="p">]</span>                                                                                            
+        <span class="n">get</span><span class="p">(</span><span class="n">ok</span><span class="p">):</span> <span class="n">sub</span><span class="o">-</span><span class="mi">01</span><span class="o">/</span><span class="n">ses</span><span class="o">-</span><span class="n">localizer</span><span class="o">/</span><span class="n">func</span><span class="o">/</span><span class="n">sub</span><span class="o">-</span><span class="mi">01</span><span class="n">_ses</span><span class="o">-</span><span class="n">localizer_task</span><span class="o">-</span><span class="n">objectcategories_run</span><span class="o">-</span><span class="mi">3</span><span class="n">_bold</span><span class="o">.</span><span class="n">nii</span><span class="o">.</span><span class="n">gz</span> <span class="p">(</span><span class="n">file</span><span class="p">)</span> <span class="p">[</span><span class="kn">from</span> <span class="nn">mddatasrc...</span><span class="p">]</span>
+        <span class="n">get</span><span class="p">(</span><span class="n">ok</span><span class="p">):</span> <span class="n">sub</span><span class="o">-</span><span class="mi">01</span><span class="o">/</span><span class="n">ses</span><span class="o">-</span><span class="n">localizer</span><span class="o">/</span><span class="n">func</span><span class="o">/</span><span class="n">sub</span><span class="o">-</span><span class="mi">01</span><span class="n">_ses</span><span class="o">-</span><span class="n">localizer_task</span><span class="o">-</span><span class="n">objectcategories_run</span><span class="o">-</span><span class="mi">4</span><span class="n">_defacemask</span><span class="o">.</span><span class="n">nii</span><span class="o">.</span><span class="n">gz</span> <span class="p">(</span><span class="n">file</span><span class="p">)</span> <span class="p">[</span><span class="kn">from</span> <span class="nn">mddatasrc...</span><span class="p">]</span>
+        <span class="n">get</span><span class="p">(</span><span class="n">ok</span><span class="p">):</span> <span class="n">sub</span><span class="o">-</span><span class="mi">01</span><span class="o">/</span><span class="n">ses</span><span class="o">-</span><span class="n">localizer</span><span class="o">/</span><span class="n">func</span><span class="o">/</span><span class="n">sub</span><span class="o">-</span><span class="mi">01</span><span class="n">_ses</span><span class="o">-</span><span class="n">localizer_task</span><span class="o">-</span><span class="n">objectcategories_run</span><span class="o">-</span><span class="mi">3</span><span class="n">_defacemask</span><span class="o">.</span><span class="n">nii</span><span class="o">.</span><span class="n">gz</span> <span class="p">(</span><span class="n">file</span><span class="p">)</span> <span class="p">[</span><span class="kn">from</span> <span class="nn">mddatasrc...</span><span class="p">]</span>
+        <span class="n">get</span><span class="p">(</span><span class="n">ok</span><span class="p">):</span> <span class="n">sub</span><span class="o">-</span><span class="mi">01</span><span class="o">/</span><span class="n">ses</span><span class="o">-</span><span class="n">localizer</span><span class="o">/</span><span class="n">func</span><span class="o">/</span><span class="n">sub</span><span class="o">-</span><span class="mi">01</span><span class="n">_ses</span><span class="o">-</span><span class="n">localizer_task</span><span class="o">-</span><span class="n">objectcategories_run</span><span class="o">-</span><span class="mi">2</span><span class="n">_defacemask</span><span class="o">.</span><span class="n">nii</span><span class="o">.</span><span class="n">gz</span> <span class="p">(</span><span class="n">file</span><span class="p">)</span> <span class="p">[</span><span class="kn">from</span> <span class="nn">mddatasrc...</span><span class="p">]</span>
+        <span class="n">get</span><span class="p">(</span><span class="n">ok</span><span class="p">):</span> <span class="n">sub</span><span class="o">-</span><span class="mi">01</span><span class="o">/</span><span class="n">ses</span><span class="o">-</span><span class="n">localizer</span><span class="o">/</span><span class="n">func</span><span class="o">/</span><span class="n">sub</span><span class="o">-</span><span class="mi">01</span><span class="n">_ses</span><span class="o">-</span><span class="n">localizer_task</span><span class="o">-</span><span class="n">objectcategories_run</span><span class="o">-</span><span class="mi">1</span><span class="n">_bold</span><span class="o">.</span><span class="n">nii</span><span class="o">.</span><span class="n">gz</span> <span class="p">(</span><span class="n">file</span><span class="p">)</span> <span class="p">[</span><span class="kn">from</span> <span class="nn">mddatasrc...</span><span class="p">]</span>
+        <span class="n">get</span><span class="p">(</span><span class="n">ok</span><span class="p">):</span> <span class="n">sub</span><span class="o">-</span><span class="mi">01</span><span class="o">/</span><span class="n">ses</span><span class="o">-</span><span class="n">localizer</span><span class="o">/</span><span class="n">func</span><span class="o">/</span><span class="n">sub</span><span class="o">-</span><span class="mi">01</span><span class="n">_ses</span><span class="o">-</span><span class="n">localizer_task</span><span class="o">-</span><span class="n">objectcategories_run</span><span class="o">-</span><span class="mi">1</span><span class="n">_defacemask</span><span class="o">.</span><span class="n">nii</span><span class="o">.</span><span class="n">gz</span> <span class="p">(</span><span class="n">file</span><span class="p">)</span> <span class="p">[</span><span class="kn">from</span> <span class="nn">mddatasrc...</span><span class="p">]</span>
+        <span class="n">action</span> <span class="n">summary</span><span class="p">:</span>
+        <span class="n">get</span> <span class="p">(</span><span class="n">ok</span><span class="p">:</span> <span class="mi">8</span><span class="p">)</span>
+
+</pre></div>
+</div>
+<p>As we can see, Datalad now uses the existing structure to download the data we’ve queried. But it looks like only the <code class="docutils literal notranslate"><span class="pre">nifti</span></code> (nii.gz)  files were downloaded. What about the <code class="docutils literal notranslate"><span class="pre">.json</span></code> files we saw before?</p>
+<p>To get all files associated with the dataset recursively. We can run <code class="docutils literal notranslate"><span class="pre">datalad</span> <span class="pre">get</span> <span class="pre">-r</span></code>. But think closely before running this, what is the expected behabivor? What happens when we are dealing with massive datasets?</p>
 <div class="dropdown admonition">
 <p class="admonition-title">Question: How do we check the filesize again?</p>
 <p><code class="docutils literal notranslate"><span class="pre">du</span> <span class="pre">-sh</span></code></p>
 </div>
-<p>To get all files associated with the dataset recursively. We can run <code class="docutils literal notranslate"><span class="pre">datalad</span> <span class="pre">get</span> <span class="pre">-r</span></code>. But think closely before running this, what is the expected behabivor? What happens when we are dealing with massive datasets?</p>
 <section id="datlad-drop-removing-data">
 <h3>Datlad drop - Removing data<a class="headerlink" href="#datlad-drop-removing-data" title="Link to this heading">#</a></h3>
 <p>In the same vein, you might want to remove raw data that has already been processed. This can be done via the <code class="docutils literal notranslate"><span class="pre">datalad</span> <span class="pre">drop</span></code> command.</p>
-<p>datalad drop sub-01/ses-localizer/func/sub-01_ses-localizer_task-objectcategories_run-4_bold.nii.gz</p>
-<p>And checking if everythins is still there?</p>
-<ul class="simple">
-<li><p>tree</p></li>
-</ul>
-<p>what about the size of our directory?</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">datalad</span> <span class="n">drop</span> <span class="n">sub</span><span class="o">-</span><span class="mi">01</span><span class="o">/</span><span class="n">ses</span><span class="o">-</span><span class="n">localizer</span><span class="o">/</span><span class="n">func</span><span class="o">/</span><span class="n">sub</span><span class="o">-</span><span class="mi">01</span><span class="n">_ses</span><span class="o">-</span><span class="n">localizer_task</span><span class="o">-</span><span class="n">objectcategories_run</span><span class="o">-</span><span class="mi">4</span><span class="n">_bold</span><span class="o">.</span><span class="n">nii</span><span class="o">.</span><span class="n">gz</span>
+    <span class="n">drop</span><span class="p">(</span><span class="n">ok</span><span class="p">):</span> <span class="n">sub</span><span class="o">-</span><span class="mi">01</span><span class="o">/</span><span class="n">ses</span><span class="o">-</span><span class="n">localizer</span><span class="o">/</span><span class="n">func</span><span class="o">/</span><span class="n">sub</span><span class="o">-</span><span class="mi">01</span><span class="n">_ses</span><span class="o">-</span><span class="n">localizer_task</span><span class="o">-</span><span class="n">objectcategories_run</span><span class="o">-</span><span class="mi">4</span><span class="n">_bold</span><span class="o">.</span><span class="n">nii</span><span class="o">.</span><span class="n">gz</span> <span class="p">(</span><span class="n">file</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>what about the size of our directory now?</p>
 <p><code class="docutils literal notranslate"><span class="pre">du</span> <span class="pre">-sh</span></code></p>
 </section>
 </section>
 <section id="datalad-run-reproducible-execution">
 <h2>Datalad Run: Reproducible execution<a class="headerlink" href="#datalad-run-reproducible-execution" title="Link to this heading">#</a></h2>
-<p><a class="reference external" href="http://datasets.datalad.org/datalad/datalad-course/pics/run_prov.svg">http://datasets.datalad.org/datalad/datalad-course/pics/run_prov.svg</a></p>
+<figure class="align-default" id="id2">
+<a class="mb-1 reference internal image-reference" href="http://datasets.datalad.org/datalad/datalad-course/pics/run_prov.svg"><img alt="fishy" class="mb-1" src="http://datasets.datalad.org/datalad/datalad-course/pics/run_prov.svg" style="width: 300px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 3 </span><span class="caption-text">DataLad Run - reproducbile execution inclduing metafile generation</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Now we could start working with this directory. Given that we want datalad to provide us with our metadata on what was done to our data, by whome, given which script etc. we can make use of the <code class="docutils literal notranslate"><span class="pre">datalad</span> <span class="pre">run</span></code> command. This makes use of the native <code class="docutils literal notranslate"><span class="pre">Python</span></code> integration and let´s us run python scripts on our data directories. We will deomstrate this shortly, but let’s get some actual data first.</p>
 </section>
 <section id="summary-dataset-consumption">
 <h2>Summary - Dataset consumption<a class="headerlink" href="#summary-dataset-consumption" title="Link to this heading">#</a></h2>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>datalad clone installs a dataset.
-    It can be installed “on its own”: Specify the source (url, path, ...) of the dataset, and an optional path for it to be installed to.
-Only small files and metadata about file availability are present locally after an install.
-    To retrieve actual file content of larger files, datalad get downloads large file content on demand.
-Content can be dropped to save disk space with datalad drop.
-    Do this only if content can be easily reobtained.
-Datasets preserve their history.
-    In nested datasets, the superdataset records only the version state of the subdataset. 
-</pre></div>
-</div>
+<ul class="simple">
+<li><p>datalad clone installs a dataset.
+It can be installed “on its own”: Specify the source (url, path, …) of the dataset, and an optional path for it to be installed to.</p></li>
+<li><p>Only small files and metadata about file availability are present locally after an install.
+To retrieve actual file content of larger files, datalad get downloads large file content on demand.</p></li>
+<li><p>Content can be dropped to save disk space with datalad drop.
+Do this only if content can be easily reobtained.</p></li>
+<li><p>Datasets preserve their history.
+In nested datasets, the superdataset records only the version state of the subdataset.</p></li>
+</ul>
 </section>
 <section id="using-published-datasets">
 <h2>Using published datasets<a class="headerlink" href="#using-published-datasets" title="Link to this heading">#</a></h2>
 <p>Most of the next part is taken from the <a class="reference external" href="https://handbook.datalad.org/en/latest/code_from_chapters/yale.html">Datalad Yale Demo</a>. Head over there to see their more in-depth takes.</p>
+<br>
 <p>Let’s first set up a new dataset directory.</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>cd ../
-datalad create -c yoda myanalysis
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">cd</span> <span class="o">../</span>
+    <span class="n">datalad</span> <span class="n">create</span> <span class="o">-</span><span class="n">c</span> <span class="n">yoda</span> <span class="n">myanalysis</span>
 </pre></div>
 </div>
 <p>A new configuration procedure appears. Yoda?</p>
 <div class="dropdown admonition">
-<p class="admonition-title">Question: GIN is based on the same architecture, but is tailored to a different use-case: What could be the difference?</p>
-<p>The YODA Flag in the datalad create Command</p>
+<p class="admonition-title">Question: What’s the YODA Flag in the datalad create Command?</p>
 <p>The -c yoda flag in the datalad create command applies YODA-compliant configurations to a newly created dataset. These configurations provide a head start in organizing a dataset according to the YODA principles.
 What the YODA Flag Does:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Directories/files:
@@ -904,14 +1025,13 @@ Version Control (.gitattributes)
 </pre></div>
 </div>
 </div>
-<ol class="arabic simple">
-<li><p>Pull Data from GIN</p></li>
-</ol>
+<section id="pull-data-from-gin">
+<h3>1. Pull Data from GIN<a class="headerlink" href="#pull-data-from-gin" title="Link to this heading">#</a></h3>
 <p>We’ll be using the <code class="docutils literal notranslate"><span class="pre">datlad</span> <span class="pre">clone</span></code> command to retrieve a datasat from a public GIN repository.</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>cd myanalysis
-datalad clone -d . \
-https://gin.g-node.org/adswa/bids-data \
-input
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">cd</span> <span class="n">myanalysis</span>
+    <span class="n">datalad</span> <span class="n">clone</span> <span class="o">-</span><span class="n">d</span> <span class="o">.</span> \
+    <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">gin</span><span class="o">.</span><span class="n">g</span><span class="o">-</span><span class="n">node</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">adswa</span><span class="o">/</span><span class="n">bids</span><span class="o">-</span><span class="n">data</span> \
+    <span class="nb">input</span>
 </pre></div>
 </div>
 <p>We can further use prexisting scripts, e.g. blatantly steal from the <a class="reference external" href="https://nilearn.github.io/stable/auto_examples/01_plotting/plot_visualization.html#sphx-glr-auto-examples-01-plotting-plot-visualization-py">nilearn tutorial</a>, as they stored theri stuff on Github. We’ll also add a commit message, so that we have some idea on what were doing for our metadata.</p>
@@ -921,39 +1041,109 @@ input
 https://raw.githubusercontent.com/datalad-handbook/resources/master/get_brainmask.py
 </pre></div>
 </div>
-<p>We can also verify the File’s Origin, here to confirm the URL is recorded as metadata, ensuring traceability.</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>datalad metadata &lt;filename&gt;
-</pre></div>
-</div>
-<ol class="arabic simple" start="2">
-<li><p>Build the computational environemnt, e.g. get a container</p></li>
-</ol>
+</section>
+<section id="build-the-computational-environemnt-e-g-get-a-container">
+<h3>2. Build the computational environemnt, e.g. get a container<a class="headerlink" href="#build-the-computational-environemnt-e-g-get-a-container" title="Link to this heading">#</a></h3>
 <p>Oh damn, but we don’t have the necessary software installed for this analysis, surely? And what if the script was written for a specific Linux distribution?  That’s were Datalad containers can come in handy. We need a container with a Python 3 environment and the nilearn package already preinstalled installed.</p>
-<p>Importantly, this container does not need to contain the analysis script. It just needs the correct software that the script requires – in this case, a Python 3 environment with nilearn installed.</p>
-<p>Let’s add this container to the dataset using datalad containers-add (manual).</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    datalad containers-add nilearn \
-    --url dhub://djarecka/nilearn:yale
+<p>This container does not need to contain the analysis script. It just needs the correct software specifications our downloaded script requires – here a Python 3 environment with nilearn.</p>
+<p>Let’s add this container to our available ennvironments using <a class="reference external" href="http://docs.datalad.org/projects/container/en/latest/generated/man/datalad-containers-add.html">datalad containers-add</a>.</p>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id3">
+<h1><a class="headerlink" href="#id3" title="Link to this heading">#</a></h1>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>        datalad containers-add nilearn \
+        --url dhub://djarecka/nilearn:yale
+
+        yale: Pulling from djarecka/nilearn
+        Digest: sha256:8b7592db7c29f449aae918cc7af2000771071084c861db63013099812e87a5bf
+        Status: Image is up to date for djarecka/nilearn:yale
+        docker.io/djarecka/nilearn:yale
+
+        What&#39;s Next?
+        View a summary of image vulnerabilities and recommendations → docker scout quickview djarecka/nilearn:yale
 </pre></div>
 </div>
-<ol class="arabic simple" start="3">
-<li><p>Run the analysis</p></li>
-</ol>
-<p>inally, call datalad containers-run to execute the script inside of the container. Here’s how this looks like</p>
-<p>datalad containers-run -m “Compute brain mask” <br />
--n nilearn <br />
-–input input/sub-02/func/sub-02_task-oneback_run-01_bold.nii.gz <br />
-–output figures/ <br />
-–output “sub-02*” <br />
-“python code/get_brainmask.py”</p>
-<ol class="arabic simple" start="4">
-<li><p>Check our metadata</p></li>
-</ol>
-<p>You can query an individual file how it came to be…:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>git log sub-02_brain-mask.nii.gz
+<section id="run-the-analysis">
+<h2>3. Run the analysis<a class="headerlink" href="#run-the-analysis" title="Link to this heading">#</a></h2>
+<p>Simply, call <code class="docutils literal notranslate"><span class="pre">datalad</span> <span class="pre">containers-run</span></code> to execute the script inside of the container. Here’s how this looks like</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="n">datalad</span> <span class="n">containers</span><span class="o">-</span><span class="n">run</span> <span class="o">-</span><span class="n">m</span> <span class="s2">&quot;Compute brain mask&quot;</span> \
+ <span class="o">-</span><span class="n">n</span> <span class="n">nilearn</span> \
+ <span class="o">--</span><span class="nb">input</span> <span class="nb">input</span><span class="o">/</span><span class="n">sub</span><span class="o">-</span><span class="mi">02</span><span class="o">/</span><span class="n">func</span><span class="o">/</span><span class="n">sub</span><span class="o">-</span><span class="mi">02</span><span class="n">_task</span><span class="o">-</span><span class="n">oneback_run</span><span class="o">-</span><span class="mi">01</span><span class="n">_bold</span><span class="o">.</span><span class="n">nii</span><span class="o">.</span><span class="n">gz</span> \
+ <span class="o">--</span><span class="n">output</span> <span class="n">figures</span><span class="o">/</span> \
+ <span class="o">--</span><span class="n">output</span> <span class="s2">&quot;sub-02*&quot;</span> \
+ <span class="s2">&quot;python code/get_brainmask.py&quot;</span>
+
 </pre></div>
 </div>
-<p>And the computation can be automatically be repeated in a reproducible manner, based on the recorded provenance using <code class="docutils literal notranslate"><span class="pre">datalad</span> <span class="pre">rerun</span></code>:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>datalad rerun
+<p>Let’s break this command down, we call <code class="docutils literal notranslate"><span class="pre">datalad</span> <span class="pre">containers-run</span></code>, defining our nilearn container, specifying <code class="docutils literal notranslate"><span class="pre">input</span></code> and <code class="docutils literal notranslate"><span class="pre">output</span></code>, as well as our executable <code class="docutils literal notranslate"><span class="pre">python</span></code> to run our previously downloaded script.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="o">-</span><span class="n">n</span> <span class="n">nilearn</span><span class="p">:</span>
+    <span class="n">Specifies</span> <span class="n">the</span> <span class="n">nilearn</span> <span class="n">container</span> <span class="k">for</span> <span class="n">running</span> <span class="n">the</span> <span class="n">computation</span><span class="p">,</span> <span class="n">pre</span><span class="o">-</span><span class="n">configured</span> <span class="k">for</span> <span class="n">neuroimaging</span> <span class="n">tasks</span><span class="o">.</span>
+
+    <span class="o">--</span><span class="nb">input</span> <span class="nb">input</span><span class="o">/</span><span class="n">sub</span><span class="o">-</span><span class="mi">02</span><span class="o">/</span><span class="n">func</span><span class="o">/</span><span class="n">sub</span><span class="o">-</span><span class="mi">02</span><span class="n">_task</span><span class="o">-</span><span class="n">oneback_run</span><span class="o">-</span><span class="mi">01</span><span class="n">_bold</span><span class="o">.</span><span class="n">nii</span><span class="o">.</span><span class="n">gz</span><span class="p">:</span>
+    <span class="n">Uses</span> <span class="n">a</span> <span class="n">BOLD</span> <span class="n">fMRI</span> <span class="n">image</span> <span class="p">(</span><span class="n">NIfTI</span> <span class="nb">format</span><span class="p">)</span> <span class="k">as</span> <span class="nb">input</span><span class="p">,</span> <span class="n">tracked</span> <span class="ow">and</span> <span class="n">reproducible</span> <span class="n">by</span> <span class="n">datalad</span><span class="o">.</span>
+
+    <span class="o">--</span><span class="n">output</span> <span class="n">figures</span><span class="o">/</span><span class="p">:</span>
+    <span class="n">Outputs</span> <span class="n">results</span> <span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">g</span><span class="o">.</span><span class="p">,</span> <span class="n">visualizations</span><span class="p">)</span> <span class="n">to</span> <span class="n">the</span> <span class="n">figures</span><span class="o">/</span> <span class="n">directory</span><span class="o">.</span>
+
+    <span class="o">--</span><span class="n">output</span> <span class="s2">&quot;sub-02*&quot;</span><span class="p">:</span>
+    <span class="n">Tracks</span> <span class="n">additional</span> <span class="n">outputs</span> <span class="n">matching</span> <span class="n">the</span> <span class="n">sub</span><span class="o">-</span><span class="mi">02</span><span class="o">*</span> <span class="n">pattern</span><span class="o">.</span>
+
+    <span class="s2">&quot;python code/get_brainmask.py&quot;</span><span class="p">:</span>
+    <span class="n">Runs</span> <span class="n">the</span> <span class="n">Python</span> <span class="n">script</span> <span class="n">to</span> <span class="n">compute</span> <span class="n">a</span> <span class="n">brain</span> <span class="n">mask</span><span class="p">,</span> <span class="n">isolating</span> <span class="n">brain</span> <span class="n">regions</span> <span class="kn">from</span> <span class="nn">the</span> <span class="nb">input</span> <span class="n">image</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>Looking into our <code class="docutils literal notranslate"><span class="pre">figures</span></code> output folder, we can see that we apparently did do some neuroscience? Yay!</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    $ ls
+        CHANGELOG.md			README.md			code				figures				input				sub-02_brain-mask.nii.gz
+    $ cd figures/
+    $ ls
+        sub-02_brainmask.png	sub-02_mean-epi.png
+</pre></div>
+</div>
+</section>
+<section id="check-our-metadata">
+<h2>4. Check our metadata<a class="headerlink" href="#check-our-metadata" title="Link to this heading">#</a></h2>
+<p>You can query an individual file and how it came to be using the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code> command providing it’s name, e.g.:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+    $ git log sub-02_brain-mask.nii.gz
+    commit 3ab58eef122727e392a0ce765bd3c2a19f194a95 (HEAD -&gt; main)
+    Author: Michael Ernst &lt;m.earnest211@gmail.com&gt;
+    Date:   Thu Nov 28 12:47:50 2024 +0100
+
+        [DATALAD RUNCMD] Compute brain mask
+        
+        === Do not change lines below ===
+        {
+        &quot;chain&quot;: [],
+        &quot;cmd&quot;: &quot;/Users/me/env/datalad/bin/python3.13 -m datalad_container.adapters.docker run .datalad/environments/nilearn/image python code/get_brainmask.py&quot;,
+        &quot;dsid&quot;: &quot;6d4fed52-fc20-4a0d-9b4c-6bb5d8463192&quot;,
+        &quot;exit&quot;: 0,
+        &quot;extra_inputs&quot;: [
+        &quot;.datalad/environments/nilearn/image&quot;
+        ],
+        &quot;inputs&quot;: [
+        &quot;input/sub-02/func/sub-02_task-oneback_run-01_bold.nii.gz&quot;
+        ],
+        &quot;outputs&quot;: [
+        &quot;figures/&quot;,
+        &quot;sub-02*&quot;
+        ],
+        &quot;pwd&quot;: &quot;.&quot;
+        }
+        ^^^ Do not change lines above ^^^
+</pre></div>
+</div>
+<p>Or using datalads own <code class="docutils literal notranslate"><span class="pre">diff</span></code> command, specyfing the most recent change:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+- $ datalad diff -f HEAD~1
+    added: figures/sub-02_brainmask.png (symlink)
+    added: figures/sub-02_mean-epi.png (symlink)
+    added: sub-02_brain-mask.nii.gz (symlink)
+</pre></div>
+</div>
+<p>And the computation can be automatically be repeated in a reproducible manner, based on the recorded provenance using <code class="docutils literal notranslate"><span class="pre">datalad</span> <span class="pre">rerun</span></code> by using the SHA-1 checksum at the top of the commit message:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>datalad rerun 3ab58eef122727e392a0ce765bd3c2a19f194a95
 </pre></div>
 </div>
 <p>Check the Chapter on <a class="reference external" href="https://handbook.datalad.org/en/latest/basics/101-109-rerun.html">Datalad Rerun</a> in the Handbook for more info.</p>
@@ -967,48 +1157,62 @@ https://raw.githubusercontent.com/datalad-handbook/resources/master/get_brainmas
 <li><p><a class="reference external" href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent">Adding a SSH Key to your GitHub Account</a></p></li>
 <li><p><a class="reference external" href="https://handbook.datalad.org/en/latest/basics/101-139-gin.html#prerequisites">Adding a SSH Key to your GIN Repository</a></p></li>
 </ol>
-<p>Following this Setup, we can quite easily connect our local and remote repositories, while Datalad keeps track of the metadata for us</p>
-<ol class="arabic simple">
-<li><p>Create an repository on GIN</p></li>
-</ol>
-<p>screenshot</p>
-<ol class="arabic simple" start="2">
-<li><p>Create a local repository using DataLad</p></li>
-</ol>
+<p>Following this Setup, we can quite easily connect our local and remote repositories, while Datalad keeps track of the metadata for us.</p>
+<figure class="align-default" id="id4">
+<a class="mb-1 reference internal image-reference" href="https://handbook.datalad.org/en/latest/_images/publishing_network_publishgin.svg"><img alt="fishy" class="mb-1" src="https://handbook.datalad.org/en/latest/_images/publishing_network_publishgin.svg" style="width: 300px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 4 </span><span class="caption-text">Datalad connecnts local and remote systems, build on Git and Git-Annex</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="create-an-repository-on-gin">
+<h3>1. Create an repository on GIN<a class="headerlink" href="#create-an-repository-on-gin" title="Link to this heading">#</a></h3>
+<p>Simply click the <code class="docutils literal notranslate"><span class="pre">+</span></code> at the top of GIN webpage and select `new repository``</p>
+<p>create_repo_gin  screenshot</p>
+</section>
+<section id="create-a-local-repository-using-datalad">
+<h3>2. Create a local repository using DataLad<a class="headerlink" href="#create-a-local-repository-using-datalad" title="Link to this heading">#</a></h3>
 <div class="dropdown admonition">
 <p class="admonition-title">Question: Remember how?</p>
-<p>datalad create</p>
+<p>datalad create -c yoda os_test_days_gin</p>
 </div>
-<ol class="arabic simple" start="3">
-<li><p>Add the remote repository</p></li>
-</ol>
+</section>
+<section id="add-the-remote-repository">
+<h3>3. Add the remote repository<a class="headerlink" href="#add-the-remote-repository" title="Link to this heading">#</a></h3>
 <p>Now the two systems will necessarily have to know about each other for this to work, right? We’ll let them know that they are related via the <code class="docutils literal notranslate"><span class="pre">datalad</span> <span class="pre">siblings</span> <span class="pre">add</span></code> command. A sibling acts like a remote in Git, allowing you to push or pull data.</p>
-<p>First we need to et the specifici SSH url from our remote repository, e.g. <a class="reference external" href="mailto:git&#37;&#52;&#48;gin&#46;g-node&#46;org">git<span>&#64;</span>gin<span>&#46;</span>g-node<span>&#46;</span>org</a>:/ernstm/datalad_tutorials.git.</p>
-<p>Screenshot</p>
-<p>And running the command:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>(base) Michaels-MacBook-Pro:datalad_os_days_marburg_2024 me$ datalad siblings add -d . \
-    &gt;  --name gin \
-    &gt;  --url git@gin.g-node.org:/ernstm/datalad_tutorials.git
-</pre></div>
-</div>
+<p>First we need to et the specifici SSH url from our remote repository, e.g. <a class="reference external" href="mailto:git&#37;&#52;&#48;gin&#46;g-node&#46;org">git<span>&#64;</span>gin<span>&#46;</span>g-node<span>&#46;</span>org</a>:/ernstm/os_test_days_gin.git</p>
+<p><img alt=" " src="../_images/gin_ssh.png" />Screenshot</p>
+<p>And running the command:
+<span class="math notranslate nohighlight">\( cd os_test_days_gin
+    \)</span> datalad siblings add -d .   –name gin   –url <a class="reference external" href="mailto:git&#37;&#52;&#48;gin&#46;g-node&#46;org">git<span>&#64;</span>gin<span>&#46;</span>g-node<span>&#46;</span>org</a>:/ernstm/os_test_days_gin.git</p>
 <p>Let’s look at the syntac more closely datalad siblings add:</p>
 <p>-d .: Specifies the current dataset as the target.
 –name gin: Assigns the name gin to the remote.
 –url: Provides the SSH URL to the remote repository.</p>
 <p>And we can check wether this worked and what siblings exist for a dataset</p>
-<p><code class="docutils literal notranslate"><span class="pre">datalad</span> <span class="pre">siblings</span></code></p>
-<ol class="arabic simple" start="4">
-<li><p>Push your dataset changes to the remote repository</p></li>
-</ol>
-<p>This command is simply enough, once the two dataset are registered as siblings we simply use <code class="docutils literal notranslate"><span class="pre">datalad</span> <span class="pre">push</span></code> to upload data, using the <code class="docutils literal notranslate"><span class="pre">push</span> <span class="pre">--to.</span></code> flag to tell DataLad our target location, e.g.</p>
-<p>–to gin: specifies the sibling to push to. In this case, it’s the sibling named gin that you configured earlier.</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    (base) Michaels-MacBook-Pro:datalad_os_days_marburg_2024 me$ datalad push --to gin
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    $ datalad siblings
+    .: gin(-) [git@gin.g-node.org:/ernstm/os_test_days_gin.git (git)]
 </pre></div>
 </div>
 </section>
+<section id="push-your-dataset-changes-to-the-remote-repository">
+<h3>4. Push your dataset changes to the remote repository<a class="headerlink" href="#push-your-dataset-changes-to-the-remote-repository" title="Link to this heading">#</a></h3>
+<p>This command is simply enough, once the two dataset are registered as siblings we simply use <code class="docutils literal notranslate"><span class="pre">datalad</span> <span class="pre">push</span></code> to upload data, using the <code class="docutils literal notranslate"><span class="pre">push</span> <span class="pre">--to.</span></code> flag to tell DataLad our target location, e.g.</p>
+<p>–to gin: specifies the sibling to push to. In this case, it’s the sibling named gin that you configured earlier.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    $ datalad push --to gin
+</pre></div>
+</div>
+<p>Checking online our files have indeed been uploaded, but If you inspect the differnt <code class="docutils literal notranslate"><span class="pre">branches</span></code> at the top of your repo, you should see some new entries, e.g. a Git-Annex branch that has been recently updated</p>
+<a class="mb-1 reference internal image-reference" href="../_images/gin_upload.png"><img alt="gin branches" class="mb-1 align-center" src="../_images/gin_upload.png" style="width: 300px;" /></a>
+</section>
+</section>
 <section id="datalad-container">
 <h2>Datalad-container<a class="headerlink" href="#datalad-container" title="Link to this heading">#</a></h2>
-<p><img alt="alt text" src="http://datasets.datalad.org/datalad/datalad-course/pics/containers-run.svg" /></p>
+<figure class="align-default" id="id5">
+<a class="mb-1 reference internal image-reference" href="http://datasets.datalad.org/datalad/datalad-course/pics/containers-run.svg"><img alt="fishy" class="mb-1" src="http://datasets.datalad.org/datalad/datalad-course/pics/containers-run.svg" style="width: 300px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 5 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">datalad</span> <span class="pre">containers-run</span></code> allows you to run reproducible workflows with included metadata</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Looking at the official <a class="reference external" href="https://registry.hub.docker.com/r/repronim/containers">Repronim container on DockerHub</a>, tells us most of the info we need to run the container and conveniently also provides a short datalad workflow to demonstrate their implementation e.g.</p>
 <p>As we talked about BIDS, we discussed modality-specific data formats. One such format, originally designed for BIDS, is the raw MRI DICOM format. Usually, we want to transform these into an appropriate format (NIfTI) for further processing. For this, you could use, for example, the ReproIn software container. It is built on HeudiConv, a heuristic conversion tool for DICOM files. Beyond converting DICOMs to NIfTI, it also assists in converting a raw dataset to the BIDS standard and integrates with DataLad to place converted and original data under version control. Additionally, it automatically annotates files with sensitive information (e.g., non-defaced anatomical images, etc.).</p>
 <section id="making-the-container-available-to-datalad">
@@ -1025,25 +1229,30 @@ https://raw.githubusercontent.com/datalad-handbook/resources/master/get_brainmas
 <section id="practical-example">
 <h3>Practical example:<a class="headerlink" href="#practical-example" title="Link to this heading">#</a></h3>
 <p>The official <a class="reference external" href="https://registry.hub.docker.com/r/repronim/containers">Repronim container on DockerHub</a> includes a helpful short DataLad workflow to demonstrate its implementation.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>1. Creating the datalad directory
-(datalad) (base) Michaels-MacBook-Pro:git me$ datalad create -d ds000003-qc -c text2git
-(datalad) (base) Michaels-MacBook-Pro:git me$ cd ds000003-qc
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+1. Creating the datalad directory
+$ datalad create -d ds000003-qc -c text2git
+$ cd ds000003-qc
+
 
 2. using datalad install to pull sourcedate from the internet
-(datalad) (base) Michaels-MacBook-Pro:ds000003-qc me$ datalad install -d . -s https://github.com/ReproNim/ds000003-demo sourcedata
+ds000003-qc $ datalad install -d . -s https://github.com/ReproNim/ds000003-demo sourcedata
+
 
 3. using datalad install to download a container image
-(datalad) (base) Michaels-MacBook-Pro:ds000003-qc me$ datalad install -d . ///repronim/containers
+ds000003-qc $ datalad install -d . ///repronim/containers
+
 
 4. Verifying our installation
-(datalad) (base) Michaels-MacBook-Pro:ds000003-qc me$ cd containers/
-(datalad) (base) Michaels-MacBook-Pro:containers me$ ls 
+ds000003-qc $ cd containers/
+containers $ ls 
 CITATION.cff	LICENSE		README.md	artwork		binds		ci		images		licenses	scripts
+
 
 5. Verifying our data 
 
-(datalad) (base) Michaels-MacBook-Pro:containers me$ cd ../sourcedata/
-(datalad) (base) Michaels-MacBook-Pro:sourcedata me$ tree
+containers $ cd ../sourcedata/
+sourcedata $ tree
 .
 ├── CHANGES
 ├── README
@@ -1067,8 +1276,9 @@ CITATION.cff	LICENSE		README.md	artwork		binds		ci		images		licenses	scripts
 
 7 directories, 13 files
 
+
 6. And using datalad run to automatically execute the bids-mriqc container (a quality control tool)
-(datalad) (base) Michaels-MacBook-Pro:ds000003-qc me$ datalad containers-run \
+ds000003-qc $ datalad containers-run \
 &gt;         -n containers/bids-mriqc \
 &gt;         --input sourcedata \
 &gt;         --output . \
@@ -1081,18 +1291,25 @@ CITATION.cff	LICENSE		README.md	artwork		binds		ci		images		licenses	scripts
 <section id="summary-using-published-datasets">
 <h2>Summary - Using published datasets<a class="headerlink" href="#summary-using-published-datasets" title="Link to this heading">#</a></h2>
 <p>DataLad provides a robust framework for managing published datasets by enabling workflows that integrate data acquisition, containerized processing, and remote repository synchronization. Key capabilities include:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Dataset Installation: The datalad install and datalad clone commands allow users to acquire datasets while preserving their provenance.
-Sibling Management: Using datalad siblings add, researchers can connect local datasets with remote repositories (e.g., on GIN), enabling seamless synchronization and version control.
-Containerized Processing: The datalad containers-add and datalad containers-run commands facilitate reproducible data processing using preconfigured software environments.
-Data Management: Data can be retrieved selectively using datalad get or removed when no longer needed with datalad drop, ensuring efficient storage use.
-</pre></div>
-</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Dataset</span> <span class="pre">Installation</span></code>: The datalad install and datalad clone commands allow users to acquire datasets while preserving their provenance.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Sibling</span> <span class="pre">Management</span></code>: Using datalad siblings add, researchers can connect local datasets with remote repositories (e.g., on GIN), enabling seamless synchronization and version control.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Containerized</span> <span class="pre">Processing</span></code>: The datalad containers-add and datalad containers-run commands facilitate reproducible data processing using preconfigured software environments.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Data</span> <span class="pre">Management</span></code>: Data can be retrieved selectively using datalad get or removed when no longer needed with datalad drop, ensuring efficient storage use.</p></li>
+</ul>
 </section>
 <section id="additinal-information-tutorials">
 <h2>Additinal Information/Tutorials<a class="headerlink" href="#additinal-information-tutorials" title="Link to this heading">#</a></h2>
 <p><a class="reference external" href="https://handbook.datalad.org/en/latest/usecases/openneuro.html">Full Course on Research Data Management using Datalad</a></p>
 <p><a class="reference external" href="https://handbook.datalad.org/en/latest/code_from_chapters/yale.html">Quick course; Running and publishing Data using Datalad</a></p>
-<p>Sources</p>
+</section>
+<section id="openneuro">
+<h2>OpenNeuro<a class="headerlink" href="#openneuro" title="Link to this heading">#</a></h2>
+<p><a class="reference external" href="https://handbook.datalad.org/en/latest/_images/openneuro.png">https://handbook.datalad.org/en/latest/_images/openneuro.png</a></p>
+<p>An alternate solution that is very common  of datasets is <a class="reference external" href="https://openneuro.org/">OpenNeuro</a>.</p>
+<p>OpenNeuro is an repository solution to host and share BIDS-compatible datasets, ensuring both accessibility and compliance with community standards. It is designed with the idea of data indexing and searching in mind therefore, but it doesn’t provide the option of non-public datasets.</p>
+<p>It is therfore particularly valuable for researchers looking to share data broadly with the community. It ensures reproducibility by providing an accessible, long-term data repository, implementing automatic BIDS Validation, but lacks the version control system unerlying GIN.</p>
+<p>Find more info in the <a class="reference external" href="https://handbook.datalad.org/en/latest/usecases/openneuro.html">Datalad aHandbook section on OpenNeuro</a></p>
 </section>
 </section>
 
@@ -1161,6 +1378,7 @@ Data Management: Data can be retrieved selectively using datalad get or removed 
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">G-Node/GIN</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intro-the-problem-at-hand">Intro: The Problem at Hand</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-g-node-approach">The G-Node Approach</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation">Motivation</a></li>
@@ -1169,10 +1387,17 @@ Data Management: Data can be retrieved selectively using datalad get or removed 
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gin-the-manual-way">GIN: The manual way</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#challenges">Challenges</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gin-cli">GIN Cli</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#openneuro">OpenNeuro</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#datalad">DataLad</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">Setup</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#usage-how-to-get-started">Usage/How to get started:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#usage-how-to-get-started">Usage/How to get started:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-directory">1. create a directory</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#initialize-git-make-it-a-git-repository">2. initialize git/make it a git repository</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#check-for-changes">3. check for changes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#check-what-git-is-tracking">4. Check what git is tracking</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-add-a-file-cat-eot-notes-txt-appends-multiple-lines-of-text-specified-between-eot-delimiters-to-the-file-notes-txt">5. create/add a file (cat &lt;&lt; EOT &gt;&gt; notes.txt appends multiple lines of text, specified between EOT delimiters, to the file notes.txt)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#track-changes">6. track changes</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#let-s-look-at-how-datalad-does-this">Let’s look at how datalad does this</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#datalad-create">Datalad create</a></li>
 </ul>
@@ -1192,8 +1417,23 @@ Data Management: Data can be retrieved selectively using datalad get or removed 
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#datalad-run-reproducible-execution">Datalad Run: Reproducible execution</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-dataset-consumption">Summary - Dataset consumption</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-published-datasets">Using published datasets</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#upload-datasets-connect-gin-and-your-local-system-via-datalad">Upload Datasets: Connect GIN and your local system via DataLad</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-published-datasets">Using published datasets</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pull-data-from-gin">1. Pull Data from GIN</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#build-the-computational-environemnt-e-g-get-a-container">2. Build the computational environemnt, e.g. get a container</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id3"></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-the-analysis">3. Run the analysis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-our-metadata">4. Check our metadata</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#upload-datasets-connect-gin-and-your-local-system-via-datalad">Upload Datasets: Connect GIN and your local system via DataLad</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-an-repository-on-gin">1. Create an repository on GIN</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-local-repository-using-datalad">2. Create a local repository using DataLad</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#add-the-remote-repository">3. Add the remote repository</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#push-your-dataset-changes-to-the-remote-repository">4. Push your dataset changes to the remote repository</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#datalad-container">Datalad-container</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#making-the-container-available-to-datalad">Making the Container Available to Datalad</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-example">Practical example:</a></li>
@@ -1201,7 +1441,11 @@ Data Management: Data can be retrieved selectively using datalad get or removed 
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-using-published-datasets">Summary - Using published datasets</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additinal-information-tutorials">Additinal Information/Tutorials</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#openneuro">OpenNeuro</a></li>
 </ul>
+</li>
+</ul>
+
   </nav></div>
 
 </div></div>
