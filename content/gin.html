@@ -397,6 +397,7 @@
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">G-Node/GIN</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sources">Sources</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intro-the-problem-at-hand">Intro: The Problem at Hand</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-g-node-approach">The G-Node Approach</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation">Motivation</a></li>
@@ -467,7 +468,7 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-using-published-datasets">Summary - Using published datasets</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additinal-information-tutorials">Additinal Information/Tutorials</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#openneuro">OpenNeuro</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sources">Sources</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Sources</a></li>
 </ul>
 </li>
 </ul>
@@ -485,6 +486,16 @@
   <section class="tex2jax_ignore mathjax_ignore" id="g-node-gin">
 <h1>G-Node/GIN<a class="headerlink" href="#g-node-gin" title="Link to this heading">#</a></h1>
 <p>BIDS gives us a starting point for standardizing neuroscience data, but this alone does not ensure acessability or reproducibility. We need tools that go beyond mere standards.</p>
+<section id="sources">
+<h2>Sources<a class="headerlink" href="#sources" title="Link to this heading">#</a></h2>
+<p>A lot of this info here builds on Datalad tutorials and the DataLad Handbook! Check the linked content for more Informatin.</p>
+<ul class="simple">
+<li><p>Especially this <a class="reference external" href="https://handbook.datalad.org/en/latest/code_from_chapters/yale.html">Quick course; Running and publishing Data using Datalad</a></p></li>
+<li><p>and the <a class="reference external" href="https://handbook.datalad.org/en/latest/">DataLad handbook</a> chapters <a class="reference external" href="https://handbook.datalad.org/en/latest/basics/basics-datasets.html">1. DataLad datasets</a>, <a class="reference external" href="https://handbook.datalad.org/en/latest/basics/intro.html">2. Basics</a> and the <a class="reference external" href="https://handbook.datalad.org/en/latest/basics/101-139-gin.html">Walk-through: Dataset hosting on GIN</a>.</p></li>
+</ul>
+<p>Datlad:
+Halchenko et al., (2021). DataLad: distributed system for joint management of code, data, and their relationship. Journal of Open Source Software, 6(63), 3262, <a class="reference external" href="https://doi.org/10.21105/joss.03262">https://doi.org/10.21105/joss.03262</a>.</p>
+</section>
 <section id="intro-the-problem-at-hand">
 <h2>Intro: The Problem at Hand<a class="headerlink" href="#intro-the-problem-at-hand" title="Link to this heading">#</a></h2>
 <p>Neuroscience is one of the most interdisciplinary fields of research, encompassing various domains</p>
@@ -841,11 +852,8 @@ annex.largefiles=((mimeencoding=binary)and(largerthan=0))
 <h2>Datalad save<a class="headerlink" href="#datalad-save" title="Link to this heading">#</a></h2>
 <p>Now we’ve set up the basic directory strtucture and specfiied which files are supposed to be tracked. How do we actually track our changes thoug? Compared to the Git approach above this is simpler, as DataLad does most of the work for us. Let’s create another notes.txt file.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    cat &lt;&lt; EOT &gt;&gt; notes.txt
-    &gt; The command &quot;datalad save [-m] PATH&quot; saves the file (modifications) to
-    &gt; history.
-    &gt; Note to self: Always use informative, concise commit messages.
-    &gt; 
-    &gt; EOT
+        Adding some notes, saving meaninful changes.
+    EOT
 </pre></div>
 </div>
 <section id="datlad-status">
@@ -1341,9 +1349,13 @@ ds000003-qc $ datalad containers-run \
 <p>It is therfore particularly valuable for researchers looking to share data broadly with the community. It ensures reproducibility by providing an accessible, long-term data repository, implementing automatic BIDS Validation, but lacks the version control system unerlying GIN.</p>
 <p>Find more info in the <a class="reference external" href="https://handbook.datalad.org/en/latest/usecases/openneuro.html">Datalad aHandbook section on OpenNeuro</a></p>
 </section>
-<section id="sources">
-<h2>Sources<a class="headerlink" href="#sources" title="Link to this heading">#</a></h2>
+<section id="id5">
+<h2>Sources<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
 <p>A lot of this info here builds on Datalad tutorials and the DataLad Handbook!</p>
+<ul class="simple">
+<li><p>Especially this <a class="reference external" href="https://handbook.datalad.org/en/latest/code_from_chapters/yale.html">Quick course; Running and publishing Data using Datalad</a></p></li>
+<li><p>and the <a class="reference external" href="https://handbook.datalad.org/en/latest/">DataLad handbook</a> chapters <a class="reference external" href="https://handbook.datalad.org/en/latest/basics/basics-datasets.html">1. DataLad datasets</a>, <a class="reference external" href="https://handbook.datalad.org/en/latest/basics/intro.html">2. Basics</a> and the <a class="reference external" href="https://handbook.datalad.org/en/latest/basics/101-139-gin.html">Walk-through: Dataset hosting on GIN</a>.</p></li>
+</ul>
 <p>Halchenko et al., (2021). DataLad: distributed system for joint management of code, data, and their relationship. Journal of Open Source Software, 6(63), 3262, <a class="reference external" href="https://doi.org/10.21105/joss.03262">https://doi.org/10.21105/joss.03262</a>.</p>
 </section>
 </section>
@@ -1414,6 +1426,7 @@ ds000003-qc $ datalad containers-run \
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">G-Node/GIN</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sources">Sources</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intro-the-problem-at-hand">Intro: The Problem at Hand</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-g-node-approach">The G-Node Approach</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation">Motivation</a></li>
@@ -1484,7 +1497,7 @@ ds000003-qc $ datalad containers-run \
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-using-published-datasets">Summary - Using published datasets</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additinal-information-tutorials">Additinal Information/Tutorials</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#openneuro">OpenNeuro</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sources">Sources</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Sources</a></li>
 </ul>
 </li>
 </ul>
