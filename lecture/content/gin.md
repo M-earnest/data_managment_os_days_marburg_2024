@@ -3,6 +3,14 @@
 
 BIDS gives us a starting point for standardizing neuroscience data, but this alone does not ensure acessability or reproducibility. We need tools that go beyond mere standards.
 
+## Sources
+
+A lot of this info here builds on Datalad tutorials and the DataLad Handbook! Check the linked content for more Informatin.
+- Especially this [Quick course; Running and publishing Data using Datalad](https://handbook.datalad.org/en/latest/code_from_chapters/yale.html)
+- and the [DataLad handbook](https://handbook.datalad.org/en/latest/) chapters [1. DataLad datasets](https://handbook.datalad.org/en/latest/basics/basics-datasets.html), [2. Basics](https://handbook.datalad.org/en/latest/basics/intro.html) and the [Walk-through: Dataset hosting on GIN](https://handbook.datalad.org/en/latest/basics/101-139-gin.html).
+
+Datlad: 
+Halchenko et al., (2021). DataLad: distributed system for joint management of code, data, and their relationship. Journal of Open Source Software, 6(63), 3262, https://doi.org/10.21105/joss.03262.
 
 ## Intro: The Problem at Hand
 
@@ -379,11 +387,8 @@ Save meaninful changes `via datalad save`
 Now we've set up the basic directory strtucture and specfiied which files are supposed to be tracked. How do we actually track our changes thoug? Compared to the Git approach above this is simpler, as DataLad does most of the work for us. Let's create another notes.txt file.
 
         cat << EOT >> notes.txt
-        > The command "datalad save [-m] PATH" saves the file (modifications) to
-        > history.
-        > Note to self: Always use informative, concise commit messages.
-        > 
-        > EOT
+            Adding some notes, saving meaninful changes.
+        EOT
 
 
 
@@ -992,5 +997,7 @@ Find more info in the [Datalad aHandbook section on OpenNeuro](https://handbook.
 ## Sources
 
 A lot of this info here builds on Datalad tutorials and the DataLad Handbook!
+- Especially this [Quick course; Running and publishing Data using Datalad](https://handbook.datalad.org/en/latest/code_from_chapters/yale.html)
+- and the [DataLad handbook](https://handbook.datalad.org/en/latest/) chapters [1. DataLad datasets](https://handbook.datalad.org/en/latest/basics/basics-datasets.html), [2. Basics](https://handbook.datalad.org/en/latest/basics/intro.html) and the [Walk-through: Dataset hosting on GIN](https://handbook.datalad.org/en/latest/basics/101-139-gin.html).
 
 Halchenko et al., (2021). DataLad: distributed system for joint management of code, data, and their relationship. Journal of Open Source Software, 6(63), 3262, https://doi.org/10.21105/joss.03262.
