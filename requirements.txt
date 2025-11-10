@@ -7,3 +7,4 @@ sphinx-book-theme
 myst-nb
 ghp-import
 jupytext
+jupyter-book<2.0.0
